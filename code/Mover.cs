@@ -6,10 +6,8 @@ public sealed class Mover : Component
 	[Property] private GameObject border { get; set; }
     [Property] public float TimetillMove { get; set; }
     [Property] public float TimetillChange { get; set; }
-    public bool Reverse = false;
-    public bool timerstarted = false;
+    
 	public TimeUntil doMove;
-	public TimeUntil changeDir;
 	public Vector3 direction;
 	public bool jumped = false;
 
@@ -19,6 +17,7 @@ public sealed class Mover : Component
 		direction = Vector3.Left;
     }
 
+	//comment asdfa sdfasdfasdfasdfasdfasdf 
 	
     protected override void OnUpdate()
 	{
@@ -26,6 +25,7 @@ public sealed class Mover : Component
 		{
 			Log.Info("bruh");
 			jumped = true;
+			TimetillMove *= .9f;
 			return;
 		}
 
@@ -54,28 +54,4 @@ public sealed class Mover : Component
 	{
 		movingblock.Transform.Position += direction * 52;
 	}
-
-    // public void Move()
-    // {
-    //     // if (Reverse) direction = Vector3.Right;
-    //     {
-    //         // MoveAgain();// Moves again after period of time in seconds //
-    //     }
-    //     // if (!timerstarted)
-    //     // StartReverseTimer();
-    // }
-	
-    // public async void MoveAgain()
-    // {
-    //     await Task.DelaySeconds(TimetillMove);
-    //     Move();// Repeat
-    // }
-
-    // public async void StartReverseTimer()
-    // {
-    //     timerstarted = true;
-    //     await Task.DelaySeconds(TimetillChange);
-    //     Reverse = !Reverse;
-    //     timerstarted = false;
-    // }
 }
