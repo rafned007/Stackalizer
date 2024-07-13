@@ -24,7 +24,7 @@
       "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "-72.89509,0,256",
+      "Position": "-128,0,256",
       "Enabled": true,
       "Components": [
         {
@@ -93,6 +93,114 @@
       ]
     },
     {
+      "__guid": "6e76a456-b719-456d-a232-60719d0c16c8",
+      "Flags": 0,
+      "Name": "Border",
+      "Enabled": true
+    },
+    {
+      "__guid": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+      "Flags": 0,
+      "Name": "Player",
+      "Position": "0,-312,0",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Mover",
+          "__guid": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
+          "border": {
+            "_type": "gameobject",
+            "go": "6e76a456-b719-456d-a232-60719d0c16c8"
+          },
+          "movingblock": {
+            "_type": "gameobject",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671"
+          },
+          "TimeRatio": 0.9,
+          "TimetillMove": 0.1
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "1f83abd1-35c5-47a5-83bf-c80993494b94",
+          "Flags": 0,
+          "Name": "MovingBlocks",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ef9a9318-94cc-49f2-8d0f-3e3827a17080",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0,0.63333,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "63ce0c1b-c5b9-4ead-86f9-010e97a7cdc9",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "9d76e848-8df6-4fdd-b71a-93b45a266de1",
+              "Flags": 0,
+              "Name": "MovingBlocks2",
+              "Position": "0,52,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "5c2c23e6-1e92-4f17-ae77-5e057be7ef6a",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "0,0.63333,1,1"
+                },
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "71c79bff-7a3f-49d5-ad35-c9bae9b91bb6",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
+            },
+            {
+              "__guid": "0321209e-f88d-4c0f-9068-428e0ab4cf1b",
+              "Flags": 0,
+              "Name": "MovingBlocks3",
+              "Position": "0,-52,0",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.ModelRenderer",
+                  "__guid": "eaeda90f-8e54-46a0-8014-9aa00a642844",
+                  "BodyGroups": 18446744073709551615,
+                  "Model": "models/dev/box.vmdl",
+                  "RenderType": "Off",
+                  "Tint": "0,0.63333,1,1"
+                },
+                {
+                  "__type": "Sandbox.BoxCollider",
+                  "__guid": "3f3ab12f-f265-46af-a79e-53f407e51419",
+                  "Center": "0,0,0",
+                  "IsTrigger": false,
+                  "Scale": "50,50,50",
+                  "Static": false
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
       "__guid": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7",
       "Flags": 0,
       "Name": "Base1",
@@ -114,13 +222,6 @@
           "IsTrigger": false,
           "Scale": "50,50,50",
           "Static": false
-        },
-        {
-          "__type": "Mover",
-          "__guid": "8537b9f0-065b-4cce-9bed-845db00b036c",
-          "__enabled": false,
-          "TimetillChange": 0,
-          "TimetillMove": 0
         }
       ],
       "Children": [
@@ -151,7 +252,7 @@
               "__type": "Mover",
               "__guid": "4deb28a0-5312-481d-9d84-b7b13ce850be",
               "__enabled": false,
-              "TimetillChange": 0,
+              "TimeRatio": 0,
               "TimetillMove": 0
             }
           ]
@@ -183,140 +284,10 @@
               "__type": "Mover",
               "__guid": "8047188d-edcd-4e88-af2f-a6ab0a7bd2d8",
               "__enabled": false,
-              "TimetillChange": 0,
+              "TimeRatio": 0,
               "TimetillMove": 0
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "073e13c2-f47c-42e6-8fce-fa497c72e671",
-      "Flags": 0,
-      "Name": "Player",
-      "Enabled": true,
-      "Children": [
-        {
-          "__guid": "0321209e-f88d-4c0f-9068-428e0ab4cf1b",
-          "Flags": 0,
-          "Name": "MovingBlocks3",
-          "Position": "0,-52,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "eaeda90f-8e54-46a0-8014-9aa00a642844",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.63333,1,1"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "3f3ab12f-f265-46af-a79e-53f407e51419",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "Mover",
-              "__guid": "a69f9bbd-fbcd-4cec-91cc-3d4fe3448a38",
-              "border": {
-                "_type": "gameobject",
-                "go": "161e210f-7737-49ac-873f-29ff54923dbf"
-              },
-              "movingblock": {
-                "_type": "gameobject",
-                "go": "0321209e-f88d-4c0f-9068-428e0ab4cf1b"
-              },
-              "TimetillChange": 0,
-              "TimetillMove": 0.1
-            }
-          ]
-        },
-        {
-          "__guid": "9d76e848-8df6-4fdd-b71a-93b45a266de1",
-          "Flags": 0,
-          "Name": "MovingBlocks2",
-          "Position": "0,52,0",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "5c2c23e6-1e92-4f17-ae77-5e057be7ef6a",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.63333,1,1"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "71c79bff-7a3f-49d5-ad35-c9bae9b91bb6",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "Mover",
-              "__guid": "7872fd8b-c867-4e2b-b0c8-352949ba2873",
-              "border": {
-                "_type": "gameobject",
-                "go": "161e210f-7737-49ac-873f-29ff54923dbf"
-              },
-              "movingblock": {
-                "_type": "gameobject",
-                "go": "9d76e848-8df6-4fdd-b71a-93b45a266de1"
-              },
-              "TimetillChange": 0,
-              "TimetillMove": 0.1
-            }
-          ]
-        },
-        {
-          "__guid": "1f83abd1-35c5-47a5-83bf-c80993494b94",
-          "Flags": 0,
-          "Name": "MovingBlocks1",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "ef9a9318-94cc-49f2-8d0f-3e3827a17080",
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.63333,1,1"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "63ce0c1b-c5b9-4ead-86f9-010e97a7cdc9",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
-            },
-            {
-              "__type": "Mover",
-              "__guid": "23d272af-654b-4a4f-b359-337c52990c96",
-              "border": {
-                "_type": "gameobject",
-                "go": "161e210f-7737-49ac-873f-29ff54923dbf"
-              },
-              "movingblock": {
-                "_type": "gameobject",
-                "go": "1f83abd1-35c5-47a5-83bf-c80993494b94"
-              },
-              "TimetillChange": 0,
-              "TimetillMove": 0.1
-            }
-          ]
-        },
-        {
-          "__guid": "161e210f-7737-49ac-873f-29ff54923dbf",
-          "Flags": 0,
-          "Name": "Border",
-          "Enabled": true
         }
       ]
     },
@@ -330,6 +301,14 @@
         {
           "__type": "GayManager",
           "__guid": "d18761d8-2a70-4ab8-97e2-aacbf5c05f1a",
+          "Border": {
+            "_type": "gameobject",
+            "go": "6e76a456-b719-456d-a232-60719d0c16c8"
+          },
+          "Camera": {
+            "_type": "gameobject",
+            "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
+          },
           "prevob": {
             "_type": "gameobject",
             "go": "073e13c2-f47c-42e6-8fce-fa497c72e671"

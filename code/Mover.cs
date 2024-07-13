@@ -5,7 +5,7 @@ public sealed class Mover : Component
 	[Property] private GameObject movingblock { get; set; }
 	[Property] private GameObject border { get; set; }
     [Property] public float TimetillMove { get; set; }
-    [Property] public float TimetillChange { get; set; }
+    [Property] public float TimeRatio { get; set; }
     
 	public TimeUntil doMove;
 	public Vector3 direction;
@@ -25,7 +25,7 @@ public sealed class Mover : Component
 		{
 			Log.Info("bruh");
 			jumped = true;
-			TimetillMove *= .9f;
+			TimetillMove *= TimeRatio;
 			return;
 		}
 
@@ -35,7 +35,7 @@ public sealed class Mover : Component
 			doMove = TimetillMove;
 		}
 
-		if (Vector3.DistanceBetween(movingblock.Transform.Position, border.Transform.Position) >= 500)
+		if (Vector3.DistanceBetween(movingblock.Transform.Position, border.Transform.Position) >= (12*52))
 		{
 			if (direction == Vector3.Left)
 			{
