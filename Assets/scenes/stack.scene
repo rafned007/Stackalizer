@@ -24,7 +24,7 @@
       "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "-128,0,256",
+      "Position": "-128,0,179.6263",
       "Enabled": true,
       "Components": [
         {
@@ -35,7 +35,7 @@
           "FieldOfView": 60,
           "IsMainCamera": true,
           "Orthographic": true,
-          "OrthographicHeight": 700,
+          "OrthographicHeight": 520,
           "Priority": 1,
           "RenderExcludeTags": "",
           "RenderTags": "",
@@ -108,13 +108,17 @@
         {
           "__type": "Mover",
           "__guid": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
-          "border": {
+          "Base": {
+            "_type": "gameobject",
+            "go": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7"
+          },
+          "Border": {
             "_type": "gameobject",
             "go": "6e76a456-b719-456d-a232-60719d0c16c8"
           },
-          "movingblock": {
+          "Camera": {
             "_type": "gameobject",
-            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671"
+            "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
           },
           "TimeRatio": 0.9,
           "TimetillMove": 0.1
@@ -300,19 +304,7 @@
       "Components": [
         {
           "__type": "GayManager",
-          "__guid": "d18761d8-2a70-4ab8-97e2-aacbf5c05f1a",
-          "Border": {
-            "_type": "gameobject",
-            "go": "6e76a456-b719-456d-a232-60719d0c16c8"
-          },
-          "Camera": {
-            "_type": "gameobject",
-            "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
-          },
-          "prevob": {
-            "_type": "gameobject",
-            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671"
-          }
+          "__guid": "d18761d8-2a70-4ab8-97e2-aacbf5c05f1a"
         }
       ]
     }
