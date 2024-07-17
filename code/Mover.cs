@@ -7,6 +7,8 @@ public sealed class Mover : Component
     [Property] public float TimeRatio { get; set; }
 	[Property] public GameObject Camera {get; set;}
 	[Property] public GameObject Base { get; set;}
+	[Property] public GameObject Base1 { get; set;}
+	[Property] public GameObject Block1 { get; set;}
 	public int turn = 1;
     
 	public TimeUntil doMove;
@@ -60,7 +62,7 @@ public sealed class Mover : Component
 			//clone prefab
 			var clone = Base.Clone();
 			// timing was off - moved clone to the left
-			clone.Transform.Position = Transform.Position + Vector3.Left * 52;
+			clone.Transform.Position = Transform.Position;
 
 			Transform.Position = Vector3.Right * (52*6) + (Vector3.Up * (52 * turn));
 			Border.Transform.Position = Vector3.Up * (52*turn);
@@ -73,6 +75,12 @@ public sealed class Mover : Component
 			if (turn % 5 == 0)
 			{
 				Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);
+				if (Base1 != null && Block1 !=null) 
+				{
+					Base1.Destroy();
+					Block1.Destroy();
+				}
+				
 			}
 		}
 	}

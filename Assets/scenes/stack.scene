@@ -24,7 +24,7 @@
       "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "-128,0,179.6263",
+      "Position": "-128,0,180",
       "Enabled": true,
       "Components": [
         {
@@ -110,7 +110,15 @@
           "__guid": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
           "Base": {
             "_type": "gameobject",
+            "go": "415d8f67-a58f-41e1-aef2-61efe24f3307"
+          },
+          "Base1": {
+            "_type": "gameobject",
             "go": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7"
+          },
+          "Block1": {
+            "_type": "gameobject",
+            "go": "9d76e848-8df6-4fdd-b71a-93b45a266de1"
           },
           "Border": {
             "_type": "gameobject",
@@ -120,21 +128,29 @@
             "_type": "gameobject",
             "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
           },
-          "TimeRatio": 0.9,
+          "TimeRatio": 0.95,
           "TimetillMove": 0.1
+        },
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "97b983b4-3214-4693-80d9-ca6933511449",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "On",
+          "Tint": "0,0.63529,1,1"
         }
       ],
       "Children": [
         {
-          "__guid": "1f83abd1-35c5-47a5-83bf-c80993494b94",
+          "__guid": "9d76e848-8df6-4fdd-b71a-93b45a266de1",
           "Flags": 0,
-          "Name": "MovingBlocks",
-          "Position": "0,0,0",
+          "Name": "Blocks1",
+          "Position": "0,52,0",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
-              "__guid": "ef9a9318-94cc-49f2-8d0f-3e3827a17080",
+              "__guid": "5c2c23e6-1e92-4f17-ae77-5e057be7ef6a",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
@@ -142,78 +158,51 @@
             },
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "63ce0c1b-c5b9-4ead-86f9-010e97a7cdc9",
+              "__guid": "71c79bff-7a3f-49d5-ad35-c9bae9b91bb6",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
             }
-          ],
-          "Children": [
+          ]
+        },
+        {
+          "__guid": "0321209e-f88d-4c0f-9068-428e0ab4cf1b",
+          "Flags": 0,
+          "Name": "Blocks2",
+          "Position": "0,-52,0",
+          "Enabled": true,
+          "Components": [
             {
-              "__guid": "9d76e848-8df6-4fdd-b71a-93b45a266de1",
-              "Flags": 0,
-              "Name": "MovingBlocks2",
-              "Position": "0,52,0",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "5c2c23e6-1e92-4f17-ae77-5e057be7ef6a",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "Off",
-                  "Tint": "0,0.63333,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "71c79bff-7a3f-49d5-ad35-c9bae9b91bb6",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "eaeda90f-8e54-46a0-8014-9aa00a642844",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0,0.63333,1,1"
             },
             {
-              "__guid": "0321209e-f88d-4c0f-9068-428e0ab4cf1b",
-              "Flags": 0,
-              "Name": "MovingBlocks3",
-              "Position": "0,-52,0",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.ModelRenderer",
-                  "__guid": "eaeda90f-8e54-46a0-8014-9aa00a642844",
-                  "BodyGroups": 18446744073709551615,
-                  "Model": "models/dev/box.vmdl",
-                  "RenderType": "Off",
-                  "Tint": "0,0.63333,1,1"
-                },
-                {
-                  "__type": "Sandbox.BoxCollider",
-                  "__guid": "3f3ab12f-f265-46af-a79e-53f407e51419",
-                  "Center": "0,0,0",
-                  "IsTrigger": false,
-                  "Scale": "50,50,50",
-                  "Static": false
-                }
-              ]
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "3f3ab12f-f265-46af-a79e-53f407e51419",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
             }
           ]
         }
       ]
     },
     {
-      "__guid": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7",
+      "__guid": "415d8f67-a58f-41e1-aef2-61efe24f3307",
       "Flags": 0,
-      "Name": "Base1",
-      "Position": "0,52,-52",
+      "Name": "Base",
+      "Position": "0,0,-52",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
-          "__guid": "ca309f80-a655-42f5-aa1e-a7bb1e24e8a0",
+          "__guid": "5263b4f9-b93d-40db-adad-dfa5e6695794",
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
           "RenderType": "Off",
@@ -221,7 +210,7 @@
         },
         {
           "__type": "Sandbox.BoxCollider",
-          "__guid": "4f20ec45-3e49-41dc-81fe-17ac60c6dbf0",
+          "__guid": "ab0e9e67-c626-4e73-84ef-efc6e861b6b5",
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "50,50,50",
@@ -230,15 +219,15 @@
       ],
       "Children": [
         {
-          "__guid": "415d8f67-a58f-41e1-aef2-61efe24f3307",
+          "__guid": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7",
           "Flags": 0,
-          "Name": "Base3",
-          "Position": "0,-52,0",
+          "Name": "Base1",
+          "Position": "0,52,0",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
-              "__guid": "5263b4f9-b93d-40db-adad-dfa5e6695794",
+              "__guid": "ca309f80-a655-42f5-aa1e-a7bb1e24e8a0",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
@@ -246,18 +235,11 @@
             },
             {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "ab0e9e67-c626-4e73-84ef-efc6e861b6b5",
+              "__guid": "4f20ec45-3e49-41dc-81fe-17ac60c6dbf0",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
-            },
-            {
-              "__type": "Mover",
-              "__guid": "4deb28a0-5312-481d-9d84-b7b13ce850be",
-              "__enabled": false,
-              "TimeRatio": 0,
-              "TimetillMove": 0
             }
           ]
         },
@@ -265,7 +247,7 @@
           "__guid": "1d9778de-4a29-46a6-8737-bbb4c9317621",
           "Flags": 0,
           "Name": "Base2",
-          "Position": "0,-104,0",
+          "Position": "0,-52,0",
           "Enabled": true,
           "Components": [
             {
@@ -283,13 +265,59 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
-            },
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "00559db9-4f7e-4cf6-b90b-e0530a129d88",
+      "Flags": 0,
+      "Name": "BaseShadow",
+      "Position": "0,0,-52",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "d3a74609-d74a-4b30-a996-7085d4596cc4",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/box.vmdl",
+          "RenderType": "Off",
+          "Tint": "0.03333,0,1,1"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "41b6b837-403d-48a3-ac62-6935445dcb68",
+          "Flags": 0,
+          "Name": "Base1",
+          "Position": "0,52,0",
+          "Enabled": true,
+          "Components": [
             {
-              "__type": "Mover",
-              "__guid": "8047188d-edcd-4e88-af2f-a6ab0a7bd2d8",
-              "__enabled": false,
-              "TimeRatio": 0,
-              "TimetillMove": 0
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "180b6990-1ff4-4c71-9fba-5c5dca0f1890",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.03333,0,1,1"
+            }
+          ]
+        },
+        {
+          "__guid": "d2052571-dc26-420a-8c28-a5e06a1a6516",
+          "Flags": 0,
+          "Name": "Base2",
+          "Position": "0,-52,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "30eef07d-fece-4513-9567-bf995f867985",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.03333,0,1,1"
             }
           ]
         }
