@@ -130,7 +130,7 @@
             "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
           },
           "TimeRatio": 0.95,
-          "TimetillMove": 0.1
+          "TimetillMove": 0.2
         },
         {
           "__type": "RayDetect",
@@ -146,6 +146,10 @@
           "Base3": {
             "_type": "gameobject",
             "go": "da90a753-0059-49ca-9de7-3547e38fc847"
+          },
+          "particles": {
+            "_type": "gameobject",
+            "go": "e74b080c-06fd-412d-ae85-9d64149aa428"
           },
           "pBlock1": {
             "_type": "gameobject",
@@ -238,6 +242,24 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "e74b080c-06fd-412d-ae85-9d64149aa428",
+          "Flags": 0,
+          "Name": "ParticleEmitter",
+          "Position": "0,0,0",
+          "Tags": "particles",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.LegacyParticleSystem",
+              "__guid": "1f2fad14-5b3d-4a4e-9d2d-0eb3707676bb",
+              "ControlPoints": [],
+              "Looped": false,
+              "Particles": "particles/confetti/confetti_splash.vpcf",
+              "PlaybackSpeed": 1
             }
           ]
         }
@@ -339,6 +361,7 @@
           "Flags": 0,
           "Name": "Base1",
           "Position": "0,52,0",
+          "Tags": "particles",
           "Enabled": true,
           "Components": [
             {
@@ -348,15 +371,6 @@
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
               "Tint": "0.03333,0,1,1"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "5171146f-72f0-4edc-ad5c-da1363386f36",
-              "__enabled": false,
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "50,50,50",
-              "Static": false
             }
           ]
         },
@@ -452,6 +466,8 @@
   "Title": "minimal",
   "Description": "",
   "ResourceVersion": 1,
-  "__references": [],
+  "__references": [
+    "baik.confettisplash"
+  ],
   "__version": 1
 }

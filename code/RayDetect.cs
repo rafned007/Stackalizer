@@ -9,6 +9,7 @@ public sealed class RayDetect : Component
 	[Property] public GameObject pBlock1 {get; set;}
 	[Property] public GameObject pBlock2 {get; set;}
 	[Property] public GameObject pBlock3 {get; set;}
+	[Property] public GameObject particles {get; set;}
 
 	protected override void OnUpdate()
 	{
@@ -26,6 +27,8 @@ public sealed class RayDetect : Component
 		if(!tr1.Hit && Input.Pressed("jump")) 
 		{
 			Base1.Destroy();
+			var clone = particles.Clone();
+			clone.Transform.Position = pBlock1.Transform.Position;
 			pBlock1.Destroy();
 		}
 
@@ -43,6 +46,8 @@ public sealed class RayDetect : Component
 		if(!tr2.Hit && Input.Pressed("jump")) 
 		{
 			Base2.Destroy();
+			var clone = particles.Clone();
+			clone.Transform.Position = pBlock2.Transform.Position;
 			pBlock2.Destroy();
 		}
 
@@ -60,6 +65,8 @@ public sealed class RayDetect : Component
 		if(!tr3.Hit && Input.Pressed("jump")) 
 		{
 			Base3.Destroy();
+			var clone = particles.Clone();
+			clone.Transform.Position = pBlock3.Transform.Position;
 			pBlock3.Destroy();
 		}
 	}
