@@ -1,0 +1,56 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root class="@(IsPaused ? "" : "hide")">
+    <h2>Stack&box</h2>
+    <div class= "options">
+        <div class="button" onclick=@OnResume>
+            Start Game!
+        </div>
+        <div class="button sfx">
+            Suck a Butt?
+        </div>
+        <div class="button menu" onclick=@ClassicMode>
+            Classic Mode
+        </div>
+    </div>
+</root>
+
+@code
+{
+
+    public bool IsPaused { get; set; }
+
+
+    protected override void OnStart()
+	{
+		IsPaused = true;
+	}
+
+    protected override void OnUpdate()
+    {
+        base.OnUpdate();
+
+        if(Input.EscapePressed)
+        {
+            Input.EscapePressed = false;
+            IsPaused = !IsPaused;
+        }
+
+        Scene.TimeScale = IsPaused ? 0 : 1;
+    }
+
+    void OnResume()
+    {
+        IsPaused = false;
+    }
+
+    void ClassicMode ()
+    {
+        Scene.LoadFromFile("scenes/classic.scene");
+    }
+
+
+    protected override int BuildHash() => System.HashCode.Combine( IsPaused );
+}

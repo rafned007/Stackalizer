@@ -26,6 +26,7 @@ public sealed class Mover : Component
 		controller();
 		
 		Move();
+
 	}
 
 	public void Move()
@@ -71,6 +72,7 @@ public sealed class Mover : Component
 
 			Move();
 			turn += 1;
+			Log.Info($"Level: {turn - 1}");
 			// Border.Transform.Position += Vector3.Up * (52*turn);
 			if (turn % 5 == 0)
 			{
