@@ -11,76 +11,110 @@ public sealed class RayDetect : Component
 	[Property] public GameObject pBlock3 {get; set;}
 	[Property] public GameObject particles {get; set;}
 	public bool ignoreinputs = false;
+	public bool b1Dead = false;
+	public bool b2Dead = false;
+	public bool b3Dead = false;
 	public int count1 = 0;
 	public int count2 = 0;
 	public int count3 = 0;
 	public float blocksHit = 3;
 	public float blocksRemain = 3;
+	public TimeUntil sceneChange;
 	
+	protected override void OnStart()
+	{
+		b1Dead = false;
+		b2Dead = false;
+		b3Dead = false;
+	}
 
 	protected override void OnUpdate()
 	{
-		var startPos1 = Player.Transform.Position + Vector3.Left*52;
-		var endPos1 = startPos1 + Vector3.Down *52;
-		var tr1 = Scene.Trace.Ray(startPos1, endPos1)
-		.WithoutTags("player").Size(5).Run();
-
-		// var draw1 = Gizmo.Draw;
-
-		// draw1.Color = Color.Green;
-		// draw1.LineThickness = 2;
-		// draw1.Line(startPos1, endPos1);
-
-		if(!tr1.Hit && Input.Pressed("jump") && count1 == 0 && !ignoreinputs) 
+		if (!b1Dead)
 		{
-			Base1.Destroy();
-			var clone = particles.Clone();
-			clone.Transform.Position = pBlock1.Transform.Position;
-			pBlock1.Destroy();
-			count1++;
-			blocksRemain--;
+			var startPos1 = Player.Transform.Position + Vector3.Left*52;
+			var endPos1 = startPos1 + Vector3.Down *52;
+			var tr1 = Scene.Trace.Ray(startPos1, endPos1)
+			.WithoutTags("player").Size(5).Run();
+			if (Input.Pressed("jump"))
+			{
+				Log.Info("------");
+				Log.Info(tr1);
+				Log.Info(tr1.Hit);
+				if (tr1.Hit)
+				{
+					Log.Info(tr1.HitPosition);
+				}
+				Log.Info($"start pos= {startPos1}");
+				Log.Info($"end pos= {endPos1}");
+				Log.Info("------");
+			}
+
+			var draw1 = Gizmo.Draw;
+			draw1.Color = Color.Green;
+			draw1.LineThickness = 2;
+			draw1.Line(startPos1, endPos1);
+
+			if(!tr1.Hit && Input.Pressed("jump") && count1 == 0 && !ignoreinputs) 
+			{
+				Base1.Destroy();
+				var clone = particles.Clone();
+				clone.Transform.Position = pBlock1.Transform.Position;
+				Log.Info(clone.Transform.Position);
+				Log.Info(pBlock1.Transform.Position);
+				pBlock1.Destroy();
+				b1Dead =true;
+				count1++;
+				blocksRemain--;
+			}
 		}
 
-		var startPos2 = Player.Transform.Position;
-		var endPos2 = startPos2 + Vector3.Down *52;
-		var tr2 = Scene.Trace.Ray(startPos2, endPos2)
-		.WithoutTags("player").Size(5).Run();
-
-		// var draw2 = Gizmo.Draw;
-
-		// draw2.Color = Color.Green;
-		// draw2.LineThickness = 2;
-		// draw2.Line(startPos2, endPos2);
-
-		if(!tr2.Hit && Input.Pressed("jump") && count2 == 0 && !ignoreinputs) 
+		if (!b2Dead)
 		{
-			Base2.Destroy();
-			var clone = particles.Clone();
-			clone.Transform.Position = pBlock2.Transform.Position;
-			pBlock2.Destroy();
-			count2++;
-			blocksRemain--;
+			var startPos2 = Player.Transform.Position;
+			var endPos2 = startPos2 + Vector3.Down *52;
+			var tr2 = Scene.Trace.Ray(startPos2, endPos2)
+			.WithoutTags("player").Size(5).Run();
+
+			var draw2 = Gizmo.Draw;
+			draw2.Color = Color.Green;
+			draw2.LineThickness = 2;
+			draw2.Line(startPos2, endPos2);
+
+			if(!tr2.Hit && Input.Pressed("jump") && count2 == 0 && !ignoreinputs) 
+			{
+				Base2.Destroy();
+				var clone = particles.Clone();
+				clone.Transform.Position = pBlock2.Transform.Position;
+				pBlock2.Destroy();
+				b2Dead =true;
+				count2++;
+				blocksRemain--;
+			}
 		}
 
-		var startPos3 = Player.Transform.Position + Vector3.Right*52;
-		var endPos3 = startPos3 + Vector3.Down *52;
-		var tr3 = Scene.Trace.Ray(startPos3, endPos3)
-		.WithoutTags("player").Size(5).Run();
-
-		// var draw3 = Gizmo.Draw;
-
-		// draw3.Color = Color.Green;
-		// draw3.LineThickness = 2;
-		// draw3.Line(startPos3, endPos3);
-
-		if(!tr3.Hit && Input.Pressed("jump") && count3 == 0 && !ignoreinputs) 
+		if (!b3Dead)
 		{
-			Base3.Destroy();
-			var clone = particles.Clone();
-			clone.Transform.Position = pBlock3.Transform.Position;
-			pBlock3.Destroy();
-			count3++;
-			blocksRemain--;
+			var startPos3 = Player.Transform.Position + Vector3.Right*52;
+			var endPos3 = startPos3 + Vector3.Down *52;
+			var tr3 = Scene.Trace.Ray(startPos3, endPos3)
+			.WithoutTags("player").Size(5).Run();
+
+			var draw3 = Gizmo.Draw;
+			draw3.Color = Color.Green;
+			draw3.LineThickness = 2;
+			draw3.Line(startPos3, endPos3);
+
+			if(!tr3.Hit && Input.Pressed("jump") && count3 == 0 && !ignoreinputs) 
+			{
+				Base3.Destroy();
+				var clone = particles.Clone();
+				clone.Transform.Position = pBlock3.Transform.Position;
+				pBlock3.Destroy();
+				b3Dead =true;
+				count3++;
+				blocksRemain--;
+			}
 		}
 
 		if (Input.Pressed("jump") && blocksHit / blocksRemain == 1.0 && !ignoreinputs)
@@ -93,17 +127,18 @@ public sealed class RayDetect : Component
 			Sound.Play("error4");
 		}
 
-		if (Input.Pressed("jump") && !tr1.Hit && !tr2.Hit && !tr3.Hit && !ignoreinputs)
+		if (blocksRemain == 0 && !ignoreinputs)
 		{
-			restart();
+			Scene.LoadFromFile("scenes/Stack.scene");
+		}
+
+		if (Input.Pressed("duck"))
+		{
+			Log.Info(pBlock1);
 		}
 	}
 	async void restart()
 	{
-		ignoreinputs = true;
-		
-		await Task.DelaySeconds(1);
 		Scene.LoadFromFile("scenes/Stack.scene");
-		ignoreinputs = false;
 	}
 }

@@ -20,7 +20,7 @@ public sealed class Mover : Component
     {
 		doMove = TimetillMove;
 		direction = Vector3.Left;
-		player.ignoreinputs = true;
+		player.ignoreinputs = false;
     }
 	
     protected override void OnUpdate()
@@ -76,7 +76,6 @@ public sealed class Mover : Component
 
 			NextTurn();
 
-			Move();
 			turn += 1;
 			Log.Info($"Level: {turn - 1}");
 			// Border.Transform.Position += Vector3.Up * (52*turn);
@@ -93,5 +92,6 @@ public sealed class Mover : Component
 		await Task.DelaySeconds(.5f);
 		jumped = false;
 		doMove = TimetillMove;
+		Move();
 	}
 }

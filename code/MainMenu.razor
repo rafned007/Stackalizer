@@ -27,11 +27,21 @@
     protected override void OnStart()
 	{
 		IsPaused = true;
+        player.ignoreinputs = false;
 	}
 
     protected override void OnUpdate()
     {
         base.OnUpdate();
+
+        if (IsPaused)
+        {
+            player.ignoreinputs = true;
+        }
+        else
+        {
+            player.ignoreinputs = false;
+        }
 
         if(Input.EscapePressed)
         {

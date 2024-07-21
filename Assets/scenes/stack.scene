@@ -1,5 +1,5 @@
 {
-  "__guid": "c86a4ad2-d811-4401-8394-9cf92e6161fc",
+  "__guid": "b02f1483-57a1-48a7-bb9c-b8f706cadb44",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -107,7 +107,7 @@
         {
           "__type": "Sandbox.Pixelate",
           "__guid": "5ae256b4-8198-46bc-9488-3aeda295b5c0",
-          "Scale": 0.1
+          "Scale": 0.001
         },
         {
           "__type": "Sandbox.Vignette",
@@ -526,7 +526,7 @@
     "NetworkFrequency": 60,
     "NetworkInterpolation": true,
     "ThreadedAnimation": true,
-    "TimeScale": 1,
+    "TimeScale": 0,
     "UseFixedUpdate": true,
     "NavMesh": {
       "Enabled": false,
