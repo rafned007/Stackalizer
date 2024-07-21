@@ -1,5 +1,5 @@
 {
-  "__guid": "f2e3a6a5-bf4b-4808-b192-8c34e454fded",
+  "__guid": "c66d98f6-3b13-459e-a7ed-1b49525eccb2",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -103,6 +103,7 @@
       "Flags": 0,
       "Name": "Player",
       "Position": "0,-312,0",
+      "Tags": "player",
       "Enabled": true,
       "Components": [
         {
@@ -132,12 +133,36 @@
           "TimetillMove": 0.1
         },
         {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "97b983b4-3214-4693-80d9-ca6933511449",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "0,0.63529,1,1"
+          "__type": "RayDetect",
+          "__guid": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
+          "Base1": {
+            "_type": "gameobject",
+            "go": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7"
+          },
+          "Base2": {
+            "_type": "gameobject",
+            "go": "1d9778de-4a29-46a6-8737-bbb4c9317621"
+          },
+          "Base3": {
+            "_type": "gameobject",
+            "go": "da90a753-0059-49ca-9de7-3547e38fc847"
+          },
+          "pBlock1": {
+            "_type": "gameobject",
+            "go": "9d76e848-8df6-4fdd-b71a-93b45a266de1"
+          },
+          "pBlock2": {
+            "_type": "gameobject",
+            "go": "0321209e-f88d-4c0f-9068-428e0ab4cf1b"
+          },
+          "pBlock3": {
+            "_type": "gameobject",
+            "go": "68b534ce-4853-4b87-be6e-28cf9e1d29f9"
+          },
+          "Player": {
+            "_type": "gameobject",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671"
+          }
         }
       ],
       "Children": [
@@ -170,7 +195,7 @@
           "__guid": "0321209e-f88d-4c0f-9068-428e0ab4cf1b",
           "Flags": 0,
           "Name": "Blocks2",
-          "Position": "0,-52,0",
+          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
@@ -190,6 +215,31 @@
               "Static": false
             }
           ]
+        },
+        {
+          "__guid": "68b534ce-4853-4b87-be6e-28cf9e1d29f9",
+          "Flags": 0,
+          "Name": "Blocks3",
+          "Position": "0,-52,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "975d0377-d2ef-4c66-af29-35703d3b17e1",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0,0.63333,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "0f96f871-c275-456b-81a0-085104709915",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
         }
       ]
     },
@@ -199,24 +249,6 @@
       "Name": "Base",
       "Position": "0,0,-52",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "5263b4f9-b93d-40db-adad-dfa5e6695794",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "Off",
-          "Tint": "0.03333,0,1,1"
-        },
-        {
-          "__type": "Sandbox.BoxCollider",
-          "__guid": "ab0e9e67-c626-4e73-84ef-efc6e861b6b5",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Scale": "50,50,50",
-          "Static": false
-        }
-      ],
       "Children": [
         {
           "__guid": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7",
@@ -247,7 +279,7 @@
           "__guid": "1d9778de-4a29-46a6-8737-bbb4c9317621",
           "Flags": 0,
           "Name": "Base2",
-          "Position": "0,-52,0",
+          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
@@ -267,28 +299,43 @@
               "Static": false
             }
           ]
+        },
+        {
+          "__guid": "da90a753-0059-49ca-9de7-3547e38fc847",
+          "Flags": 0,
+          "Name": "Base3",
+          "Position": "0,-52,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "ca0fca0a-70b8-4f7b-b9b0-8dfcdca00cba",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.03333,0,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "4367c17c-4132-423d-b047-20d053d3b8ca",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
         }
       ]
     },
     {
-      "__guid": "00559db9-4f7e-4cf6-b90b-e0530a129d88",
+      "__guid": "76c2d749-634d-4082-9725-061195d1c204",
       "Flags": 0,
-      "Name": "BaseShadow",
+      "Name": "Base (1)",
       "Position": "0,0,-52",
       "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "d3a74609-d74a-4b30-a996-7085d4596cc4",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "Off",
-          "Tint": "0.03333,0,1,1"
-        }
-      ],
       "Children": [
         {
-          "__guid": "41b6b837-403d-48a3-ac62-6935445dcb68",
+          "__guid": "190907fa-58a5-494f-b626-1138e0e85a02",
           "Flags": 0,
           "Name": "Base1",
           "Position": "0,52,0",
@@ -296,28 +343,72 @@
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
-              "__guid": "180b6990-1ff4-4c71-9fba-5c5dca0f1890",
+              "__guid": "a1852f83-df92-4c20-9313-79928968beff",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
               "Tint": "0.03333,0,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "5171146f-72f0-4edc-ad5c-da1363386f36",
+              "__enabled": false,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
             }
           ]
         },
         {
-          "__guid": "d2052571-dc26-420a-8c28-a5e06a1a6516",
+          "__guid": "cc2e29f3-dc39-4b12-9573-58bbfb0044df",
           "Flags": 0,
           "Name": "Base2",
+          "Position": "0,0,0",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "0701b2d8-9069-4c1c-b425-3870b547d3d9",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "Off",
+              "Tint": "0.03333,0,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "0c5f9c2b-bf0f-4e7c-9ba6-9798fad6c5b1",
+              "__enabled": false,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
+            }
+          ]
+        },
+        {
+          "__guid": "48462372-1dd3-472a-b425-e755dac2c103",
+          "Flags": 0,
+          "Name": "Base3",
           "Position": "0,-52,0",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.ModelRenderer",
-              "__guid": "30eef07d-fece-4513-9567-bf995f867985",
+              "__guid": "baa1591c-9fd4-4e94-a0c4-7fa625b9ae24",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
               "Tint": "0.03333,0,1,1"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "2c61d86e-1c0d-4c82-a91c-d1f119a5e1da",
+              "__enabled": false,
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "50,50,50",
+              "Static": false
             }
           ]
         }

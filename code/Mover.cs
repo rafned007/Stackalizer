@@ -75,11 +75,6 @@ public sealed class Mover : Component
 			if (turn % 5 == 0)
 			{
 				Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);
-				if (Base1 != null && Block1 !=null) 
-				{
-					Base1.Destroy();
-					Block1.Destroy();
-				}
 				
 			}
 		}
