@@ -9,6 +9,7 @@ public sealed class Mover : Component
 	[Property] public GameObject Base { get; set;}
 	[Property] public GameObject Base1 { get; set;}
 	[Property] public GameObject Block1 { get; set;}
+	[Property] RayDetect player { get; set; }
 	public int turn = 1;
     
 	public TimeUntil doMove;
@@ -19,12 +20,17 @@ public sealed class Mover : Component
     {
 		doMove = TimetillMove;
 		direction = Vector3.Left;
+		player.ignoreinputs = true;
     }
 	
     protected override void OnUpdate()
 	{
-		controller();
 		
+		if (!player.ignoreinputs)
+		{
+			controller();
+			
+		}
 		Move();
 
 	}

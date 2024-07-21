@@ -21,6 +21,7 @@
 {
 
     public bool IsPaused { get; set; }
+    [Property] RayDetect player { get; set; }
 
 
     protected override void OnStart()
@@ -36,6 +37,7 @@
         {
             Input.EscapePressed = false;
             IsPaused = !IsPaused;
+            player.ignoreinputs = true;
         }
 
         Scene.TimeScale = IsPaused ? 0 : 1;
@@ -44,6 +46,7 @@
     void OnResume()
     {
         IsPaused = false;
+        player.ignoreinputs = false;
     }
 
     void ClassicMode ()

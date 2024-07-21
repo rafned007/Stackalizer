@@ -129,6 +129,12 @@
             "_type": "gameobject",
             "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
           },
+          "player": {
+            "_type": "component",
+            "component_id": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+            "component_type": "RayDetect"
+          },
           "TimeRatio": 0.95,
           "TimetillMove": 0.2
         },
@@ -448,7 +454,13 @@
         },
         {
           "__type": "MainMenu",
-          "__guid": "d335f7f7-70d5-4518-b4a3-6fdcca73d81e"
+          "__guid": "d335f7f7-70d5-4518-b4a3-6fdcca73d81e",
+          "player": {
+            "_type": "component",
+            "component_id": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+            "component_type": "RayDetect"
+          }
         }
       ]
     },

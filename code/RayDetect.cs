@@ -10,13 +10,13 @@ public sealed class RayDetect : Component
 	[Property] public GameObject pBlock2 {get; set;}
 	[Property] public GameObject pBlock3 {get; set;}
 	[Property] public GameObject particles {get; set;}
+	public bool ignoreinputs = false;
 	public int count1 = 0;
 	public int count2 = 0;
 	public int count3 = 0;
 	public float blocksHit = 3;
 	public float blocksRemain = 3;
-	public bool perfHit = false;
-
+	
 
 	protected override void OnUpdate()
 	{
@@ -31,7 +31,7 @@ public sealed class RayDetect : Component
 		// draw1.LineThickness = 2;
 		// draw1.Line(startPos1, endPos1);
 
-		if(!tr1.Hit && Input.Pressed("jump") && count1 == 0) 
+		if(!tr1.Hit && Input.Pressed("jump") && count1 == 0 && !ignoreinputs) 
 		{
 			Base1.Destroy();
 			var clone = particles.Clone();
@@ -52,7 +52,7 @@ public sealed class RayDetect : Component
 		// draw2.LineThickness = 2;
 		// draw2.Line(startPos2, endPos2);
 
-		if(!tr2.Hit && Input.Pressed("jump") && count2 == 0) 
+		if(!tr2.Hit && Input.Pressed("jump") && count2 == 0 && !ignoreinputs) 
 		{
 			Base2.Destroy();
 			var clone = particles.Clone();
@@ -73,7 +73,7 @@ public sealed class RayDetect : Component
 		// draw3.LineThickness = 2;
 		// draw3.Line(startPos3, endPos3);
 
-		if(!tr3.Hit && Input.Pressed("jump") && count3 == 0) 
+		if(!tr3.Hit && Input.Pressed("jump") && count3 == 0 && !ignoreinputs) 
 		{
 			Base3.Destroy();
 			var clone = particles.Clone();
@@ -83,25 +83,27 @@ public sealed class RayDetect : Component
 			blocksRemain--;
 		}
 
-		if (Input.Pressed("jump") && blocksHit / blocksRemain == 1.0)
+		if (Input.Pressed("jump") && blocksHit / blocksRemain == 1.0 && !ignoreinputs)
 		{
 			Sound.Play("perfect!");
 		}
-		else if (Input.Pressed("jump") && blocksHit / blocksRemain != 1.0)
+		else if (Input.Pressed("jump") && blocksHit / blocksRemain != 1.0 && !ignoreinputs)
 		{
 			blocksHit--;
 			Sound.Play("error4");
 		}
 
-		if (Input.Pressed("jump") && !tr1.Hit && !tr2.Hit && !tr3.Hit)
+		if (Input.Pressed("jump") && !tr1.Hit && !tr2.Hit && !tr3.Hit && !ignoreinputs)
 		{
 			restart();
-			
 		}
 	}
 	async void restart()
 	{
+		ignoreinputs = true;
+		
 		await Task.DelaySeconds(1);
 		Scene.LoadFromFile("scenes/Stack.scene");
+		ignoreinputs = false;
 	}
 }
