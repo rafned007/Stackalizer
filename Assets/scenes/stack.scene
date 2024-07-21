@@ -41,7 +41,7 @@
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
-          "ZFar": 10000,
+          "ZFar": 506,
           "ZNear": 10
         },
         {
@@ -68,10 +68,10 @@
               "y": 1
             }
           ],
-          "Mode": "Additive",
-          "Strength": 1.77,
-          "Threshold": 0.18,
-          "ThresholdWidth": 2.55
+          "Mode": "Blur",
+          "Strength": 0.27,
+          "Threshold": 0,
+          "ThresholdWidth": 0.07
         },
         {
           "__type": "Sandbox.Tonemapping",
@@ -82,13 +82,41 @@
           "ExposureMethod": "RGB",
           "MaximumExposure": 0.83,
           "MinimumExposure": 0.98,
-          "Mode": "Legacy",
+          "Mode": "ACES",
           "Rate": 1
         },
         {
           "__type": "Sandbox.Sharpen",
           "__guid": "21a69a2c-4d7d-4856-914f-8fd31c7113b1",
-          "Scale": 0.2
+          "Scale": 5
+        },
+        {
+          "__type": "Sandbox.FilmGrain",
+          "__guid": "f127bef9-1203-4c73-b915-9534d36f037d",
+          "Intensity": 0.02,
+          "Response": 2.0000117
+        },
+        {
+          "__type": "Sandbox.DepthOfField",
+          "__guid": "78710f2c-486f-4f25-bb3d-764d1f3c874f",
+          "BackBlur": false,
+          "BlurSize": 100,
+          "FocalDistance": 0,
+          "FrontBlur": true
+        },
+        {
+          "__type": "Sandbox.Pixelate",
+          "__guid": "5ae256b4-8198-46bc-9488-3aeda295b5c0",
+          "Scale": 0.1
+        },
+        {
+          "__type": "Sandbox.Vignette",
+          "__guid": "6b2a5c5c-b430-4674-8b88-a96d20fbd325",
+          "Center": "0.5,0.5",
+          "Color": "0.00422,0.01078,0.06047,1",
+          "Intensity": 0.39,
+          "Roundness": 0,
+          "Smoothness": 1
         }
       ]
     },
