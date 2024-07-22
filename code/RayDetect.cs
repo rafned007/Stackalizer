@@ -10,6 +10,7 @@ public sealed class RayDetect : Component
 	[Property] public GameObject pBlock2 {get; set;}
 	[Property] public GameObject pBlock3 {get; set;}
 	[Property] public GameObject particles {get; set;}
+	[Property] public GameObject confetti {get; set;}
 	public bool ignoreinputs = false;
 	public bool b1Dead = false;
 	public bool b2Dead = false;
@@ -36,24 +37,11 @@ public sealed class RayDetect : Component
 			var endPos1 = startPos1 + Vector3.Down *52;
 			var tr1 = Scene.Trace.Ray(startPos1, endPos1)
 			.WithoutTags("player").Size(5).Run();
-			if (Input.Pressed("jump"))
-			{
-				Log.Info("------");
-				Log.Info(tr1);
-				Log.Info(tr1.Hit);
-				if (tr1.Hit)
-				{
-					Log.Info(tr1.HitPosition);
-				}
-				Log.Info($"start pos= {startPos1}");
-				Log.Info($"end pos= {endPos1}");
-				Log.Info("------");
-			}
 
-			var draw1 = Gizmo.Draw;
-			draw1.Color = Color.Green;
-			draw1.LineThickness = 2;
-			draw1.Line(startPos1, endPos1);
+			// var draw1 = Gizmo.Draw;
+			// draw1.Color = Color.Green;
+			// draw1.LineThickness = 2;
+			// draw1.Line(startPos1, endPos1);
 
 			if(!tr1.Hit && Input.Pressed("jump") && count1 == 0 && !ignoreinputs) 
 			{
@@ -76,10 +64,10 @@ public sealed class RayDetect : Component
 			var tr2 = Scene.Trace.Ray(startPos2, endPos2)
 			.WithoutTags("player").Size(5).Run();
 
-			var draw2 = Gizmo.Draw;
-			draw2.Color = Color.Green;
-			draw2.LineThickness = 2;
-			draw2.Line(startPos2, endPos2);
+			// var draw2 = Gizmo.Draw;
+			// draw2.Color = Color.Green;
+			// draw2.LineThickness = 2;
+			// draw2.Line(startPos2, endPos2);
 
 			if(!tr2.Hit && Input.Pressed("jump") && count2 == 0 && !ignoreinputs) 
 			{
@@ -100,10 +88,10 @@ public sealed class RayDetect : Component
 			var tr3 = Scene.Trace.Ray(startPos3, endPos3)
 			.WithoutTags("player").Size(5).Run();
 
-			var draw3 = Gizmo.Draw;
-			draw3.Color = Color.Green;
-			draw3.LineThickness = 2;
-			draw3.Line(startPos3, endPos3);
+			// var draw3 = Gizmo.Draw;
+			// draw3.Color = Color.Green;
+			// draw3.LineThickness = 2;
+			// draw3.Line(startPos3, endPos3);
 
 			if(!tr3.Hit && Input.Pressed("jump") && count3 == 0 && !ignoreinputs) 
 			{
@@ -120,6 +108,8 @@ public sealed class RayDetect : Component
 		if (Input.Pressed("jump") && blocksHit / blocksRemain == 1.0 && !ignoreinputs)
 		{
 			Sound.Play("perfect!");
+			var clone = confetti.Clone();
+			clone.Transform.Position = Player.Transform.Position + Vector3.Up*80;
 		}
 		else if (Input.Pressed("jump") && blocksHit / blocksRemain != 1.0 && !ignoreinputs)
 		{
@@ -129,16 +119,12 @@ public sealed class RayDetect : Component
 
 		if (blocksRemain == 0 && !ignoreinputs)
 		{
-			Scene.LoadFromFile("scenes/Stack.scene");
+			Scene.LoadFromFile("scenes/LeaderBoard.scene");
 		}
 
 		if (Input.Pressed("duck"))
 		{
 			Log.Info(pBlock1);
 		}
-	}
-	async void restart()
-	{
-		Scene.LoadFromFile("scenes/Stack.scene");
 	}
 }

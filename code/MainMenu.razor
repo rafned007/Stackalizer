@@ -6,13 +6,7 @@
     <h2>Stack&box</h2>
     <div class= "options">
         <div class="button" onclick=@OnResume>
-            Start Game!
-        </div>
-        <div class="button sfx">
-            Suck a Butt?
-        </div>
-        <div class="button menu" onclick=@ClassicMode>
-            Classic Mode
+            Resume
         </div>
     </div>
 </root>
@@ -26,7 +20,8 @@
 
     protected override void OnStart()
 	{
-		IsPaused = true;
+        GameObject.Enabled = true;
+		IsPaused = false;
         player.ignoreinputs = false;
 	}
 

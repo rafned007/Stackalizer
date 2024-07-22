@@ -1,0 +1,188 @@
+{
+  "__guid": "f191f8ab-8edf-45eb-9bce-c18567ef2844",
+  "GameObjects": [
+    {
+      "__guid": "4c1a847f-4162-4ec8-9fc7-7fc1d8365cb4",
+      "Flags": 0,
+      "Name": "Screen",
+      "Position": "149.3263,149.3264,-211.1794",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "b5079d82-2e96-4e72-bbc7-614239f41427",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "LeaderBoard",
+          "__guid": "f0a8e707-a153-4f4a-83f1-16e9d558b821"
+        }
+      ]
+    },
+    {
+      "__guid": "fded1d05-e4b3-45b0-a7d8-6828d931319d",
+      "Flags": 0,
+      "Name": "2D Skybox",
+      "Position": "149.3263,149.3264,-211.1794",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "8e8f2f0f-c976-42ad-bfc5-d1cbfc504cc3",
+          "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
+          "Tint": "0,0,0,1"
+        }
+      ]
+    },
+    {
+      "__guid": "61c27a90-f461-4700-aaa2-c14765a95f79",
+      "Flags": 0,
+      "Name": "Sun",
+      "Position": "149.3263,149.3264,-211.1794",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "6796e2ba-cefc-4435-b866-08eb316f87cd",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0,0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "fe9827da-4337-41c5-bf26-277594a253f7",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-128,0,180",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "42f57fa3-94f2-4cc6-bde1-b7cd0449391f",
+          "BackgroundColor": "0.09302,0.09259,0.09259,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 520,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 506,
+          "ZNear": 10
+        },
+        {
+          "__type": "Sandbox.Bloom",
+          "__guid": "33833328-4e81-4073-ad48-0af9c0f29b60",
+          "BloomColor": {
+            "color": [
+              {
+                "c": "1,1,1,1"
+              },
+              {
+                "t": 1,
+                "c": "1,1,1,1"
+              }
+            ],
+            "alpha": []
+          },
+          "BloomCurve": [
+            {
+              "y": 0.5
+            },
+            {
+              "x": 1,
+              "y": 1
+            }
+          ],
+          "Mode": "Blur",
+          "Strength": 0.27,
+          "Threshold": 0,
+          "ThresholdWidth": 0.07
+        },
+        {
+          "__type": "Sandbox.Tonemapping",
+          "__guid": "a03bad13-4e65-4315-9f42-1b80722726f2",
+          "__version": 1,
+          "ExposureBias": 2,
+          "ExposureCompensation": 0,
+          "ExposureMethod": "RGB",
+          "MaximumExposure": 0.83,
+          "MinimumExposure": 0.98,
+          "Mode": "ACES",
+          "Rate": 1
+        },
+        {
+          "__type": "Sandbox.Sharpen",
+          "__guid": "fdaca705-16b3-4648-a174-0e0465c3b082",
+          "Scale": 2.03
+        },
+        {
+          "__type": "Sandbox.FilmGrain",
+          "__guid": "7cdbaec4-3419-4707-85af-320e2678f532",
+          "Intensity": 0.004,
+          "Response": 1
+        },
+        {
+          "__type": "Sandbox.DepthOfField",
+          "__guid": "cfd83e80-f009-4deb-b981-9fce6eaf6eb8",
+          "__enabled": false,
+          "BackBlur": false,
+          "BlurSize": 100,
+          "FocalDistance": 0,
+          "FrontBlur": true
+        },
+        {
+          "__type": "Sandbox.Pixelate",
+          "__guid": "501c9013-4ec1-47e3-a144-ce8f4527e2d7",
+          "Scale": 0.001
+        },
+        {
+          "__type": "Sandbox.Vignette",
+          "__guid": "9e132ee3-ee5d-41f5-a752-51b915388b99",
+          "Center": "0.5,0.5",
+          "Color": "0.26512,0.0259,0.0259,1",
+          "Intensity": 0.49,
+          "Roundness": 0.83,
+          "Smoothness": 0.87
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "leaderboard",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

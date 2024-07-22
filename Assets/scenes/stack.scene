@@ -1,5 +1,5 @@
 {
-  "__guid": "b02f1483-57a1-48a7-bb9c-b8f706cadb44",
+  "__guid": "0c2c5c0a-68c1-4ac6-a405-862ba56ffd46",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -88,17 +88,18 @@
         {
           "__type": "Sandbox.Sharpen",
           "__guid": "21a69a2c-4d7d-4856-914f-8fd31c7113b1",
-          "Scale": 5
+          "Scale": 2.03
         },
         {
           "__type": "Sandbox.FilmGrain",
           "__guid": "f127bef9-1203-4c73-b915-9534d36f037d",
-          "Intensity": 0.02,
-          "Response": 2.0000117
+          "Intensity": 0.004,
+          "Response": 1
         },
         {
           "__type": "Sandbox.DepthOfField",
           "__guid": "78710f2c-486f-4f25-bb3d-764d1f3c874f",
+          "__enabled": false,
           "BackBlur": false,
           "BlurSize": 100,
           "FocalDistance": 0,
@@ -114,9 +115,9 @@
           "__guid": "6b2a5c5c-b430-4674-8b88-a96d20fbd325",
           "Center": "0.5,0.5",
           "Color": "0.00422,0.01078,0.06047,1",
-          "Intensity": 0.39,
-          "Roundness": 0,
-          "Smoothness": 1
+          "Intensity": 0.49,
+          "Roundness": 0.83,
+          "Smoothness": 0.87
         }
       ]
     },
@@ -124,6 +125,7 @@
       "__guid": "6e76a456-b719-456d-a232-60719d0c16c8",
       "Flags": 0,
       "Name": "Border",
+      "Position": "0,0,104",
       "Enabled": true
     },
     {
@@ -164,7 +166,7 @@
             "component_type": "RayDetect"
           },
           "TimeRatio": 0.95,
-          "TimetillMove": 0.2
+          "TimetillMove": 0.1805
         },
         {
           "__type": "RayDetect",
@@ -180,6 +182,10 @@
           "Base3": {
             "_type": "gameobject",
             "go": "da90a753-0059-49ca-9de7-3547e38fc847"
+          },
+          "confetti": {
+            "_type": "gameobject",
+            "go": "b7ccbe11-2b94-4598-bb32-04f4d24bb14d"
           },
           "particles": {
             "_type": "gameobject",
@@ -301,6 +307,24 @@
               "ControlPoints": [],
               "Looped": false,
               "Particles": "particles/explosion/barrel_explosion/explosion_fire_ring_02.vpcf",
+              "PlaybackSpeed": 1
+            }
+          ]
+        },
+        {
+          "__guid": "b7ccbe11-2b94-4598-bb32-04f4d24bb14d",
+          "Flags": 0,
+          "Name": "confetti",
+          "Position": "0.2386074,300.7478,-398.1903",
+          "Tags": "particles",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.LegacyParticleSystem",
+              "__guid": "a695291b-dd94-41b6-ac6e-74205e97dbd2",
+              "ControlPoints": [],
+              "Looped": false,
+              "Particles": "particles/confetti_splash.vpcf",
               "PlaybackSpeed": 1
             }
           ]
@@ -468,7 +492,7 @@
     {
       "__guid": "08a62f63-471f-4ef5-a825-c165d9fd4c79",
       "Flags": 0,
-      "Name": "MainMenu",
+      "Name": "PauseMenu",
       "Position": "-904.3911,867.9819,287.5479",
       "Enabled": true,
       "Components": [

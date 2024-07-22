@@ -1,0 +1,34 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root 
+    class= "buttons">
+    <h>Try Your Luck</h>
+    <div class= "options">
+        <div class="button" onclick=@StartdaGame1>
+            Start Game
+        </div>
+        <div class="button speedrun" onclick=@StartdaGame2>
+            Classic Mode
+        </div>
+        <div class="button sfx">
+            View Leaderboard
+        </div>
+    </div>
+</root>
+
+@code
+{
+    
+ void StartdaGame1()
+    {
+        Scene.LoadFromFile("scenes/Stack.scene");
+    }
+    
+ void StartdaGame2()
+    {
+        Scene.LoadFromFile("scenes/classic.scene");
+    }
+
+}

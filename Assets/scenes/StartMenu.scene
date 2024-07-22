@@ -1,0 +1,159 @@
+{
+  "__guid": "44f235f2-b1ba-46b2-8b1e-d5c1c9717a9b",
+  "GameObjects": [
+    {
+      "__guid": "e0ec5190-1309-4845-ade1-803d40485196",
+      "Flags": 0,
+      "Name": "StartMenu",
+      "Position": "-6.19984,222.4548,68.43999",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "121e43c9-5e0d-4d1a-b20b-fad3f723464d",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 99
+        },
+        {
+          "__type": "StartMenu",
+          "__guid": "b89c5f5b-f0cd-4e37-a605-1a2a9de3c380"
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "c3961ea8-8c2f-4849-858a-b785311aeb35",
+          "Flags": 0,
+          "Name": "Buttons",
+          "Position": "-48.66626,-264.8752,-48.27464",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ScreenPanel",
+              "__guid": "04791e46-03a0-4c13-b679-ba8979a3c0ce",
+              "AutoScreenScale": true,
+              "Opacity": 1,
+              "Scale": 1,
+              "ZIndex": 100
+            },
+            {
+              "__type": "MenuButtons",
+              "__guid": "ac2966ab-3c30-4438-a287-52f1931cba91"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "c5c5d5c3-f03b-4141-a115-93712dc232d3",
+      "Flags": 0,
+      "Name": "Sun",
+      "Position": "-149.6651,269.4159,14.98729",
+      "Tags": "light_directional,light",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.DirectionalLight",
+          "__guid": "2d2ee9b9-f86b-44e7-ab88-ac3728776537",
+          "FogMode": "Enabled",
+          "FogStrength": 1,
+          "LightColor": "0.91373,0.98039,1,1",
+          "Shadows": true,
+          "SkyColor": "0,0,0,0"
+        }
+      ]
+    },
+    {
+      "__guid": "323ad17b-1d3b-41c5-bfcf-72e7a4b22594",
+      "Flags": 0,
+      "Name": "2D Skybox",
+      "Position": "-149.6651,269.4159,14.98729",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "0bfe1305-4220-4890-9f3a-b5f386778002",
+          "SkyMaterial": "materials/skybox/skybox_workshop.vmat",
+          "Tint": "1,1,1,1"
+        }
+      ]
+    },
+    {
+      "__guid": "a12442de-8489-48fc-8617-9280015c146a",
+      "Flags": 0,
+      "Name": "Camera",
+      "Position": "-63.69479,382.5797,50.29993",
+      "Tags": "maincamera",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.CameraComponent",
+          "__guid": "3b892ae7-37cb-4153-85b0-3dc6e6afe21f",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
+          "ClearFlags": "All",
+          "FieldOfView": 60,
+          "IsMainCamera": true,
+          "Orthographic": false,
+          "OrthographicHeight": 1204,
+          "Priority": 1,
+          "RenderExcludeTags": "",
+          "RenderTags": "",
+          "TargetEye": "None",
+          "Viewport": "0,0,1,1",
+          "ZFar": 10000,
+          "ZNear": 10
+        }
+      ]
+    },
+    {
+      "__guid": "fa1efa2a-54e2-4a7c-820b-edc1e041282e",
+      "Flags": 0,
+      "Name": "Screen",
+      "Position": "-17.30277,280.2432,74.54819",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "cdc5ce1c-8e09-448f-8026-05e35ff4f050",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 98
+        },
+        {
+          "__type": "Background",
+          "__guid": "f3cb09f9-c5b9-45ce-836a-890fdaeada82",
+          "MyStringValue": ""
+        }
+      ]
+    }
+  ],
+  "SceneProperties": {
+    "FixedUpdateFrequency": 50,
+    "MaxFixedUpdates": 5,
+    "NetworkFrequency": 30,
+    "NetworkInterpolation": true,
+    "ThreadedAnimation": true,
+    "TimeScale": 1,
+    "UseFixedUpdate": true,
+    "NavMesh": {
+      "Enabled": false,
+      "IncludeStaticBodies": true,
+      "IncludeKeyframedBodies": true,
+      "EditorAutoUpdate": true,
+      "AgentHeight": 64,
+      "AgentRadius": 16,
+      "AgentStepSize": 18,
+      "AgentMaxSlope": 40,
+      "ExcludedBodies": "",
+      "IncludedBodies": ""
+    }
+  },
+  "Title": "startmenu",
+  "Description": "",
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
