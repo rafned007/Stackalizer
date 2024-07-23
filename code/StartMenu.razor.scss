@@ -8,11 +8,9 @@ StartMenu {
 	pointer-events: all;
 	flex-direction: row;
 	padding: 60px;
-	color: rgb(255, 204, 0);
+	color: rgb(0, 191, 255);
 	font-family: Poppins;
 	font-size: 14px;
-
-
 
 	.left {
 		width: 600px;
@@ -25,7 +23,8 @@ StartMenu {
 		}
 
 		>.explanation {
-			color: #000000;
+			color: #ffffff;
+			text-stroke: 6px rgb(0, 0, 0);
 			font-size: 24px;
 			font-weight: bold;
 			margin-bottom: 50px;
@@ -34,5 +33,4 @@ StartMenu {
 			gap: 20px;
 		}
 	}
-
 }

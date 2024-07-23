@@ -1,5 +1,5 @@
 {
-  "__guid": "0c2c5c0a-68c1-4ac6-a405-862ba56ffd46",
+  "__guid": "bb42c259-c4b6-4769-a104-d6721dc02a64",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -125,14 +125,13 @@
       "__guid": "6e76a456-b719-456d-a232-60719d0c16c8",
       "Flags": 0,
       "Name": "Border",
-      "Position": "0,0,104",
       "Enabled": true
     },
     {
       "__guid": "073e13c2-f47c-42e6-8fce-fa497c72e671",
       "Flags": 0,
       "Name": "Player",
-      "Position": "0,-312,0",
+      "Position": "0,-468,0",
       "Tags": "player",
       "Enabled": true,
       "Components": [
@@ -142,14 +141,6 @@
           "Base": {
             "_type": "gameobject",
             "go": "415d8f67-a58f-41e1-aef2-61efe24f3307"
-          },
-          "Base1": {
-            "_type": "gameobject",
-            "go": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7"
-          },
-          "Block1": {
-            "_type": "gameobject",
-            "go": "9d76e848-8df6-4fdd-b71a-93b45a266de1"
           },
           "Border": {
             "_type": "gameobject",
@@ -166,7 +157,7 @@
             "component_type": "RayDetect"
           },
           "TimeRatio": 0.95,
-          "TimetillMove": 0.1805
+          "TimetillMove": 0.2
         },
         {
           "__type": "RayDetect",
@@ -202,10 +193,6 @@
           "pBlock3": {
             "_type": "gameobject",
             "go": "68b534ce-4853-4b87-be6e-28cf9e1d29f9"
-          },
-          "Player": {
-            "_type": "gameobject",
-            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671"
           }
         }
       ],
@@ -324,7 +311,7 @@
               "__guid": "a695291b-dd94-41b6-ac6e-74205e97dbd2",
               "ControlPoints": [],
               "Looped": false,
-              "Particles": "particles/confetti_splash.vpcf",
+              "Particles": "particles/confetti/confetti_splash.vpcf",
               "PlaybackSpeed": 1
             }
           ]
@@ -505,8 +492,8 @@
           "ZIndex": 100
         },
         {
-          "__type": "MainMenu",
-          "__guid": "d335f7f7-70d5-4518-b4a3-6fdcca73d81e",
+          "__type": "PauseMenu",
+          "__guid": "bbd5f2da-099e-457a-a1a9-f56a5e859e81",
           "player": {
             "_type": "component",
             "component_id": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
@@ -565,9 +552,11 @@
       "IncludedBodies": ""
     }
   },
-  "Title": "minimal",
+  "Title": "stack",
   "Description": "",
   "ResourceVersion": 1,
-  "__references": [],
+  "__references": [
+    "baik.confettisplash"
+  ],
   "__version": 1
 }

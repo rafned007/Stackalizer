@@ -7,8 +7,6 @@ public sealed class Mover : Component
     [Property] public float TimeRatio { get; set; }
 	[Property] public GameObject Camera {get; set;}
 	[Property] public GameObject Base { get; set;}
-	[Property] public GameObject Base1 { get; set;}
-	[Property] public GameObject Block1 { get; set;}
 	[Property] RayDetect player { get; set; }
 	public int turn = 1;
     
@@ -23,16 +21,13 @@ public sealed class Mover : Component
 		player.ignoreinputs = false;
     }
 	
-    protected override void OnUpdate()
+	protected override void OnUpdate()
 	{
-		
 		if (!player.ignoreinputs)
 		{
 			controller();
-			
+			Move();
 		}
-		Move();
-
 	}
 
 	public void Move()
@@ -43,7 +38,7 @@ public sealed class Mover : Component
 			doMove = TimetillMove;
 		}
 
-		if (Vector3.DistanceBetween(Transform.Position, Border.Transform.Position) >= (12*52))
+		if (Vector3.DistanceBetween(Transform.Position, Border.Transform.Position) >= (10*52))
 		{
 			if (direction == Vector3.Left)
 			{
@@ -60,19 +55,19 @@ public sealed class Mover : Component
 
 	public void controller()
 	{
-			
-		// cloner.Transform.Position += (direction * (52 * turn));
 		if (Input.Pressed("jump"))
 		{
+			//clone base at players current position
+			var clone = Base.Clone();
+			clone.Transform.Position = Transform.Position;
+			Transform.Position = Transform.Position;
+
 			jumped = true;
 			TimetillMove *= TimeRatio;
-			//clone prefab
-			var clone = Base.Clone();
-			// timing was off - moved clone to the left
-			clone.Transform.Position = Transform.Position;
-
-			Transform.Position = Vector3.Right * (52*6) + (Vector3.Up * (52 * turn));
+			//move border
 			Border.Transform.Position = Vector3.Up * (52*turn);
+			//move player
+			Transform.Position = Border.Transform.Position + Vector3.Right*(52*9);	
 
 			NextTurn();
 
@@ -81,17 +76,14 @@ public sealed class Mover : Component
 			// Border.Transform.Position += Vector3.Up * (52*turn);
 			if (turn % 5 == 0)
 			{
-				Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);
-				
+				Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);	
 			}
 		}
 	}
 
-	async void NextTurn()
+	void NextTurn()
 	{
-		await Task.DelaySeconds(.5f);
 		jumped = false;
-		doMove = TimetillMove;
-		Move();
+		doMove = .25f;
 	}
 }
