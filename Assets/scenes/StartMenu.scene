@@ -1,5 +1,5 @@
 {
-  "__guid": "44f235f2-b1ba-46b2-8b1e-d5c1c9717a9b",
+  "__guid": "01d9204e-86b5-45f5-9048-4a9d5b2c8b84",
   "GameObjects": [
     {
       "__guid": "e0ec5190-1309-4845-ade1-803d40485196",
@@ -132,7 +132,7 @@
       "__guid": "61a2b84d-95bd-4586-9be4-4a452349ce1f",
       "Flags": 0,
       "Name": "Player",
-      "Position": "0,-468,0",
+      "Position": "0,468,0",
       "Tags": "player",
       "Enabled": true,
       "Components": [

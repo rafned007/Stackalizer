@@ -1,0 +1,33 @@
+@using Sandbox;
+@using Sandbox.UI;
+@inherits PanelComponent
+
+<root class="LeaderBoard">
+    <h2>Stack&box</h2>
+
+    <div class= "options">
+        <!-- <div class="button" onclick=@OnResume>
+            Try Again
+        </div> -->
+		<!-- <div class="button" onclick=@OnResume>
+            Leader Boards
+        </div> -->
+        <div class="button" onclick=@Startmenu>
+            Return to Menu
+        </div>
+    </div>
+	
+</root>
+
+@code
+{
+    void OnResume()
+    {
+		Scene.LoadFromFile("scenes/Stack.scene");
+    }
+    void Startmenu()
+    {
+		Scene.LoadFromFile("scenes/Startmenu.scene");
+    }
+
+}
