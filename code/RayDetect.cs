@@ -22,6 +22,7 @@ public sealed class RayDetect : Component
 	public int count3 = 0;
 	public float blocksHit = 3;
 	public float blocksRemain = 3;
+	public float gameBroke;
 	
 	protected override void OnPreRender()
 	{

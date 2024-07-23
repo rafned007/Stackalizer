@@ -1,10 +1,10 @@
 {
-  "Title": "STACK",
+  "Title": "Stack\u0026box",
   "Type": "game",
-  "Org": "local",
+  "Org": "rafnscrat",
   "Ident": "stack",
   "Schema": 1,
-  "IncludeSourceFiles": false,
+  "IncludeSourceFiles": true,
   "Resources": null,
   "PackageReferences": [],
   "EditorReferences": null,
@@ -21,6 +21,7 @@
     "PerMapRanking": false,
     "LeaderboardType": "None",
     "CsProjName": "",
-    "StartupScene": "scenes/minimal.scene"
+    "StartupScene": "scenes/startmenu.scene",
+    "LaunchMode": "Normal"
   }
 }
