@@ -1,15 +1,20 @@
-Background 
-
-{
+Background {
 	position: absolute;
 	top: 0;
 	left: 0;
 	right: 0;
 	bottom: 0;
+	background-color: #444;
 	justify-content: center;
 	align-items: center;
 	font-weight: bold;
-	background-image: url("images/gemini_generated_image_rejz0urejz0urejz.png");
+	border-radius: 20px;
+	background-image: url("images/gemini_generated_image_rejz0urejz0urejz.jpg");
 
+	.title {
 
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+	}
 }

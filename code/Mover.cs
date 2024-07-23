@@ -25,11 +25,14 @@ public sealed class Mover : Component
 	
     protected override void OnUpdate()
 	{
-		Move();
+		
 		if (!player.ignoreinputs)
 		{
 			controller();
+			
 		}
+		Move();
+
 	}
 
 	public void Move()
@@ -56,7 +59,9 @@ public sealed class Mover : Component
 	}
 
 	public void controller()
-	{	
+	{
+			
+		// cloner.Transform.Position += (direction * (52 * turn));
 		if (Input.Pressed("jump"))
 		{
 			jumped = true;
@@ -65,22 +70,25 @@ public sealed class Mover : Component
 			var clone = Base.Clone();
 			// timing was off - moved clone to the left
 			clone.Transform.Position = Transform.Position;
+
+			Transform.Position = Vector3.Right * (52*6) + (Vector3.Up * (52 * turn));
 			Border.Transform.Position = Vector3.Up * (52*turn);
+
 			NextTurn();
+
 			turn += 1;
 			Log.Info($"Level: {turn - 1}");
-		
+			// Border.Transform.Position += Vector3.Up * (52*turn);
 			if (turn % 5 == 0)
 			{
 				Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);
+				
 			}
 		}
 	}
 
 	async void NextTurn()
 	{
-		await Task.DelaySeconds(.1f);
-		Transform.Position = Vector3.Right * (52*6) + (Vector3.Up * (52 * turn -52));
 		await Task.DelaySeconds(.5f);
 		jumped = false;
 		doMove = TimetillMove;

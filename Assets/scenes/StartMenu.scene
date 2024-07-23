@@ -124,7 +124,8 @@
         },
         {
           "__type": "Background",
-          "__guid": "f3cb09f9-c5b9-45ce-836a-890fdaeada82"
+          "__guid": "f3cb09f9-c5b9-45ce-836a-890fdaeada82",
+          "MyStringValue": ""
         }
       ]
     }
