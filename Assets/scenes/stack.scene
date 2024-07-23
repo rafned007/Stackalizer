@@ -324,7 +324,7 @@
               "__guid": "a695291b-dd94-41b6-ac6e-74205e97dbd2",
               "ControlPoints": [],
               "Looped": false,
-              "Particles": "particles/confetti_splash.vpcf",
+              "Particles": "particles/confetti/confetti_splash.vpcf",
               "PlaybackSpeed": 1
             }
           ]
@@ -505,8 +505,8 @@
           "ZIndex": 100
         },
         {
-          "__type": "MainMenu",
-          "__guid": "d335f7f7-70d5-4518-b4a3-6fdcca73d81e",
+          "__type": "PauseMenu",
+          "__guid": "57f062ad-e4e5-40fa-a453-27fe6c97edbb",
           "player": {
             "_type": "component",
             "component_id": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
@@ -568,6 +568,8 @@
   "Title": "minimal",
   "Description": "",
   "ResourceVersion": 1,
-  "__references": [],
+  "__references": [
+    "baik.confettisplash"
+  ],
   "__version": 1
 }
