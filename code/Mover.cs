@@ -69,7 +69,6 @@ public sealed class Mover : Component
 			Transform.Position = Border.Transform.Position + Vector3.Right*(52*9);	
 
 			NextTurn();
-			
 		}
 	}
 
