@@ -464,19 +464,6 @@
       ]
     },
     {
-      "__guid": "35cd8e55-5022-4e32-b774-679fabedcf65",
-      "Flags": 0,
-      "Name": "GameManager",
-      "Position": "-466.1698,-9.092796,97.7469",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "GayManager",
-          "__guid": "d18761d8-2a70-4ab8-97e2-aacbf5c05f1a"
-        }
-      ]
-    },
-    {
       "__guid": "08a62f63-471f-4ef5-a825-c165d9fd4c79",
       "Flags": 0,
       "Name": "PauseMenu",

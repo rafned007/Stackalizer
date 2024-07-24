@@ -16,7 +16,7 @@ public sealed class Mover : Component
 
     protected override void OnStart()
     {
-		doMove = TimetillMove;
+		doMove = .5f;
 		direction = Vector3.Left;
 		player.ignoreinputs = false;
     }
@@ -60,7 +60,6 @@ public sealed class Mover : Component
 			//clone base at players current position
 			var clone = Base.Clone();
 			clone.Transform.Position = Transform.Position;
-			Transform.Position = Transform.Position;
 
 			jumped = true;
 			TimetillMove *= TimeRatio;
@@ -70,20 +69,19 @@ public sealed class Mover : Component
 			Transform.Position = Border.Transform.Position + Vector3.Right*(52*9);	
 
 			NextTurn();
-
-			turn += 1;
-			Log.Info($"Level: {turn - 1}");
-			// Border.Transform.Position += Vector3.Up * (52*turn);
-			if (turn % 5 == 0)
-			{
-				Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);	
-			}
+			
 		}
 	}
 
 	void NextTurn()
-	{
+	{	
+		turn += 1;
+		Log.Info($"Level: {turn - 1}");
 		jumped = false;
-		doMove = .25f;
+		doMove = .5f;	
+		if (turn % 5 == 0)
+		{
+			Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);	
+		}
 	}
 }
