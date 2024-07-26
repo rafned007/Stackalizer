@@ -162,6 +162,12 @@
         {
           "__type": "RayDetect",
           "__guid": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
+          "player": {
+            "_type": "component",
+            "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+            "component_type": "Mover"
+          },
           "Base1": {
             "_type": "gameobject",
             "go": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7"

@@ -10,6 +10,7 @@ public sealed class RayDetect : Component
 	[Property] public GameObject pBlock3 {get; set;}
 	[Property] public GameObject particles {get; set;}
 	[Property] public GameObject confetti {get; set;}
+	[Property] Mover player;
 	
 	public bool ignoreinputs = false;
 	public bool b1Dead = false;
@@ -26,6 +27,7 @@ public sealed class RayDetect : Component
 		if (blocksRemain == 0 && !ignoreinputs)
 		{
 			ignoreinputs = true;
+        	Sandbox.Services.Stats.SetValue( "score", player.turn - 1 );
 			Scene.LoadFromFile("scenes/Leaderboard.scene");
 		}
 

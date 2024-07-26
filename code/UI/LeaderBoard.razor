@@ -2,6 +2,8 @@
 @using Sandbox.UI;
 @inherits PanelComponent
 
+
+
 <root class="LeaderBoard">
     <h2>Stack&box</h2>
 
@@ -21,6 +23,7 @@
 
 @code
 {
+    [Property] Mover turn;
     void OnResume()
     {
 		Scene.LoadFromFile("scenes/Stack.scene");
@@ -29,5 +32,4 @@
     {
 		Scene.LoadFromFile("scenes/Stack.scene");
     }
-
 }

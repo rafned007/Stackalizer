@@ -1,6 +1,4 @@
-PauseMenu 
-
-{
+PauseMenu {
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -17,7 +15,15 @@ PauseMenu
 	flex-direction: column;
 	transition: opacity .25s ease;
 
+	>h3 {
+		color: rgb(0, 235, 71) font-size: 128px;
+		font-size: 32px;
+		text-stroke: 10px black;
+		font-weight: bolder;
+	}
+
 	>h2 {
+		color: rgb(235, 0, 223) font-size: 128px;
 		font-size: 128px;
 		text-stroke: 10px black;
 		font-weight: bolder;
@@ -39,9 +45,7 @@ PauseMenu
 			&.menu {
 				background-color: rgb(47, 0, 255);
 
-				&:active {
-					
-				}
+				&:active {}
 			}
 
 			&:hover {
@@ -58,9 +62,7 @@ PauseMenu
 			}
 
 			&.sfx {
-				&:active {
-					
-				}
+				&:active {}
 			}
 		}
 	}

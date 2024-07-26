@@ -3,13 +3,14 @@
 @inherits PanelComponent
 
 <root class="@(IsPaused ? "" : "hide")">
+    <h3>Press Esc to Resume</h3>
     <h2>Stack&box</h2>
     <div class= "options">
-        <!-- <div class="button" onclick=@OnResume>
-            Resume
-        </div> -->
         <div class="button" onclick=@Startmenu>
             Return to Menu
+        </div>
+        <div class="button" onclick=@OnResume>
+            Resume
         </div>
     </div>
 </root>
