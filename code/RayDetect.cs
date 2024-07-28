@@ -118,7 +118,7 @@ public sealed class RayDetect : Component
 	{
 		if (Input.Pressed("jump") && blocksHit / blocksRemain == 1.0 && !ignoreinputs)
 		{
-			Sound.Play("perfect!");
+			Sound.Play("AmongUs");
 			var clone = confetti.Clone();
 			clone.Transform.Position = Transform.Position + Vector3.Up*104;
 		}

@@ -127,6 +127,41 @@
           "__guid": "f3cb09f9-c5b9-45ce-836a-890fdaeada82"
         }
       ]
+    },
+    {
+      "__guid": "65e85e51-4138-486a-8e91-64dd1213143d",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "172,0,180",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundBoxComponent",
+          "__guid": "f0f3d44e-e409-4cce-afc5-5364ac94e58c",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": true,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": false,
+          "Scale": "50,50,50",
+          "SoundEvent": "sounds/startsong.sound",
+          "SoundOverride": true,
+          "StopOnNew": false,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
+          "Volume": 0.33
+        }
+      ]
     }
   ],
   "SceneProperties": {
