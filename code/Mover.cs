@@ -25,7 +25,6 @@ public sealed class Mover : Component
 	{
 		if (!player.ignoreinputs)
 		{
-			controller();
 			Move();
 		}
 	}

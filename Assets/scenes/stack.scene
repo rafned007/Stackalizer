@@ -162,12 +162,6 @@
         {
           "__type": "RayDetect",
           "__guid": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
-          "player": {
-            "_type": "component",
-            "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
-            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
-            "component_type": "Mover"
-          },
           "Base1": {
             "_type": "gameobject",
             "go": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7"
@@ -199,6 +193,12 @@
           "pBlock3": {
             "_type": "gameobject",
             "go": "68b534ce-4853-4b87-be6e-28cf9e1d29f9"
+          },
+          "player": {
+            "_type": "component",
+            "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+            "component_type": "Mover"
           }
         }
       ],
@@ -545,7 +545,7 @@
           "PlayOnStart": true,
           "ReflectionOverride": false,
           "Reflections": false,
-          "Repeat": false,
+          "Repeat": true,
           "Scale": "50,50,50",
           "SoundEvent": "sounds/bgmusic.sound",
           "SoundOverride": true,
@@ -554,7 +554,171 @@
             "Name": "unknown",
             "Id": "00000000-0000-0000-0000-000000000000"
           },
-          "Volume": 0.5
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "__guid": "79619ec9-8058-426b-a175-72dde820e85b",
+      "Flags": 0,
+      "Name": "Sphere",
+      "Position": "-9.082947,0,530.6092",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "24c7fde3-c833-4c0d-970f-6652d8d765eb",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.13953,0.13953,1"
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "29f53926-24f3-49b8-9246-79742e0ff67d",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Radius": 33.100063,
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "5b0373b9-a595-442d-90b3-a480cda7d9d7",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "Destroydelay",
+          "__guid": "2c95bb08-4ef1-44e9-9e4e-4a9de83c9e9a"
+        }
+      ]
+    },
+    {
+      "__guid": "00334843-b69c-47dd-b2fe-d707226be464",
+      "Flags": 0,
+      "Name": "Sphere (1)",
+      "Position": "-9.082947,-3.633998,341.2329",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "e68ebb4d-5327-4c08-a236-345b0aaaf6d8",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "0,0.48333,1,1"
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "4bfd27d9-d861-4aff-a8ca-6ba022281385",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Radius": 33.100063,
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "64cb6186-06b3-4a9c-b9d7-04fe96110578",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "Destroydelay",
+          "__guid": "01ebe151-85f5-4abf-bb6f-35e9b0007e07"
+        }
+      ]
+    },
+    {
+      "__guid": "28f01223-6e0b-4246-a29b-741dbcbd21f8",
+      "Flags": 0,
+      "Name": "Sphere (2)",
+      "Position": "-9.082947,87.90593,341.2329",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "0bed1537-35d3-4949-978f-20c9ea5d1d0a",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "0,1,0.81667,1"
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "fefe4328-640d-4a21-bcea-1ae3856b9399",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Radius": 33.100063,
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "4952759f-1779-4e17-9894-b29e18cb6f6b",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "Destroydelay",
+          "__guid": "4ca08b10-e1c4-41aa-9ace-c4983ef1d8cd"
+        }
+      ]
+    },
+    {
+      "__guid": "1a9eb65c-78cd-48d8-a7d1-1f3e54a6249c",
+      "Flags": 0,
+      "Name": "Sphere (3)",
+      "Position": "-9.082947,-92.0443,341.2329",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ModelRenderer",
+          "__guid": "10a6cf76-5da4-45c5-a0b3-4c6d7958a6c0",
+          "BodyGroups": 18446744073709551615,
+          "Model": "models/dev/sphere.vmdl",
+          "RenderType": "On",
+          "Tint": "1,0.87845,0.08837,1"
+        },
+        {
+          "__type": "Sandbox.SphereCollider",
+          "__guid": "ca491a7c-36f9-4181-948a-a6bfd441b475",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Radius": 33.100063,
+          "Static": false
+        },
+        {
+          "__type": "Sandbox.Rigidbody",
+          "__guid": "86e6d6f4-7be8-4e59-9377-86c8b6f2b59e",
+          "AngularDamping": 0,
+          "Gravity": true,
+          "LinearDamping": 0,
+          "Locking": {},
+          "MassOverride": 0,
+          "MotionEnabled": true,
+          "RigidbodyFlags": 0,
+          "StartAsleep": false
+        },
+        {
+          "__type": "Destroydelay",
+          "__guid": "39c71933-981c-47c2-89b4-7a167bbf8b5e"
         }
       ]
     }

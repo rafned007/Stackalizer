@@ -10,7 +10,7 @@ public sealed class RayDetect : Component
 	[Property] public GameObject pBlock3 {get; set;}
 	[Property] public GameObject particles {get; set;}
 	[Property] public GameObject confetti {get; set;}
-	[Property] Mover player;
+	[Property] Mover player {get; set;}
 	
 	public bool ignoreinputs = false;
 	public bool b1Dead = false;
@@ -27,7 +27,10 @@ public sealed class RayDetect : Component
 		if (blocksRemain == 0 && !ignoreinputs)
 		{
 			ignoreinputs = true;
-        	Sandbox.Services.Stats.SetValue( "score", player.turn - 1 );
+			if (!Application.IsEditor) 
+			{
+				Sandbox.Services.Stats.SetValue( "score", player.turn - 1 );
+			}
 			Scene.LoadFromFile("scenes/Leaderboard.scene");
 		}
 
@@ -36,6 +39,11 @@ public sealed class RayDetect : Component
 		if (!b3Dead)B3Destroyer();
 		
 		EffectsController();
+		if(!ignoreinputs)
+		{
+			player.controller();
+		}
+		
 	}
 
 	void B1Destroyer()
@@ -53,7 +61,6 @@ public sealed class RayDetect : Component
 		if(Input.Pressed("jump") && !tr1.Hit && count1 == 0 && !ignoreinputs) 
 		{
 			Base1.Destroy();
-			Sound.Play("error4");
 			var clone = particles.Clone();
 			clone.Transform.Position = pBlock1.Transform.Position;
 			pBlock1.Destroy();
@@ -78,7 +85,6 @@ public sealed class RayDetect : Component
 		if(Input.Pressed("jump") && !tr2.Hit &&  count2 == 0 && !ignoreinputs) 
 		{
 			Base2.Destroy();
-			Sound.Play("error4");
 			var clone = particles.Clone();
 			clone.Transform.Position = pBlock2.Transform.Position;
 			pBlock2.Destroy();
@@ -103,7 +109,6 @@ public sealed class RayDetect : Component
 		if(Input.Pressed("jump") && !tr3.Hit && count3 == 0 && !ignoreinputs) 
 		{
 			Base3.Destroy();
-			Sound.Play("error4");
 			var clone = particles.Clone();
 			clone.Transform.Position = pBlock3.Transform.Position;
 			pBlock3.Destroy();
@@ -120,11 +125,12 @@ public sealed class RayDetect : Component
 		{
 			Sound.Play("AmongUs");
 			var clone = confetti.Clone();
-			clone.Transform.Position = Transform.Position + Vector3.Up*104;
+			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52;
 		}
 		else if (Input.Pressed("jump") && blocksHit / blocksRemain != 1.0 && !ignoreinputs)
 		{
 			blocksHit--;
+			Sound.Play("error4");
 		}
 	}
 }

@@ -19,7 +19,7 @@ MenuButtons
 	>h {
 		font-size: 128px;
 		font-weight: bolder;
-		color: rgb(12, 16, 243);
+		color:  rgb(0, 191, 255);;
 		text-stroke: 10px black;
 	}
 
@@ -29,24 +29,29 @@ MenuButtons
 		gap: 16px;
 
 		>.button {
-			background-color: rgb(207, 0, 214);
+			background-color:  rgb(47, 0, 255);
 			color: rgb(200, 200, 200);
 			text-stroke: 6px black;
 			padding: 8px;
-			border-radius: 2px;
-			transition: all 0.1s ease;
+			border-radius: 4px;
+			transition: all 0.25s ease;
 
 			&.sfx {
 				background-color: rgb(255, 0, 0);
 
-				&:active {
+				&:active 
+				{
 					sound-in: fart;
+				}
+				&:hover 
+				{
+					background-color: rgb(255, 0, 0);
 				}
 			}
 
 			&:hover {
 				sound-in: ui.button.over;
-				background-color: rgb(166, 166, 166);
+				background-color: rgb(207, 0, 214);
 				transform: scale(1.1);
 				cursor: pointer;
 				color: rgb(0, 0, 0);
