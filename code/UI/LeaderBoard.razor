@@ -8,13 +8,13 @@
     <h2>Stack&box</h2>
 
     <div class= "options">
-        <!-- <div class="button" onclick=@OnResume>
-            Try Again
-        </div> -->
-		<!-- <div class="button" onclick=@OnResume>
-            Leader Boards
-        </div> -->
         <div class="button" onclick=@Startmenu>
+            Return to Main Menu
+        </div>
+		<div>
+            Press Space to Try Again
+        </div>
+        <div class="button" onclick=@OnResume>
             Try Again?
         </div>
     </div>
@@ -23,12 +23,17 @@
 
 @code
 {
+    protected override void OnUpdate()
+    {
+        base.OnUpdate();
+        if (Input.Pressed("jump")) Scene.LoadFromFile("scenes/Stack.scene");
+    }
     void OnResume()
     {
 		Scene.LoadFromFile("scenes/Stack.scene");
     }
     void Startmenu()
     {
-		Scene.LoadFromFile("scenes/Stack.scene");
+		Scene.LoadFromFile("scenes/startmenu.scene");
     }
 }

@@ -11,6 +11,7 @@ public sealed class RayDetect : Component
 	[Property] public GameObject particles {get; set;}
 	[Property] public GameObject confetti {get; set;}
 	[Property] Mover player {get; set;}
+	[Property] Camshake shake {get; set;}
 	
 	public bool ignoreinputs = false;
 	public bool b1Dead = false;
@@ -31,7 +32,8 @@ public sealed class RayDetect : Component
 			{
 				Sandbox.Services.Stats.SetValue( "score", player.turn - 1 );
 			}
-			Scene.LoadFromFile("scenes/Leaderboard.scene");
+			shake.ViewBob();
+			Sceneload();
 		}
 
 		if (!b1Dead)B1Destroyer();
@@ -121,7 +123,11 @@ public sealed class RayDetect : Component
 	}
 	void EffectsController()
 	{
-		if (Input.Pressed("jump") && blocksHit / blocksRemain == 1.0 && !ignoreinputs)
+		if (Input.Pressed("jump") && blocksRemain == 0 && !ignoreinputs)
+		{
+			Sound.Play("Fail");
+		}
+		else if (Input.Pressed("jump") && blocksHit / blocksRemain == 1.0 && !ignoreinputs)
 		{
 			Sound.Play("AmongUs");
 			var clone = confetti.Clone();
@@ -132,5 +138,11 @@ public sealed class RayDetect : Component
 			blocksHit--;
 			Sound.Play("error4");
 		}
+	}
+
+	async void Sceneload()
+	{
+		await Task.DelaySeconds(.6f);
+		Scene.LoadFromFile("scenes/Leaderboard.scene");
 	}
 }
