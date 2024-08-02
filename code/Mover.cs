@@ -27,6 +27,8 @@ public sealed class Mover : Component
 		{
 			Move();
 		}
+		camControl();
+		
 	}
 
 	public void Move()
@@ -77,9 +79,20 @@ public sealed class Mover : Component
 		Log.Info($"Level: {turn - 1}");
 		jumped = false;
 		doMove = .5f;	
+		 if (turn % 5 == 0)
+		{
+			doMove = .7f;
+			// Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);	
+		}
+			
+	}
+	void camControl()
+	{	
+		var start = Camera.Transform.Position;
+		var end = Vector3.Up *(52*turn)+ (Vector3.Backward * 104);
 		if (turn % 5 == 0)
 		{
-			Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);	
+			Camera.Transform.Position = start.LerpTo(end, doMove.Fraction/10);	
 		}
 	}
 }

@@ -12,17 +12,20 @@ StartMenu {
 	font-family: Poppins;
 	font-size: 14px;
 
-	.left {
-		width: 600px;
+	.left 
+	{
+		width: 20%;
 		flex-direction: column;
 
-		>.title {
+		>.title 
+		{
 			font-size: 60px;
 			font-weight: bold;
 			text-stroke: 6px black;
 		}
 
-		>.explanation {
+		>.explanation 
+		{
 			color: #ffffff;
 			text-stroke: 6px rgb(0, 0, 0);
 			font-size: 24px;

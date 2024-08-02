@@ -1,4 +1,5 @@
-LeaderBoard {
+LeaderBoard 
+{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -14,28 +15,39 @@ LeaderBoard {
 	align-items: center;
 	flex-direction: column;
 	transition: opacity .25s ease;
-
-	>h2 {
+	>h1 
+	{
+		font-size: 32px;
+		text-stroke: 10px black;
+		font-weight: bolder;
+		color: rgb(8, 235, 0);	
+	}
+	>h2 
+	{
+		padding-top: 5%;
 		font-size: 128px;
 		text-stroke: 10px black;
 		font-weight: bolder;
 	}
 
-	>.options {
+	>.options 
+	{
 		flex-direction: column;
 		align-items: center;
 		gap: 16px;
 		color: rgb(39, 0, 235);
 
-		>.button {
+		>.button 
+		{
 			background-color: rgb(47, 0, 255);
 			color: rgb(200, 200, 200);
 			text-stroke: 6px black;
 			padding: 8px;
 			border-radius: 2px;
-			transition: all 0.1s ease;
+			transition: all 0.25s ease;
 
-			&.menu {
+			&.menu 
+			{
 				background-color: rgb(47, 0, 255);
 
 				&:active {
@@ -43,7 +55,8 @@ LeaderBoard {
 				}
 			}
 
-			&:hover {
+			&:hover 
+			{
 				sound-in: ui.button.over;
 				background-color: rgb(216, 3, 188);
 				transform: scale(1.1);
@@ -52,17 +65,17 @@ LeaderBoard {
 				text-stroke: 6px rgb(255, 255, 255);
 			}
 
-			&:active {
+			&:active 
+			{
 				sound-in: ui.button.press;
 			}
-
-			&.sfx {
-				&:active {
+			&.sfx 
+			{
+				&:active 
+				{
 					sound-in: fart;
 				}
 			}
-
-
 		}
 	}
 
