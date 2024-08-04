@@ -1,0 +1,40 @@
+{
+  "RootObject": {
+    "__guid": "e74b080c-06fd-412d-ae85-9d64149aa428",
+    "Flags": 0,
+    "Name": "explosion",
+    "Tags": "particles",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.LegacyParticleSystem",
+        "__guid": "1f2fad14-5b3d-4a4e-9d2d-0eb3707676bb",
+        "ControlPoints": [],
+        "Looped": false,
+        "Particles": "particles/explosion/barrel_explosion/explosion_gib_04.vpcf",
+        "PlaybackSpeed": 1
+      },
+      {
+        "__type": "Sandbox.LegacyParticleSystem",
+        "__guid": "f2b18732-459d-4898-bc08-ec196bd7e658",
+        "ControlPoints": [],
+        "Looped": false,
+        "Particles": "particles/explosion/barrel_explosion/explosion_fire_ring_02.vpcf",
+        "PlaybackSpeed": 1
+      },
+      {
+        "__type": "Destroydelay",
+        "__guid": "fd80cb8b-20fe-4455-8319-b1042bc21a88",
+        "timeTillDestroy": 2
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

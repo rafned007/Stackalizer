@@ -45,7 +45,6 @@ public sealed class RayDetect : Component
 		{
 			player.controller();
 		}
-		
 	}
 
 	void B1Destroyer()

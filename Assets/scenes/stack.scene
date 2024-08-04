@@ -1,5 +1,5 @@
 {
-  "__guid": "bb42c259-c4b6-4769-a104-d6721dc02a64",
+  "__guid": "09f30d59-a038-4b34-a2c6-615b4b472dba",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -41,8 +41,8 @@
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
-          "ZFar": 506,
-          "ZNear": 10
+          "ZFar": 2060,
+          "ZNear": 1
         },
         {
           "__type": "Sandbox.Bloom",
@@ -131,7 +131,71 @@
       "__guid": "6e76a456-b719-456d-a232-60719d0c16c8",
       "Flags": 0,
       "Name": "Border",
-      "Enabled": true
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
+          "Flags": 0,
+          "Name": "blob1",
+          "Position": "337.5524,360.0166,39.48421",
+          "Rotation": "0.503915,-0.4960546,-0.4960541,0.5039145",
+          "Tags": "shootable",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "746e89df-a32e-4892-93f5-1ad0ad1c0f0b",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/blob1.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "YPositive"
+            },
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "6201dc2b-9f45-4cf3-8d7d-169aec41aa47",
+              "Center": "0,0,0",
+              "IsTrigger": false,
+              "Scale": "89.69985,58.29998,5.700144",
+              "Static": false
+            }
+          ],
+          "Children": [
+            {
+              "__guid": "84ca212e-704a-4331-8e8c-4519c0c49588",
+              "Flags": 0,
+              "Name": "World",
+              "Position": "-7.507634,49.10888,10.71531",
+              "Rotation": "-0.5039151,0.4960546,0.4960542,0.5039145",
+              "Tags": "worldpanel",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.WorldPanel",
+                  "__guid": "c2c6001d-d509-474f-8180-7a38dc1e8292",
+                  "HorizontalAlign": "Center",
+                  "InteractionRange": 1000,
+                  "LookAtCamera": true,
+                  "PanelSize": "4000,800",
+                  "RenderScale": 9,
+                  "VerticalAlign": "Center"
+                },
+                {
+                  "__type": "SpriteWIP",
+                  "__guid": "4b8eb7da-ff4f-486d-acaa-31998e5e5a2b",
+                  "MyStringValue": "DO NOT CLICK"
+                }
+              ]
+            }
+          ]
+        }
+      ]
     },
     {
       "__guid": "073e13c2-f47c-42e6-8fce-fa497c72e671",
@@ -182,11 +246,11 @@
           },
           "confetti": {
             "_type": "gameobject",
-            "go": "b7ccbe11-2b94-4598-bb32-04f4d24bb14d"
+            "prefab": "prefabs/confetti.prefab"
           },
           "particles": {
             "_type": "gameobject",
-            "go": "e74b080c-06fd-412d-ae85-9d64149aa428"
+            "prefab": "prefabs/explosion.prefab"
           },
           "pBlock1": {
             "_type": "gameobject",
@@ -287,50 +351,6 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
-            }
-          ]
-        },
-        {
-          "__guid": "e74b080c-06fd-412d-ae85-9d64149aa428",
-          "Flags": 0,
-          "Name": "ParticleEmitter",
-          "Position": "0,0,-1993.21",
-          "Tags": "particles",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.LegacyParticleSystem",
-              "__guid": "1f2fad14-5b3d-4a4e-9d2d-0eb3707676bb",
-              "ControlPoints": [],
-              "Looped": false,
-              "Particles": "particles/explosion/barrel_explosion/explosion_gib_04.vpcf",
-              "PlaybackSpeed": 1
-            },
-            {
-              "__type": "Sandbox.LegacyParticleSystem",
-              "__guid": "f2b18732-459d-4898-bc08-ec196bd7e658",
-              "ControlPoints": [],
-              "Looped": false,
-              "Particles": "particles/explosion/barrel_explosion/explosion_fire_ring_02.vpcf",
-              "PlaybackSpeed": 1
-            }
-          ]
-        },
-        {
-          "__guid": "b7ccbe11-2b94-4598-bb32-04f4d24bb14d",
-          "Flags": 0,
-          "Name": "confetti",
-          "Position": "0.2386074,300.7478,-398.1903",
-          "Tags": "particles",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.LegacyParticleSystem",
-              "__guid": "a695291b-dd94-41b6-ac6e-74205e97dbd2",
-              "ControlPoints": [],
-              "Looped": false,
-              "Particles": "particles/confetti/confetti_splash.vpcf",
-              "PlaybackSpeed": 1
             }
           ]
         }
@@ -607,7 +627,8 @@
         },
         {
           "__type": "Destroydelay",
-          "__guid": "2c95bb08-4ef1-44e9-9e4e-4a9de83c9e9a"
+          "__guid": "2c95bb08-4ef1-44e9-9e4e-4a9de83c9e9a",
+          "timeTillDestroy": 0
         }
       ]
     },
@@ -648,7 +669,8 @@
         },
         {
           "__type": "Destroydelay",
-          "__guid": "01ebe151-85f5-4abf-bb6f-35e9b0007e07"
+          "__guid": "01ebe151-85f5-4abf-bb6f-35e9b0007e07",
+          "timeTillDestroy": 0
         }
       ]
     },
@@ -689,7 +711,8 @@
         },
         {
           "__type": "Destroydelay",
-          "__guid": "4ca08b10-e1c4-41aa-9ace-c4983ef1d8cd"
+          "__guid": "4ca08b10-e1c4-41aa-9ace-c4983ef1d8cd",
+          "timeTillDestroy": 0
         }
       ]
     },
@@ -730,7 +753,52 @@
         },
         {
           "__type": "Destroydelay",
-          "__guid": "39c71933-981c-47c2-89b4-7a167bbf8b5e"
+          "__guid": "39c71933-981c-47c2-89b4-7a167bbf8b5e",
+          "timeTillDestroy": 0
+        }
+      ]
+    },
+    {
+      "__guid": "75fc3a5c-0544-43cf-824c-8b40a47f42c0",
+      "Flags": 0,
+      "Name": "2D Skybox",
+      "Position": "-405.8428,-337.8919,311.5291",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "8cee23e7-22d1-48fd-a634-d5b3382f1d16",
+          "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
+          "Tint": "0.19694,0.05045,0.20465,0.38"
+        }
+      ]
+    },
+    {
+      "__guid": "d9f3aeea-30d8-485a-94ab-06b7d6cb3c68",
+      "Flags": 0,
+      "Name": "Shooter",
+      "Position": "69.88004,377.4887,93.58479",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ShooterControl",
+          "__guid": "ec27866c-5e7c-4ecb-99db-ee7d26a109b4",
+          "blob1": {
+            "_type": "gameobject",
+            "go": "10068d60-29e2-4872-a3ac-41a38124c735"
+          },
+          "explosion": {
+            "_type": "gameobject",
+            "prefab": "prefabs/explosion.prefab"
+          },
+          "HitRadius": 5,
+          "playerSpeed": {
+            "_type": "component",
+            "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+            "component_type": "Mover"
+          }
         }
       ]
     }
@@ -759,8 +827,6 @@
   "Title": "stack",
   "Description": "",
   "ResourceVersion": 1,
-  "__references": [
-    "baik.confettisplash"
-  ],
+  "__references": [],
   "__version": 1
 }

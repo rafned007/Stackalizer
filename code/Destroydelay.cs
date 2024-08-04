@@ -2,6 +2,8 @@ using Sandbox;
 
 public sealed class Destroydelay : Component
 {
+	[Property] public float timeTillDestroy {get; set;}
+
 	protected override void OnStart()
 	{
 		destroyer();
@@ -9,7 +11,7 @@ public sealed class Destroydelay : Component
 
 	async void destroyer()
 	{
-		await Task.DelaySeconds(5);
+		await Task.DelaySeconds(timeTillDestroy);
 		GameObject.Destroy();
 	}
 }
