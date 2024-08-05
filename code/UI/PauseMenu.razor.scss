@@ -6,6 +6,7 @@ PauseMenu {
 	bottom: 0;
 	background-color: rgba(black, 0.7);
 	pointer-events: all;
+	cursor: none;
 	color: rgb(235, 0, 223);
 	font-family: Poppins;
 	font-size: 64px;
@@ -59,7 +60,6 @@ PauseMenu {
 				sound-in: ui.button.over;
 				background-color: rgb(216, 3, 188);
 				transform: scale(1.1);
-				cursor: pointer;
 				color: rgb(0, 0, 0);
 				text-stroke: 6px rgb(255, 255, 255);
 			}

@@ -12,6 +12,7 @@ public sealed class ShooterControl : Component
 	protected override void OnStart()
 	{
 		Mouse.Visible = true;
+		Mouse.CursorType = "none";
 	}
 
 	protected override void OnUpdate()

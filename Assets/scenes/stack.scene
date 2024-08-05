@@ -131,71 +131,7 @@
       "__guid": "6e76a456-b719-456d-a232-60719d0c16c8",
       "Flags": 0,
       "Name": "Border",
-      "Enabled": true,
-      "Children": [
-        {
-          "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
-          "Flags": 0,
-          "Name": "blob1",
-          "Position": "337.5945,357.3512,64.00027",
-          "Rotation": "0.503915,-0.4960546,-0.4960541,0.5039145",
-          "Tags": "shootable",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "SpriteTools.SpriteComponent",
-              "__guid": "746e89df-a32e-4892-93f5-1ad0ad1c0f0b",
-              "__version": 1,
-              "BroadcastEvents": {},
-              "CastShadows": "On",
-              "CreateAttachPoints": false,
-              "FlashTint": "1,1,1,0",
-              "PlaybackSpeed": 1,
-              "Sprite": "sprites/blob1.sprite",
-              "SpriteFlags": "None",
-              "StartingAnimationName": "animation_01",
-              "Tint": "1,1,1,1",
-              "UpDirection": "YPositive"
-            },
-            {
-              "__type": "Sandbox.BoxCollider",
-              "__guid": "6201dc2b-9f45-4cf3-8d7d-169aec41aa47",
-              "Center": "0,0,0",
-              "IsTrigger": false,
-              "Scale": "89.69985,58.29998,5.700144",
-              "Static": false
-            }
-          ],
-          "Children": [
-            {
-              "__guid": "84ca212e-704a-4331-8e8c-4519c0c49588",
-              "Flags": 0,
-              "Name": "World",
-              "Position": "5.180223,63.99973,10.91477",
-              "Rotation": "-0.5039151,0.4960546,0.4960542,0.5039145",
-              "Tags": "worldpanel",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.WorldPanel",
-                  "__guid": "c2c6001d-d509-474f-8180-7a38dc1e8292",
-                  "HorizontalAlign": "Center",
-                  "InteractionRange": 1000,
-                  "LookAtCamera": true,
-                  "PanelSize": "4000,800",
-                  "RenderScale": 9,
-                  "VerticalAlign": "Center"
-                },
-                {
-                  "__type": "SpriteWIP",
-                  "__guid": "4b8eb7da-ff4f-486d-acaa-31998e5e5a2b",
-                  "MyStringValue": "DO NOT CLICK"
-                }
-              ]
-            }
-          ]
-        }
-      ]
+      "Enabled": true
     },
     {
       "__guid": "073e13c2-f47c-42e6-8fce-fa497c72e671",
@@ -628,7 +564,7 @@
         {
           "__type": "Destroydelay",
           "__guid": "2c95bb08-4ef1-44e9-9e4e-4a9de83c9e9a",
-          "timeTillDestroy": 0
+          "timeTillDestroy": 5
         }
       ]
     },
@@ -670,7 +606,7 @@
         {
           "__type": "Destroydelay",
           "__guid": "01ebe151-85f5-4abf-bb6f-35e9b0007e07",
-          "timeTillDestroy": 0
+          "timeTillDestroy": 5
         }
       ]
     },
@@ -712,7 +648,7 @@
         {
           "__type": "Destroydelay",
           "__guid": "4ca08b10-e1c4-41aa-9ace-c4983ef1d8cd",
-          "timeTillDestroy": 0
+          "timeTillDestroy": 5
         }
       ]
     },
@@ -754,7 +690,7 @@
         {
           "__type": "Destroydelay",
           "__guid": "39c71933-981c-47c2-89b4-7a167bbf8b5e",
-          "timeTillDestroy": 0
+          "timeTillDestroy": 5
         }
       ]
     },
@@ -799,6 +735,96 @@
             "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
             "component_type": "Mover"
           }
+        }
+      ]
+    },
+    {
+      "__guid": "bbc7e4a4-51ae-4667-8f55-1c08f30d7dd3",
+      "Flags": 0,
+      "Name": "CH",
+      "Position": "-792.8206,-380.5623,180.9636",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "edb838f3-2d09-4f85-8eff-bc45c9472247",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Crosshair",
+          "__guid": "1cb64acb-f326-41a2-b4f7-d4bb290360ff"
+        }
+      ]
+    },
+    {
+      "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
+      "Flags": 0,
+      "Name": "blob1",
+      "Position": "64,224,64",
+      "Rotation": "0.5,-0.5,-0.5,0.5",
+      "Tags": "shootable",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpriteTools.SpriteComponent",
+          "__guid": "746e89df-a32e-4892-93f5-1ad0ad1c0f0b",
+          "__version": 1,
+          "BroadcastEvents": {},
+          "CastShadows": "On",
+          "CreateAttachPoints": false,
+          "FlashTint": "1,1,1,0",
+          "PlaybackSpeed": 1,
+          "Sprite": "sprites/blob1.sprite",
+          "SpriteFlags": "None",
+          "StartingAnimationName": "animation_01",
+          "Tint": "1,1,1,1",
+          "UpDirection": "YPositive"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "6201dc2b-9f45-4cf3-8d7d-169aec41aa47",
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "89.69985,58.29998,5.700144",
+          "Static": false
+        },
+        {
+          "__type": "SpriteController",
+          "__guid": "42343ee8-fdfb-4188-8be8-ea0964bdaf37",
+          "MoveDistance": "0,0,500",
+          "ReverseAnimation": true,
+          "TimeToMove": 5
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "84ca212e-704a-4331-8e8c-4519c0c49588",
+          "Flags": 0,
+          "Name": "World",
+          "Position": "5.351166,63.99972,10.83205",
+          "Rotation": "0.5000001,0.4999999,0.5,-0.5",
+          "Tags": "worldpanel",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.WorldPanel",
+              "__guid": "c2c6001d-d509-474f-8180-7a38dc1e8292",
+              "HorizontalAlign": "Center",
+              "InteractionRange": 1000,
+              "LookAtCamera": false,
+              "PanelSize": "4000,800",
+              "RenderScale": 9,
+              "VerticalAlign": "Center"
+            },
+            {
+              "__type": "SpriteWIP",
+              "__guid": "4b8eb7da-ff4f-486d-acaa-31998e5e5a2b",
+              "MyStringValue": "DO NOT CLICK!"
+            }
+          ]
         }
       ]
     }
