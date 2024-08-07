@@ -97,15 +97,6 @@
           "Response": 1
         },
         {
-          "__type": "Sandbox.DepthOfField",
-          "__guid": "78710f2c-486f-4f25-bb3d-764d1f3c874f",
-          "__enabled": false,
-          "BackBlur": false,
-          "BlurSize": 100,
-          "FocalDistance": 0,
-          "FrontBlur": true
-        },
-        {
           "__type": "Sandbox.Pixelate",
           "__guid": "5ae256b4-8198-46bc-9488-3aeda295b5c0",
           "Scale": 0.001
@@ -114,8 +105,8 @@
           "__type": "Sandbox.Vignette",
           "__guid": "6b2a5c5c-b430-4674-8b88-a96d20fbd325",
           "Center": "0.5,0.5",
-          "Color": "0.00422,0.01078,0.06047,1",
-          "Intensity": 0.49,
+          "Color": "0,0,0,1",
+          "Intensity": 0.5,
           "Roundness": 0.83,
           "Smoothness": 0.87
         },
@@ -720,10 +711,6 @@
         {
           "__type": "ShooterControl",
           "__guid": "ec27866c-5e7c-4ecb-99db-ee7d26a109b4",
-          "blob1": {
-            "_type": "gameobject",
-            "go": "10068d60-29e2-4872-a3ac-41a38124c735"
-          },
           "explosion": {
             "_type": "gameobject",
             "prefab": "prefabs/explosion.prefab"
@@ -734,7 +721,8 @@
             "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
             "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
             "component_type": "Mover"
-          }
+          },
+          "ShotSound": "sounds/impacts/bullets/impact-bullet-dirt.sound"
         }
       ]
     },
@@ -763,7 +751,7 @@
       "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
       "Flags": 0,
       "Name": "blob1",
-      "Position": "64,224,64",
+      "Position": "64,-224,992",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
       "Enabled": true,
@@ -794,9 +782,9 @@
         {
           "__type": "SpriteController",
           "__guid": "42343ee8-fdfb-4188-8be8-ea0964bdaf37",
-          "MoveDistance": "0,0,500",
+          "MoveDistance": "0,500,0",
           "ReverseAnimation": true,
-          "TimeToMove": 5
+          "TimeToMove": 1
         }
       ],
       "Children": [
@@ -822,7 +810,7 @@
             {
               "__type": "SpriteWIP",
               "__guid": "4b8eb7da-ff4f-486d-acaa-31998e5e5a2b",
-              "MyStringValue": "DO NOT CLICK!"
+              "MyStringValue": "SLOW TIME!"
             }
           ]
         }

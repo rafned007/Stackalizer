@@ -5,7 +5,6 @@ public sealed class ShooterControl : Component
 	[Property] public SoundEvent ShotSound { get; set; }
 	[Property] public GameObject explosion { get; set; }
 	[Property] public Mover playerSpeed { get; set; }
-	[Property] public GameObject blob1 { get; set; }
 	[Property] public float HitRadius { get; set; } = 5f;
 
 
@@ -33,14 +32,15 @@ public sealed class ShooterControl : Component
 		var tr = Scene.Trace
 			.Ray( aimRay, 5000f )
 			.Radius( HitRadius )
-			.WithTag( "shootable" )
+			// .WithTag( "shootable" )
 			.Run();
-		if ( tr.Hit )
+		if ( tr.Hit && tr.GameObject.Tags.Has("shootable") )
 		{
+			var hitpos = tr.HitPosition;
 			var clone = explosion.Clone();
-			clone.Transform.Position = blob1.Transform.Position;
-			blob1.Destroy();
-			playerSpeed.TimetillMove = .02f; 
+			clone.Transform.Position = hitpos;
+			tr.GameObject.Destroy();
+			playerSpeed.TimetillMove = .1f; 
 		}
 	}
 }
