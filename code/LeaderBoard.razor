@@ -1,4 +1,4 @@
-<!-- @using System;
+@using System;
 @using System.Threading.Tasks;
 @using System.Collections.Generic;
 @using Sandbox;
@@ -7,24 +7,35 @@
 @using Sandbox.Utility;
 @inherits PanelComponent
 
+@*
 <root>
 	<div class="title"></div>
 </root>
+*@
+
 
 
 
 @code
 {
+	public Sandbox.Services.Leaderboards.Board board { get; set; }
+
     protected override void OnStart()
 	{
-		
+		_ = GetLeaderboard();
 	}
 
-	public void PlayerStats()
+	public async Task GetLeaderboard()
 	{
-		var board = Sandbox.Services.LeaderBoards.Get("Your High Score");
+		board = Sandbox.Services.Leaderboards.Get( "highscore" );
 		board.MaxEntries = 10;
-		board.Refresh();
+
+		await board.Refresh();
+
+		foreach ( var entry in board.Entries )
+		{
+			Log.Info( $"{entry.DisplayName} - {entry.Value}" );
+		}
 	}
 	protected override int BuildHash() => System.HashCode.Combine( board.Title );
-} -->
+}
