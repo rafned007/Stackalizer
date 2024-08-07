@@ -1,0 +1,30 @@
+<!-- @using System;
+@using System.Threading.Tasks;
+@using System.Collections.Generic;
+@using Sandbox;
+@using Sandbox.Services;
+@using Sandbox.UI;
+@using Sandbox.Utility;
+@inherits PanelComponent
+
+<root>
+	<div class="title"></div>
+</root>
+
+
+
+@code
+{
+    protected override void OnStart()
+	{
+		
+	}
+
+	public void PlayerStats()
+	{
+		var board = Sandbox.Services.LeaderBoards.Get("Your High Score");
+		board.MaxEntries = 10;
+		board.Refresh();
+	}
+	protected override int BuildHash() => System.HashCode.Combine( board.Title );
+} -->

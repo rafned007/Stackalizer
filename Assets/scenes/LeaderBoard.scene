@@ -4,7 +4,7 @@
     {
       "__guid": "4c1a847f-4162-4ec8-9fc7-7fc1d8365cb4",
       "Flags": 0,
-      "Name": "Screen",
+      "Name": "Death",
       "Position": "149.3263,149.3264,-211.1794",
       "Enabled": true,
       "Components": [
@@ -17,8 +17,8 @@
           "ZIndex": 100
         },
         {
-          "__type": "LeaderBoard",
-          "__guid": "f0a8e707-a153-4f4a-83f1-16e9d558b821"
+          "__type": "DeathScreen",
+          "__guid": "97f85622-d1a2-4c9a-bd2b-9198e0d1a107"
         }
       ]
     },
@@ -164,6 +164,28 @@
       "Name": "Object",
       "Position": "-828.939,-329.5267,142.9075",
       "Enabled": true
+    },
+    {
+      "__guid": "8573fca5-0214-401a-bb53-2defdc7c3040",
+      "Flags": 0,
+      "Name": "Leaderboards",
+      "Position": "172,0,180",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "f10a04b8-a4c9-4dd0-8859-4fbc521a3806",
+          "AutoScreenScale": true,
+          "Opacity": 0.51,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "LeaderBoard",
+          "__guid": "71c0666e-f4bb-4d18-9a23-dfdbec72772a",
+          "MyStringValue": "LeaderBoard!"
+        }
+      ]
     }
   ],
   "SceneProperties": {

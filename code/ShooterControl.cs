@@ -3,6 +3,7 @@ using Sandbox;
 public sealed class ShooterControl : Component
 {
 	[Property] public SoundEvent ShotSound { get; set; }
+	[Property] public GameObject Camera { get; set; }
 	[Property] public GameObject explosion { get; set; }
 	[Property] public Mover playerSpeed { get; set; }
 	[Property] public GameObject blob1 { get; set; }
@@ -24,14 +25,14 @@ public sealed class ShooterControl : Component
 		}
 	}
 
-	public void Fire( Ray aimRay )
+	public void Fire( Ray fireRay )
 	{
 		if ( ShotSound is not null )
 		{
 			Sound.Play( ShotSound, Scene.Camera.Transform.Position );
 		}
 		var tr = Scene.Trace
-			.Ray( aimRay, 5000f )
+			.Ray( fireRay, 5000f )
 			.Radius( HitRadius )
 			.WithTag( "shootable" )
 			.Run();

@@ -724,6 +724,10 @@
             "_type": "gameobject",
             "go": "10068d60-29e2-4872-a3ac-41a38124c735"
           },
+          "Camera": {
+            "_type": "gameobject",
+            "go": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a"
+          },
           "explosion": {
             "_type": "gameobject",
             "prefab": "prefabs/explosion.prefab"
