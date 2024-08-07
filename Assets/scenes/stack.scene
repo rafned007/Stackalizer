@@ -429,6 +429,31 @@
       ]
     },
     {
+      "__guid": "d9f3aeea-30d8-485a-94ab-06b7d6cb3c68",
+      "Flags": 0,
+      "Name": "Shooter",
+      "Position": "69.88004,377.4887,93.58479",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "ShooterControl",
+          "__guid": "ec27866c-5e7c-4ecb-99db-ee7d26a109b4",
+          "explosion": {
+            "_type": "gameobject",
+            "prefab": "prefabs/explosion.prefab"
+          },
+          "HitRadius": 5,
+          "playerSpeed": {
+            "_type": "component",
+            "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+            "component_type": "Mover"
+          },
+          "ShotSound": "sounds/impacts/bullets/impact-bullet-dirt.sound"
+        }
+      ]
+    },
+    {
       "__guid": "08a62f63-471f-4ef5-a825-c165d9fd4c79",
       "Flags": 0,
       "Name": "PauseMenu",
@@ -702,31 +727,6 @@
       ]
     },
     {
-      "__guid": "d9f3aeea-30d8-485a-94ab-06b7d6cb3c68",
-      "Flags": 0,
-      "Name": "Shooter",
-      "Position": "69.88004,377.4887,93.58479",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "ShooterControl",
-          "__guid": "ec27866c-5e7c-4ecb-99db-ee7d26a109b4",
-          "explosion": {
-            "_type": "gameobject",
-            "prefab": "prefabs/explosion.prefab"
-          },
-          "HitRadius": 5,
-          "playerSpeed": {
-            "_type": "component",
-            "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
-            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
-            "component_type": "Mover"
-          },
-          "ShotSound": "sounds/impacts/bullets/impact-bullet-dirt.sound"
-        }
-      ]
-    },
-    {
       "__guid": "bbc7e4a4-51ae-4667-8f55-1c08f30d7dd3",
       "Flags": 0,
       "Name": "CH",
@@ -751,7 +751,7 @@
       "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
       "Flags": 0,
       "Name": "blob1",
-      "Position": "64,-224,992",
+      "Position": "64,-224,96",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
       "Enabled": true,
@@ -803,14 +803,14 @@
               "HorizontalAlign": "Center",
               "InteractionRange": 1000,
               "LookAtCamera": false,
-              "PanelSize": "4000,800",
+              "PanelSize": "4500,800",
               "RenderScale": 9,
               "VerticalAlign": "Center"
             },
             {
               "__type": "SpriteWIP",
               "__guid": "4b8eb7da-ff4f-486d-acaa-31998e5e5a2b",
-              "MyStringValue": "SLOW TIME!"
+              "MyStringValue": "DON\u0027T SHOOT ME!"
             }
           ]
         }

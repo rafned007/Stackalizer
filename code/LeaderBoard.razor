@@ -1,20 +1,20 @@
-@using System;
-@using System.Threading.Tasks;
-@using System.Collections.Generic;
 @using Sandbox;
-@using Sandbox.Services;
+@using System.Threading.Tasks;
 @using Sandbox.UI;
-@using Sandbox.Utility;
 @inherits PanelComponent
 
-@*
+
 <root>
-	<div class="title"></div>
+	<div id="entryList">
+        @foreach ( var entry in board.Entries )
+		{
+			<div class="entry">
+				<div class="name">@entry.DisplayName</div>
+				<div class="score">@entry.FormattedValue</div>
+			</div>
+		}
+    </div>
 </root>
-*@
-
-
-
 
 @code
 {

@@ -3,7 +3,6 @@ using Sandbox;
 public sealed class ShooterControl : Component
 {
 	[Property] public SoundEvent ShotSound { get; set; }
-	[Property] public GameObject Camera { get; set; }
 	[Property] public GameObject explosion { get; set; }
 	[Property] public Mover playerSpeed { get; set; }
 	[Property] public float HitRadius { get; set; } = 5f;
@@ -41,7 +40,7 @@ public sealed class ShooterControl : Component
 			var clone = explosion.Clone();
 			clone.Transform.Position = hitpos;
 			tr.GameObject.Destroy();
-			playerSpeed.TimetillMove = .1f; 
+			playerSpeed.TimetillMove = .02f; 
 		}
 	}
 }

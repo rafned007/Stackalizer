@@ -176,14 +176,13 @@
           "__type": "Sandbox.ScreenPanel",
           "__guid": "f10a04b8-a4c9-4dd0-8859-4fbc521a3806",
           "AutoScreenScale": true,
-          "Opacity": 0.51,
+          "Opacity": 1,
           "Scale": 1,
-          "ZIndex": 100
+          "ZIndex": 99
         },
         {
           "__type": "LeaderBoard",
-          "__guid": "71c0666e-f4bb-4d18-9a23-dfdbec72772a",
-          "MyStringValue": "LeaderBoard!"
+          "__guid": "71c0666e-f4bb-4d18-9a23-dfdbec72772a"
         }
       ]
     }

@@ -9,10 +9,10 @@
         <div class="button" onclick=@StartdaGame1>
             Start Game
         </div>
-        <div class="button speedrun" onclick=@StartdaGame2>
+        <div class="button speedrun">
             Classic Mode
         </div>
-        <div class="button sfx">
+        <div class="button sfx"onclick=@StartdaGame2>
             View Leaderboard
         </div>
     </div>
@@ -28,7 +28,7 @@
     
  void StartdaGame2()
     {
-        <!-- Scene.LoadFromFile("scenes/classic.scene"); -->
+        Scene.LoadFromFile("scenes/leaderboard.scene");
     }
 
 }
