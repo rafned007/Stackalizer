@@ -5,10 +5,11 @@
 
 
 <root>
-	<div id="entryList">
+	<div id="entryList">LeaderBoard
         @foreach ( var entry in board.Entries )
 		{
 			<div class="entry">
+				<div class="rank (entry.Rank)">@entry.Rank.</div>
 				<div class="name">@entry.DisplayName</div>
 				<div class="score">@entry.FormattedValue</div>
 			</div>
@@ -28,7 +29,7 @@
 	public async Task GetLeaderboard()
 	{
 		board = Sandbox.Services.Leaderboards.Get( "highscore" );
-		board.MaxEntries = 10;
+		board.MaxEntries = 20;
 
 		await board.Refresh();
 

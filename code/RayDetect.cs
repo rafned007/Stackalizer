@@ -10,6 +10,8 @@ public sealed class RayDetect : Component
 	[Property] public GameObject pBlock3 {get; set;}
 	[Property] public GameObject particles {get; set;}
 	[Property] public GameObject confetti {get; set;}
+	[Property] public GameObject pauseMenu {get; set;}
+	[Property] public GameObject leaderBoardMenu {get; set;}
 	[Property] Mover player {get; set;}
 	[Property] Camshake shake {get; set;}
 	
@@ -33,7 +35,7 @@ public sealed class RayDetect : Component
 				Sandbox.Services.Stats.SetValue( "score", player.turn - 1 );
 			}
 			shake.ViewBob();
-			Sceneload();
+			OpenLeaderBoard();
 		}
 
 		if (!b1Dead)B1Destroyer();
@@ -139,9 +141,10 @@ public sealed class RayDetect : Component
 		}
 	}
 
-	async void Sceneload()
+	async void OpenLeaderBoard()
 	{
 		await Task.DelaySeconds(.6f);
-		Scene.LoadFromFile("scenes/Leaderboard.scene");
+		pauseMenu.Enabled = false;
+		leaderBoardMenu.Enabled = true;
 	}
 }

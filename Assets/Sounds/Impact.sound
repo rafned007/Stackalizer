@@ -1,0 +1,17 @@
+{
+  "UI": false,
+  "Volume": "0.70,1.00,0",
+  "Pitch": "1.00,1.00,0",
+  "Decibels": 70,
+  "SelectionMode": "Forward",
+  "Sounds": [
+    "sounds/impact 021.vsnd"
+  ],
+  "Occlusion": true,
+  "AirAbsorption": true,
+  "Transmission": true,
+  "OcclusionRadius": 116.81,
+  "DistanceAttenuation": false,
+  "__references": [],
+  "__version": 0
+}
