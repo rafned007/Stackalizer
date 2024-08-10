@@ -14,27 +14,11 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
-          "ZIndex": 100
+          "ZIndex": 99
         },
         {
           "__type": "DeathScreen",
           "__guid": "97f85622-d1a2-4c9a-bd2b-9198e0d1a107"
-        }
-      ]
-    },
-    {
-      "__guid": "fded1d05-e4b3-45b0-a7d8-6828d931319d",
-      "Flags": 0,
-      "Name": "2D Skybox",
-      "Position": "149.3263,149.3264,-211.1794",
-      "Tags": "skybox",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SkyBox2D",
-          "__guid": "8e8f2f0f-c976-42ad-bfc5-d1cbfc504cc3",
-          "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
-          "Tint": "0,0,0,1"
         }
       ]
     },
@@ -69,7 +53,7 @@
           "__guid": "42f57fa3-94f2-4cc6-bde1-b7cd0449391f",
           "BackgroundColor": "0.09302,0.09259,0.09259,1",
           "ClearFlags": "All",
-          "FieldOfView": 60,
+          "FieldOfView": 124.86,
           "IsMainCamera": true,
           "Orthographic": false,
           "OrthographicHeight": 520,
@@ -78,12 +62,13 @@
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
-          "ZFar": 506,
+          "ZFar": 10000,
           "ZNear": 10
         },
         {
           "__type": "Sandbox.Bloom",
           "__guid": "33833328-4e81-4073-ad48-0af9c0f29b60",
+          "__enabled": false,
           "BloomColor": {
             "color": [
               {
@@ -125,11 +110,13 @@
         {
           "__type": "Sandbox.Sharpen",
           "__guid": "fdaca705-16b3-4648-a174-0e0465c3b082",
+          "__enabled": false,
           "Scale": 2.03
         },
         {
           "__type": "Sandbox.FilmGrain",
           "__guid": "7cdbaec4-3419-4707-85af-320e2678f532",
+          "__enabled": false,
           "Intensity": 0.004,
           "Response": 1
         },
@@ -145,6 +132,7 @@
         {
           "__type": "Sandbox.Pixelate",
           "__guid": "501c9013-4ec1-47e3-a144-ce8f4527e2d7",
+          "__enabled": false,
           "Scale": 0.001
         },
         {
@@ -157,13 +145,6 @@
           "Smoothness": 0.87
         }
       ]
-    },
-    {
-      "__guid": "1c706e7a-270e-46a2-944f-45f11ad2d180",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "-828.939,-329.5267,142.9075",
-      "Enabled": true
     },
     {
       "__guid": "8573fca5-0214-401a-bb53-2defdc7c3040",
@@ -183,6 +164,77 @@
         {
           "__type": "LeaderBoard",
           "__guid": "71c0666e-f4bb-4d18-9a23-dfdbec72772a"
+        }
+      ]
+    },
+    {
+      "__guid": "14ff6896-8403-4084-91ca-56e35032e853",
+      "Flags": 0,
+      "Name": "ambiance",
+      "Position": "0,-160,0.00001525879",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundPointComponent",
+          "__guid": "a0127a22-47e4-4896-a789-13733790db2b",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": false,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": false,
+          "SoundEvent": "sounds/ambiance.sound",
+          "SoundOverride": false,
+          "StopOnNew": false,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
+          "Volume": 1
+        }
+      ]
+    },
+    {
+      "__guid": "5bdedc16-3fec-4021-94a4-12d4451720b8",
+      "Flags": 0,
+      "Name": "2D Skybox",
+      "Position": "-723.697,-571.5629,195.6191",
+      "Tags": "skybox",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SkyBox2D",
+          "__guid": "0a4c81d8-faf3-42f9-9e0a-a4247f1ae02a",
+          "SkyMaterial": "materials/default/shiverfrost.vmat",
+          "Tint": "4.06,0,3.654,1"
+        }
+      ]
+    },
+    {
+      "__guid": "31912b88-98a5-4388-a996-3588db7046c6",
+      "Flags": 0,
+      "Name": "Screen",
+      "Position": "-723.697,-571.5629,195.6191",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "72a9ccf3-bca2-4824-ab72-c2ba75599558",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Crosshair",
+          "__guid": "d8f1e2f3-ada7-4ecc-bcaa-9820fda4cb8f"
         }
       ]
     }
@@ -211,6 +263,8 @@
   "Title": "leaderboard",
   "Description": "",
   "ResourceVersion": 1,
-  "__references": [],
+  "__references": [
+    "agentab.shiverfrost"
+  ],
   "__version": 1
 }

@@ -21,6 +21,12 @@
 
 @code
 {
+    protected override void OnStart()
+    {
+        base.OnStart();
+        Mouse.Visible = true;
+		Mouse.CursorType = "none";
+    }
     protected override void OnUpdate()
     {
         base.OnUpdate();
