@@ -610,20 +610,6 @@
             "component_type": "Mover"
           },
           "ShotSound": "sounds/shootiewootie.sound"
-        },
-        {
-          "__type": "SpriteTools.SpriteComponent",
-          "__guid": "d35afe0c-0902-4d9b-82df-c4db1aad845c",
-          "__version": 1,
-          "BroadcastEvents": {},
-          "CastShadows": "On",
-          "CreateAttachPoints": false,
-          "FlashTint": "1,1,1,0",
-          "PlaybackSpeed": 1,
-          "SpriteFlags": "None",
-          "StartingAnimationName": "",
-          "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
         }
       ]
     },
@@ -800,7 +786,7 @@
     {
       "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
       "Flags": 0,
-      "Name": "blob1",
+      "Name": "blimbus",
       "Position": "90.84976,-475.4385,287.8834",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
@@ -911,7 +897,7 @@
           "__guid": "a8136833-5f5e-462c-a657-fdafdf4e41bb",
           "Flags": 0,
           "Name": "World",
-          "Position": "5.351166,63.99972,10.83205",
+          "Position": "-30.51501,63.99973,10.83205",
           "Rotation": "0.5000001,0.4999999,0.5,-0.5",
           "Tags": "worldpanel",
           "Enabled": true,
@@ -922,7 +908,7 @@
               "HorizontalAlign": "Center",
               "InteractionRange": 1000,
               "LookAtCamera": false,
-              "PanelSize": "4500,800",
+              "PanelSize": "3000,800",
               "RenderScale": 9,
               "VerticalAlign": "Center"
             },
@@ -941,7 +927,7 @@
       "Name": "Blorble",
       "Position": "90.84976,231.3532,1470.122",
       "Rotation": "0.5,-0.5,-0.5,0.5",
-      "Tags": "shootable",
+      "Tags": "shootable,blorble",
       "Enabled": true,
       "Components": [
         {
@@ -965,7 +951,7 @@
         {
           "__type": "Sandbox.BoxCollider",
           "__guid": "15c5aac9-b957-4973-9e21-9665171f8211",
-          "Center": "0,0,0",
+          "Center": "-6.899997,-1.3,0",
           "IsTrigger": false,
           "Scale": "83.69993,82.09966,5.700144",
           "Static": false
@@ -1059,7 +1045,7 @@
       "__guid": "ab0a5e4c-a90f-45a0-a02c-950a4c080576",
       "Flags": 0,
       "Name": "Seat",
-      "Position": "67.14069,386.1822,127.8664",
+      "Position": "67.14069,381.0098,131.2837",
       "Rotation": "1,0,0,-0.00000004371139",
       "Enabled": true,
       "Components": [
@@ -1129,15 +1115,15 @@
           "PlayOnStart": true,
           "ReflectionOverride": false,
           "Reflections": false,
-          "Repeat": false,
+          "Repeat": true,
           "SoundEvent": "sounds/ambiance.sound",
-          "SoundOverride": false,
+          "SoundOverride": true,
           "StopOnNew": false,
           "TargetMixer": {
             "Name": "unknown",
             "Id": "00000000-0000-0000-0000-000000000000"
           },
-          "Volume": 2
+          "Volume": 4
         }
       ]
     }

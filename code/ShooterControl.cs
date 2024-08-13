@@ -23,6 +23,7 @@ public sealed class ShooterControl : Component
 			var fireRay = Scene.Camera.ScreenPixelToRay( Mouse.Position );
 			Fire( fireRay );
 		}
+	
 	}
 
 	public void Fire( Ray fireRay )
@@ -45,14 +46,18 @@ public sealed class ShooterControl : Component
 			tr.GameObject.Destroy();
 			Sound.Play( HitSound, tr.HitPosition);
 			Sound.Play( HitSound1, tr.HitPosition);
-			if (blorble.upgrade)
+			if (blorble.upgrade && tr.GameObject.Tags.Has("blorble") )
 			{
 				playerSpeed.TimetillMove *= 2f;
 			}
-			else if(!blorble.upgrade)
+			else if(!blorble.upgrade && tr.GameObject.Tags.Has("blorble"))
 			{
 				playerSpeed.TimetillMove *= .5f;
 			}
+			else if (!tr.GameObject.Tags.Has("blorble"))
+			{
+				playerSpeed.TimetillMove = .02f;	
+			} 
 		}
 	}
 }
