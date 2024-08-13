@@ -1,11 +1,11 @@
 {
   "UI": true,
-  "Volume": "1.00,1.00,0",
+  "Volume": "2.00,1.00,0",
   "Pitch": "1.00,1.00,0",
   "Decibels": 70,
-  "SelectionMode": "Random",
+  "SelectionMode": "Forward",
   "Sounds": [
-    "sounds/rawaudio/ambisonic_a ext forrest winter wind morning 02.vsnd"
+    "sounds/rawaudio/ambisonic_a ext forrest winter wind morning 02w.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

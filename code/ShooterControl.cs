@@ -5,10 +5,10 @@ public sealed class ShooterControl : Component
 	[Property] public SoundEvent ShotSound { get; set; }
 	[Property] public GameObject explosion { get; set; }
 	[Property] public Mover playerSpeed { get; set; }
+	[Property] public Blob1Controller blorble {get; set;}
 	[Property] public SoundEvent HitSound { get; set; }
 	[Property] public SoundEvent HitSound1 { get; set; }
 	[Property] public float HitRadius { get; set; } = 5f;
-
 
 	protected override void OnStart()
 	{
@@ -43,9 +43,16 @@ public sealed class ShooterControl : Component
 			var clone = explosion.Clone();
 			clone.Transform.Position = hitpos;
 			tr.GameObject.Destroy();
-			playerSpeed.TimetillMove = .02f;
 			Sound.Play( HitSound, tr.HitPosition);
 			Sound.Play( HitSound1, tr.HitPosition);
+			if (blorble.upgrade)
+			{
+				playerSpeed.TimetillMove *= 2f;
+			}
+			else if(!blorble.upgrade)
+			{
+				playerSpeed.TimetillMove *= .5f;
+			}
 		}
 	}
 }

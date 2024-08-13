@@ -1,0 +1,62 @@
+{
+  "Animations": [
+    {
+      "FrameRate": 8,
+      "Origin": "0.5,0.5",
+      "Looping": true,
+      "Name": "animation_01",
+      "Frames": [
+        {
+          "FilePath": "images/platform.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Size": "32,32"
+          }
+        },
+        {
+          "FilePath": "images/platform.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "32,0",
+            "Size": "32,32"
+          }
+        },
+        {
+          "FilePath": "images/platform.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "0,32",
+            "Size": "32,32"
+          }
+        },
+        {
+          "FilePath": "images/platform.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "32,32",
+            "Size": "32,32"
+          }
+        },
+        {
+          "FilePath": "images/platform.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "0,64",
+            "Size": "32,32"
+          }
+        },
+        {
+          "FilePath": "images/platform.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "32,64",
+            "Size": "32,32"
+          }
+        }
+      ],
+      "Attachments": []
+    }
+  ],
+  "__references": [],
+  "__version": 0
+}

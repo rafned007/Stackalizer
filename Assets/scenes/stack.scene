@@ -1,5 +1,5 @@
 {
-  "__guid": "26dd134e-04a6-4b85-af2a-3f9cac843084",
+  "__guid": "8551a8be-3a46-408b-b6e3-a01e91e0243a",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -224,6 +224,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "5c2c23e6-1e92-4f17-ae77-5e057be7ef6a",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
@@ -236,6 +237,21 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "8869ed86-c1dc-49ff-a511-077e224b500e",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubertpink.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         },
@@ -249,6 +265,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "eaeda90f-8e54-46a0-8014-9aa00a642844",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
@@ -261,6 +278,21 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "9b5bb37b-20f5-435f-9b63-c3e07c57e0fb",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubertpink.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         },
@@ -274,6 +306,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "975d0377-d2ef-4c66-af29-35703d3b17e1",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
@@ -286,6 +319,21 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "437df064-fcd7-4d32-804e-15fd64cf35fd",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubertpink.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         }
@@ -308,6 +356,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "ca309f80-a655-42f5-aa1e-a7bb1e24e8a0",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
@@ -320,6 +369,21 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "b731d8cd-0abd-48ae-84f4-c34ac946bcdd",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubert1.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         },
@@ -333,6 +397,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "ec5c360d-8baa-41fd-af97-83176b0d065e",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
@@ -345,6 +410,21 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "133b4248-1529-4293-be31-20743bcc1455",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubert1.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         },
@@ -358,6 +438,7 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "ca0fca0a-70b8-4f7b-b9b0-8dfcdca00cba",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
@@ -370,6 +451,21 @@
               "IsTrigger": false,
               "Scale": "50,50,50",
               "Static": false
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "062dd70d-6e91-4405-b6ca-5298fa1f6e8d",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubert1.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         }
@@ -393,10 +489,26 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "bd4821ec-766b-44cb-9590-b142a5c3830a",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
               "Tint": "0,0.34902,0.94902,1"
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "6a1d0bec-ee3e-4f21-9e11-e9e6e390735c",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubert1.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         },
@@ -410,10 +522,26 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "9626d753-e9eb-4bbc-8db7-576aeac0ff16",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
               "Tint": "0,0.34902,0.94902,1"
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "72b37c87-a5a4-46f3-9014-06331e55eb7e",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubert1.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         },
@@ -427,10 +555,26 @@
             {
               "__type": "Sandbox.ModelRenderer",
               "__guid": "346dacf8-5f8c-4dd0-b478-53df300f550a",
+              "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
               "RenderType": "Off",
               "Tint": "0,0.34902,0.94902,1"
+            },
+            {
+              "__type": "SpriteTools.SpriteComponent",
+              "__guid": "a964bcf6-175a-48aa-93f9-d59c005e1116",
+              "__version": 1,
+              "BroadcastEvents": {},
+              "CastShadows": "On",
+              "CreateAttachPoints": false,
+              "FlashTint": "1,1,1,0",
+              "PlaybackSpeed": 1,
+              "Sprite": "sprites/cubert1.sprite",
+              "SpriteFlags": "None",
+              "StartingAnimationName": "animation_01",
+              "Tint": "1,1,1,1",
+              "UpDirection": "ZNegative"
             }
           ]
         }
@@ -446,6 +590,12 @@
         {
           "__type": "ShooterControl",
           "__guid": "ec27866c-5e7c-4ecb-99db-ee7d26a109b4",
+          "blorble": {
+            "_type": "component",
+            "component_id": "1e758c75-1e93-42f5-ac14-866ad251cdb6",
+            "go": "7f2bcc32-dc84-4ab9-a319-8935a6f2b9e6",
+            "component_type": "Blob1Controller"
+          },
           "explosion": {
             "_type": "gameobject",
             "prefab": "prefabs/explosion.prefab"
@@ -460,6 +610,20 @@
             "component_type": "Mover"
           },
           "ShotSound": "sounds/shootiewootie.sound"
+        },
+        {
+          "__type": "SpriteTools.SpriteComponent",
+          "__guid": "d35afe0c-0902-4d9b-82df-c4db1aad845c",
+          "__version": 1,
+          "BroadcastEvents": {},
+          "CastShadows": "On",
+          "CreateAttachPoints": false,
+          "FlashTint": "1,1,1,0",
+          "PlaybackSpeed": 1,
+          "SpriteFlags": "None",
+          "StartingAnimationName": "",
+          "Tint": "1,1,1,1",
+          "UpDirection": "YPositive"
         }
       ]
     },
@@ -555,7 +719,7 @@
       "__guid": "79619ec9-8058-426b-a175-72dde820e85b",
       "Flags": 0,
       "Name": "Sphere",
-      "Position": "-9.082947,0,530.6092",
+      "Position": "-9.082947,0,2143.62",
       "Enabled": true,
       "Components": [
         {
@@ -591,138 +755,6 @@
         {
           "__type": "Destroydelay",
           "__guid": "2c95bb08-4ef1-44e9-9e4e-4a9de83c9e9a",
-          "timeTillDestroy": 5
-        }
-      ]
-    },
-    {
-      "__guid": "00334843-b69c-47dd-b2fe-d707226be464",
-      "Flags": 0,
-      "Name": "Sphere (1)",
-      "Position": "-9.082947,-3.633998,341.2329",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "e68ebb4d-5327-4c08-a236-345b0aaaf6d8",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "0,0.48333,1,1"
-        },
-        {
-          "__type": "Sandbox.SphereCollider",
-          "__guid": "4bfd27d9-d861-4aff-a8ca-6ba022281385",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Radius": 33.100063,
-          "Static": false
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "64cb6186-06b3-4a9c-b9d7-04fe96110578",
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {},
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        },
-        {
-          "__type": "Destroydelay",
-          "__guid": "01ebe151-85f5-4abf-bb6f-35e9b0007e07",
-          "timeTillDestroy": 5
-        }
-      ]
-    },
-    {
-      "__guid": "28f01223-6e0b-4246-a29b-741dbcbd21f8",
-      "Flags": 0,
-      "Name": "Sphere (2)",
-      "Position": "-9.082947,87.90593,341.2329",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0bed1537-35d3-4949-978f-20c9ea5d1d0a",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "0,1,0.81667,1"
-        },
-        {
-          "__type": "Sandbox.SphereCollider",
-          "__guid": "fefe4328-640d-4a21-bcea-1ae3856b9399",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Radius": 33.100063,
-          "Static": false
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "4952759f-1779-4e17-9894-b29e18cb6f6b",
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {},
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        },
-        {
-          "__type": "Destroydelay",
-          "__guid": "4ca08b10-e1c4-41aa-9ace-c4983ef1d8cd",
-          "timeTillDestroy": 5
-        }
-      ]
-    },
-    {
-      "__guid": "1a9eb65c-78cd-48d8-a7d1-1f3e54a6249c",
-      "Flags": 0,
-      "Name": "Sphere (3)",
-      "Position": "-9.082947,-92.0443,341.2329",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "10a6cf76-5da4-45c5-a0b3-4c6d7958a6c0",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/sphere.vmdl",
-          "RenderType": "On",
-          "Tint": "1,0.87845,0.08837,1"
-        },
-        {
-          "__type": "Sandbox.SphereCollider",
-          "__guid": "ca491a7c-36f9-4181-948a-a6bfd441b475",
-          "Center": "0,0,0",
-          "IsTrigger": false,
-          "Radius": 33.100063,
-          "Static": false
-        },
-        {
-          "__type": "Sandbox.Rigidbody",
-          "__guid": "86e6d6f4-7be8-4e59-9377-86c8b6f2b59e",
-          "AngularDamping": 0,
-          "Gravity": true,
-          "LinearDamping": 0,
-          "Locking": {},
-          "MassCenterOverride": "0,0,0",
-          "MassOverride": 0,
-          "MotionEnabled": true,
-          "OverrideMassCenter": false,
-          "RigidbodyFlags": 0,
-          "StartAsleep": false
-        },
-        {
-          "__type": "Destroydelay",
-          "__guid": "39c71933-981c-47c2-89b4-7a167bbf8b5e",
           "timeTillDestroy": 5
         }
       ]
@@ -769,7 +801,7 @@
       "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
       "Flags": 0,
       "Name": "blob1",
-      "Position": "90.84976,-224,96",
+      "Position": "90.84976,-475.4385,287.8834",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
       "Enabled": true,
@@ -838,9 +870,8 @@
       "__guid": "f579497a-db7a-4149-90be-8d32a033475e",
       "Flags": 0,
       "Name": "Smokie",
-      "Position": "83.66565,233.2394,922.1589",
+      "Position": "83.66565,321.485,155.873",
       "Rotation": "0.5,-0.5,-0.5,0.5",
-      "Tags": "shootable",
       "Enabled": true,
       "Components": [
         {
@@ -908,7 +939,7 @@
       "__guid": "7f2bcc32-dc84-4ab9-a319-8935a6f2b9e6",
       "Flags": 0,
       "Name": "Blorble",
-      "Position": "90.84976,231.3532,249.0674",
+      "Position": "90.84976,231.3532,1470.122",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
       "Enabled": true,
@@ -917,7 +948,10 @@
           "__type": "SpriteTools.SpriteComponent",
           "__guid": "14e237c3-1b6c-4a1e-a8bf-178ac086c8f4",
           "__version": 1,
-          "BroadcastEvents": {},
+          "BroadcastEvents": {
+            "Shoot": null,
+            "BadShoot": null
+          },
           "CastShadows": "On",
           "CreateAttachPoints": false,
           "FlashTint": "1,1,1,0",
@@ -943,6 +977,10 @@
           "MoveDistance": "0,500,0",
           "ReverseAnimation": true,
           "TimeToMove": 1
+        },
+        {
+          "__type": "Blob1Controller",
+          "__guid": "1e758c75-1e93-42f5-ac14-866ad251cdb6"
         }
       ],
       "Children": [
@@ -1021,16 +1059,33 @@
       "__guid": "ab0a5e4c-a90f-45a0-a02c-950a4c080576",
       "Flags": 0,
       "Name": "Seat",
-      "Position": "110.7764,278.2045,869.624",
+      "Position": "67.14069,386.1822,127.8664",
+      "Rotation": "1,0,0,-0.00000004371139",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.ModelRenderer",
           "__guid": "00f02f51-ab4a-4b9e-ad2a-509c0b1669ed",
+          "__enabled": false,
           "BodyGroups": 18446744073709551615,
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "1,1,1,1"
+        },
+        {
+          "__type": "SpriteTools.SpriteComponent",
+          "__guid": "60bf81e6-e591-4a0c-873a-4c166fbdedb7",
+          "__version": 1,
+          "BroadcastEvents": {},
+          "CastShadows": "On",
+          "CreateAttachPoints": false,
+          "FlashTint": "1,1,1,0",
+          "PlaybackSpeed": 1,
+          "Sprite": "sprites/platform.sprite",
+          "SpriteFlags": "None",
+          "StartingAnimationName": "animation_01",
+          "Tint": "1,1,1,1",
+          "UpDirection": "ZNegative"
         }
       ]
     },
@@ -1038,7 +1093,7 @@
       "__guid": "fbcb647c-1276-43bd-9701-9961006fbff0",
       "Flags": 0,
       "Name": "Cube",
-      "Position": "169.2574,247.9917,204.6585",
+      "Position": "169.2574,247.9917,1425.712",
       "Scale": "1,1.8,0.09999993",
       "Enabled": true,
       "Components": [
@@ -1053,18 +1108,18 @@
       ]
     },
     {
-      "__guid": "7588c130-f35f-4596-b7fa-8c235537d4c2",
+      "__guid": "1d784308-7fa8-448b-8b49-fb5fb0cb4721",
       "Flags": 0,
       "Name": "ambiance",
-      "Position": "480,288,0",
+      "Position": "152.1477,252.2307,0",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.SoundPointComponent",
-          "__guid": "d7fbb3b1-d677-4aa8-acfb-81b568586eca",
+          "__guid": "2898d591-5ea7-4b54-9fa2-e8a8469be0b2",
           "DistanceAttenuation": false,
           "DistanceAttenuationOverride": false,
-          "Force2d": false,
+          "Force2d": true,
           "MaxRepeatTime": 1,
           "MinRepeatTime": 1,
           "Occlusion": false,
@@ -1074,7 +1129,7 @@
           "PlayOnStart": true,
           "ReflectionOverride": false,
           "Reflections": false,
-          "Repeat": true,
+          "Repeat": false,
           "SoundEvent": "sounds/ambiance.sound",
           "SoundOverride": false,
           "StopOnNew": false,
@@ -1082,7 +1137,7 @@
             "Name": "unknown",
             "Id": "00000000-0000-0000-0000-000000000000"
           },
-          "Volume": 1
+          "Volume": 2
         }
       ]
     }

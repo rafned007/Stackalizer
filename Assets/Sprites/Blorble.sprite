@@ -8,14 +8,18 @@
       "Frames": [
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Size": "32,32"
           }
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "32,0",
             "Size": "32,32"
@@ -23,7 +27,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "64,0",
             "Size": "32,32"
@@ -31,7 +37,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "96,0",
             "Size": "32,32"
@@ -39,7 +47,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "0,32",
             "Size": "32,32"
@@ -47,7 +57,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "32,32",
             "Size": "32,32"
@@ -55,7 +67,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "Shoot"
+          ],
           "SpriteSheetRect": {
             "Position": "64,32",
             "Size": "32,32"
@@ -63,7 +77,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "Shoot"
+          ],
           "SpriteSheetRect": {
             "Position": "96,32",
             "Size": "32,32"
@@ -71,7 +87,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "Shoot"
+          ],
           "SpriteSheetRect": {
             "Position": "0,64",
             "Size": "32,32"
@@ -79,7 +97,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "32,64",
             "Size": "32,32"
@@ -87,7 +107,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "64,64",
             "Size": "32,32"
@@ -95,7 +117,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "96,64",
             "Size": "32,32"
@@ -103,7 +127,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "0,96",
             "Size": "32,32"
@@ -111,7 +137,9 @@
         },
         {
           "FilePath": "images/blorble.png",
-          "Events": [],
+          "Events": [
+            "BadShoot"
+          ],
           "SpriteSheetRect": {
             "Position": "32,96",
             "Size": "32,32"
