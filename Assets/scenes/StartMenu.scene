@@ -152,14 +152,14 @@
           "Reflections": false,
           "Repeat": true,
           "Scale": "50,50,50",
-          "SoundEvent": "sounds/startsong.sound",
+          "SoundEvent": "sounds/lofistart.sound",
           "SoundOverride": true,
           "StopOnNew": false,
           "TargetMixer": {
             "Name": "unknown",
             "Id": "00000000-0000-0000-0000-000000000000"
           },
-          "Volume": 1
+          "Volume": 0.36
         }
       ]
     }

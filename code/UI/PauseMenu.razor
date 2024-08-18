@@ -12,23 +12,38 @@
         <div class="button" onclick=@OnResume>
             Resume
         </div>
+        <div class="button" onclick=@MusicControl>
+            Mute Music
+        </div>
     </div>
 </root>
 
 @code
 { 
     [Property] RayDetect player { get; set; }
+    [Property] SoundPointComponent lofiInGame {get; set;}
+    public bool musicMuted;
     public bool IsPaused { get; set; }
 
     protected override void OnStart()
 	{
 		IsPaused = false;
+        musicMuted = false;
         player.ignoreinputs = false;
 	}
 
     protected override void OnUpdate()
     {
         base.OnUpdate();
+
+        if (musicMuted) 
+        {
+            lofiInGame.Volume = 0;
+        }
+        else
+        {
+            lofiInGame.Volume = .25f;
+        }
 
         if (IsPaused)
         {
@@ -58,6 +73,12 @@
     void Startmenu()
     {
         Scene.LoadFromFile("scenes/Startmenu.scene");
+    }
+
+    void MusicControl()
+    {
+        musicMuted = !musicMuted;
+        
     }
 
     protected override int BuildHash() => System.HashCode.Combine( IsPaused );

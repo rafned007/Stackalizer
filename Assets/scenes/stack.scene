@@ -1578,6 +1578,12 @@
         {
           "__type": "PauseMenu",
           "__guid": "bbd5f2da-099e-457a-a1a9-f56a5e859e81",
+          "lofiInGame": {
+            "_type": "component",
+            "component_id": "7056ca6e-7bdd-4a40-b19c-ff5f99800f75",
+            "go": "2f49a232-12d4-4555-bfb6-3c52464b8b37",
+            "component_type": "SoundPointComponent"
+          },
           "player": {
             "_type": "component",
             "component_id": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
@@ -1838,7 +1844,7 @@
       "__guid": "f579497a-db7a-4149-90be-8d32a033475e",
       "Flags": 0,
       "Name": "Smokie",
-      "Position": "83.66565,321.485,155.873",
+      "Position": "252.7399,321.485,155.873",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Enabled": true,
       "Components": [
@@ -2141,6 +2147,40 @@
           "Model": "models/dev/box.vmdl",
           "RenderType": "On",
           "Tint": "0.05814,0,0.23256,1"
+        }
+      ]
+    },
+    {
+      "__guid": "2f49a232-12d4-4555-bfb6-3c52464b8b37",
+      "Flags": 0,
+      "Name": "Lofi-ingame",
+      "Position": "172,0,180",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundPointComponent",
+          "__guid": "7056ca6e-7bdd-4a40-b19c-ff5f99800f75",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": true,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": true,
+          "SoundEvent": "sounds/lofi-ingame.sound",
+          "SoundOverride": true,
+          "StopOnNew": false,
+          "TargetMixer": {
+            "Name": "unknown",
+            "Id": "00000000-0000-0000-0000-000000000000"
+          },
+          "Volume": 0.25
         }
       ]
     }
