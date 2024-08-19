@@ -1,56 +1,49 @@
 LeaderBoard {
     position: absolute;
     top: 25px;
-    right: 5%;
+    right: 25px;
     flex-direction: column;
     height: 95%;
     width: 25%;
     background-color: #fb00ff;
-    align-items: center;
     border-radius: 30px;
     padding: 10px;
     font-weight: bold;
-    font-size: 40px;
+    font-size: 40%;
     font-family: 'Gill Sans';
+    
 
     #entryList {
         text-stroke: 6px rgb(255, 255, 255);
         flex-direction: column;
         align-items: center;
         padding: 10px;
-        gap: 10px;
-
+        gap: 15px;
+        
 
         .entry {
-            color: #000000;
-            font-size: 10%;
+            font-size: 25%;
             font-family: Poppins;
-
-            >* {
-                align-items: center;
-            }
+            text-stroke: 6px black;  
         }
 
         .rank {
-            width: 10%;
+            width: 15%;
             color: #f7f4f4;
             text-align: left;
-            text-stroke: 6px black;
         }
 
         .name {
             width: 70%;
             color: rgb(0, 191, 255);
-            padding-right: 100px;
-            text-stroke: 6px black;
-
+            padding-right: 5%;
+            font-size: 25%;
         }
 
         .score {
-            font-size: 15%;
+            font-size: 30%;
             color: #f7f4f4;
-            padding-left: 50px;
-            text-stroke: 6px black;
+            padding-left: 10%;
         }
     }
 }

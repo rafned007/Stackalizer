@@ -41,7 +41,7 @@
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
-          "ZFar": 2060,
+          "ZFar": 1500,
           "ZNear": 1
         },
         {
@@ -1617,40 +1617,6 @@
             "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
             "component_type": "Mover"
           }
-        }
-      ]
-    },
-    {
-      "__guid": "6ae74594-fcd5-454a-9b07-95fbfed82a12",
-      "Flags": 0,
-      "Name": "BGMusic",
-      "Position": "-901.5143,222.6751,68.47903",
-      "Components": [
-        {
-          "__type": "Sandbox.SoundBoxComponent",
-          "__guid": "d228518b-b526-4b5a-b3ac-b4883b59c889",
-          "DistanceAttenuation": false,
-          "DistanceAttenuationOverride": false,
-          "Force2d": true,
-          "MaxRepeatTime": 1,
-          "MinRepeatTime": 1,
-          "Occlusion": false,
-          "OcclusionOverride": false,
-          "OcclusionRadius": 32,
-          "Pitch": 1,
-          "PlayOnStart": true,
-          "ReflectionOverride": false,
-          "Reflections": false,
-          "Repeat": true,
-          "Scale": "50,50,50",
-          "SoundEvent": "sounds/bgmusic.sound",
-          "SoundOverride": true,
-          "StopOnNew": false,
-          "TargetMixer": {
-            "Name": "unknown",
-            "Id": "00000000-0000-0000-0000-000000000000"
-          },
-          "Volume": 0.5
         }
       ]
     },
