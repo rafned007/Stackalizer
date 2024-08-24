@@ -39,7 +39,11 @@
             },
             {
               "__type": "MenuButtons",
-              "__guid": "ac2966ab-3c30-4438-a287-52f1931cba91"
+              "__guid": "ac2966ab-3c30-4438-a287-52f1931cba91",
+              "howtopanel": {
+                "_type": "gameobject",
+                "go": "beea6abd-1969-402b-8111-4ef1e9cea13c"
+              }
             }
           ]
         }
@@ -160,6 +164,31 @@
             "Id": "00000000-0000-0000-0000-000000000000"
           },
           "Volume": 0.36
+        }
+      ]
+    },
+    {
+      "__guid": "beea6abd-1969-402b-8111-4ef1e9cea13c",
+      "Flags": 0,
+      "Name": "Instructions",
+      "Position": "544.8864,466.2906,-4139.08",
+      "Components": [
+        {
+          "__type": "Sandbox.ScreenPanel",
+          "__guid": "0af1c77c-7001-4286-9587-4b37fefa2fe6",
+          "AutoScreenScale": true,
+          "Opacity": 1,
+          "Scale": 1,
+          "ZIndex": 100
+        },
+        {
+          "__type": "Howtoplay",
+          "__guid": "ad2bf00f-bdbd-4b31-9867-8e5ea3cde4f4",
+          "buttons": {
+            "_type": "gameobject",
+            "go": "c3961ea8-8c2f-4849-858a-b785311aeb35"
+          },
+          "MyStringValue": "How To Play!"
         }
       ]
     }

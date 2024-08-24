@@ -1706,7 +1706,7 @@
       "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
       "Flags": 0,
       "Name": "blimbus",
-      "Position": "288,-416,1696",
+      "Position": "288,-512,1632",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
       "Enabled": true,
@@ -1739,7 +1739,7 @@
           "__guid": "42343ee8-fdfb-4188-8be8-ea0964bdaf37",
           "MoveDistance": "0,1000,0",
           "ReverseAnimation": true,
-          "TimeToMove": 1
+          "TimeToMove": 2
         },
         {
           "__type": "CoinSpawner",
@@ -1768,7 +1768,7 @@
           "__guid": "5893a9a5-0e65-4fec-b3bc-f11a3282e1aa",
           "Flags": 0,
           "Name": "ufosound",
-          "Position": "-5.286041,4.903381,148.8048",
+          "Position": "-5.286041,4.903381,384",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -1782,7 +1782,7 @@
               "MinRepeatTime": 1,
               "Occlusion": true,
               "OcclusionOverride": true,
-              "OcclusionRadius": 2.26,
+              "OcclusionRadius": 3.8,
               "Pitch": 1,
               "PlayOnStart": true,
               "ReflectionOverride": false,
@@ -1795,7 +1795,7 @@
                 "Name": "unknown",
                 "Id": "00000000-0000-0000-0000-000000000000"
               },
-              "Volume": 0.35
+              "Volume": 1
             }
           ]
         }
@@ -1908,7 +1908,7 @@
       "__guid": "7f2bcc32-dc84-4ab9-a319-8935a6f2b9e6",
       "Flags": 0,
       "Name": "Blorble",
-      "Position": "90.84976,231.3532,1470.122",
+      "Position": "90.84976,231.3532,1302.205",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable,blorble",
       "Enabled": true,
@@ -2071,7 +2071,7 @@
       "__guid": "fbcb647c-1276-43bd-9701-9961006fbff0",
       "Flags": 0,
       "Name": "Cube",
-      "Position": "169.2574,247.9917,1425.712",
+      "Position": "96,247.9917,1257.795",
       "Scale": "1,1.8,0.09999993",
       "Enabled": true,
       "Components": [

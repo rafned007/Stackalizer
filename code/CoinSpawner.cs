@@ -14,16 +14,13 @@ public sealed class CoinSpawner : Component
 		TimetillClone = 5f;
 		coinspawn();
 	}
-	
-	
 	async void coinspawn()
 	{
 		await Task.DelaySeconds(TimetillClone);
-		var cloneRC = redCoin.Clone(Transform.Position);
-		var cloneBC = blueCoin.Clone(Transform.Position);
-		var clonePC = pinkCoin.Clone(Transform.Position);
+		var cloneRC = redCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+		var cloneBC = blueCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+		var clonePC = pinkCoin.Clone(Transform.Position + (Vector3.Backward * 104));
 		cloneagain();
-
 	}
 	void cloneagain()
 	{

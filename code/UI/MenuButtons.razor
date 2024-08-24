@@ -9,9 +9,9 @@
         <div class="button" onclick=@StartdaGame1>
             Start Game
         </div>
-        <!-- <div class="button speedrun">
-            Classic Mode
-        </div> -->
+        <div class="button" onclick=@PanelToggle>
+            How To Play
+        </div>
         <div class="button sfx"onclick=@StartdaGame2>
             View Leaderboard
         </div>
@@ -20,15 +20,18 @@
 
 @code
 {
-    
- void StartdaGame1()
+    [Property] public GameObject howtopanel {get;set;}
+    void StartdaGame1()
     {  
         Scene.LoadFromFile("scenes/Stack.scene");
     }
-    
- void StartdaGame2()
+    void StartdaGame2()
     {
         Scene.LoadFromFile("scenes/leaderboard.scene");
     }
-
+    void PanelToggle()
+    {
+        howtopanel.Enabled = !howtopanel.Enabled;
+        GameObject.Enabled = !GameObject.Enabled; 
+    }
 }

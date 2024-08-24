@@ -1,0 +1,20 @@
+{
+  "publish": {
+    "Enabled": false,
+    "ProjectConfig": {
+      "Title": "alientalk",
+      "Type": "sound",
+      "Org": "local",
+      "Ident": "alientalk",
+      "Schema": 0,
+      "IncludeSourceFiles": true,
+      "Resources": null,
+      "PackageReferences": null,
+      "EditorReferences": null,
+      "IsWhitelistDisabled": false,
+      "Metadata": {
+        "SingleAssetSource": "sounds/alientalk.sound"
+      }
+    }
+  }
+}

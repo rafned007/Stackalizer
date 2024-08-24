@@ -1,0 +1,24 @@
+Howtoplay
+{
+	position: absolute;
+    top: 25px;
+    right: 25px;
+	left: 25px;
+	align-items: center;
+    flex-direction: column;
+    height: 95%;
+    background-color: #310034;
+    border-radius: 30px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 40%;
+    font-family: 'Gill Sans';
+
+	.title
+	{
+		pointer-events: all;
+		font-size: 25px;
+		font-family: Poppins;
+		color: #fff;
+	}
+}
