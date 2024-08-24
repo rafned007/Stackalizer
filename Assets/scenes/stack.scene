@@ -1537,16 +1537,22 @@
         {
           "__type": "ShooterControl",
           "__guid": "ec27866c-5e7c-4ecb-99db-ee7d26a109b4",
+          "badcoin": "sounds/badcoin.sound",
           "blorble": {
             "_type": "component",
             "component_id": "1e758c75-1e93-42f5-ac14-866ad251cdb6",
             "go": "7f2bcc32-dc84-4ab9-a319-8935a6f2b9e6",
             "component_type": "Blob1Controller"
           },
+          "coinsplosion": {
+            "_type": "gameobject",
+            "prefab": "prefabs/coinsplosion.prefab"
+          },
           "explosion": {
             "_type": "gameobject",
             "prefab": "prefabs/explosion.prefab"
           },
+          "goodcoin": "sounds/goodcoin.sound",
           "HitRadius": 5,
           "HitSound": "sounds/impact.sound",
           "HitSound1": "sounds/pop.sound",
@@ -1739,11 +1745,17 @@
           "__guid": "42343ee8-fdfb-4188-8be8-ea0964bdaf37",
           "MoveDistance": "0,1000,0",
           "ReverseAnimation": true,
-          "TimeToMove": 2
+          "TimeToMove": 3.7
         },
         {
           "__type": "CoinSpawner",
           "__guid": "9c3448d2-9579-485d-a121-a246515a8828",
+          "player": {
+            "_type": "component",
+            "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+            "component_type": "Mover"
+          },
           "blueCoin": {
             "_type": "gameobject",
             "prefab": "prefabs/bluecoinfab.prefab"

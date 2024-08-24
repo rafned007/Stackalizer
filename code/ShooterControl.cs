@@ -4,10 +4,13 @@ public sealed class ShooterControl : Component
 {
 	[Property] public SoundEvent ShotSound { get; set; }
 	[Property] public GameObject explosion { get; set; }
+	[Property] public GameObject coinsplosion { get; set; }
 	[Property] public Mover playerSpeed { get; set; }
 	[Property] public Blob1Controller blorble {get; set;}
 	[Property] public SoundEvent HitSound { get; set; }
 	[Property] public SoundEvent HitSound1 { get; set; }
+	[Property] public SoundEvent badcoin { get; set; }
+	[Property] public SoundEvent goodcoin { get; set; }
 	[Property] public float HitRadius { get; set; } = 5f;
 
 	protected override void OnStart()
@@ -41,23 +44,54 @@ public sealed class ShooterControl : Component
 		if ( tr.Hit && tr.GameObject.Tags.Has("shootable") )
 		{
 			var hitpos = tr.HitPosition;
-			var clone = explosion.Clone();
-			clone.Transform.Position = hitpos;
-			tr.GameObject.Destroy();
-			Sound.Play( HitSound, tr.HitPosition);
-			Sound.Play( HitSound1, tr.HitPosition);
+
 			if (blorble.upgrade && tr.GameObject.Tags.Has("blorble") )
 			{
+				var clone = explosion.Clone();
+				clone.Transform.Position = hitpos;
+				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= 2f;
+				Sound.Play( HitSound, tr.HitPosition);
+				Sound.Play( HitSound1, tr.HitPosition);
 			}
 			else if(!blorble.upgrade && tr.GameObject.Tags.Has("blorble"))
 			{
+				var clone = explosion.Clone();
+				clone.Transform.Position = hitpos;
+				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= .5f;
+				Sound.Play( HitSound, tr.HitPosition);
+				Sound.Play( HitSound1, tr.HitPosition);
 			}
-			else if (!tr.GameObject.Tags.Has("blorble"))
+			// else if (!tr.GameObject.Tags.Has("blorble"))
+			// {
+			// 	playerSpeed.TimetillMove = .02f;	
+			// }
+
+			if (tr.GameObject.Tags.Has("redcoin"))
 			{
-				playerSpeed.TimetillMove = .02f;	
-			} 
+				var clone = coinsplosion.Clone();
+				clone.Transform.Position = hitpos;
+				tr.GameObject.Destroy();
+				playerSpeed.TimetillMove *= .5f;
+				Sound.Play( badcoin);
+			}
+			else if (tr.GameObject.Tags.Has("bluecoin"))
+			{
+				var clone = coinsplosion.Clone();
+				clone.Transform.Position = hitpos;
+				tr.GameObject.Destroy();
+				playerSpeed.TimetillMove *= 1.2f;
+				Sound.Play( goodcoin);
+			}
+			else if (tr.GameObject.Tags.Has("pinkcoin"))
+			{
+				var clone = coinsplosion.Clone();
+				clone.Transform.Position = hitpos;
+				tr.GameObject.Destroy();
+				playerSpeed.TimetillMove *= 1.5f;
+				Sound.Play( goodcoin);
+			}
 		}
 	}
 }

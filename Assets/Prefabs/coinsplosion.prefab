@@ -1,0 +1,32 @@
+{
+  "RootObject": {
+    "__guid": "d3284ba7-b648-4ee3-939e-c39b7c4d7141",
+    "Flags": 0,
+    "Name": "coinsplosion",
+    "Tags": "particles",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "Sandbox.LegacyParticleSystem",
+        "__guid": "3d1fc46b-faa0-4e0a-9d93-b40e46ac3c26",
+        "ControlPoints": [],
+        "Looped": false,
+        "Particles": "particles/example/pull_towards_example/pull_towards_example.vpcf",
+        "PlaybackSpeed": 1
+      },
+      {
+        "__type": "Destroydelay",
+        "__guid": "f765c2a2-5914-4bc1-b393-17e951fa03c3",
+        "timeTillDestroy": 2
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

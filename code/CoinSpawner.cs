@@ -1,4 +1,5 @@
 using Sandbox;
+using System;
 
 public sealed class CoinSpawner : Component
 {
@@ -7,24 +8,43 @@ public sealed class CoinSpawner : Component
 	[Property] public GameObject blueCoin {get; set;}
 	[Property] public GameObject pinkCoin {get; set;}
 	[Property] public GameObject spawnLocation {get; set;}
+	[Property] public Mover player;
 
 
 	protected override void OnStart()
 	{
 		TimetillClone = 5f;
 		coinspawn();
+		Log.Info(player.turn);
 	}
+	
 	async void coinspawn()
 	{
-		await Task.DelaySeconds(TimetillClone);
-		var cloneRC = redCoin.Clone(Transform.Position + (Vector3.Backward * 104));
-		var cloneBC = blueCoin.Clone(Transform.Position + (Vector3.Backward * 104));
-		var clonePC = pinkCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+		Random rnd = new Random();
+		var rndCoin = rnd.Next(0, 3);
+		var rndTime = rnd.Next(1, 10);
+		await Task.DelaySeconds(rndTime);
+		
+		if (player.turn >= 1)
+		{
+			if (rndCoin == 0)
+			{
+				var cloneRC = redCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+			}
+			else if (rndCoin == 1)
+			{
+				var cloneBC = blueCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+			}
+			else
+			{
+				var clonePC = pinkCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+			}
+		}
 		cloneagain();
 	}
 	void cloneagain()
 	{
-		coinspawn();
+			coinspawn();
 	}
 
 	// protected override void OnStart()
