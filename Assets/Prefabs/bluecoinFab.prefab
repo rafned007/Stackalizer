@@ -4,7 +4,7 @@
     "Flags": 0,
     "Name": "bluecoinfab",
     "Scale": "0.5,0.5,1",
-    "Tags": "bluecoin",
+    "Tags": "bluecoin,shootable",
     "Enabled": true,
     "Components": [
       {
@@ -27,15 +27,39 @@
         "__guid": "c2f9718f-e829-4244-9d33-7156f2ca35b3",
         "Center": "0,0,0",
         "IsTrigger": false,
-        "Scale": "68.50003,73.09977,10.89998",
+        "Scale": "75.79993,67.99969,35.8",
         "Static": false
       },
       {
-        "__type": "SpriteController",
-        "__guid": "9b7424da-3981-4484-b5da-39783487e540",
-        "MoveDistance": "0,0,-600",
-        "ReverseAnimation": false,
-        "TimeToMove": 5.5
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "8170e3df-8e33-4d7f-8cca-ab9a67e85675",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": true,
+          "Y": true,
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Cointroller",
+        "__guid": "09d7a5a1-5958-49ab-9f35-fd3b1650f68d",
+        "rb": {
+          "_type": "component",
+          "component_id": "8170e3df-8e33-4d7f-8cca-ab9a67e85675",
+          "go": "8af962b9-30c8-4168-843e-26331e0154ff",
+          "component_type": "Rigidbody"
+        },
+        "speed": 500
       }
     ],
     "Children": [],

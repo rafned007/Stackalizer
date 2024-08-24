@@ -1,5 +1,5 @@
 {
-  "__guid": "9ed211ad-39ce-4210-aaea-7c661f44af93",
+  "__guid": "0f4442aa-e589-4e96-9cac-ab13e10fc584",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -1706,7 +1706,7 @@
       "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
       "Flags": 0,
       "Name": "blimbus",
-      "Position": "90.84976,-274.911,426.7997",
+      "Position": "288,-416,1696",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
       "Enabled": true,
@@ -2120,16 +2120,9 @@
       ]
     },
     {
-      "__guid": "02dd1879-713f-451d-b852-386cbfeb866b",
-      "Flags": 0,
-      "Name": "",
-      "Position": "-4118.297,130.0981,901.2789",
-      "Enabled": true
-    },
-    {
       "__guid": "99fe3ea2-080e-4d90-997f-e1723774e155",
       "Flags": 0,
-      "Name": "CoinSpawner",
+      "Name": "CoinSpawna",
       "Position": "-802.3268,77.41991,152.3103",
       "Enabled": true,
       "Components": [

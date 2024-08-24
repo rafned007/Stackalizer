@@ -4,7 +4,7 @@
     "Flags": 0,
     "Name": "pinkcoinfab",
     "Scale": "0.5,0.5,1",
-    "Tags": "pinkcoin",
+    "Tags": "pinkcoin,shootable",
     "Enabled": true,
     "Components": [
       {
@@ -27,15 +27,39 @@
         "__guid": "40f65b1d-69c9-4dac-ab63-01caea3e593f",
         "Center": "0,0,0",
         "IsTrigger": false,
-        "Scale": "68.50003,73.09977,10.89998",
+        "Scale": "75.79993,67.99969,35.8",
         "Static": false
       },
       {
-        "__type": "SpriteController",
-        "__guid": "130a00af-462a-47e2-936c-9f8520e54019",
-        "MoveDistance": "0,0,-600",
-        "ReverseAnimation": false,
-        "TimeToMove": 2
+        "__type": "Sandbox.Rigidbody",
+        "__guid": "8f98abc6-4478-477b-8a97-c1a92a4e62e8",
+        "AngularDamping": 0,
+        "Gravity": false,
+        "LinearDamping": 0,
+        "Locking": {
+          "X": true,
+          "Y": true,
+          "Pitch": true,
+          "Yaw": true,
+          "Roll": true
+        },
+        "MassCenterOverride": "0,0,0",
+        "MassOverride": 0,
+        "MotionEnabled": true,
+        "OverrideMassCenter": false,
+        "RigidbodyFlags": 0,
+        "StartAsleep": false
+      },
+      {
+        "__type": "Cointroller",
+        "__guid": "5eaed8fc-7790-452f-8924-c350dfa127a4",
+        "rb": {
+          "_type": "component",
+          "component_id": "8f98abc6-4478-477b-8a97-c1a92a4e62e8",
+          "go": "8a3bb92e-8009-4f7e-8f47-5fea2229b1e1",
+          "component_type": "Rigidbody"
+        },
+        "speed": 750
       }
     ],
     "Children": [],
