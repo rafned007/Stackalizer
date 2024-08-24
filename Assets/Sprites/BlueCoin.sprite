@@ -1,0 +1,78 @@
+{
+  "Animations": [
+    {
+      "FrameRate": 8,
+      "Origin": "0.5,0.5",
+      "Looping": true,
+      "Name": "animation_01",
+      "Frames": [
+        {
+          "FilePath": "sprites/bluecoin.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Size": "120,120"
+          }
+        },
+        {
+          "FilePath": "sprites/bluecoin.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "120,0",
+            "Size": "120,120"
+          }
+        },
+        {
+          "FilePath": "sprites/bluecoin.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "240,0",
+            "Size": "120,120"
+          }
+        },
+        {
+          "FilePath": "sprites/bluecoin.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "360,0",
+            "Size": "120,120"
+          }
+        },
+        {
+          "FilePath": "sprites/bluecoin.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "480,0",
+            "Size": "120,120"
+          }
+        },
+        {
+          "FilePath": "sprites/bluecoin.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "600,0",
+            "Size": "120,120"
+          }
+        },
+        {
+          "FilePath": "sprites/bluecoin.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "720,0",
+            "Size": "120,120"
+          }
+        },
+        {
+          "FilePath": "sprites/bluecoin.png",
+          "Events": [],
+          "SpriteSheetRect": {
+            "Position": "840,0",
+            "Size": "120,120"
+          }
+        }
+      ],
+      "Attachments": []
+    }
+  ],
+  "__references": [],
+  "__version": 0
+}

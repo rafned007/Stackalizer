@@ -11,7 +11,7 @@ LeaderBoard {
     font-weight: bold;
     font-size: 40%;
     font-family: 'Gill Sans';
-    
+
 
     #entryList {
         text-stroke: 6px rgb(255, 255, 255);
@@ -19,12 +19,12 @@ LeaderBoard {
         align-items: center;
         padding: 10px;
         gap: 15px;
-        
+
 
         .entry {
             font-size: 25%;
             font-family: Poppins;
-            text-stroke: 6px black;  
+            text-stroke: 6px black;
         }
 
         .rank {

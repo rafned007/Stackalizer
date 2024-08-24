@@ -1,0 +1,50 @@
+{
+  "RootObject": {
+    "__guid": "8af962b9-30c8-4168-843e-26331e0154ff",
+    "Flags": 0,
+    "Name": "bluecoinfab",
+    "Scale": "0.5,0.5,1",
+    "Tags": "bluecoin",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "SpriteTools.SpriteComponent",
+        "__guid": "865fbd0f-624d-4842-b03a-536c387be49a",
+        "__version": 1,
+        "BroadcastEvents": {},
+        "CastShadows": "On",
+        "CreateAttachPoints": false,
+        "FlashTint": "1,1,1,0",
+        "PlaybackSpeed": 1,
+        "Sprite": "sprites/bluecoin.sprite",
+        "SpriteFlags": "None",
+        "StartingAnimationName": "animation_01",
+        "Tint": "1,1,1,1",
+        "UpDirection": "ZNegative"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "c2f9718f-e829-4244-9d33-7156f2ca35b3",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "68.50003,73.09977,10.89998",
+        "Static": false
+      },
+      {
+        "__type": "SpriteController",
+        "__guid": "9b7424da-3981-4484-b5da-39783487e540",
+        "MoveDistance": "0,0,-600",
+        "ReverseAnimation": false,
+        "TimeToMove": 5.5
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

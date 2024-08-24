@@ -1,0 +1,50 @@
+{
+  "RootObject": {
+    "__guid": "8a3bb92e-8009-4f7e-8f47-5fea2229b1e1",
+    "Flags": 0,
+    "Name": "pinkcoinfab",
+    "Scale": "0.5,0.5,1",
+    "Tags": "pinkcoin",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "SpriteTools.SpriteComponent",
+        "__guid": "a80ebbb9-1543-4d33-961d-01b91ee97802",
+        "__version": 1,
+        "BroadcastEvents": {},
+        "CastShadows": "On",
+        "CreateAttachPoints": false,
+        "FlashTint": "1,1,1,0",
+        "PlaybackSpeed": 1,
+        "Sprite": "sprites/pinkcoin.sprite",
+        "SpriteFlags": "None",
+        "StartingAnimationName": "animation_01",
+        "Tint": "1,1,1,1",
+        "UpDirection": "ZNegative"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "40f65b1d-69c9-4dac-ab63-01caea3e593f",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "68.50003,73.09977,10.89998",
+        "Static": false
+      },
+      {
+        "__type": "SpriteController",
+        "__guid": "130a00af-462a-47e2-936c-9f8520e54019",
+        "MoveDistance": "0,0,-600",
+        "ReverseAnimation": false,
+        "TimeToMove": 2
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

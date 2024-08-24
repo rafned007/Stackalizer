@@ -1706,7 +1706,7 @@
       "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
       "Flags": 0,
       "Name": "blimbus",
-      "Position": "90.84976,-475.4385,973.8323",
+      "Position": "90.84976,-274.911,426.7997",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
       "Enabled": true,
@@ -1737,38 +1737,33 @@
         {
           "__type": "SpriteController",
           "__guid": "42343ee8-fdfb-4188-8be8-ea0964bdaf37",
-          "MoveDistance": "0,500,0",
+          "MoveDistance": "0,1000,0",
           "ReverseAnimation": true,
           "TimeToMove": 1
+        },
+        {
+          "__type": "CoinSpawner",
+          "__guid": "9c3448d2-9579-485d-a121-a246515a8828",
+          "blueCoin": {
+            "_type": "gameobject",
+            "prefab": "prefabs/bluecoinfab.prefab"
+          },
+          "pinkCoin": {
+            "_type": "gameobject",
+            "prefab": "prefabs/pinkcoinfab.prefab"
+          },
+          "redCoin": {
+            "_type": "gameobject",
+            "prefab": "prefabs/redcoinfab.prefab"
+          },
+          "spawnLocation": {
+            "_type": "gameobject",
+            "go": "99fe3ea2-080e-4d90-997f-e1723774e155"
+          },
+          "TimetillClone": 5
         }
       ],
       "Children": [
-        {
-          "__guid": "84ca212e-704a-4331-8e8c-4519c0c49588",
-          "Flags": 0,
-          "Name": "World",
-          "Position": "5.351166,63.99972,10.83205",
-          "Rotation": "0.5000001,0.4999999,0.5,-0.5",
-          "Tags": "worldpanel",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "c2c6001d-d509-474f-8180-7a38dc1e8292",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "4500,800",
-              "RenderScale": 9,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "SpriteWIP",
-              "__guid": "4b8eb7da-ff4f-486d-acaa-31998e5e5a2b",
-              "MyStringValue": "DON\u0027T SHOOT ME!!"
-            }
-          ]
-        },
         {
           "__guid": "5893a9a5-0e65-4fec-b3bc-f11a3282e1aa",
           "Flags": 0,
@@ -1959,32 +1954,6 @@
       ],
       "Children": [
         {
-          "__guid": "994a879e-2b79-467b-b1cb-6643d27c03d4",
-          "Flags": 0,
-          "Name": "World",
-          "Position": "5.351166,63.99972,10.83205",
-          "Rotation": "0.5000001,0.4999999,0.5,-0.5",
-          "Tags": "worldpanel",
-          "Enabled": true,
-          "Components": [
-            {
-              "__type": "Sandbox.WorldPanel",
-              "__guid": "59a08b95-62dd-430d-8fb4-6b7e98d6d569",
-              "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
-              "LookAtCamera": false,
-              "PanelSize": "4500,1500",
-              "RenderScale": 9,
-              "VerticalAlign": "Center"
-            },
-            {
-              "__type": "SpriteWIP",
-              "__guid": "cd44c896-8f59-495b-a78b-6f819a25c048",
-              "MyStringValue": "BAD LUCK! HEHEHEHE"
-            }
-          ]
-        },
-        {
           "__guid": "11b26dd5-b489-4a55-ad1a-64042cf2de2e",
           "Flags": 0,
           "Name": "alientalk",
@@ -2147,6 +2116,30 @@
             "Id": "00000000-0000-0000-0000-000000000000"
           },
           "Volume": 0.25
+        }
+      ]
+    },
+    {
+      "__guid": "02dd1879-713f-451d-b852-386cbfeb866b",
+      "Flags": 0,
+      "Name": "",
+      "Position": "-4118.297,130.0981,901.2789",
+      "Enabled": true
+    },
+    {
+      "__guid": "99fe3ea2-080e-4d90-997f-e1723774e155",
+      "Flags": 0,
+      "Name": "CoinSpawner",
+      "Position": "-802.3268,77.41991,152.3103",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "PositionMatch",
+          "__guid": "0dd3e3c4-f7d7-4467-85ca-f9a534ae919c",
+          "blob1": {
+            "_type": "gameobject",
+            "go": "10068d60-29e2-4872-a3ac-41a38124c735"
+          }
         }
       ]
     }

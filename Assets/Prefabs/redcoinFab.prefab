@@ -1,0 +1,50 @@
+{
+  "RootObject": {
+    "__guid": "f21f8904-10b7-47bd-a1bf-6edc3623133d",
+    "Flags": 0,
+    "Name": "redcoinfab",
+    "Scale": "0.5,0.5,1",
+    "Tags": "redcoin",
+    "Enabled": true,
+    "Components": [
+      {
+        "__type": "SpriteTools.SpriteComponent",
+        "__guid": "2e15b5bf-847b-4c72-84d3-725f25684606",
+        "__version": 1,
+        "BroadcastEvents": {},
+        "CastShadows": "On",
+        "CreateAttachPoints": false,
+        "FlashTint": "1,1,1,0",
+        "PlaybackSpeed": 1,
+        "Sprite": "sprites/redcoin.sprite",
+        "SpriteFlags": "None",
+        "StartingAnimationName": "animation_01",
+        "Tint": "1,1,1,1",
+        "UpDirection": "ZNegative"
+      },
+      {
+        "__type": "Sandbox.BoxCollider",
+        "__guid": "d917ea83-4e38-403e-8110-07c9d46bad5a",
+        "Center": "0,0,0",
+        "IsTrigger": false,
+        "Scale": "68.50003,73.09977,10.89998",
+        "Static": false
+      },
+      {
+        "__type": "SpriteController",
+        "__guid": "1a645fa3-98e7-4dc7-a742-0c72fcaf8a04",
+        "MoveDistance": "0,0,-600",
+        "ReverseAnimation": false,
+        "TimeToMove": 10
+      }
+    ],
+    "Children": [],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}
