@@ -59,12 +59,12 @@
           "go": "f21f8904-10b7-47bd-a1bf-6edc3623133d",
           "component_type": "Rigidbody"
         },
-        "speed": 300
+        "speed": 450
       },
       {
         "__type": "Destroydelay",
         "__guid": "2128c4b4-5818-429e-b5a9-d09ce7fcb54e",
-        "timeTillDestroy": 15
+        "timeTillDestroy": 20
       }
     ],
     "Children": [],

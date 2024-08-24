@@ -25,7 +25,7 @@ public sealed class CoinSpawner : Component
 		var rndTime = rnd.Next(1, 10);
 		await Task.DelaySeconds(rndTime);
 		
-		if (player.turn >= 1)
+		if (player.turn >= 8)
 		{
 			if (rndCoin == 0)
 			{

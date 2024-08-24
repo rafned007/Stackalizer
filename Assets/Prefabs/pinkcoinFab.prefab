@@ -59,7 +59,7 @@
           "go": "8a3bb92e-8009-4f7e-8f47-5fea2229b1e1",
           "component_type": "Rigidbody"
         },
-        "speed": 750
+        "speed": 700
       },
       {
         "__type": "Destroydelay",

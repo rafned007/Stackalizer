@@ -1,24 +1,38 @@
-Howtoplay
-{
-	position: absolute;
+Howtoplay {
+    position: absolute;
     top: 25px;
     right: 25px;
-	left: 25px;
-	align-items: center;
+    left: 25px;
+    align-items: center;
     flex-direction: column;
     height: 95%;
-    background-color: #310034;
+    background: 100%, 100%;
+    background-image: url("UI\Images\HowTo.png");
     border-radius: 30px;
     padding: 10px;
     font-weight: bold;
     font-size: 40%;
     font-family: 'Gill Sans';
 
-	.title
-	{
-		pointer-events: all;
-		font-size: 25px;
-		font-family: Poppins;
-		color: #fff;
-	}
+    .title {
+        pointer-events: all;
+        font-size: 48px;
+        font-family: Poppins;
+        padding: 8px;
+        border-radius: 4px;
+        color: #fff;
+
+        &:hover {
+            sound-in: ui.button.over;
+            background-color: rgb(207, 0, 214);
+            transform: scale(1.1);
+            cursor: pointer;
+            color: rgb(0, 0, 0);
+            text-stroke: 6px rgb(255, 255, 255);
+        }
+
+        &:active {
+            sound-in: ui.button.press;
+        }
+    }
 }
