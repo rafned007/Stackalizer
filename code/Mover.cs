@@ -1,4 +1,5 @@
 using Sandbox;
+using System;
 
 public sealed class Mover : Component
 {    
@@ -9,6 +10,7 @@ public sealed class Mover : Component
 	[Property] public GameObject Base { get; set;}
 	[Property] RayDetect player { get; set; }
 	public int turn = 1;
+	public float speed = 100;
     
 	public TimeUntil doMove;
 	public Vector3 direction;
@@ -28,6 +30,7 @@ public sealed class Mover : Component
 			Move();
 		}
 		camControl();
+		speed = (float)Math.Round(120 - (TimetillMove * 100));
 		
 	}
 
