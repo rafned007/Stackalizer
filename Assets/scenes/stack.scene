@@ -24,7 +24,7 @@
       "__guid": "3ee1c9f4-07be-4e0b-8b23-67bee2d8ec8a",
       "Flags": 0,
       "Name": "Camera",
-      "Position": "-128,0,178.0802",
+      "Position": "-188.4588,0,178.0802",
       "Enabled": true,
       "Components": [
         {
@@ -1668,7 +1668,7 @@
       "__guid": "10068d60-29e2-4872-a3ac-41a38124c735",
       "Flags": 0,
       "Name": "blimbus",
-      "Position": "288,-512,4881.305",
+      "Position": "24.75086,-392.9147,4881.305",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable",
       "Enabled": true,
@@ -1699,7 +1699,7 @@
         {
           "__type": "SpriteController",
           "__guid": "42343ee8-fdfb-4188-8be8-ea0964bdaf37",
-          "MoveDistance": "0,1000,0",
+          "MoveDistance": "0,800,0",
           "ReverseAnimation": true,
           "TimeToMove": 3.7
         },
@@ -1876,7 +1876,7 @@
       "__guid": "45b07537-e037-4783-bfd7-d33b09d40018",
       "Flags": 0,
       "Name": "Smokie (1)",
-      "Position": "252.7397,-366.2323,5208.112",
+      "Position": "252.7397,-327.7957,5208.112",
       "Rotation": "-0.5,-0.5,-0.5,-0.5",
       "Enabled": true,
       "Components": [
@@ -1917,8 +1917,8 @@
           "__guid": "049df286-bf63-47a8-8a9f-d12a0913a6f8",
           "Flags": 0,
           "Name": "World",
-          "Position": "-30.51501,63.99973,10.83205",
-          "Rotation": "0.5000001,0.4999999,0.5,-0.5",
+          "Position": "-30.51501,63.99951,10.83205",
+          "Rotation": "0.5,-0.5,-0.4999999,-0.5000001",
           "Tags": "worldpanel",
           "Enabled": true,
           "Components": [

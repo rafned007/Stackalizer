@@ -89,7 +89,7 @@ public sealed class Mover : Component
 	void camControl()
 	{	
 		var start = Camera.Transform.Position;
-		var end = Vector3.Up *(52*turn)+ (Vector3.Backward * 104);
+		var end = Vector3.Up *(52*turn)+ (Vector3.Backward * 208);
 		if (turn % 5 == 0)
 		{
 			Camera.Transform.Position = start.LerpTo(end, doMove.Fraction/10);	

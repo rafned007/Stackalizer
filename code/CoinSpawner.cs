@@ -15,7 +15,6 @@ public sealed class CoinSpawner : Component
 	{
 		TimetillClone = 5f;
 		coinspawn();
-		Log.Info(player.turn);
 	}
 	
 	async void coinspawn()
@@ -29,15 +28,15 @@ public sealed class CoinSpawner : Component
 		{
 			if (rndCoin == 0)
 			{
-				var cloneRC = redCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+				var cloneRC = redCoin.Clone(Transform.Position + (Vector3.Forward * -104));
 			}
 			else if (rndCoin == 1)
 			{
-				var cloneBC = blueCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+				var cloneBC = blueCoin.Clone(Transform.Position + (Vector3.Forward * -104));
 			}
 			else
 			{
-				var clonePC = pinkCoin.Clone(Transform.Position + (Vector3.Backward * 104));
+				var clonePC = pinkCoin.Clone(Transform.Position + (Vector3.Forward * -104));
 			}
 		}
 		cloneagain();

@@ -24,10 +24,10 @@
       },
       {
         "__type": "Sandbox.BoxCollider",
-        "__guid": "d917ea83-4e38-403e-8110-07c9d46bad5a",
+        "__guid": "c2f9718f-e829-4244-9d33-7156f2ca35b3",
         "Center": "0,0,0",
         "IsTrigger": false,
-        "Scale": "75.79993,67.99969,35.8",
+        "Scale": "3.799987,67.99969,35.8",
         "Static": false
       },
       {

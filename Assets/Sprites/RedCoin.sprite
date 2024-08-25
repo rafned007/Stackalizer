@@ -7,14 +7,14 @@
       "Name": "animation_01",
       "Frames": [
         {
-          "FilePath": "sprites/redcoin.png",
+          "FilePath": "images/redcoin.png",
           "Events": [],
           "SpriteSheetRect": {
             "Size": "120,120"
           }
         },
         {
-          "FilePath": "sprites/redcoin.png",
+          "FilePath": "images/redcoin.png",
           "Events": [],
           "SpriteSheetRect": {
             "Position": "120,0",
@@ -22,7 +22,7 @@
           }
         },
         {
-          "FilePath": "sprites/redcoin.png",
+          "FilePath": "images/redcoin.png",
           "Events": [],
           "SpriteSheetRect": {
             "Position": "240,0",
@@ -30,7 +30,7 @@
           }
         },
         {
-          "FilePath": "sprites/redcoin.png",
+          "FilePath": "images/redcoin.png",
           "Events": [],
           "SpriteSheetRect": {
             "Position": "360,0",
@@ -38,7 +38,7 @@
           }
         },
         {
-          "FilePath": "sprites/redcoin.png",
+          "FilePath": "images/redcoin.png",
           "Events": [],
           "SpriteSheetRect": {
             "Position": "480,0",
@@ -46,7 +46,7 @@
           }
         },
         {
-          "FilePath": "sprites/redcoin.png",
+          "FilePath": "images/redcoin.png",
           "Events": [],
           "SpriteSheetRect": {
             "Position": "600,0",
@@ -54,7 +54,7 @@
           }
         },
         {
-          "FilePath": "sprites/redcoin.png",
+          "FilePath": "images/redcoin.png",
           "Events": [],
           "SpriteSheetRect": {
             "Position": "720,0",
@@ -62,7 +62,7 @@
           }
         },
         {
-          "FilePath": "sprites/redcoin.png",
+          "FilePath": "images/redcoin.png",
           "Events": [],
           "SpriteSheetRect": {
             "Position": "840,0",
