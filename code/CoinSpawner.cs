@@ -7,7 +7,6 @@ public sealed class CoinSpawner : Component
 	[Property] public GameObject redCoin {get; set;}
 	[Property] public GameObject blueCoin {get; set;}
 	[Property] public GameObject pinkCoin {get; set;}
-	[Property] public GameObject spawnLocation {get; set;}
 	[Property] public Mover player;
 
 

@@ -1,6 +1,7 @@
 @using Sandbox;
 @using Sandbox.UI;
 @inherits PanelComponent
+@using System;
 
 <root>
 
@@ -9,7 +10,7 @@
     </div>
 
     <div class="vitals">@("Speed: ")
-        <p class="spacing"> @Player.speed@("%") </p>
+        <p class="spacing"> @speed@("%") </p>
     </div>
 
 </root>
@@ -17,9 +18,15 @@
 @code
 {
 	[Property] Mover Player {get; set;}
+    public float speed {get; set;}
 
+    protected override void OnUpdate()
+	{
+		base.OnUpdate(); 
+        speed = (float)Math.Round((1/Player.TimetillMove) * 20);
+	}
 	protected override int BuildHash()
     {
-        return System.HashCode.Combine( Player.turn );
+        return System.HashCode.Combine( Player.turn , speed, Player.TimetillMove );
     }
 }

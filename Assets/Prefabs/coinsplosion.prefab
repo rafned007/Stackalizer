@@ -11,7 +11,7 @@
         "__guid": "3d1fc46b-faa0-4e0a-9d93-b40e46ac3c26",
         "ControlPoints": [],
         "Looped": false,
-        "Particles": "particles/example/pull_towards_example/pull_towards_example.vpcf",
+        "Particles": "particles/coinsplosion.vpcf",
         "PlaybackSpeed": 1
       },
       {

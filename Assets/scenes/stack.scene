@@ -1,5 +1,5 @@
 {
-  "__guid": "0f4442aa-e589-4e96-9cac-ab13e10fc584",
+  "__guid": "c5aa96b5-ee06-4d64-bb36-cc53d72ccd56",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -1724,10 +1724,6 @@
             "_type": "gameobject",
             "prefab": "prefabs/redcoinfab.prefab"
           },
-          "spawnLocation": {
-            "_type": "gameobject",
-            "go": "99fe3ea2-080e-4d90-997f-e1723774e155"
-          },
           "TimetillClone": 5
         }
       ],
@@ -1743,6 +1739,111 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "61504eff-939a-440d-b4e8-4c34447f2026",
+              "DistanceAttenuation": true,
+              "DistanceAttenuationOverride": true,
+              "Force2d": false,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": true,
+              "OcclusionOverride": true,
+              "OcclusionRadius": 3.8,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": false,
+              "SoundEvent": "sounds/ufosound.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "TargetMixer": {
+                "Name": "unknown",
+                "Id": "00000000-0000-0000-0000-000000000000"
+              },
+              "Volume": 1
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "__guid": "0b5efb75-65f0-4707-99f1-d81643ac7a65",
+      "Flags": 0,
+      "Name": "blimbus (1)",
+      "Position": "1184,-32,192",
+      "Rotation": "0.5,-0.5,-0.5,0.5",
+      "Scale": "2,2,2",
+      "Tags": "shootable",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpriteTools.SpriteComponent",
+          "__guid": "bb03a2fc-70a9-41f3-b775-4942461c2715",
+          "__version": 1,
+          "BroadcastEvents": {},
+          "CastShadows": "On",
+          "CreateAttachPoints": false,
+          "FlashTint": "1,1,1,0",
+          "PlaybackSpeed": 1,
+          "Sprite": "sprites/blob1.sprite",
+          "SpriteFlags": "None",
+          "StartingAnimationName": "animation_01",
+          "Tint": "1,1,1,1",
+          "UpDirection": "YPositive"
+        },
+        {
+          "__type": "Sandbox.BoxCollider",
+          "__guid": "06722446-baf4-4489-ad42-dc4230823013",
+          "__enabled": false,
+          "Center": "0,0,0",
+          "IsTrigger": false,
+          "Scale": "89.69985,58.29998,5.700144",
+          "Static": false
+        },
+        {
+          "__type": "SpriteController",
+          "__guid": "eaf6bbb3-c43e-49d6-9f46-7f1dc157817a",
+          "__enabled": false,
+          "MoveDistance": "0,800,0",
+          "ReverseAnimation": true,
+          "TimeToMove": 3.7
+        },
+        {
+          "__type": "CoinSpawner",
+          "__guid": "e11fdc60-7252-4955-b5fa-a2762272e6e1",
+          "__enabled": false,
+          "player": {
+            "_type": "component",
+            "component_id": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
+            "go": "073e13c2-f47c-42e6-8fce-fa497c72e671",
+            "component_type": "Mover"
+          },
+          "blueCoin": {
+            "_type": "gameobject",
+            "prefab": "prefabs/bluecoinfab.prefab"
+          },
+          "pinkCoin": {
+            "_type": "gameobject",
+            "prefab": "prefabs/pinkcoinfab.prefab"
+          },
+          "redCoin": {
+            "_type": "gameobject",
+            "prefab": "prefabs/redcoinfab.prefab"
+          },
+          "TimetillClone": 5
+        }
+      ],
+      "Children": [
+        {
+          "__guid": "6815b889-139a-423e-8454-1de2599f173e",
+          "Flags": 0,
+          "Name": "ufosound",
+          "Position": "-5.286041,4.903381,384",
+          "Rotation": "0,0,0.7071068,-0.7071068",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundPointComponent",
+              "__guid": "9cac6239-1ab9-46a5-8694-23a3c99b83a6",
               "DistanceAttenuation": true,
               "DistanceAttenuationOverride": true,
               "Force2d": false,
@@ -2503,19 +2604,23 @@
       ]
     },
     {
-      "__guid": "99fe3ea2-080e-4d90-997f-e1723774e155",
+      "__guid": "1bc26d73-a0b8-42df-8f74-d5edcd760514",
       "Flags": 0,
-      "Name": "CoinSpawna",
-      "Position": "-802.3268,77.41991,152.3103",
+      "Name": "Cubemap Fog",
+      "Position": "-352,-1.361374,198.0205",
       "Enabled": true,
       "Components": [
         {
-          "__type": "PositionMatch",
-          "__guid": "0dd3e3c4-f7d7-4467-85ca-f9a534ae919c",
-          "blob1": {
-            "_type": "gameobject",
-            "go": "10068d60-29e2-4872-a3ac-41a38124c735"
-          }
+          "__type": "Sandbox.CubemapFog",
+          "__guid": "e5a6453b-a8ce-4850-81fe-c09d1edb2c3b",
+          "Blur": 0,
+          "EndDistance": 10000,
+          "FalloffExponent": 0.5,
+          "HeightExponent": 2,
+          "HeightStart": 2000,
+          "HeightWidth": 0,
+          "StartDistance": 1000,
+          "Tint": "1,1,1,1"
         }
       ]
     }
