@@ -99,6 +99,7 @@
         {
           "__type": "Sandbox.Pixelate",
           "__guid": "5ae256b4-8198-46bc-9488-3aeda295b5c0",
+          "__enabled": false,
           "Scale": 0.001
         },
         {
@@ -113,8 +114,8 @@
         {
           "__type": "Camshake",
           "__guid": "2e2db312-6028-4a3c-857b-f42a8fd1d2ec",
-          "intensity": 2,
-          "speed": 10
+          "intensity": 0.2,
+          "speed": 20
         }
       ],
       "Children": [
@@ -123,7 +124,6 @@
           "Flags": 0,
           "Name": "BigRain",
           "Position": "-62.5016,442.5976,207.4125",
-          "Enabled": true,
           "Children": [
             {
               "__guid": "23c22d0b-f62e-42e3-89d8-1c36861848a4",
@@ -1428,20 +1428,10 @@
         {
           "__guid": "190907fa-58a5-494f-b626-1138e0e85a02",
           "Flags": 0,
-          "Name": "Base1",
-          "Position": "0,52,0",
-          "Tags": "particles",
+          "Name": "B1",
+          "Position": "32,52,0",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "bd4821ec-766b-44cb-9590-b142a5c3830a",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.34902,0.94902,1"
-            },
             {
               "__type": "SpriteTools.SpriteComponent",
               "__guid": "6a1d0bec-ee3e-4f21-9e11-e9e6e390735c",
@@ -1462,19 +1452,10 @@
         {
           "__guid": "cc2e29f3-dc39-4b12-9573-58bbfb0044df",
           "Flags": 0,
-          "Name": "Base2",
-          "Position": "0,0,0",
+          "Name": "B2",
+          "Position": "32,0,0",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "9626d753-e9eb-4bbc-8db7-576aeac0ff16",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.34902,0.94902,1"
-            },
             {
               "__type": "SpriteTools.SpriteComponent",
               "__guid": "72b37c87-a5a4-46f3-9014-06331e55eb7e",
@@ -1495,19 +1476,10 @@
         {
           "__guid": "48462372-1dd3-472a-b425-e755dac2c103",
           "Flags": 0,
-          "Name": "Base3",
-          "Position": "0,-52,0",
+          "Name": "B3",
+          "Position": "32,-52,0",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "346dacf8-5f8c-4dd0-b478-53df300f550a",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.34902,0.94902,1"
-            },
             {
               "__type": "SpriteTools.SpriteComponent",
               "__guid": "a964bcf6-175a-48aa-93f9-d59c005e1116",
@@ -2165,7 +2137,7 @@
       "__guid": "0262799a-ae0f-4da7-ba2c-f3712f0d3a49",
       "Flags": 0,
       "Name": "Blorble (3)",
-      "Position": "90.84976,386.3126,5031.18",
+      "Position": "90.84976,386.3126,5076.805",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable,blorble",
       "Enabled": true,
@@ -2251,7 +2223,7 @@
       "__guid": "7a07377a-c976-43c7-9feb-4241f0835525",
       "Flags": 0,
       "Name": "Blorble (2)",
-      "Position": "90.84976,-373.5386,3773.385",
+      "Position": "90.84976,-373.5386,3828.474",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable,blorble",
       "Enabled": true,
@@ -2337,7 +2309,7 @@
       "__guid": "9fba0be8-a49a-489d-bea1-bbaac2bbfb4b",
       "Flags": 0,
       "Name": "Blorble (1)",
-      "Position": "90.84976,335.9732,2720.411",
+      "Position": "90.84976,335.9732,2773.173",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable,blorble",
       "Enabled": true,
@@ -2489,10 +2461,10 @@
           "SoundOverride": true,
           "StopOnNew": false,
           "TargetMixer": {
-            "Name": "unknown",
-            "Id": "00000000-0000-0000-0000-000000000000"
+            "Name": "master",
+            "Id": "ca63bfd2-6f9f-444c-ba6f-8b0194683730"
           },
-          "Volume": 0.1
+          "Volume": 0.15
         }
       ]
     },
@@ -2518,7 +2490,7 @@
       "__guid": "aaef9011-2a3b-472e-ba66-3294db564f07",
       "Flags": 0,
       "Name": "Cube (3)",
-      "Position": "96,402.951,4989.57",
+      "Position": "96,402.951,5035.195",
       "Scale": "1,1.8,0.09999993",
       "Enabled": true,
       "Components": [
@@ -2536,7 +2508,7 @@
       "__guid": "60f5ffa3-f56c-4afc-8f22-bebd3b010b52",
       "Flags": 0,
       "Name": "Cube (2)",
-      "Position": "96,-356.9001,3732.436",
+      "Position": "96,-356.9001,3787.525",
       "Scale": "1,1.8,0.09999993",
       "Enabled": true,
       "Components": [
@@ -2554,7 +2526,7 @@
       "__guid": "1690a7fa-df3d-424d-8b9f-a2aa2466540a",
       "Flags": 0,
       "Name": "Cube (1)",
-      "Position": "96,352.6117,2678.065",
+      "Position": "96,352.6117,2730.827",
       "Scale": "1,1.8,0.09999993",
       "Enabled": true,
       "Components": [
@@ -2595,8 +2567,8 @@
           "SoundOverride": true,
           "StopOnNew": false,
           "TargetMixer": {
-            "Name": "unknown",
-            "Id": "00000000-0000-0000-0000-000000000000"
+            "Name": "master",
+            "Id": "ca63bfd2-6f9f-444c-ba6f-8b0194683730"
           },
           "Volume": 0.25
         }
@@ -2624,33 +2596,10 @@
       ]
     },
     {
-      "__guid": "20dcba9a-c298-4901-a9eb-71d71d8d6f54",
-      "Flags": 0,
-      "Name": "Object",
-      "Position": "-402.1607,-256.6242,194.6705",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "SpriteTools.SpriteComponent",
-          "__guid": "fa78f513-4125-46f7-84ae-1c9ff8a14928",
-          "__version": 1,
-          "BroadcastEvents": {},
-          "CastShadows": "On",
-          "CreateAttachPoints": false,
-          "FlashTint": "1,1,1,0",
-          "PlaybackSpeed": 1,
-          "SpriteFlags": "None",
-          "StartingAnimationName": "",
-          "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
-        }
-      ]
-    },
-    {
       "__guid": "5a9a92ed-a884-44cb-aa65-a1769175edb0",
       "Flags": 0,
       "Name": "city",
-      "Position": "3725.082,2.986548,718.9022",
+      "Position": "3808,2.986548,718.9022",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "18,18,1",
       "Enabled": true,
