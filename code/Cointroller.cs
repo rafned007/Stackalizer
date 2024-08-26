@@ -1,4 +1,5 @@
 using Sandbox;
+using System;
 
 public sealed class Cointroller : Component
 {
@@ -7,6 +8,8 @@ public sealed class Cointroller : Component
 
 	protected override void OnStart()
 	{
-		rb.Velocity = Vector3.Down * speed;
+		Random rnd = new Random();
+        var rndSpeed = rnd.Next(500, 700);
+		rb.Velocity = Vector3.Down * rndSpeed;
 	}
 }
