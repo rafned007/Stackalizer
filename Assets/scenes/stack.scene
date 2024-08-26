@@ -2623,6 +2623,55 @@
           "Tint": "1,1,1,1"
         }
       ]
+    },
+    {
+      "__guid": "20dcba9a-c298-4901-a9eb-71d71d8d6f54",
+      "Flags": 0,
+      "Name": "Object",
+      "Position": "-402.1607,-256.6242,194.6705",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpriteTools.SpriteComponent",
+          "__guid": "fa78f513-4125-46f7-84ae-1c9ff8a14928",
+          "__version": 1,
+          "BroadcastEvents": {},
+          "CastShadows": "On",
+          "CreateAttachPoints": false,
+          "FlashTint": "1,1,1,0",
+          "PlaybackSpeed": 1,
+          "SpriteFlags": "None",
+          "StartingAnimationName": "",
+          "Tint": "1,1,1,1",
+          "UpDirection": "YPositive"
+        }
+      ]
+    },
+    {
+      "__guid": "5a9a92ed-a884-44cb-aa65-a1769175edb0",
+      "Flags": 0,
+      "Name": "city",
+      "Position": "1084.149,2.986548,718.9022",
+      "Rotation": "0.5,-0.5,-0.5,0.5",
+      "Scale": "18,18,1",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "SpriteTools.SpriteComponent",
+          "__guid": "2f16dbd2-ccd0-4d03-94a1-042461270327",
+          "__version": 1,
+          "BroadcastEvents": {},
+          "CastShadows": "Off",
+          "CreateAttachPoints": false,
+          "FlashTint": "1,1,1,0",
+          "PlaybackSpeed": 1,
+          "Sprite": "sprites/city.sprite",
+          "SpriteFlags": "None",
+          "StartingAnimationName": "animation_01",
+          "Tint": "1,1,1,1",
+          "UpDirection": "YPositive"
+        }
+      ]
     }
   ],
   "SceneProperties": {
