@@ -1,5 +1,5 @@
 {
-  "__guid": "c5aa96b5-ee06-4d64-bb36-cc53d72ccd56",
+  "__guid": "171466c1-6da6-4546-8089-cfc42e71dd66",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -41,7 +41,7 @@
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
-          "ZFar": 1500,
+          "ZFar": 4273,
           "ZNear": 1
         },
         {
@@ -137,7 +137,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "ceab78f6-198d-4ace-bf20-db60c8753f23",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.49
                 }
@@ -155,7 +155,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "21efb97a-1ba7-4885-aacb-34d2364e4baf",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.81
                 }
@@ -173,7 +173,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "dbfda3a2-1407-429c-95c9-3e37c990da97",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.78
                 }
@@ -191,7 +191,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "52272888-d8de-429f-9418-d89017bf5d47",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.06
                 }
@@ -209,7 +209,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "695b07cd-7b28-4edb-95df-62c40e4ead47",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.85
                 }
@@ -227,7 +227,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "8128af92-4aea-45a8-a157-e4e9e321366b",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.88
                 }
@@ -245,7 +245,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "104b76e0-142d-46fa-a679-04936f60c839",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.98
                 }
@@ -263,7 +263,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "32250f45-6193-4682-b417-762b8a48a05f",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.29
                 }
@@ -281,7 +281,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "5f88fa3c-8b47-4989-978a-7eb1a739d4fc",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.29
                 }
@@ -299,7 +299,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "c9f1b351-36f7-4e43-ad8c-457e2f70315e",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.29
                 }
@@ -317,7 +317,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "29bce9e2-1c75-4469-afbe-633eab66f51f",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.61
                 }
@@ -335,7 +335,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "ef39b14d-2cb8-4b37-9ed5-064a42f11790",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.57
                 }
@@ -353,7 +353,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "a67da2a6-9e12-42f9-9294-88f5fb363dee",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.66
                 }
@@ -371,7 +371,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "55a67fb9-f06c-4164-9daa-1836fe3a6bb8",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.5
                 }
@@ -389,7 +389,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "017298fb-ca2d-4d51-b355-4a99c9764db2",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.34
                 }
@@ -407,7 +407,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "76613e46-273d-414d-9137-73fc7cc450a3",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.48
                 }
@@ -425,7 +425,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "60813cc6-3ab8-4eeb-980e-a28f73cbe114",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.29
                 }
@@ -443,7 +443,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "2eff573c-68fa-4117-9587-192e7de2e307",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.68
                 }
@@ -461,7 +461,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "2e81661c-91da-4ef3-8b6c-2298152c4d10",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.57
                 }
@@ -479,7 +479,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "fdb3d364-7990-4e56-80a5-6a0b2f1c5766",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.57
                 }
@@ -497,7 +497,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "26833905-76ab-4ae5-a1f6-9131cb661991",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.91
                 }
@@ -515,7 +515,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "d2a72555-64fb-4e21-9427-c4954eee2597",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.68
                 }
@@ -533,7 +533,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "0dab670b-50e2-436d-a7e6-2cf6dd1ca6de",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.35
                 }
@@ -551,7 +551,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "412d75d6-f211-4a98-ac6b-ac2550ba34fd",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.66
                 }
@@ -569,7 +569,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "c7b6ea8f-eb2d-43eb-9a37-614463e39cd5",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.76
                 }
@@ -587,7 +587,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "198ea2a8-bee7-48fe-9bbf-dcd47486143d",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.43
                 }
@@ -605,7 +605,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "bf26c48b-5b81-444b-897c-c94ea41d93cd",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.06
                 }
@@ -623,7 +623,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "1f046320-a69e-4a89-aff9-0864b9830e7b",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.21
                 }
@@ -641,7 +641,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "8c5016f6-639b-4b49-99ec-b8e5f91f00b2",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.92
                 }
@@ -659,7 +659,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "686aef0d-1ba3-43b5-a953-01d43a713256",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.63
                 }
@@ -677,7 +677,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "2321de02-9f88-4e38-8565-d087ef877f93",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.52
                 }
@@ -695,7 +695,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "c98d99f5-51b9-491b-8515-192014e7f4c7",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.05
                 }
@@ -713,7 +713,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "75e58b1d-8285-4b03-a990-bf4c7ea1b1cc",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.35
                 }
@@ -731,7 +731,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "062b8bca-0605-46ba-9b1f-d1ebb7edaa6c",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.82
                 }
@@ -749,7 +749,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "0cf026dd-0fed-45cc-889c-467c8e29e784",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.82
                 }
@@ -767,7 +767,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "db6eebbf-4ca7-4b3a-8ad1-7971075dd2b5",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.37
                 }
@@ -785,7 +785,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "c028d53a-856d-41d1-9146-a960ec51664f",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.75
                 }
@@ -803,7 +803,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "dc344292-d4ee-405a-ae4d-0de6b4e222ff",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.34
                 }
@@ -821,7 +821,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "1943f8b6-9d4a-4bef-a040-ec18dcd1bbd9",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.78
                 }
@@ -839,7 +839,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "01bd0237-32ff-490d-915d-023d695c1050",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.54
                 }
@@ -857,7 +857,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "cabc9624-0819-4e52-a2e7-9e3cde4f17f3",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.54
                 }
@@ -875,7 +875,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "bdc8aa99-bc02-4126-b6da-23de42a0c012",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.54
                 }
@@ -893,7 +893,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "db69aa18-f7a8-4a04-a74a-ce32a494dee2",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.34
                 }
@@ -911,7 +911,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "1fa0fa43-6da8-4f1d-9e93-d0c09426e2a2",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.25
                 }
@@ -929,7 +929,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "0cf6ea14-fb00-4df6-8838-2e3fe8c5b421",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.48
                 }
@@ -947,7 +947,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "1de09a0b-8745-48e0-be96-d1853cb50804",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.7
                 }
@@ -965,7 +965,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "581fa978-9e5e-4827-a258-08aa345f4e56",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.06
                 }
@@ -983,7 +983,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "8371d408-af31-42e8-a7ab-8ac1314ff93e",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 1.06
                 }
@@ -1001,7 +1001,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "233a4255-046c-4e9c-abdd-666fe4f7168c",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.72
                 }
@@ -1019,7 +1019,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "fb112d30-e5c9-4d50-91cc-b4407ae5878f",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.72
                 }
@@ -1037,7 +1037,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "7e4f293f-dc0f-4c58-ab35-b66d6c332f94",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.72
                 }
@@ -1055,7 +1055,7 @@
                   "__type": "Sandbox.LegacyParticleSystem",
                   "__guid": "bc6d1f68-6e10-4925-9ee4-3edb1850b9a1",
                   "ControlPoints": [],
-                  "Looped": false,
+                  "Looped": true,
                   "Particles": "particles/water_drip.vpcf",
                   "PlaybackSpeed": 0.72
                 }
@@ -1769,7 +1769,7 @@
       "__guid": "0b5efb75-65f0-4707-99f1-d81643ac7a65",
       "Flags": 0,
       "Name": "blimbus (1)",
-      "Position": "1184,-32,192",
+      "Position": "4026.318,-299.4187,700.6075",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "2,2,2",
       "Tags": "shootable",
@@ -1782,12 +1782,12 @@
           "BroadcastEvents": {},
           "CastShadows": "On",
           "CreateAttachPoints": false,
-          "FlashTint": "1,1,1,0",
+          "FlashTint": "0,0.08256,0.9907,0.57",
           "PlaybackSpeed": 1,
           "Sprite": "sprites/blob1.sprite",
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
-          "Tint": "1,1,1,1",
+          "Tint": "0.5814,0.05408,0.05408,1",
           "UpDirection": "YPositive"
         },
         {
@@ -1802,10 +1802,9 @@
         {
           "__type": "SpriteController",
           "__guid": "eaf6bbb3-c43e-49d6-9f46-7f1dc157817a",
-          "__enabled": false,
-          "MoveDistance": "0,800,0",
+          "MoveDistance": "0,600,0",
           "ReverseAnimation": true,
-          "TimeToMove": 3.7
+          "TimeToMove": 10
         },
         {
           "__type": "CoinSpawner",
@@ -1915,7 +1914,7 @@
           "__guid": "a8136833-5f5e-462c-a657-fdafdf4e41bb",
           "Flags": 0,
           "Name": "World",
-          "Position": "-30.51501,63.99973,10.83205",
+          "Position": "-30.51495,63.99974,400.6715",
           "Rotation": "0.5000001,0.4999999,0.5,-0.5",
           "Tags": "worldpanel",
           "Enabled": true,
@@ -2615,11 +2614,11 @@
           "__guid": "e5a6453b-a8ce-4850-81fe-c09d1edb2c3b",
           "Blur": 0,
           "EndDistance": 10000,
-          "FalloffExponent": 0.5,
+          "FalloffExponent": 1.3000001,
           "HeightExponent": 2,
           "HeightStart": 2000,
           "HeightWidth": 0,
-          "StartDistance": 1000,
+          "StartDistance": 3500,
           "Tint": "1,1,1,1"
         }
       ]
@@ -2651,7 +2650,7 @@
       "__guid": "5a9a92ed-a884-44cb-aa65-a1769175edb0",
       "Flags": 0,
       "Name": "city",
-      "Position": "1084.149,2.986548,718.9022",
+      "Position": "3725.082,2.986548,718.9022",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "18,18,1",
       "Enabled": true,

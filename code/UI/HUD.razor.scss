@@ -7,17 +7,16 @@ HUD {
 	font-weight: bold;
 	font-family: 'Poppins';
 	text-stroke: 12px black;
-	color: #00c3ff;
-	// color: #ffffff;
+	color: #ffffff;
 
 	>.titles {
 		position: absolute;
 		left: 16px;
 		bottom: 16px;
 		font-size: 65px;
-		// background-color: #00c3ff;
-		// padding: 0 20px;
-		// border-radius: 2px;
+		background-color: rgb(47, 0, 255);
+		padding: 0 20px;
+		border-radius: 2px;
 	}
 
 	.spacing {
@@ -29,9 +28,9 @@ HUD {
 		right: 16px;
 		bottom: 16px;
 		font-size: 65px;
-		// background-color: #00c3ff;
-		// padding: 0 20px;
-		// border-radius: 2px;
+		background-color: rgb(47, 0, 255);
+		padding: 0 20px;
+		border-radius: 2px;
 	}
 }
 
