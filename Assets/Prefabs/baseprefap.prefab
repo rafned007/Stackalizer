@@ -1,0 +1,139 @@
+{
+  "RootObject": {
+    "__guid": "415d8f67-a58f-41e1-aef2-61efe24f3307",
+    "Flags": 0,
+    "Name": "baseprefap",
+    "Enabled": true,
+    "Children": [
+      {
+        "__guid": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7",
+        "Flags": 0,
+        "Name": "Base1",
+        "Position": "0,52,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "ca309f80-a655-42f5-aa1e-a7bb1e24e8a0",
+            "__enabled": false,
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "Off",
+            "Tint": "0,0.34791,0.94884,1"
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "4f20ec45-3e49-41dc-81fe-17ac60c6dbf0",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false
+          },
+          {
+            "__type": "SpriteTools.SpriteComponent",
+            "__guid": "b731d8cd-0abd-48ae-84f4-c34ac946bcdd",
+            "__version": 1,
+            "BroadcastEvents": {},
+            "CastShadows": "On",
+            "CreateAttachPoints": false,
+            "FlashTint": "1,1,1,0",
+            "PlaybackSpeed": 0,
+            "Sprite": "sprites/cubert1.sprite",
+            "SpriteFlags": "None",
+            "StartingAnimationName": "animation_01",
+            "Tint": "1,1,1,1",
+            "UpDirection": "ZNegative"
+          }
+        ]
+      },
+      {
+        "__guid": "1d9778de-4a29-46a6-8737-bbb4c9317621",
+        "Flags": 0,
+        "Name": "Base2",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "ec5c360d-8baa-41fd-af97-83176b0d065e",
+            "__enabled": false,
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "Off",
+            "Tint": "0,0.34791,0.94884,1"
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "9bf6fc1a-138d-47b0-bc1a-4c4f23bb1d9c",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false
+          },
+          {
+            "__type": "SpriteTools.SpriteComponent",
+            "__guid": "133b4248-1529-4293-be31-20743bcc1455",
+            "__version": 1,
+            "BroadcastEvents": {},
+            "CastShadows": "On",
+            "CreateAttachPoints": false,
+            "FlashTint": "1,1,1,0",
+            "PlaybackSpeed": 0,
+            "Sprite": "sprites/cubert1.sprite",
+            "SpriteFlags": "None",
+            "StartingAnimationName": "animation_01",
+            "Tint": "1,1,1,1",
+            "UpDirection": "ZNegative"
+          }
+        ]
+      },
+      {
+        "__guid": "da90a753-0059-49ca-9de7-3547e38fc847",
+        "Flags": 0,
+        "Name": "Base3",
+        "Position": "0,-52,0",
+        "Enabled": true,
+        "Components": [
+          {
+            "__type": "Sandbox.ModelRenderer",
+            "__guid": "ca0fca0a-70b8-4f7b-b9b0-8dfcdca00cba",
+            "__enabled": false,
+            "BodyGroups": 18446744073709551615,
+            "Model": "models/dev/box.vmdl",
+            "RenderType": "Off",
+            "Tint": "0,0.34791,0.94884,1"
+          },
+          {
+            "__type": "Sandbox.BoxCollider",
+            "__guid": "4367c17c-4132-423d-b047-20d053d3b8ca",
+            "Center": "0,0,0",
+            "IsTrigger": false,
+            "Scale": "50,50,50",
+            "Static": false
+          },
+          {
+            "__type": "SpriteTools.SpriteComponent",
+            "__guid": "062dd70d-6e91-4405-b6ca-5298fa1f6e8d",
+            "__version": 1,
+            "BroadcastEvents": {},
+            "CastShadows": "On",
+            "CreateAttachPoints": false,
+            "FlashTint": "1,1,1,0",
+            "PlaybackSpeed": 0,
+            "Sprite": "sprites/cubert1.sprite",
+            "SpriteFlags": "None",
+            "StartingAnimationName": "animation_01",
+            "Tint": "1,1,1,1",
+            "UpDirection": "ZNegative"
+          }
+        ]
+      }
+    ],
+    "__variables": []
+  },
+  "ShowInMenu": false,
+  "MenuPath": null,
+  "MenuIcon": null,
+  "ResourceVersion": 1,
+  "__references": [],
+  "__version": 1
+}

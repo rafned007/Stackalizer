@@ -124,6 +124,7 @@
           "Flags": 0,
           "Name": "BigRain",
           "Position": "-62.5016,442.5976,207.4125",
+          "Enabled": true,
           "Children": [
             {
               "__guid": "23c22d0b-f62e-42e3-89d8-1c36861848a4",
@@ -1062,6 +1063,27 @@
               ]
             }
           ]
+        },
+        {
+          "__guid": "e9bcaa38-aadd-41ad-b7ea-1790d9da6788",
+          "Flags": 0,
+          "Name": "SpriteDeleter",
+          "Position": "252.4588,-32,-338.0802",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.BoxCollider",
+              "__guid": "54ad517d-c53a-4759-ab28-3c8700657906",
+              "Center": "0,0,0",
+              "IsTrigger": true,
+              "Scale": "500.5001,1300,50",
+              "Static": false
+            },
+            {
+              "__type": "destroytrigger",
+              "__guid": "74798d83-0498-4dcb-991d-4f68aef1338c"
+            }
+          ]
         }
       ]
     },
@@ -1084,7 +1106,7 @@
           "__guid": "5ef92005-0277-46a6-8ff1-7a37aa9ea739",
           "Base": {
             "_type": "gameobject",
-            "go": "415d8f67-a58f-41e1-aef2-61efe24f3307"
+            "go": "14afd500-5d09-4ca4-842f-2a114959ac1f"
           },
           "Border": {
             "_type": "gameobject",
@@ -1108,15 +1130,15 @@
           "__guid": "1f7b5346-1899-4339-8ec0-db4681cff2c3",
           "Base1": {
             "_type": "gameobject",
-            "go": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7"
+            "go": "244cdfc5-e1f1-40fb-91a3-170e3d9ae067"
           },
           "Base2": {
             "_type": "gameobject",
-            "go": "1d9778de-4a29-46a6-8737-bbb4c9317621"
+            "go": "cfab8cfc-e320-4feb-932b-b85d64f64eb5"
           },
           "Base3": {
             "_type": "gameobject",
-            "go": "da90a753-0059-49ca-9de7-3547e38fc847"
+            "go": "f9483aa9-93ca-4327-9a28-9dce9992a2b1"
           },
           "confetti": {
             "_type": "gameobject",
@@ -1169,15 +1191,6 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "5c2c23e6-1e92-4f17-ae77-5e057be7ef6a",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0.8093,0.00753,0.75585,1"
-            },
-            {
               "__type": "Sandbox.BoxCollider",
               "__guid": "71c79bff-7a3f-49d5-ad35-c9bae9b91bb6",
               "Center": "0,0,0",
@@ -1209,15 +1222,6 @@
           "Position": "0,0,0",
           "Enabled": true,
           "Components": [
-            {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "eaeda90f-8e54-46a0-8014-9aa00a642844",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0.8093,0.00753,0.75585,1"
-            },
             {
               "__type": "Sandbox.BoxCollider",
               "__guid": "3f3ab12f-f265-46af-a79e-53f407e51419",
@@ -1251,15 +1255,6 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "975d0377-d2ef-4c66-af29-35703d3b17e1",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0.8093,0.00753,0.75585,1"
-            },
-            {
               "__type": "Sandbox.BoxCollider",
               "__guid": "0f96f871-c275-456b-81a0-085104709915",
               "Center": "0,0,0",
@@ -1287,31 +1282,23 @@
       ]
     },
     {
-      "__guid": "415d8f67-a58f-41e1-aef2-61efe24f3307",
+      "__guid": "14afd500-5d09-4ca4-842f-2a114959ac1f",
       "Flags": 0,
-      "Name": "Base",
+      "Name": "base",
       "Position": "0,0,-52",
+      "Tags": "base",
       "Enabled": true,
       "Children": [
         {
-          "__guid": "32a948f9-2d2f-425f-926d-a4cb2dca6ce7",
+          "__guid": "244cdfc5-e1f1-40fb-91a3-170e3d9ae067",
           "Flags": 0,
           "Name": "Base1",
           "Position": "0,52,0",
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "ca309f80-a655-42f5-aa1e-a7bb1e24e8a0",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.34791,0.94884,1"
-            },
-            {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "4f20ec45-3e49-41dc-81fe-17ac60c6dbf0",
+              "__guid": "5af11fa0-9295-4a88-9f6f-a621366faacf",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -1319,7 +1306,7 @@
             },
             {
               "__type": "SpriteTools.SpriteComponent",
-              "__guid": "b731d8cd-0abd-48ae-84f4-c34ac946bcdd",
+              "__guid": "28b0db58-5882-46b6-922c-a566dbe771b4",
               "__version": 1,
               "BroadcastEvents": {},
               "CastShadows": "On",
@@ -1335,24 +1322,15 @@
           ]
         },
         {
-          "__guid": "1d9778de-4a29-46a6-8737-bbb4c9317621",
+          "__guid": "cfab8cfc-e320-4feb-932b-b85d64f64eb5",
           "Flags": 0,
           "Name": "Base2",
           "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "ec5c360d-8baa-41fd-af97-83176b0d065e",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.34791,0.94884,1"
-            },
-            {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "9bf6fc1a-138d-47b0-bc1a-4c4f23bb1d9c",
+              "__guid": "3dbe9aff-9fe8-4924-a2ca-622686af3cd5",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -1360,7 +1338,7 @@
             },
             {
               "__type": "SpriteTools.SpriteComponent",
-              "__guid": "133b4248-1529-4293-be31-20743bcc1455",
+              "__guid": "553591d0-e854-4ca1-bf80-c14a9638cffa",
               "__version": 1,
               "BroadcastEvents": {},
               "CastShadows": "On",
@@ -1376,24 +1354,15 @@
           ]
         },
         {
-          "__guid": "da90a753-0059-49ca-9de7-3547e38fc847",
+          "__guid": "f9483aa9-93ca-4327-9a28-9dce9992a2b1",
           "Flags": 0,
           "Name": "Base3",
           "Position": "0,-52,0",
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "ca0fca0a-70b8-4f7b-b9b0-8dfcdca00cba",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "Off",
-              "Tint": "0,0.34791,0.94884,1"
-            },
-            {
               "__type": "Sandbox.BoxCollider",
-              "__guid": "4367c17c-4132-423d-b047-20d053d3b8ca",
+              "__guid": "bf407acf-ebe9-45d6-9e97-9f47d448c680",
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
@@ -1401,7 +1370,7 @@
             },
             {
               "__type": "SpriteTools.SpriteComponent",
-              "__guid": "062dd70d-6e91-4405-b6ca-5298fa1f6e8d",
+              "__guid": "004be90c-5749-43c7-af8c-bb34b87c7a16",
               "__version": 1,
               "BroadcastEvents": {},
               "CastShadows": "On",
@@ -1419,22 +1388,22 @@
       ]
     },
     {
-      "__guid": "76c2d749-634d-4082-9725-061195d1c204",
+      "__guid": "900cacf4-f3d4-46e4-9c97-ecfd226e17a2",
       "Flags": 0,
       "Name": "Shadow",
       "Position": "0,0,-52",
       "Enabled": true,
       "Children": [
         {
-          "__guid": "190907fa-58a5-494f-b626-1138e0e85a02",
+          "__guid": "112e56e1-bb50-4eff-a99e-5e30ede76d58",
           "Flags": 0,
-          "Name": "B1",
-          "Position": "32,52,0",
+          "Name": "Base1",
+          "Position": "0,52,0",
           "Enabled": true,
           "Components": [
             {
               "__type": "SpriteTools.SpriteComponent",
-              "__guid": "6a1d0bec-ee3e-4f21-9e11-e9e6e390735c",
+              "__guid": "1f48dd9a-dd21-4e1f-b866-de45709b3d11",
               "__version": 1,
               "BroadcastEvents": {},
               "CastShadows": "On",
@@ -1450,15 +1419,15 @@
           ]
         },
         {
-          "__guid": "cc2e29f3-dc39-4b12-9573-58bbfb0044df",
+          "__guid": "249bc472-b246-4764-a33d-f59529e650af",
           "Flags": 0,
-          "Name": "B2",
-          "Position": "32,0,0",
+          "Name": "Base2",
+          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
               "__type": "SpriteTools.SpriteComponent",
-              "__guid": "72b37c87-a5a4-46f3-9014-06331e55eb7e",
+              "__guid": "661f7d39-0f87-42e0-aa5c-4498772c89ae",
               "__version": 1,
               "BroadcastEvents": {},
               "CastShadows": "On",
@@ -1474,15 +1443,15 @@
           ]
         },
         {
-          "__guid": "48462372-1dd3-472a-b425-e755dac2c103",
+          "__guid": "41b0107c-4730-4aea-8c5f-bd3c991a0605",
           "Flags": 0,
-          "Name": "B3",
-          "Position": "32,-52,0",
+          "Name": "Base3",
+          "Position": "0,-52,0",
           "Enabled": true,
           "Components": [
             {
               "__type": "SpriteTools.SpriteComponent",
-              "__guid": "a964bcf6-175a-48aa-93f9-d59c005e1116",
+              "__guid": "2425f4ac-c745-4cf1-bed6-099efa5461da",
               "__version": 1,
               "BroadcastEvents": {},
               "CastShadows": "On",
@@ -1542,7 +1511,7 @@
       "__guid": "08a62f63-471f-4ef5-a825-c165d9fd4c79",
       "Flags": 0,
       "Name": "PauseMenu",
-      "Position": "-904.3911,867.9819,287.5479",
+      "Position": "-352,867.9819,32",
       "Enabled": true,
       "Components": [
         {
@@ -1575,7 +1544,7 @@
       "__guid": "c03dd675-eda5-452a-bb97-acf6ae3f6a5b",
       "Flags": 0,
       "Name": "HUD",
-      "Position": "-711.678,-5.351837,216.6402",
+      "Position": "-320,-5.351837,32",
       "Enabled": true,
       "Components": [
         {
@@ -1619,7 +1588,7 @@
       "__guid": "bbc7e4a4-51ae-4667-8f55-1c08f30d7dd3",
       "Flags": 0,
       "Name": "CH",
-      "Position": "-792.8206,-380.5623,180.9636",
+      "Position": "-288,-380.5623,32",
       "Enabled": true,
       "Components": [
         {
@@ -1704,7 +1673,7 @@
           "__guid": "5893a9a5-0e65-4fec-b3bc-f11a3282e1aa",
           "Flags": 0,
           "Name": "ufosound",
-          "Position": "-5.286041,4.903381,384",
+          "Position": "-5.286041,4.90332,280.7509",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -1731,7 +1700,7 @@
                 "Name": "unknown",
                 "Id": "00000000-0000-0000-0000-000000000000"
               },
-              "Volume": 1
+              "Volume": 0.5
             }
           ]
         }
@@ -1857,7 +1826,7 @@
           "CastShadows": "On",
           "CreateAttachPoints": false,
           "FlashTint": "1,1,1,0",
-          "PlaybackSpeed": 1,
+          "PlaybackSpeed": 1.1,
           "Sprite": "sprites/smokie.sprite",
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
@@ -1886,7 +1855,7 @@
           "__guid": "a8136833-5f5e-462c-a657-fdafdf4e41bb",
           "Flags": 0,
           "Name": "World",
-          "Position": "-30.51495,63.99974,400.6715",
+          "Position": "-30.51495,63.99974,-3.260101",
           "Rotation": "0.5000001,0.4999999,0.5,-0.5",
           "Tags": "worldpanel",
           "Enabled": true,
@@ -2100,7 +2069,7 @@
           "__guid": "11b26dd5-b489-4a55-ad1a-64042cf2de2e",
           "Flags": 0,
           "Name": "alientalk",
-          "Position": "4.786758,1.161255,68.49435",
+          "Position": "4.786758,1.161255,346.8498",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -2127,7 +2096,7 @@
                 "Name": "unknown",
                 "Id": "00000000-0000-0000-0000-000000000000"
               },
-              "Volume": 0.33
+              "Volume": 0.5
             }
           ]
         }
@@ -2186,7 +2155,7 @@
           "__guid": "680b6384-1dd7-4213-942c-4352eb6c5a53",
           "Flags": 0,
           "Name": "alientalk",
-          "Position": "4.786758,1.161255,68.49435",
+          "Position": "4.786743,1.161133,346.8498",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -2213,7 +2182,7 @@
                 "Name": "unknown",
                 "Id": "00000000-0000-0000-0000-000000000000"
               },
-              "Volume": 0.33
+              "Volume": 0.5
             }
           ]
         }
@@ -2272,7 +2241,7 @@
           "__guid": "968f0c21-c750-409e-879d-d516b29d043c",
           "Flags": 0,
           "Name": "alientalk",
-          "Position": "4.786758,1.161255,68.49435",
+          "Position": "4.786743,1.161377,346.8498",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -2299,7 +2268,7 @@
                 "Name": "unknown",
                 "Id": "00000000-0000-0000-0000-000000000000"
               },
-              "Volume": 0.33
+              "Volume": 0.5
             }
           ]
         }
@@ -2358,7 +2327,7 @@
           "__guid": "c4bc306f-c507-489a-b347-04211931d18c",
           "Flags": 0,
           "Name": "alientalk",
-          "Position": "4.786758,1.161255,68.49435",
+          "Position": "4.786743,1.161377,346.8498",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -2385,7 +2354,7 @@
                 "Name": "unknown",
                 "Id": "00000000-0000-0000-0000-000000000000"
               },
-              "Volume": 0.33
+              "Volume": 0.5
             }
           ]
         }
@@ -2438,7 +2407,7 @@
       "__guid": "1d784308-7fa8-448b-8b49-fb5fb0cb4721",
       "Flags": 0,
       "Name": "ambiance",
-      "Position": "152.1477,252.2307,0",
+      "Position": "-256,252.2307,32",
       "Enabled": true,
       "Components": [
         {
@@ -2620,6 +2589,12 @@
           "UpDirection": "YPositive"
         }
       ]
+    },
+    {
+      "__guid": "be5bac1e-429a-4f33-9a4d-4868bf0fea99",
+      "Flags": 0,
+      "Name": "GameObject",
+      "Enabled": true
     }
   ],
   "SceneProperties": {
@@ -2628,7 +2603,7 @@
     "NetworkFrequency": 60,
     "NetworkInterpolation": true,
     "ThreadedAnimation": true,
-    "TimeScale": 0,
+    "TimeScale": 1,
     "UseFixedUpdate": true,
     "NavMesh": {
       "Enabled": false,

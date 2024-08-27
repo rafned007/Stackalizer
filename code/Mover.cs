@@ -59,8 +59,8 @@ public sealed class Mover : Component
 		if (Input.Pressed("jump"))
 		{
 			//clone base at players current position
-			var clone = Base.Clone();
-			clone.Transform.Position = Transform.Position;
+			var clone = Base.Clone(Transform.Position);
+			clone.Tags.Remove("base");
 
 			jumped = true;
 			TimetillMove *= TimeRatio;
@@ -82,7 +82,6 @@ public sealed class Mover : Component
 		 if (turn % 5 == 0)
 		{
 			doMove = .7f;
-			// Camera.Transform.Position = (Vector3.Up * (52*turn)) + (Vector3.Backward * 104);	
 		}
 			
 	}

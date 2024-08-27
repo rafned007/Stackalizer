@@ -60,11 +60,6 @@
           "component_type": "Rigidbody"
         },
         "speed": 650
-      },
-      {
-        "__type": "Destroydelay",
-        "__guid": "2128c4b4-5818-429e-b5a9-d09ce7fcb54e",
-        "timeTillDestroy": 20
       }
     ],
     "Children": [],
