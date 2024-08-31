@@ -15,21 +15,27 @@ public sealed class CoinSpawner : Component
 		TimetillClone = 5f;
 		coinspawn();
 	}
+	protected override void OnUpdate()
+	{
+		Random rnd = new Random();	
+		var rndTime = rnd.Next(1, 10);
+		TimetillClone =  rndTime;
+		
+	}
 	
 	async void coinspawn()
 	{
 		Random rnd = new Random();
-		var rndCoin = rnd.Next(0, 3);
-		var rndTime = rnd.Next(1, 10);
-		await Task.DelaySeconds(rndTime);
+		var rndCoin = rnd.Next(1, 3);
+		await Task.DelaySeconds(TimetillClone);
 		
 		if (player.turn >= 8)
 		{
-			if (rndCoin == 0)
+			if (rndCoin == 1)
 			{
 				var cloneRC = redCoin.Clone(Transform.Position + (Vector3.Forward * -104));
 			}
-			else if (rndCoin == 1)
+			else if (rndCoin == 2)
 			{
 				var cloneBC = blueCoin.Clone(Transform.Position + (Vector3.Forward * -104));
 			}
