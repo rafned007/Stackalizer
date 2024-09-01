@@ -1,5 +1,5 @@
 {
-  "__guid": "171466c1-6da6-4546-8089-cfc42e71dd66",
+  "__guid": "daa0bc67-f0fe-46ff-a6f8-1f2737ea8f8d",
   "GameObjects": [
     {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
@@ -2594,12 +2594,6 @@
           "UpDirection": "YPositive"
         }
       ]
-    },
-    {
-      "__guid": "be5bac1e-429a-4f33-9a4d-4868bf0fea99",
-      "Flags": 0,
-      "Name": "GameObject",
-      "Enabled": true
     }
   ],
   "SceneProperties": {
