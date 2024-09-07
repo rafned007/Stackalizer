@@ -30,6 +30,11 @@
             The playback speed of the animation.
             </summary>
         </member>
+        <member name="P:SpriteTools.SpriteComponent.UsePixelScale">
+            <summary>
+            Whether or not the object should scale based on the resolution of the Sprite.
+            </summary>
+        </member>
         <member name="P:SpriteTools.SpriteComponent.CastShadows">
             <summary>
             Whether or not the sprite should render itself/its shadows.

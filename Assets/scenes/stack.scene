@@ -5,17 +5,17 @@
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Flags": 0,
       "Name": "Sun",
-      "Position": "-256,0,0",
+      "Position": "-448,0,128",
       "Tags": "light_directional,light",
       "Enabled": true,
       "Components": [
         {
           "__type": "Sandbox.DirectionalLight",
           "__guid": "c9ca5076-cb80-49b9-b852-9528c5719588",
-          "FogMode": "Enabled",
+          "FogMode": "WithoutShadows",
           "FogStrength": 1,
           "LightColor": "1,0.93023,0.93023,1",
-          "Shadows": true,
+          "Shadows": false,
           "SkyColor": "0.24333,0.31677,0.35349,1"
         }
       ]
@@ -30,7 +30,7 @@
         {
           "__type": "Sandbox.CameraComponent",
           "__guid": "2d87317f-1808-40d4-a650-1f678fbb82d7",
-          "BackgroundColor": "0.09302,0.09259,0.09259,1",
+          "BackgroundColor": "0.33333,0.46275,0.52157,1",
           "ClearFlags": "All",
           "FieldOfView": 100,
           "IsMainCamera": true,
@@ -97,12 +97,6 @@
           "Response": 1
         },
         {
-          "__type": "Sandbox.Pixelate",
-          "__guid": "5ae256b4-8198-46bc-9488-3aeda295b5c0",
-          "__enabled": false,
-          "Scale": 0.001
-        },
-        {
           "__type": "Sandbox.Vignette",
           "__guid": "6b2a5c5c-b430-4674-8b88-a96d20fbd325",
           "Center": "0.5,0.5",
@@ -123,7 +117,7 @@
           "__guid": "c391950c-dc72-4d5f-a131-1d2f337b1d8d",
           "Flags": 0,
           "Name": "BigRain",
-          "Position": "-62.5016,442.5976,207.4125",
+          "Position": "-62.5016,442.5976,173.9198",
           "Enabled": true,
           "Children": [
             {
@@ -1203,7 +1197,7 @@
               "__guid": "8869ed86-c1dc-49ff-a511-077e224b500e",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1211,7 +1205,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         },
@@ -1235,7 +1230,7 @@
               "__guid": "9b5bb37b-20f5-435f-9b63-c3e07c57e0fb",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1243,7 +1238,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         },
@@ -1267,7 +1263,7 @@
               "__guid": "437df064-fcd7-4d32-804e-15fd64cf35fd",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1275,7 +1271,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         }
@@ -1309,7 +1306,7 @@
               "__guid": "28b0db58-5882-46b6-922c-a566dbe771b4",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1317,7 +1314,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         },
@@ -1341,7 +1339,7 @@
               "__guid": "553591d0-e854-4ca1-bf80-c14a9638cffa",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1349,7 +1347,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         },
@@ -1373,7 +1372,7 @@
               "__guid": "004be90c-5749-43c7-af8c-bb34b87c7a16",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1381,7 +1380,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         }
@@ -1406,7 +1406,7 @@
               "__guid": "1f48dd9a-dd21-4e1f-b866-de45709b3d11",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1414,7 +1414,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         },
@@ -1430,7 +1431,7 @@
               "__guid": "661f7d39-0f87-42e0-aa5c-4498772c89ae",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1438,7 +1439,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         },
@@ -1454,7 +1456,7 @@
               "__guid": "2425f4ac-c745-4cf1-bed6-099efa5461da",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1462,7 +1464,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         }
@@ -1485,9 +1488,17 @@
             "go": "7f2bcc32-dc84-4ab9-a319-8935a6f2b9e6",
             "component_type": "Blob1Controller"
           },
-          "coinsplosion": {
+          "coinsplosionb": {
             "_type": "gameobject",
-            "prefab": "prefabs/coinsplosion.prefab"
+            "prefab": "prefabs/coinsplosionb.prefab"
+          },
+          "coinsplosionp": {
+            "_type": "gameobject",
+            "prefab": "prefabs/coinsplosionp.prefab"
+          },
+          "coinsplosionr": {
+            "_type": "gameobject",
+            "prefab": "prefabs/coinsplosionr.prefab"
           },
           "explosion": {
             "_type": "gameobject",
@@ -1590,7 +1601,7 @@
       "__guid": "bbc7e4a4-51ae-4667-8f55-1c08f30d7dd3",
       "Flags": 0,
       "Name": "CH",
-      "Position": "-288,-380.5623,32",
+      "Position": "-320,-32,32",
       "Enabled": true,
       "Components": [
         {
@@ -1630,7 +1641,8 @@
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
           "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -1724,7 +1736,7 @@
           "__guid": "bb03a2fc-70a9-41f3-b775-4942461c2715",
           "__version": 1,
           "BroadcastEvents": {},
-          "CastShadows": "On",
+          "CastShadows": "Off",
           "CreateAttachPoints": false,
           "FlashTint": "0,0.08256,0.9907,0.57",
           "PlaybackSpeed": 1,
@@ -1732,7 +1744,8 @@
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
           "Tint": "0.5814,0.05408,0.05408,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -1826,7 +1839,7 @@
           "__guid": "2d14b251-a651-452a-804f-9f4e38f57631",
           "__version": 1,
           "BroadcastEvents": {},
-          "CastShadows": "On",
+          "CastShadows": "Off",
           "CreateAttachPoints": false,
           "FlashTint": "1,1,1,0",
           "PlaybackSpeed": 1.1,
@@ -1834,7 +1847,8 @@
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
           "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -1889,20 +1903,11 @@
           "Enabled": true,
           "Components": [
             {
-              "__type": "Sandbox.ModelRenderer",
-              "__guid": "00f02f51-ab4a-4b9e-ad2a-509c0b1669ed",
-              "__enabled": false,
-              "BodyGroups": 18446744073709551615,
-              "Model": "models/dev/box.vmdl",
-              "RenderType": "On",
-              "Tint": "1,1,1,1"
-            },
-            {
               "__type": "SpriteTools.SpriteComponent",
               "__guid": "60bf81e6-e591-4a0c-873a-4c166fbdedb7",
               "__version": 1,
               "BroadcastEvents": {},
-              "CastShadows": "On",
+              "CastShadows": "Off",
               "CreateAttachPoints": false,
               "FlashTint": "1,1,1,0",
               "PlaybackSpeed": 1,
@@ -1910,7 +1915,8 @@
               "SpriteFlags": "None",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         }
@@ -1937,7 +1943,8 @@
           "SpriteFlags": "DrawBackface",
           "StartingAnimationName": "animation_01",
           "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -2013,7 +2020,8 @@
               "SpriteFlags": "DrawBackface",
               "StartingAnimationName": "animation_01",
               "Tint": "1,1,1,1",
-              "UpDirection": "ZNegative"
+              "UpDirection": "ZNegative",
+              "UsePixelScale": false
             }
           ]
         }
@@ -2023,7 +2031,7 @@
       "__guid": "7f2bcc32-dc84-4ab9-a319-8935a6f2b9e6",
       "Flags": 0,
       "Name": "Blorble",
-      "Position": "90.84976,-239.6388,1414.05",
+      "Position": "90.84976,-239.6388,1408",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Tags": "shootable,blorble",
       "Enabled": true,
@@ -2044,7 +2052,8 @@
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
           "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -2102,6 +2111,25 @@
               "Volume": 0.5
             }
           ]
+        },
+        {
+          "__guid": "fbcb647c-1276-43bd-9701-9961006fbff0",
+          "Flags": 0,
+          "Name": "Cube",
+          "Position": "-16.63849,-38.35999,-5.150238",
+          "Rotation": "-0.5,0.5,0.5,0.5",
+          "Scale": "1,1.8,0.09999993",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "f469edfa-303e-4422-b4a6-52927aff1c18",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.05814,0,0.23256,1"
+            }
+          ]
         }
       ]
     },
@@ -2130,7 +2158,8 @@
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
           "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -2188,6 +2217,25 @@
               "Volume": 0.5
             }
           ]
+        },
+        {
+          "__guid": "aaef9011-2a3b-472e-ba66-3294db564f07",
+          "Flags": 0,
+          "Name": "Cube (3)",
+          "Position": "-16.6384,-41.61035,-5.150238",
+          "Rotation": "-0.5,0.5,0.5,0.5",
+          "Scale": "1,1.8,0.09999993",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "0e5296be-7937-4f3f-b4a0-8486ed9e9567",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.05814,0,0.23256,1"
+            }
+          ]
         }
       ]
     },
@@ -2216,7 +2264,8 @@
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
           "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -2274,6 +2323,25 @@
               "Volume": 0.5
             }
           ]
+        },
+        {
+          "__guid": "60f5ffa3-f56c-4afc-8f22-bebd3b010b52",
+          "Flags": 0,
+          "Name": "Cube (2)",
+          "Position": "-16.63852,-40.94922,-5.150238",
+          "Rotation": "-0.5,0.5,0.5,0.5",
+          "Scale": "1,1.8,0.09999993",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "2b0a5768-30fe-4097-bd42-4da07bf5321f",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.05814,0,0.23256,1"
+            }
+          ]
         }
       ]
     },
@@ -2302,7 +2370,8 @@
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
           "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
         },
         {
           "__type": "Sandbox.BoxCollider",
@@ -2360,6 +2429,25 @@
               "Volume": 0.5
             }
           ]
+        },
+        {
+          "__guid": "1690a7fa-df3d-424d-8b9f-a2aa2466540a",
+          "Flags": 0,
+          "Name": "Cube (1)",
+          "Position": "-16.63849,-42.34619,-5.150238",
+          "Rotation": "-0.5,0.5,0.5,0.5",
+          "Scale": "1,1.8,0.09999993",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.ModelRenderer",
+              "__guid": "92dd0a2e-47e0-45b3-960e-0bc413957fe4",
+              "BodyGroups": 18446744073709551615,
+              "Model": "models/dev/box.vmdl",
+              "RenderType": "On",
+              "Tint": "0.05814,0,0.23256,1"
+            }
+          ]
         }
       ]
     },
@@ -2409,146 +2497,6 @@
       ]
     },
     {
-      "__guid": "1d784308-7fa8-448b-8b49-fb5fb0cb4721",
-      "Flags": 0,
-      "Name": "ambiance",
-      "Position": "-256,252.2307,32",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SoundPointComponent",
-          "__guid": "2898d591-5ea7-4b54-9fa2-e8a8469be0b2",
-          "DistanceAttenuation": false,
-          "DistanceAttenuationOverride": false,
-          "Force2d": true,
-          "MaxRepeatTime": 1,
-          "MinRepeatTime": 1,
-          "Occlusion": false,
-          "OcclusionOverride": false,
-          "OcclusionRadius": 32,
-          "Pitch": 1,
-          "PlayOnStart": true,
-          "ReflectionOverride": false,
-          "Reflections": false,
-          "Repeat": true,
-          "SoundEvent": "sounds/rainambience.sound",
-          "SoundOverride": true,
-          "StopOnNew": false,
-          "TargetMixer": {
-            "Name": "master",
-            "Id": "ca63bfd2-6f9f-444c-ba6f-8b0194683730"
-          },
-          "Volume": 0.15
-        }
-      ]
-    },
-    {
-      "__guid": "fbcb647c-1276-43bd-9701-9961006fbff0",
-      "Flags": 0,
-      "Name": "Cube",
-      "Position": "96,-223.0003,1369.64",
-      "Scale": "1,1.8,0.09999993",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "f469edfa-303e-4422-b4a6-52927aff1c18",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "0.05814,0,0.23256,1"
-        }
-      ]
-    },
-    {
-      "__guid": "aaef9011-2a3b-472e-ba66-3294db564f07",
-      "Flags": 0,
-      "Name": "Cube (3)",
-      "Position": "96,402.951,5035.195",
-      "Scale": "1,1.8,0.09999993",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "0e5296be-7937-4f3f-b4a0-8486ed9e9567",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "0.05814,0,0.23256,1"
-        }
-      ]
-    },
-    {
-      "__guid": "60f5ffa3-f56c-4afc-8f22-bebd3b010b52",
-      "Flags": 0,
-      "Name": "Cube (2)",
-      "Position": "96,-356.9001,3787.525",
-      "Scale": "1,1.8,0.09999993",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "2b0a5768-30fe-4097-bd42-4da07bf5321f",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "0.05814,0,0.23256,1"
-        }
-      ]
-    },
-    {
-      "__guid": "1690a7fa-df3d-424d-8b9f-a2aa2466540a",
-      "Flags": 0,
-      "Name": "Cube (1)",
-      "Position": "96,352.6117,2730.827",
-      "Scale": "1,1.8,0.09999993",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.ModelRenderer",
-          "__guid": "92dd0a2e-47e0-45b3-960e-0bc413957fe4",
-          "BodyGroups": 18446744073709551615,
-          "Model": "models/dev/box.vmdl",
-          "RenderType": "On",
-          "Tint": "0.05814,0,0.23256,1"
-        }
-      ]
-    },
-    {
-      "__guid": "2f49a232-12d4-4555-bfb6-3c52464b8b37",
-      "Flags": 0,
-      "Name": "Lofi-ingame",
-      "Position": "172,0,180",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SoundPointComponent",
-          "__guid": "7056ca6e-7bdd-4a40-b19c-ff5f99800f75",
-          "DistanceAttenuation": false,
-          "DistanceAttenuationOverride": false,
-          "Force2d": true,
-          "MaxRepeatTime": 1,
-          "MinRepeatTime": 1,
-          "Occlusion": false,
-          "OcclusionOverride": false,
-          "OcclusionRadius": 32,
-          "Pitch": 1,
-          "PlayOnStart": true,
-          "ReflectionOverride": false,
-          "Reflections": false,
-          "Repeat": true,
-          "SoundEvent": "sounds/lofi-ingame.sound",
-          "SoundOverride": true,
-          "StopOnNew": false,
-          "TargetMixer": {
-            "Name": "master",
-            "Id": "ca63bfd2-6f9f-444c-ba6f-8b0194683730"
-          },
-          "Volume": 0.25
-        }
-      ]
-    },
-    {
       "__guid": "1bc26d73-a0b8-42df-8f74-d5edcd760514",
       "Flags": 0,
       "Name": "Cubemap Fog",
@@ -2573,7 +2521,7 @@
       "__guid": "5a9a92ed-a884-44cb-aa65-a1769175edb0",
       "Flags": 0,
       "Name": "city",
-      "Position": "3808,2.986548,718.9022",
+      "Position": "3808,2.986548,800",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "18,18,1",
       "Enabled": true,
@@ -2591,7 +2539,85 @@
           "SpriteFlags": "None",
           "StartingAnimationName": "animation_01",
           "Tint": "1,1,1,1",
-          "UpDirection": "YPositive"
+          "UpDirection": "YPositive",
+          "UsePixelScale": false
+        }
+      ]
+    },
+    {
+      "__guid": "00d6d13d-93c0-4a66-bec9-ca22f0d7d260",
+      "Flags": 0,
+      "Name": "Music",
+      "Position": "-218.0966,130.6449,27.36029",
+      "Enabled": true,
+      "Children": [
+        {
+          "__guid": "2f49a232-12d4-4555-bfb6-3c52464b8b37",
+          "Flags": 0,
+          "Name": "Lofi-ingame",
+          "Position": "-133.9034,93.3551,68.63971",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundPointComponent",
+              "__guid": "7056ca6e-7bdd-4a40-b19c-ff5f99800f75",
+              "DistanceAttenuation": false,
+              "DistanceAttenuationOverride": false,
+              "Force2d": true,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": true,
+              "SoundEvent": "sounds/lofi-ingame.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "TargetMixer": {
+                "Name": "master",
+                "Id": "ca63bfd2-6f9f-444c-ba6f-8b0194683730"
+              },
+              "Volume": 0.25
+            }
+          ]
+        },
+        {
+          "__guid": "1d784308-7fa8-448b-8b49-fb5fb0cb4721",
+          "Flags": 0,
+          "Name": "ambiance",
+          "Position": "-69.90335,121.5858,36.63971",
+          "Enabled": true,
+          "Components": [
+            {
+              "__type": "Sandbox.SoundPointComponent",
+              "__guid": "2898d591-5ea7-4b54-9fa2-e8a8469be0b2",
+              "DistanceAttenuation": false,
+              "DistanceAttenuationOverride": false,
+              "Force2d": true,
+              "MaxRepeatTime": 1,
+              "MinRepeatTime": 1,
+              "Occlusion": false,
+              "OcclusionOverride": false,
+              "OcclusionRadius": 32,
+              "Pitch": 1,
+              "PlayOnStart": true,
+              "ReflectionOverride": false,
+              "Reflections": false,
+              "Repeat": true,
+              "SoundEvent": "sounds/rainambience.sound",
+              "SoundOverride": true,
+              "StopOnNew": false,
+              "TargetMixer": {
+                "Name": "master",
+                "Id": "ca63bfd2-6f9f-444c-ba6f-8b0194683730"
+              },
+              "Volume": 0.15
+            }
+          ]
         }
       ]
     }

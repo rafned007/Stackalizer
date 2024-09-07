@@ -4,7 +4,9 @@ public sealed class ShooterControl : Component
 {
 	[Property] public SoundEvent ShotSound { get; set; }
 	[Property] public GameObject explosion { get; set; }
-	[Property] public GameObject coinsplosion { get; set; }
+	[Property] public GameObject coinsplosionp { get; set; }
+	[Property] public GameObject coinsplosionb { get; set; }
+	[Property] public GameObject coinsplosionr { get; set; }
 	[Property] public Mover playerSpeed { get; set; }
 	[Property] public Blob1Controller blorble {get; set;}
 	[Property] public SoundEvent HitSound { get; set; }
@@ -51,8 +53,8 @@ public sealed class ShooterControl : Component
 				clone.Transform.Position = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= 2f;
-				Sound.Play( HitSound, tr.HitPosition);
-				Sound.Play( HitSound1, tr.HitPosition);
+				Sound.Play( HitSound, hitpos);
+				Sound.Play( HitSound1, hitpos);
 			}
 			else if(!blorble.upgrade && tr.GameObject.Tags.Has("blorble"))
 			{
@@ -60,8 +62,8 @@ public sealed class ShooterControl : Component
 				clone.Transform.Position = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= .5f;
-				Sound.Play( HitSound, tr.HitPosition);
-				Sound.Play( HitSound1, tr.HitPosition);
+				Sound.Play( HitSound, hitpos);
+				Sound.Play( HitSound1, hitpos);
 			}
 			// else if (!tr.GameObject.Tags.Has("blorble"))
 			// {
@@ -70,7 +72,7 @@ public sealed class ShooterControl : Component
 
 			if (tr.GameObject.Tags.Has("redcoin"))
 			{
-				var clone = coinsplosion.Clone();
+				var clone = coinsplosionr.Clone();
 				clone.Transform.Position = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= .5f;
@@ -78,7 +80,7 @@ public sealed class ShooterControl : Component
 			}
 			else if (tr.GameObject.Tags.Has("bluecoin"))
 			{
-				var clone = coinsplosion.Clone();
+				var clone = coinsplosionb.Clone();
 				clone.Transform.Position = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= 1.2f;
@@ -86,7 +88,7 @@ public sealed class ShooterControl : Component
 			}
 			else if (tr.GameObject.Tags.Has("pinkcoin"))
 			{
-				var clone = coinsplosion.Clone();
+				var clone = coinsplosionp.Clone();
 				clone.Transform.Position = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= 1.5f;
