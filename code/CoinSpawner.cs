@@ -18,7 +18,7 @@ public sealed class CoinSpawner : Component
 	protected override void OnUpdate()
 	{
 		Random rnd = new Random();	
-		var rndTime = rnd.Next(1, 10);
+		var rndTime = rnd.Next(1, 8);
 		TimetillClone =  rndTime;
 		
 	}
@@ -31,6 +31,11 @@ public sealed class CoinSpawner : Component
 		
 		if (player.turn >= 8)
 		{
+			if (rndCoin == null)
+			{
+				Log.Info("wtf");
+				cloneagain();
+			}
 			if (rndCoin == 1)
 			{
 				var cloneRC = redCoin.Clone(Transform.Position + (Vector3.Forward * -104));
@@ -51,7 +56,7 @@ public sealed class CoinSpawner : Component
 	}
 	void cloneagain()
 	{
-			coinspawn();
+		coinspawn();
 	}
 
 	// protected override void OnStart()

@@ -41,7 +41,7 @@
           "RenderTags": "",
           "TargetEye": "None",
           "Viewport": "0,0,1,1",
-          "ZFar": 4273,
+          "ZFar": 1343,
           "ZNear": 1
         },
         {
@@ -1584,7 +1584,7 @@
       "__guid": "75fc3a5c-0544-43cf-824c-8b40a47f42c0",
       "Flags": 0,
       "Name": "2D Skybox",
-      "Position": "-405.8428,-337.8919,311.5291",
+      "Position": "-405.8428,0,96",
       "Rotation": "0,0,-0.7933533,0.6087615",
       "Tags": "skybox",
       "Enabled": true,
@@ -1725,7 +1725,7 @@
       "__guid": "0b5efb75-65f0-4707-99f1-d81643ac7a65",
       "Flags": 0,
       "Name": "blimbus (1)",
-      "Position": "4026.318,-299.4187,700.6075",
+      "Position": "1056,-288,700.6075",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "2,2,2",
       "Tags": "shootable",
@@ -1968,7 +1968,7 @@
           "__guid": "049df286-bf63-47a8-8a9f-d12a0913a6f8",
           "Flags": 0,
           "Name": "World",
-          "Position": "-30.51501,63.99951,10.83205",
+          "Position": "-30.51501,95.57275,10.83205",
           "Rotation": "0.5,-0.5,-0.4999999,-0.5000001",
           "Tags": "worldpanel",
           "Enabled": true,
@@ -1979,7 +1979,7 @@
               "HorizontalAlign": "Center",
               "InteractionRange": 1000,
               "LookAtCamera": false,
-              "PanelSize": "3000,800",
+              "PanelSize": "4000,1600",
               "RenderScale": 9,
               "VerticalAlign": "Center"
             },
@@ -2506,14 +2506,14 @@
         {
           "__type": "Sandbox.CubemapFog",
           "__guid": "e5a6453b-a8ce-4850-81fe-c09d1edb2c3b",
-          "Blur": 0,
-          "EndDistance": 10000,
-          "FalloffExponent": 1.3000001,
+          "Blur": 0.86,
+          "EndDistance": 2000,
+          "FalloffExponent": 0.9,
           "HeightExponent": 2,
           "HeightStart": 2000,
           "HeightWidth": 0,
-          "StartDistance": 3500,
-          "Tint": "1,1,1,1"
+          "StartDistance": 100,
+          "Tint": "0.65,0,1,1"
         }
       ]
     },
@@ -2521,7 +2521,7 @@
       "__guid": "5a9a92ed-a884-44cb-aa65-a1769175edb0",
       "Flags": 0,
       "Name": "city",
-      "Position": "3808,2.986548,800",
+      "Position": "1024,2.986548,800",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "18,18,1",
       "Enabled": true,

@@ -11,7 +11,7 @@
         "__guid": "1f2fad14-5b3d-4a4e-9d2d-0eb3707676bb",
         "ControlPoints": [],
         "Looped": false,
-        "Particles": "particles/explosion/barrel_explosion/explosion_gib_04.vpcf",
+        "Particles": "particles/explosion_gibby.vpcf",
         "PlaybackSpeed": 1
       },
       {
