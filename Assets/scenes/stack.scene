@@ -121,172 +121,10 @@
           "Enabled": true,
           "Children": [
             {
-              "__guid": "23c22d0b-f62e-42e3-89d8-1c36861848a4",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.3964,-399.2305,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "ceab78f6-198d-4ace-bf20-db60c8753f23",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.49
-                }
-              ]
-            },
-            {
-              "__guid": "bf231cbf-852c-405d-9a4b-48dc579437b6",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-194.7054,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "21efb97a-1ba7-4885-aacb-34d2364e4baf",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.81
-                }
-              ]
-            },
-            {
-              "__guid": "02c6b45a-e67f-4704-beb3-85d9151dee18",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-597.7261,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "dbfda3a2-1407-429c-95c9-3e37c990da97",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.78
-                }
-              ]
-            },
-            {
-              "__guid": "7c0dc449-6d41-44bf-bd2b-d385053e8a3a",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-99.00143,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "52272888-d8de-429f-9418-d89017bf5d47",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.06
-                }
-              ]
-            },
-            {
-              "__guid": "9b73ccfe-3397-468e-af0f-1d7070a28c7e",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-499.5457,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "695b07cd-7b28-4edb-95df-62c40e4ead47",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.85
-                }
-              ]
-            },
-            {
-              "__guid": "1eeb0ad6-df47-4c3b-99ce-c730e40e4ab2",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-304.6154,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "8128af92-4aea-45a8-a157-e4e9e321366b",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.88
-                }
-              ]
-            },
-            {
-              "__guid": "b4868a3c-5030-4d46-ae0f-41fb5065272c",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-701.4568,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "104b76e0-142d-46fa-a679-04936f60c839",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.98
-                }
-              ]
-            },
-            {
-              "__guid": "8d0d867a-e01c-4044-9717-e9dea30e5001",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-824.3206,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "32250f45-6193-4682-b417-762b8a48a05f",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.29
-                }
-              ]
-            },
-            {
-              "__guid": "0dc7d1ce-8e5a-4e1e-a2f7-ebeced81d7f9",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-958.6503,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "5f88fa3c-8b47-4989-978a-7eb1a739d4fc",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.29
-                }
-              ]
-            },
-            {
               "__guid": "27bce0c0-b3ce-4629-948a-1ddcc82c50c7",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,155.4756,80.47894",
+              "Position": "694.2706,155.4756,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -295,764 +133,422 @@
                   "__guid": "c9f1b351-36f7-4e43-ad8c-457e2f70315e",
                   "ControlPoints": [],
                   "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.29
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.4
                 }
               ]
             },
             {
-              "__guid": "e8f1b598-bf7c-48d9-b477-927e29847537",
+              "__guid": "78ad86e9-8433-4ada-a59a-f51c88965c52",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-443.4325,80.47894",
+              "Position": "694.2706,81.99164,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "29bce9e2-1c75-4469-afbe-633eab66f51f",
+                  "__guid": "c041f9fa-9b07-4b95-aa4a-500af3f5a760",
                   "ControlPoints": [],
                   "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.61
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.11
                 }
               ]
             },
             {
-              "__guid": "b6bfc1b8-5c84-414a-8218-2f4587d8ec3a",
+              "__guid": "e4eab54c-fbbd-4f58-a64a-939c38ebc3c4",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-251.889,80.47894",
+              "Position": "694.2706,3.002655,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "ef39b14d-2cb8-4b37-9ed5-064a42f11790",
+                  "__guid": "7fb7645a-352d-48d6-a840-c8c37c49e7d8",
                   "ControlPoints": [],
                   "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.57
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.43
                 }
               ]
             },
             {
-              "__guid": "41e18011-c758-4153-97b4-9c3133a98b42",
+              "__guid": "ed91eeaa-e9c5-4b98-8520-d5f9cd694222",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-651.1367,80.47894",
+              "Position": "694.2706,-57.16736,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "a67da2a6-9e12-42f9-9294-88f5fb363dee",
+                  "__guid": "d932fa37-6e3c-4348-9197-c172c9efc81f",
                   "ControlPoints": [],
                   "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.66
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.16
                 }
               ]
             },
             {
-              "__guid": "82cad6bc-1cb5-48d7-9684-d14b41adf590",
+              "__guid": "811a055b-0573-4bdd-b8bc-9bd30cd36eb5",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-152.8023,80.47894",
+              "Position": "694.2706,-153.8756,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "55a67fb9-f06c-4164-9daa-1836fe3a6bb8",
+                  "__guid": "3ba987c9-a2f3-4804-ba9f-629f9ab8ebf8",
                   "ControlPoints": [],
                   "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.5
-                }
-              ]
-            },
-            {
-              "__guid": "841d9938-0cc5-4829-95e3-9dd6b29b3853",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-550.6855,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "017298fb-ca2d-4d51-b355-4a99c9764db2",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
+                  "Particles": "particles/rafrain.vpcf",
                   "PlaybackSpeed": 0.34
                 }
               ]
             },
             {
-              "__guid": "8abdf6f4-6849-43bc-b0d4-fd132d5bffbd",
+              "__guid": "da9b58ea-3f39-47fc-91d7-673bb0db3998",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-335.7387,80.47894",
+              "Position": "694.2706,-217.5459,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "76613e46-273d-414d-9137-73fc7cc450a3",
+                  "__guid": "f263cf9f-4367-407c-9f17-6795d00ece07",
                   "ControlPoints": [],
                   "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.48
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.17
                 }
               ]
             },
             {
-              "__guid": "c7a48216-47ac-43c2-b650-f10e6783a5f7",
+              "__guid": "93ff911e-13ce-41af-b2e9-6ee5fa3d0c81",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-751.4519,80.47894",
+              "Position": "694.2706,-278.9608,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "60813cc6-3ab8-4eeb-980e-a28f73cbe114",
+                  "__guid": "7ce1a8a3-7222-48d3-868d-7af342f64b26",
                   "ControlPoints": [],
                   "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "39d76863-b919-4276-a02d-1c0533aa3219",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-316.9764,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "64bfdd3f-075e-4f6b-9676-0cb895fabf05",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "681ffb7f-c2dc-4984-afb9-b9ee31951a98",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-386.7784,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "6d824c46-da6b-49de-9907-406629b95a1d",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.44
+                }
+              ]
+            },
+            {
+              "__guid": "3e24f4a4-ddba-4072-a3fc-c214f40c7632",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-496.989,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "91d313df-9ac3-435c-bc4b-bf69c4a37e9a",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "002abe7d-fb35-4e3c-9922-deaf7d702802",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-565.2991,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "8ccd53a8-2b9e-44c4-84f3-05e148e5a892",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "5130e144-7f76-42be-8063-f648b44f923a",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-601.5966,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "6adb1f91-8734-47fd-9680-7c8875059034",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "1359efbc-b6a5-4f94-86df-e198b45883b9",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-706.9967,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "d628322c-0c17-4b8f-bd7c-11472c1bb96a",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "c9d68415-0885-457f-b278-21f7922525a4",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-783.2518,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "34810f06-342d-4446-9670-aef928465ead",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "9f1c6e50-6d99-45f3-bc2f-8faa7b10f121",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-839.4198,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "adb9fd06-32c3-44d0-825a-fd93426db0df",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "56e8706f-2025-4fe6-b6e4-8ece7a632a63",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-905.4489,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "1ae8aa70-140b-4317-bc85-2ec80b059e4c",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "5c9da9fd-f80b-490c-a800-823e52bd35d3",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-982.9532,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "6ccce2ec-4d31-4d4f-af49-06c6869776e8",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "cbeaaa79-196d-4cd7-94ad-ba9a7aef83e0",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-1027.521,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "f1dd9cc1-5918-4b96-8ce7-fe1cf137a145",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "86f132d3-e848-4808-bdd0-99deca8f4bbe",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-1142.354,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "33bf89d7-247f-4f97-ae47-96762160d602",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.26
+                }
+              ]
+            },
+            {
+              "__guid": "bef5da5a-14ff-4e0e-a069-2552e33bf312",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-91.57846,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "c74282bd-5d53-441b-81ef-df77ea51ce5c",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.24
+                }
+              ]
+            },
+            {
+              "__guid": "8b14f100-be2b-4750-818d-ccd99c401c60",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-434.3691,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "8ef40f44-6308-48a4-b693-bedff4f84e38",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.23
+                }
+              ]
+            },
+            {
+              "__guid": "f784ab67-9a69-4556-a0de-51289b786460",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-651.7169,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "b3c09cd2-1a11-4c4c-9d73-9bb55198104b",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.12
+                }
+              ]
+            },
+            {
+              "__guid": "f5d6b8ab-0817-4665-a575-7680e1ac3f67",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-866.5625,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "d9be24d8-5032-46ec-ba21-632841d8c576",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
                   "PlaybackSpeed": 0.29
                 }
               ]
             },
             {
-              "__guid": "bb99a1b3-0455-4f7d-a83f-06a8d961dbd1",
+              "__guid": "f8e26c23-306b-4f8a-a1f6-4d16229af299",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-874.3157,80.47894",
+              "Position": "694.2706,-1077.422,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "2eff573c-68fa-4117-9587-192e7de2e307",
+                  "__guid": "5518914e-04ea-449d-9999-9e5413015ecb",
                   "ControlPoints": [],
                   "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.68
-                }
-              ]
-            },
-            {
-              "__guid": "96576741-89e2-4623-9f15-2143f84ea876",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-1015.361,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "2e81661c-91da-4ef3-8b6c-2298152c4d10",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.57
-                }
-              ]
-            },
-            {
-              "__guid": "95f7cbdf-879b-41c6-953b-3c9021cee33f",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,98.76489,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "fdb3d364-7990-4e56-80a5-6a0b2f1c5766",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.57
-                }
-              ]
-            },
-            {
-              "__guid": "218f001c-d0f8-45ce-86c6-a31f724da687",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-424.0753,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "26833905-76ab-4ae5-a1f6-9131cb661991",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.91
-                }
-              ]
-            },
-            {
-              "__guid": "21d5e148-32f0-4481-a33b-58529d23699d",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-218.4257,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "d2a72555-64fb-4e21-9427-c4954eee2597",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.68
-                }
-              ]
-            },
-            {
-              "__guid": "1d17e13c-c8e1-42b5-8fe4-d9c1ea006af8",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-625.9864,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "0dab670b-50e2-436d-a7e6-2cf6dd1ca6de",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.35
-                }
-              ]
-            },
-            {
-              "__guid": "048eb39d-9110-415c-9795-47e3c4df7862",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-123.8462,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "412d75d6-f211-4a98-ac6b-ac2550ba34fd",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.66
-                }
-              ]
-            },
-            {
-              "__guid": "d2753827-dc32-44f1-a034-4ef85f03cabb",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-34.84232,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "c7b6ea8f-eb2d-43eb-9a37-614463e39cd5",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.76
-                }
-              ]
-            },
-            {
-              "__guid": "e6d754ad-5175-41c2-8e72-693c0fbb04b6",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-55.32037,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "198ea2a8-bee7-48fe-9bbf-dcd47486143d",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.43
-                }
-              ]
-            },
-            {
-              "__guid": "46f7537d-e6d6-40e8-bd6e-df029705776e",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,7.19342,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "bf26c48b-5b81-444b-897c-c94ea41d93cd",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.06
-                }
-              ]
-            },
-            {
-              "__guid": "7e984ea7-db12-40e2-8bb5-8d939f92dcbb",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,27.3399,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "1f046320-a69e-4a89-aff9-0864b9830e7b",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.21
-                }
-              ]
-            },
-            {
-              "__guid": "16d7352f-ce64-463e-9f67-3b07e47b6395",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,49.37097,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "8c5016f6-639b-4b49-99ec-b8e5f91f00b2",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.92
-                }
-              ]
-            },
-            {
-              "__guid": "8807572f-8f60-47e6-86c9-7fa0c1f4f44e",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-519.7068,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "686aef0d-1ba3-43b5-a953-01d43a713256",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.63
-                }
-              ]
-            },
-            {
-              "__guid": "45f883df-fe22-4507-8883-98b829519842",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-325.8494,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "2321de02-9f88-4e38-8565-d087ef877f93",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.52
-                }
-              ]
-            },
-            {
-              "__guid": "e440717f-3714-48c6-811f-afe0e9570733",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-726.3016,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "c98d99f5-51b9-491b-8515-192014e7f4c7",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.05
-                }
-              ]
-            },
-            {
-              "__guid": "7f61ad3a-cced-4002-8cb3-8bbb9b1f223c",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-849.1654,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "75e58b1d-8285-4b03-a990-bf4c7ea1b1cc",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.35
-                }
-              ]
-            },
-            {
-              "__guid": "dafc54e5-3efa-406c-9a7d-407316645a6c",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-996.2003,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "062b8bca-0605-46ba-9b1f-d1ebb7edaa6c",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.82
-                }
-              ]
-            },
-            {
-              "__guid": "eb651ac8-984f-4f1d-b983-b4541881bd88",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,117.9256,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "0cf026dd-0fed-45cc-889c-467c8e29e784",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.82
-                }
-              ]
-            },
-            {
-              "__guid": "59b5cf44-24e4-4dd9-9c11-1035957bdd10",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-80.79285,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "db6eebbf-4ca7-4b3a-8ad1-7971075dd2b5",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.37
-                }
-              ]
-            },
-            {
-              "__guid": "2e63f636-8ee3-44c5-87a2-a3d52f921200",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-483.2615,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "c028d53a-856d-41d1-9146-a960ec51664f",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.75
-                }
-              ]
-            },
-            {
-              "__guid": "2b5c2469-cbce-4a39-a7f6-c87d67adb8f9",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-279.2066,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "dc344292-d4ee-405a-ae4d-0de6b4e222ff",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.34
-                }
-              ]
-            },
-            {
-              "__guid": "44ff3f87-26fd-41b0-9d13-37c66e06aed4",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-675.9814,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "1943f8b6-9d4a-4bef-a040-ec18dcd1bbd9",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.78
-                }
-              ]
-            },
-            {
-              "__guid": "c04c6955-04cc-46d7-97ec-1f4dbcfb10e4",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-798.8452,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "01bd0237-32ff-490d-915d-023d695c1050",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.54
-                }
-              ]
-            },
-            {
-              "__guid": "7d9e7505-b084-4a5d-9da7-9dfe69062bfc",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-939.8901,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "cabc9624-0819-4e52-a2e7-9e3cde4f17f3",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.54
-                }
-              ]
-            },
-            {
-              "__guid": "863a21fd-89cc-4578-b3a1-9fbe928b5734",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,174.2358,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "bdc8aa99-bc02-4126-b6da-23de42a0c012",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.54
-                }
-              ]
-            },
-            {
-              "__guid": "674f60d6-a0c4-4ed1-b6f7-6ace09d1e0a1",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.3985,-168.0544,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "db69aa18-f7a8-4a04-a74a-ce32a494dee2",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.34
-                }
-              ]
-            },
-            {
-              "__guid": "a8805ea6-b8e3-4737-8401-a2d142b1512a",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-569.8058,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "1fa0fa43-6da8-4f1d-9e93-d0c09426e2a2",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.25
-                }
-              ]
-            },
-            {
-              "__guid": "0b86fd40-5898-44c2-b9a6-ec71f676f5ae",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-379.5206,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "0cf6ea14-fb00-4df6-8838-2e3fe8c5b421",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.48
-                }
-              ]
-            },
-            {
-              "__guid": "7810d3d5-c0ab-410b-9ccf-d956d9718be9",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-776.2967,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "1de09a0b-8745-48e0-be96-d1853cb50804",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.7
-                }
-              ]
-            },
-            {
-              "__guid": "e151eab1-4c0b-48cf-894e-6e67035df309",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-917.3417,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "581fa978-9e5e-4827-a258-08aa345f4e56",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.06
-                }
-              ]
-            },
-            {
-              "__guid": "4e68c42e-90df-4c97-8819-99c0ba289585",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,196.7842,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "8371d408-af31-42e8-a7ab-8ac1314ff93e",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 1.06
-                }
-              ]
-            },
-            {
-              "__guid": "807e6c38-2ef0-48c1-b254-7c1f91fcabbf",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-899.1604,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "233a4255-046c-4e9c-abdd-666fe4f7168c",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.72
-                }
-              ]
-            },
-            {
-              "__guid": "4c8da39a-3dd7-49da-b3f5-0310c6dd1052",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,214.9655,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "fb112d30-e5c9-4d50-91cc-b4407ae5878f",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.72
-                }
-              ]
-            },
-            {
-              "__guid": "a968d668-7df1-4473-99fe-949c3db81857",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,-1040.205,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "7e4f293f-dc0f-4c58-ab35-b66d6c332f94",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.72
-                }
-              ]
-            },
-            {
-              "__guid": "730c62f8-0175-4a06-a1bf-8b57f3681989",
-              "Flags": 0,
-              "Name": "lilRain",
-              "Position": "694.2706,73.92096,80.47894",
-              "Tags": "particles",
-              "Enabled": true,
-              "Components": [
-                {
-                  "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "bc6d1f68-6e10-4925-9ee4-3edb1850b9a1",
-                  "ControlPoints": [],
-                  "Looped": true,
-                  "Particles": "particles/water_drip.vpcf",
-                  "PlaybackSpeed": 0.72
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.25
                 }
               ]
             }
@@ -1884,6 +1380,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "3000,800",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 9,
               "VerticalAlign": "Center"
             },
@@ -1980,6 +1482,12 @@
               "InteractionRange": 1000,
               "LookAtCamera": false,
               "PanelSize": "4000,1600",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderScale": 9,
               "VerticalAlign": "Center"
             },
@@ -2004,6 +1512,12 @@
               "__enabled": false,
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "1,1,1,1"
             },
@@ -2126,6 +1640,12 @@
               "__guid": "f469edfa-303e-4422-b4a6-52927aff1c18",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "0.05814,0,0.23256,1"
             }
@@ -2232,6 +1752,12 @@
               "__guid": "0e5296be-7937-4f3f-b4a0-8486ed9e9567",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "0.05814,0,0.23256,1"
             }
@@ -2338,6 +1864,12 @@
               "__guid": "2b0a5768-30fe-4097-bd42-4da07bf5321f",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "0.05814,0,0.23256,1"
             }
@@ -2444,6 +1976,12 @@
               "__guid": "92dd0a2e-47e0-45b3-960e-0bc413957fe4",
               "BodyGroups": 18446744073709551615,
               "Model": "models/dev/box.vmdl",
+              "RenderOptions": {
+                "GameLayer": true,
+                "OverlayLayer": false,
+                "BloomLayer": false,
+                "AfterUILayer": false
+              },
               "RenderType": "On",
               "Tint": "0.05814,0,0.23256,1"
             }
@@ -2646,8 +2184,6 @@
   "Title": "stack",
   "Description": "",
   "ResourceVersion": 1,
-  "__references": [
-    "stardrive.water_drip"
-  ],
+  "__references": [],
   "__version": 1
 }
