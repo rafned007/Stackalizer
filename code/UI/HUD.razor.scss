@@ -16,25 +16,23 @@ HUD {
 		font-size: 65px;
 		background-color: rgba(47, 0, 255, 0.1);
 		padding-left: 20px;
-		padding-right: 20px;
 		border-radius: 2px;
 	}
 
 	.spacing {
 		padding-left: 20px;
+		padding-right: 20px;
 	}
 
-	>.percent {
+	>.speed1 {
 		position: absolute;
 		right: 16px;
 		bottom: 16px;
 		font-size: 48px;
 		background-color: rgba(47, 0, 255, 0.1);
 		border-radius: 2px;
-		padding-right: 20px;
 	}
-
-	>.speed {
+	>.speed2 {
 		position: absolute;
 		right: 16px;
 		bottom: 96px;
@@ -42,6 +40,27 @@ HUD {
 		background-color: rgba(47, 0, 255, 0.1);
 		border-radius: 2px;
 		padding-left: 20px;
-		padding-right: 20px;
 	}
 }
+
+// HUD {
+// 	position: absolute;
+// 	left: 16px;
+// 	bottom: 16px;
+// 	background-color: #0916cf;
+// 	justify-content: center;
+// 	align-items: center;
+// 	font-weight: bold;
+// 	border-radius: 2px;
+// 	padding: 0 20px;
+
+// 	.titles {
+// 		font-size: 65px;
+// 		font-family: Poppins;
+// 		color: #ffffff;
+// 	}
+
+// 	.spacing {
+// 		padding-left: 25px;
+// 	}
+// }

@@ -36,6 +36,8 @@ public sealed class RayDetect : Component
 			}
 			shake.ViewBob();
 			OpenLeaderBoard();
+			// pauseMenu.Enabled = false;
+			// leaderBoardMenu.Enabled = true;
 		}
 
 		if (!b1Dead)B1Destroyer();
@@ -141,9 +143,9 @@ public sealed class RayDetect : Component
 		}
 	}
 
-	async void OpenLeaderBoard()
+	public async void OpenLeaderBoard()
 	{
-		await Task.DelaySeconds(.6f);
+		await Task.DelayRealtimeSeconds(.6f);
 		pauseMenu.Enabled = false;
 		leaderBoardMenu.Enabled = true;
 	}

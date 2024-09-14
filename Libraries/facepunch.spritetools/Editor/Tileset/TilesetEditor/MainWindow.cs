@@ -10,7 +10,6 @@ namespace SpriteTools.TilesetEditor;
 [EditorApp("Tileset Editor", "calendar_view_month", "Edit Tilesets")]
 public partial class MainWindow : DockWindow, IAssetEditor
 {
-	internal static List<MainWindow> OpenWindows = new();
 	public bool CanOpenMultipleAssets => false;
 
 	private readonly UndoStack _undoStack = new();
@@ -54,13 +53,6 @@ public partial class MainWindow : DockWindow, IAssetEditor
 		SetWindowIcon("emoji_emotions");
 
 		RestoreDefaultDockLayout();
-		OpenWindows.Add(this);
-	}
-
-	public override void OnDestroyed()
-	{
-		base.OnDestroyed();
-		OpenWindows.Remove(this);
 	}
 
 	public void AssetOpen(Asset asset)
