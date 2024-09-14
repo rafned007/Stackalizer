@@ -77,6 +77,7 @@
           "__type": "Sandbox.Tonemapping",
           "__guid": "0839307c-50ab-4637-9781-49cedda14880",
           "__version": 1,
+          "AutoExposureEnabled": true,
           "ExposureBias": 2,
           "ExposureCompensation": 0,
           "ExposureMethod": "RGB",
@@ -117,14 +118,14 @@
           "__guid": "c391950c-dc72-4d5f-a131-1d2f337b1d8d",
           "Flags": 0,
           "Name": "BigRain",
-          "Position": "-62.5016,442.5976,173.9198",
+          "Position": "-254.7074,442.5976,173.9198",
           "Enabled": true,
           "Children": [
             {
               "__guid": "27bce0c0-b3ce-4629-948a-1ddcc82c50c7",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,155.4756,109.1341",
+              "Position": "694.2706,94.16248,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -134,7 +135,97 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.4
+                  "PlaybackSpeed": 0.45
+                }
+              ]
+            },
+            {
+              "__guid": "87470070-82c9-4c7f-b84f-a3be3c52d252",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,121.0093,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "10bde9b0-5c6a-4f01-94ae-4b5184244472",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.45
+                }
+              ]
+            },
+            {
+              "__guid": "5516c853-b353-44ac-9862-7aa093884fa7",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,53.19125,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "73ab692f-c989-4ee5-a4d3-fa8b5ddd92be",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.45
+                }
+              ]
+            },
+            {
+              "__guid": "5b553178-337b-4b01-9fea-ba7c787158e3",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,75.20282,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "c0bcb4b5-642a-4f41-99c1-4977c48341c3",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.45
+                }
+              ]
+            },
+            {
+              "__guid": "f7637fcd-997e-4339-b283-f24a90b3678f",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,110.7449,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "821769d2-4bb8-4403-807b-47db249ae6b9",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.45
+                }
+              ]
+            },
+            {
+              "__guid": "6abebdbc-8e76-4910-9a79-a281d2b1a8af",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,143.0334,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "69b2f4b9-b730-43fa-9676-c4319f4f5afa",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.45
                 }
               ]
             },
@@ -142,7 +233,7 @@
               "__guid": "78ad86e9-8433-4ada-a59a-f51c88965c52",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,81.99164,109.1341",
+              "Position": "694.2706,20.86777,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -152,7 +243,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.11
+                  "PlaybackSpeed": 0.41
+                }
+              ]
+            },
+            {
+              "__guid": "38fde0fe-ba04-4280-b9cc-cf82dcbf8956",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,53.15628,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "2c6c0ebe-856c-43fd-baba-6d64c8ad7304",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.41
                 }
               ]
             },
@@ -160,7 +269,7 @@
               "__guid": "e4eab54c-fbbd-4f58-a64a-939c38ebc3c4",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,3.002655,109.1341",
+              "Position": "694.2706,-3.254761,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -170,7 +279,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.43
+                  "PlaybackSpeed": 0.47
+                }
+              ]
+            },
+            {
+              "__guid": "81a706c1-b14a-4129-b7df-b3808cb5bdf6",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,29.03375,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "0dab67a7-40c2-4f47-a2ea-efdc5cf064af",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.47
                 }
               ]
             },
@@ -178,7 +305,7 @@
               "__guid": "ed91eeaa-e9c5-4b98-8520-d5f9cd694222",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-57.16736,109.1341",
+              "Position": "694.2706,-56.32855,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -188,7 +315,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.16
+                  "PlaybackSpeed": 0.35
+                }
+              ]
+            },
+            {
+              "__guid": "424c1709-968d-43ed-8162-c16be2be2f0a",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-24.04004,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "7a19845e-1092-4edf-bec0-e8db56b0a672",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.35
                 }
               ]
             },
@@ -196,7 +341,7 @@
               "__guid": "811a055b-0573-4bdd-b8bc-9bd30cd36eb5",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-153.8756,109.1341",
+              "Position": "694.2706,-154.1953,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -206,7 +351,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.34
+                  "PlaybackSpeed": 0.47
+                }
+              ]
+            },
+            {
+              "__guid": "020ac44d-099f-4774-848f-df49153163c6",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-121.2319,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "d40658f0-2961-44c5-beaa-c4ac481da444",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.47
                 }
               ]
             },
@@ -214,7 +377,7 @@
               "__guid": "da9b58ea-3f39-47fc-91d7-673bb0db3998",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-217.5459,109.1341",
+              "Position": "694.2706,-221.7909,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -224,7 +387,43 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.17
+                  "PlaybackSpeed": 0.53
+                }
+              ]
+            },
+            {
+              "__guid": "3d6786f7-4f8d-4837-8d3c-b89e017e06d1",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-206.951,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "b7c80f8a-d21e-4538-b0d8-002f4bd37cd1",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.53
+                }
+              ]
+            },
+            {
+              "__guid": "34a17207-764a-432c-97ec-7f23103da830",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-178.8361,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "430114a7-ea39-429b-bd4f-845a810de15d",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.53
                 }
               ]
             },
@@ -242,7 +441,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.44
+                }
+              ]
+            },
+            {
+              "__guid": "ad90c355-9c14-480d-8577-6e2c23d4e8a8",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-253.1911,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "77b89b57-8f28-425a-8f68-0e1cea5e1b75",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.44
                 }
               ]
             },
@@ -250,7 +467,7 @@
               "__guid": "39d76863-b919-4276-a02d-1c0533aa3219",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-316.9764,109.1341",
+              "Position": "694.2706,-338.3268,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -260,7 +477,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.51
+                }
+              ]
+            },
+            {
+              "__guid": "4a36a2bf-68f4-4eda-b86d-f07799a47e34",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-305.7434,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "60eb8a06-4074-402a-80f0-7384a94530ba",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.51
                 }
               ]
             },
@@ -278,7 +513,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.44
+                  "PlaybackSpeed": 0.48
+                }
+              ]
+            },
+            {
+              "__guid": "4a867406-f8b1-4284-8f70-bc23ad464bba",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "726.1895,-373.6205,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "2e52bd94-30bf-48c1-a281-bccd742fb92e",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.48
                 }
               ]
             },
@@ -296,7 +549,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.53
+                }
+              ]
+            },
+            {
+              "__guid": "d4de3024-a880-4792-b8a7-05719d26607a",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-464.7005,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "f9205b2d-8fd0-4a1f-9dc0-ada62d939615",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.53
                 }
               ]
             },
@@ -314,7 +585,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.46
+                }
+              ]
+            },
+            {
+              "__guid": "26129f59-37de-47ea-896a-1f691cae4996",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-533.0106,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "11367614-6037-4d9d-83f5-48d7aab37ded",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.46
                 }
               ]
             },
@@ -332,7 +621,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "9b7bd2b3-2f33-4459-94d8-e4765909e9c2",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-569.3081,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "f5c236eb-a75a-4b89-9463-513b1f8f4a5d",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.5
                 }
               ]
             },
@@ -350,7 +657,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "ec8abd35-b1e6-4b55-946a-e9a3b9f47df5",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-674.7082,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "205d3502-065c-4ac2-a9cc-9bd12f2b431a",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.5
                 }
               ]
             },
@@ -358,7 +683,7 @@
               "__guid": "c9d68415-0885-457f-b278-21f7922525a4",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-783.2518,109.1341",
+              "Position": "694.2706,-764.0164,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -368,7 +693,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.44
+                }
+              ]
+            },
+            {
+              "__guid": "827df570-1f59-4dc1-b321-f2c4eeacc1c0",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-733.3858,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "c742999e-3aef-4a27-a0f1-ab5614616687",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.5
                 }
               ]
             },
@@ -386,7 +729,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "d70cc121-8f67-42a2-9d57-daac2aca7fe7",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-793.1689,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "8750b26b-5eea-47ab-a517-7f22c38201d8",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.48
                 }
               ]
             },
@@ -404,7 +765,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.46
+                }
+              ]
+            },
+            {
+              "__guid": "a808a9ae-264f-496d-848d-b7944469cc2e",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-873.8453,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "a443749d-a571-4e35-8c74-7448a8e88b26",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.47
                 }
               ]
             },
@@ -422,7 +801,61 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "81298a13-b167-41c2-8b51-2e2db787563f",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-950.6647,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "7748574d-a0ff-418d-8f75-4be7a07ae1c5",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "127e25f5-7b68-4911-b0f6-c90f3515dbbf",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-945.425,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "7805b12e-4f15-4697-b6f0-43757e9664f2",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "08400c8b-d228-448e-8aa7-707fc3e73484",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-913.1365,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "70eeaa09-fe41-49db-a433-7299070e37a1",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.44
                 }
               ]
             },
@@ -440,25 +873,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.5
                 }
               ]
             },
             {
-              "__guid": "86f132d3-e848-4808-bdd0-99deca8f4bbe",
+              "__guid": "49b4600f-b8f3-40a1-a8c4-4f3d4874baf2",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-1142.354,109.1341",
+              "Position": "694.2706,-995.2325,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "33bf89d7-247f-4f97-ae47-96762160d602",
+                  "__guid": "894b4087-8382-47cc-aaf4-ebf00e00547d",
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.26
+                  "PlaybackSpeed": 0.5
                 }
               ]
             },
@@ -466,7 +899,7 @@
               "__guid": "bef5da5a-14ff-4e0e-a069-2552e33bf312",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-91.57846,109.1341",
+              "Position": "694.2706,-91.22324,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -476,7 +909,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.24
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "99d1590e-546d-4f7d-924c-fce9167ec6b1",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-58.45114,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "690beda2-5795-4cad-89a4-03e3c36c8485",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.5
                 }
               ]
             },
@@ -484,7 +935,7 @@
               "__guid": "8b14f100-be2b-4750-818d-ccd99c401c60",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-434.3691,109.1341",
+              "Position": "694.2706,-439.2108,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
@@ -494,7 +945,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.23
+                  "PlaybackSpeed": 0.46
+                }
+              ]
+            },
+            {
+              "__guid": "9fc2392d-40d2-4f3e-b1fb-fdd4ac15c608",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-410.4312,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "4ee279fe-8f05-402b-b974-aa8d1595856e",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.46
                 }
               ]
             },
@@ -512,7 +981,25 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.12
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "11a8fe43-be14-4323-8ffd-181fafd07cf5",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-619.4284,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "27720f1a-aa3d-42b4-8e0c-8122f1179e3d",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.5
                 }
               ]
             },
@@ -530,25 +1017,43 @@
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.29
+                  "PlaybackSpeed": 0.5
                 }
               ]
             },
             {
-              "__guid": "f8e26c23-306b-4f8a-a1f6-4d16229af299",
+              "__guid": "8e9c485c-87cc-4423-a46b-1f57c7dcc552",
               "Flags": 0,
               "Name": "lilRain",
-              "Position": "694.2706,-1077.422,109.1341",
+              "Position": "694.2706,-821.7614,109.1341",
               "Tags": "particles",
               "Enabled": true,
               "Components": [
                 {
                   "__type": "Sandbox.LegacyParticleSystem",
-                  "__guid": "5518914e-04ea-449d-9999-9e5413015ecb",
+                  "__guid": "d26cb5fb-7721-4699-9a3b-b1f1a359d0ab",
                   "ControlPoints": [],
                   "Looped": true,
                   "Particles": "particles/rafrain.vpcf",
-                  "PlaybackSpeed": 0.25
+                  "PlaybackSpeed": 0.5
+                }
+              ]
+            },
+            {
+              "__guid": "31a8181d-79c4-4aad-ad7a-4bd2b633a748",
+              "Flags": 0,
+              "Name": "lilRain",
+              "Position": "694.2706,-1045.134,109.1341",
+              "Tags": "particles",
+              "Enabled": true,
+              "Components": [
+                {
+                  "__type": "Sandbox.LegacyParticleSystem",
+                  "__guid": "4e25e0e1-6c12-445a-b6e5-430f8cf89689",
+                  "ControlPoints": [],
+                  "Looped": true,
+                  "Particles": "particles/rafrain.vpcf",
+                  "PlaybackSpeed": 0.5
                 }
               ]
             }
@@ -1326,7 +1831,7 @@
       "__guid": "f579497a-db7a-4149-90be-8d32a033475e",
       "Flags": 0,
       "Name": "Smokie",
-      "Position": "252.7399,321.485,155.873",
+      "Position": "899.2219,321.485,155.873",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Enabled": true,
       "Components": [
@@ -2031,27 +2536,6 @@
               "__guid": "046cfbc5-e999-436d-b3e1-f84b6b3a1b58"
             }
           ]
-        }
-      ]
-    },
-    {
-      "__guid": "1bc26d73-a0b8-42df-8f74-d5edcd760514",
-      "Flags": 0,
-      "Name": "Cubemap Fog",
-      "Position": "-352,-1.361374,198.0205",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.CubemapFog",
-          "__guid": "e5a6453b-a8ce-4850-81fe-c09d1edb2c3b",
-          "Blur": 0.86,
-          "EndDistance": 2000,
-          "FalloffExponent": 0.9,
-          "HeightExponent": 2,
-          "HeightStart": 2000,
-          "HeightWidth": 0,
-          "StartDistance": 100,
-          "Tint": "0.65,0,1,1"
         }
       ]
     },

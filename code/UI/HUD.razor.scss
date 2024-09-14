@@ -14,23 +14,32 @@ HUD {
 		left: 16px;
 		bottom: 16px;
 		font-size: 65px;
-		background-color: rgb(47, 0, 255);
-		padding: 0 20px;
+		background-color: rgba(47, 0, 255, 0.1);
+		padding-left: 20px;
 		border-radius: 2px;
 	}
 
 	.spacing {
-		padding-left: 25px;
+		padding-left: 20px;
+		padding-right: 20px;
 	}
 
-	>.vitals {
+	>.speed1 {
 		position: absolute;
 		right: 16px;
 		bottom: 16px;
-		font-size: 65px;
-		background-color: rgb(47, 0, 255);
-		padding: 0 20px;
+		font-size: 48px;
+		background-color: rgba(47, 0, 255, 0.1);
 		border-radius: 2px;
+	}
+	>.speed2 {
+		position: absolute;
+		right: 16px;
+		bottom: 96px;
+		font-size: 48px;
+		background-color: rgba(47, 0, 255, 0.1);
+		border-radius: 2px;
+		padding-left: 20px;
 	}
 }
 

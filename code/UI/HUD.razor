@@ -9,8 +9,11 @@
         <p class="spacing"> @Player.turn </p>
     </div>
 
-    <div class="vitals">@("Speed: ")
+    <div class="speed1">@("")
         <p class="spacing"> @speed@("%") </p>
+    </div>
+    <div class="speed2"> @("Speed: ")
+        <p class="spacing"> @speed2@("u/s") </p>
     </div>
 
 </root>
@@ -19,11 +22,13 @@
 {
 	[Property] Mover Player {get; set;}
     public float speed {get; set;}
+    public float speed2 {get; set;}
 
     protected override void OnUpdate()
 	{
 		base.OnUpdate(); 
         speed = (float)Math.Round((1/Player.TimetillMove) * 20);
+        speed2 = (float)Math.Round((1/Player.TimetillMove)*10)/10;
 	}
 	protected override int BuildHash()
     {
