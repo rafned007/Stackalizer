@@ -38,5 +38,5 @@
 			Log.Info( $"{entry.DisplayName} - {entry.Value}" );
 		}
 	}
-	protected override int BuildHash() => System.HashCode.Combine( board.Title );
+	protected override int BuildHash() => System.HashCode.Combine( board.Entries );
 }
