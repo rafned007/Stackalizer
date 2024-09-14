@@ -27,7 +27,7 @@ public sealed class CoinSpawner : Component
 	{
 		Random rnd = new Random();
 		var rndCoin = rnd.Next(1, 4);
-		await Task.DelaySeconds(TimetillClone);
+		await Task.DelayRealtimeSeconds(TimetillClone);
 		
 		if (player.turn >= 8)
 		{

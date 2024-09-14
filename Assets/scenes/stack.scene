@@ -1725,7 +1725,7 @@
     {
       "__guid": "0b5efb75-65f0-4707-99f1-d81643ac7a65",
       "Flags": 0,
-      "Name": "blimbus (1)",
+      "Name": "BIGblimbus",
       "Position": "1056,-288,700.6075",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "2,2,2",
@@ -1932,7 +1932,7 @@
     {
       "__guid": "45b07537-e037-4783-bfd7-d33b09d40018",
       "Flags": 0,
-      "Name": "Smokie (1)",
+      "Name": "Smokie2",
       "Position": "252.7397,-327.7957,5208.112",
       "Rotation": "-0.5,-0.5,-0.5,-0.5",
       "Enabled": true,

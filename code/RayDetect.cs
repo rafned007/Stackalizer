@@ -36,8 +36,6 @@ public sealed class RayDetect : Component
 			}
 			shake.ViewBob();
 			OpenLeaderBoard();
-			// pauseMenu.Enabled = false;
-			// leaderBoardMenu.Enabled = true;
 		}
 
 		if (!b1Dead)B1Destroyer();
@@ -45,6 +43,7 @@ public sealed class RayDetect : Component
 		if (!b3Dead)B3Destroyer();
 		
 		EffectsController();
+
 		if(!ignoreinputs)
 		{
 			player.controller();
@@ -142,7 +141,6 @@ public sealed class RayDetect : Component
 			Sound.Play("error4");
 		}
 	}
-
 	public async void OpenLeaderBoard()
 	{
 		await Task.DelayRealtimeSeconds(.6f);

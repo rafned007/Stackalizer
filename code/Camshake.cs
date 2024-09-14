@@ -13,8 +13,6 @@ public sealed class Camshake : Component
 
 	public void ViewBob()
 	{
-		
-
 		var bobSpeed = speed;
 
 
