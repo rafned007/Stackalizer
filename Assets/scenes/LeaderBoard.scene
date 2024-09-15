@@ -14,6 +14,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 99
         },
         {
@@ -99,6 +100,7 @@
           "__type": "Sandbox.Tonemapping",
           "__guid": "a03bad13-4e65-4315-9f42-1b80722726f2",
           "__version": 1,
+          "AutoExposureEnabled": true,
           "ExposureBias": 2,
           "ExposureCompensation": 0,
           "ExposureMethod": "RGB",
@@ -159,6 +161,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 99
         },
         {
@@ -179,7 +182,7 @@
           "__guid": "a0127a22-47e4-4896-a789-13733790db2b",
           "DistanceAttenuation": false,
           "DistanceAttenuationOverride": false,
-          "Force2d": false,
+          "Force2d": true,
           "MaxRepeatTime": 1,
           "MinRepeatTime": 1,
           "Occlusion": false,
@@ -189,15 +192,49 @@
           "PlayOnStart": true,
           "ReflectionOverride": false,
           "Reflections": false,
-          "Repeat": false,
+          "Repeat": true,
           "SoundEvent": "sounds/ambiance.sound",
-          "SoundOverride": false,
+          "SoundOverride": true,
           "StopOnNew": false,
           "TargetMixer": {
-            "Name": "unknown",
-            "Id": "00000000-0000-0000-0000-000000000000"
+            "Name": "game",
+            "Id": "9353fd8a-71db-43de-86d5-391050d1f9c5"
           },
-          "Volume": 1
+          "Volume": 2
+        }
+      ]
+    },
+    {
+      "__guid": "1079605b-76a4-469c-9e18-4d5d8974249d",
+      "Flags": 0,
+      "Name": "ambiance2",
+      "Position": "0,-256,0.00001525879",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SoundPointComponent",
+          "__guid": "82d610c6-bb96-4121-8ae7-e0c146e624ed",
+          "DistanceAttenuation": false,
+          "DistanceAttenuationOverride": false,
+          "Force2d": true,
+          "MaxRepeatTime": 1,
+          "MinRepeatTime": 1,
+          "Occlusion": false,
+          "OcclusionOverride": false,
+          "OcclusionRadius": 32,
+          "Pitch": 1,
+          "PlayOnStart": true,
+          "ReflectionOverride": false,
+          "Reflections": false,
+          "Repeat": true,
+          "SoundEvent": "sounds/submarine.sound",
+          "SoundOverride": true,
+          "StopOnNew": false,
+          "TargetMixer": {
+            "Name": "game",
+            "Id": "9353fd8a-71db-43de-86d5-391050d1f9c5"
+          },
+          "Volume": 0.25
         }
       ]
     },
@@ -230,6 +267,7 @@
           "AutoScreenScale": true,
           "Opacity": 1,
           "Scale": 1,
+          "ScaleStrategy": "ConsistentHeight",
           "ZIndex": 100
         },
         {

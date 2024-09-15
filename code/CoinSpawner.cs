@@ -20,18 +20,17 @@ public sealed class CoinSpawner : Component
 		Random rnd = new Random();	
 		var rndTime = rnd.Next(1, 8);
 		TimetillClone =  rndTime;
-		
 	}
 	
 	async void coinspawn()
 	{
 		Random rnd = new Random();
 		var rndCoin = rnd.Next(1, 4);
-		await Task.DelayRealtimeSeconds(TimetillClone);
+		await Task.DelaySeconds(TimetillClone);
 		
 		if (player.turn >= 8)
 		{
-			if (rndCoin == null)
+			if (rndCoin == 0)
 			{
 				Log.Info("wtf");
 				cloneagain();
@@ -58,35 +57,4 @@ public sealed class CoinSpawner : Component
 	{
 		coinspawn();
 	}
-
-	// protected override void OnStart()
-	// {
-	// 	doClone = TimetillClone;
-	// 	Log.Info(doClone == true);
-	// }
-
-	// protected override void OnUpdate()
-	// {
-		
-	// 	Log.Info(doClone == true);
-
-		
-	// 	CoinClone();
-	// }
-
-	
-	// public void CoinClone()
-	// {
-	// 	var cloneRC = redCoin.Clone(Transform.Position);
-	// 	var cloneBC = blueCoin.Clone(Transform.Position);
-	// 	var clonePC = pinkCoin.Clone(Transform.Position);
-	// 	if(doClone)
-	// 	{
-	// 		Log.Info(Transform.Position);
-	// 		cloneRC.Transform.Position = spawnLocation.Transform.Position;
-	// 		cloneBC.Transform.Position = spawnLocation.Transform.Position;
-	// 		clonePC.Transform.Position = spawnLocation.Transform.Position;
-	// 		doClone = 5;
-	// 	}
-	// }
 }

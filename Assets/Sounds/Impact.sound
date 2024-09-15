@@ -1,11 +1,11 @@
 {
   "UI": false,
-  "Volume": "0.70,1.00,0",
-  "Pitch": "1.00,1.00,0",
+  "Volume": "0.7",
+  "Pitch": "1",
   "Decibels": 70,
   "SelectionMode": "Forward",
   "Sounds": [
-    "sounds/impact 021.vsnd"
+    "sounds/rawaudio/impact 021.vsnd"
   ],
   "Occlusion": true,
   "AirAbsorption": true,

@@ -1,17 +1,17 @@
 {
   "UI": true,
-  "Volume": "2.00,1.00,0",
-  "Pitch": "1.00,1.00,0",
+  "Volume": "2",
+  "Pitch": "1",
   "Decibels": 70,
   "SelectionMode": "Forward",
   "Sounds": [
     "sounds/rawaudio/ambisonic_a ext forrest winter wind morning 02w.vsnd"
   ],
-  "Occlusion": true,
-  "AirAbsorption": true,
-  "Transmission": true,
+  "Occlusion": false,
+  "AirAbsorption": false,
+  "Transmission": false,
   "OcclusionRadius": 64,
-  "DistanceAttenuation": true,
+  "DistanceAttenuation": false,
   "__references": [],
   "__version": 0
 }

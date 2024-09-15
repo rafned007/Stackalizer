@@ -163,8 +163,8 @@
           "SoundOverride": true,
           "StopOnNew": false,
           "TargetMixer": {
-            "Name": "unknown",
-            "Id": "00000000-0000-0000-0000-000000000000"
+            "Name": "music",
+            "Id": "6a1d091f-1f7f-4dd0-9d2c-80609ec05660"
           },
           "Volume": 0.36
         }

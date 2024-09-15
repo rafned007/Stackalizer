@@ -11,7 +11,7 @@ public sealed class Destroydelay : Component
 
 	async void destroyer()
 	{
-		await Task.DelayRealtimeSeconds(timeTillDestroy);
+		await Task.DelaySeconds(timeTillDestroy);
 		GameObject.Destroy();
 	}
 }

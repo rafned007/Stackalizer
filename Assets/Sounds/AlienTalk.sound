@@ -7,11 +7,11 @@
   "Sounds": [
     "sounds/rawaudio/alientalk.vsnd"
   ],
-  "Occlusion": false,
+  "Occlusion": true,
   "AirAbsorption": true,
   "Transmission": true,
   "OcclusionRadius": 64,
-  "DistanceAttenuation": true,
+  "DistanceAttenuation": false,
   "__references": [],
   "__version": 0
 }

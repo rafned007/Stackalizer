@@ -76,7 +76,7 @@ public sealed class Mover : Component
 	void NextTurn()
 	{	
 		turn += 1;
-		Log.Info($"Level: {turn - 1}");
+		Log.Info($"Level: {turn}");
 		jumped = false;
 		doMove = .5f;	
 		 if (turn % 5 == 0)

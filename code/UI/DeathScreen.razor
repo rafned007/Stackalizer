@@ -12,7 +12,7 @@
         <div class="button" onclick=@Startmenu>
             Return to Main Menu
         </div>
-        <div class="button" onclick=@OnResume>
+        <div class="button" onclick=@Tryagain>
             Try Again?
         </div>
     </div>
@@ -32,7 +32,7 @@
         base.OnUpdate();
         if (Input.Pressed("jump")) Scene.LoadFromFile("scenes/Stack.scene");
     }
-    void OnResume()
+    void Tryagain()
     {
 		Scene.LoadFromFile("scenes/Stack.scene");
     }

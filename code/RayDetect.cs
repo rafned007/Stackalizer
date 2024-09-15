@@ -30,10 +30,6 @@ public sealed class RayDetect : Component
 		if (blocksRemain == 0 && !ignoreinputs)
 		{
 			ignoreinputs = true;
-			if (!Application.IsEditor) 
-			{
-				Sandbox.Services.Stats.SetValue( "score", player.turn - 1 );
-			}
 			shake.ViewBob();
 			OpenLeaderBoard();
 		}
@@ -143,7 +139,13 @@ public sealed class RayDetect : Component
 	}
 	public async void OpenLeaderBoard()
 	{
-		await Task.DelayRealtimeSeconds(.6f);
+		if (!Application.IsEditor) 
+			{
+				Sandbox.Services.Stats.SetValue( "score", player.turn - 1 );
+				// Log.Info(player.turn - 1);
+			}
+			
+		await Task.DelaySeconds(.7f);
 		pauseMenu.Enabled = false;
 		leaderBoardMenu.Enabled = true;
 	}
