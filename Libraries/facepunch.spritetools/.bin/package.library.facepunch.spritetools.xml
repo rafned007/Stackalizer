@@ -223,5 +223,10 @@
             A class that re-packs a tileset with 1px borders to avoid bleeding.
             </summary>
         </member>
+        <member name="P:SpriteTools.TilesetComponent.LayerDistance">
+            <summary>
+            The distance between layers, this is useful when you want to position things between layers.
+            </summary>
+        </member>
     </members>
 </doc>
