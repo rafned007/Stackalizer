@@ -145,7 +145,7 @@ public sealed class RayDetect : Component
 				// Log.Info(player.turn - 1);
 			}
 			
-		await Task.DelaySeconds(.7f);
+		await Task.DelayRealtimeSeconds(.7f);
 		pauseMenu.Enabled = false;
 		leaderBoardMenu.Enabled = true;
 	}

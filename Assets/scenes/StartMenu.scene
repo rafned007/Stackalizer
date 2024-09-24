@@ -52,41 +52,6 @@
       ]
     },
     {
-      "__guid": "c5c5d5c3-f03b-4141-a115-93712dc232d3",
-      "Flags": 0,
-      "Name": "Sun",
-      "Position": "-149.6651,269.4159,14.98729",
-      "Tags": "light_directional,light",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.DirectionalLight",
-          "__guid": "2d2ee9b9-f86b-44e7-ab88-ac3728776537",
-          "FogMode": "Enabled",
-          "FogStrength": 1,
-          "LightColor": "0.91373,0.98039,1,1",
-          "Shadows": true,
-          "SkyColor": "0,0,0,0"
-        }
-      ]
-    },
-    {
-      "__guid": "323ad17b-1d3b-41c5-bfcf-72e7a4b22594",
-      "Flags": 0,
-      "Name": "2D Skybox",
-      "Position": "-149.6651,269.4159,14.98729",
-      "Tags": "skybox",
-      "Enabled": true,
-      "Components": [
-        {
-          "__type": "Sandbox.SkyBox2D",
-          "__guid": "0bfe1305-4220-4890-9f3a-b5f386778002",
-          "SkyMaterial": "materials/skybox/skybox_workshop.vmat",
-          "Tint": "1,1,1,1"
-        }
-      ]
-    },
-    {
       "__guid": "a12442de-8489-48fc-8617-9280015c146a",
       "Flags": 0,
       "Name": "Camera",
@@ -222,5 +187,6 @@
   "Description": "",
   "ResourceVersion": 1,
   "__references": [],
+  "IsValid": true,
   "__version": 1
 }

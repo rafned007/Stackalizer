@@ -17,16 +17,15 @@ public sealed class CoinSpawner : Component
 	}
 	protected override void OnUpdate()
 	{
-		Random rnd = new Random();	
-		var rndTime = rnd.Next(1, 8);
-		TimetillClone =  rndTime;
+		
 	}
 	
 	async void coinspawn()
 	{
 		Random rnd = new Random();
 		var rndCoin = rnd.Next(1, 4);
-		await Task.DelaySeconds(TimetillClone);
+		TimetillClone = rnd.Next(1, 8);
+		await Task.DelayRealtimeSeconds(TimetillClone);
 		
 		if (player.turn >= 8)
 		{

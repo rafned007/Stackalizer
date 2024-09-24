@@ -12,8 +12,11 @@
         <div class="button" onclick=@PanelToggle>
             How To Play
         </div>
-        <div class="button sfx"onclick=@StartdaGame2>
+        <div class="button sfx "onclick=@StartdaGame2>
             View Leaderboard
+        </div>
+        <div class="button sfx" onclick=@( () => Game.Overlay.ShowSettingsModal() )>
+            Settings 
         </div>
     </div>
 </root>
@@ -34,5 +37,6 @@
         howtopanel.Enabled = !howtopanel.Enabled;
         GameObject.Enabled = !GameObject.Enabled; 
     }
+    
     protected override int BuildHash() => System.HashCode.Combine( PanelToggle );
 }
