@@ -11,7 +11,7 @@
         "__guid": "a695291b-dd94-41b6-ac6e-74205e97dbd2",
         "ControlPoints": [],
         "Looped": false,
-        "Particles": "particles/confetti/confetti_splash.vpcf",
+        "Particles": "particles/confetti1.vpcf",
         "PlaybackSpeed": 1
       },
       {
@@ -26,9 +26,9 @@
   "ShowInMenu": false,
   "MenuPath": null,
   "MenuIcon": null,
+  "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
-  "__references": [
-    "baik.confettisplash"
-  ],
+  "__references": [],
+  "IsValid": true,
   "__version": 1
 }

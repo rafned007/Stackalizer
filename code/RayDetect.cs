@@ -128,8 +128,7 @@ public sealed class RayDetect : Component
 		else if (Input.Pressed("jump") && blocksHit / blocksRemain == 1.0 && !ignoreinputs)
 		{
 			Sound.Play("AmongUs");
-			var clone = confetti.Clone();
-			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52;
+			ConfettiLocationFinder();
 		}
 		else if (Input.Pressed("jump") && blocksHit / blocksRemain != 1.0 && !ignoreinputs)
 		{
@@ -149,4 +148,34 @@ public sealed class RayDetect : Component
 		pauseMenu.Enabled = false;
 		leaderBoardMenu.Enabled = true;
 	}
+	public void ConfettiLocationFinder()
+	{
+		var clone = confetti.Clone();
+		
+		if (!b1Dead && !b2Dead && !b3Dead)
+		{
+			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52;
+		}
+		if (b1Dead)
+		{
+			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*26;
+		}
+		if (b3Dead)
+		{
+			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*-26;
+		}
+		if (b1Dead && b3Dead)
+		{
+			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52;
+		}
+		if (b1Dead && b2Dead)
+		{
+			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*52;
+		}
+		if (b2Dead && b3Dead)
+		{
+			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*-52;
+		}
+	}
+
 }

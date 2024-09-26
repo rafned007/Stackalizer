@@ -6,11 +6,11 @@
     <h1>Press Esc to Resume</h1>
     <h2>Stack&box</h2>
     <div class= "options">
-        <div class="button" onclick=@Startmenu>
-            Return to Menu
-        </div>
         <div class="button" onclick=@OnResume>
             Resume
+        </div>
+        <div class="button" onclick=@Startmenu>
+            Return to Menu
         </div>
         <div class="button" onclick=@MusicControl>
             Mute Music
@@ -63,26 +63,20 @@
             IsPaused = !IsPaused;
             player.ignoreinputs = true;
         }
-
         Scene.TimeScale = IsPaused ? 0 : 1;
     }
-
     void OnResume()
     {
         IsPaused = false;
         player.ignoreinputs = false;
     }
-
     void Startmenu()
     {
         Scene.LoadFromFile("scenes/Startmenu.scene");
     }
-
     void MusicControl()
     {
         musicMuted = !musicMuted;
-        
     }
-
     protected override int BuildHash() => System.HashCode.Combine( IsPaused );
 }

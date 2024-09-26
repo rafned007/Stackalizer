@@ -223,10 +223,98 @@
             A class that re-packs a tileset with 1px borders to avoid bleeding.
             </summary>
         </member>
+        <member name="P:SpriteTools.TilesetComponent.Layers">
+            <summary>
+            The Layers within the TilesetComponent
+            </summary>
+        </member>
         <member name="P:SpriteTools.TilesetComponent.LayerDistance">
             <summary>
             The distance between layers, this is useful when you want to position things between layers.
             </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.HasCollider">
+            <summary>
+            Whether or not the component should generate a collider based on the specified Collision Layer
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.ColliderWidth">
+            <summary>
+            The width of the generated collider
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.Name">
+            <summary>
+            The name of the Layer
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.IsVisible">
+            <summary>
+            Whether or not this Layer is currently being rendered
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.IsLocked">
+            <summary>
+            Whether or not this Layer is locked. Locked Layers will ignore any attempted changes
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.IsCollisionLayer">
+            <summary>
+            Whether or not this Layer dictates the collision mesh
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.TilesetResource">
+            <summary>
+            The Tileset that this Layer uses
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.Tiles">
+            <summary>
+            A dictionary of all Tiles in the layer by their position
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.TilesetComponent">
+            <summary>
+            The TilesetComponent that this Layer belongs to
+            </summary>
+        </member>
+        <member name="M:SpriteTools.TilesetComponent.Layer.Copy">
+            <summary>
+            Returns an exact copy of the Layer
+            </summary>
+            <returns></returns>
+        </member>
+        <member name="M:SpriteTools.TilesetComponent.Layer.SetTile(Vector2Int,System.Guid,Vector2Int,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Set a tile at the specified position. Will fail if IsLocked is true.
+            </summary>
+            <param name="position"></param>
+            <param name="tileId"></param>
+            <param name="cellPosition"></param>
+            <param name="angle"></param>
+            <param name="flipX"></param>
+            <param name="flipY"></param>
+            <param name="rebuild"></param>
+        </member>
+        <member name="M:SpriteTools.TilesetComponent.Layer.GetTile(Vector2Int)">
+            <summary>
+            Get the Tile at the specified position
+            </summary>
+            <param name="position"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SpriteTools.TilesetComponent.Layer.GetTile(Vector3)">
+            <summary>
+            Get the Tile at the specified position
+            </summary>
+            <param name="position"></param>
+            <returns></returns>
+        </member>
+        <member name="M:SpriteTools.TilesetComponent.Layer.RemoveTile(Vector2Int)">
+            <summary>
+            Remove the Tile at the specified position. Will fail if IsLocked is true.
+            </summary>
+            <param name="position"></param>
         </member>
     </members>
 </doc>

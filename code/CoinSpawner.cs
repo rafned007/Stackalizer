@@ -8,6 +8,7 @@ public sealed class CoinSpawner : Component
 	[Property] public GameObject blueCoin {get; set;}
 	[Property] public GameObject pinkCoin {get; set;}
 	[Property] public Mover player;
+	[Property] public PauseMenu pauseMenu;
 
 
 	protected override void OnStart()
@@ -27,7 +28,7 @@ public sealed class CoinSpawner : Component
 		TimetillClone = rnd.Next(1, 8);
 		await Task.DelayRealtimeSeconds(TimetillClone);
 		
-		if (player.turn >= 8)
+		if (player.turn >= 8 && !pauseMenu.IsPaused)
 		{
 			if (rndCoin == 0)
 			{

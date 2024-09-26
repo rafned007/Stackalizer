@@ -3,17 +3,18 @@ using System;
 using System.Buffers;
 using System.Collections.Generic;
 using System.Linq;
-using System.Numerics;
 using System.Text.Json.Serialization;
-using System.Threading;
 
 namespace SpriteTools;
 
 [Category("2D")]
 [Title("2D Tileset Component")]
 [Icon("calendar_view_month")]
-public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
+public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 {
+	/// <summary>
+	/// The Layers within the TilesetComponent
+	/// </summary>
 	[Property, Group("Layers")]
 	public List<Layer> Layers
 	{
@@ -34,9 +35,11 @@ public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
 	/// </summary>
 	[Property, Group("Layers"), ShowIf(nameof(TilesetComponent.HasMultipleLayers), true)]
 	public float LayerDistance { get; set; } = 1f;
-
 	bool HasMultipleLayers => Layers.Count > 1;
 
+	/// <summary>
+	/// Whether or not the component should generate a collider based on the specified Collision Layer
+	/// </summary>
 	[Property, Group("Collision")]
 	public bool HasCollider
 	{
@@ -50,6 +53,9 @@ public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
 	}
 	bool _hasCollider;
 
+	/// <summary>
+	/// The width of the generated collider
+	/// </summary>
 	[Property, Group("Collision")]
 	public float ColliderWidth
 	{
@@ -65,11 +71,9 @@ public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
 	float _colliderWidth;
 
 	public bool IsDirty = false;
-
 	private Model CollisionMesh { get; set; }
 	private List<Vector3> CollisionVertices { get; set; } = new();
 	private List<int[]> CollisionFaces { get; set; } = new();
-
 	List<TilesetSceneObject> _sos = new();
 
 	protected override void OnStart()
@@ -105,6 +109,7 @@ public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
 		base.OnUpdate();
 
 		_sos ??= new();
+		Layers ??= new();
 		if (Layers.Count != _sos.Count)
 		{
 			RebuildSceneObjects();
@@ -217,7 +222,7 @@ public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
 		var tilePositions = new Dictionary<Vector2Int, bool>();
 		foreach (var tile in collisionLayer.Tiles)
 		{
-			tilePositions[Vector2Int.Parse(tile.Key)] = true;
+			tilePositions[tile.Key] = true;
 		}
 		if (tilePositions.Count == 0) return;
 
@@ -412,16 +417,52 @@ public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
 		return false;
 	}
 
+	public Layer GetLayerFromName(string name)
+	{
+		return Layers.FirstOrDefault(x => x.Name == name);
+	}
+
+	public Layer GetLayerFromIndex(int index)
+	{
+		if (index < 0 || index >= Layers.Count) return null;
+		return Layers[index];
+	}
+
 	public class Layer
 	{
+		/// <summary>
+		/// The name of the Layer
+		/// </summary>
 		public string Name { get; set; }
+
+		/// <summary>
+		/// Whether or not this Layer is currently being rendered
+		/// </summary>
 		public bool IsVisible { get; set; }
+
+		/// <summary>
+		/// Whether or not this Layer is locked. Locked Layers will ignore any attempted changes
+		/// </summary>
 		public bool IsLocked { get; set; }
+
+		/// <summary>
+		/// Whether or not this Layer dictates the collision mesh
+		/// </summary>
 		public bool IsCollisionLayer { get; set; }
+
+		/// <summary>
+		/// The Tileset that this Layer uses
+		/// </summary>
 		[Property, Group("Selected Layer")] public TilesetResource TilesetResource { get; set; }
 
-		public Dictionary<string, Tile> Tiles { get; set; }
+		/// <summary>
+		/// A dictionary of all Tiles in the layer by their position
+		/// </summary>
+		public Dictionary<Vector2Int, Tile> Tiles { get; set; }
 
+		/// <summary>
+		/// The TilesetComponent that this Layer belongs to
+		/// </summary>
 		[JsonIgnore, Hide] public TilesetComponent TilesetComponent { get; set; }
 
 		public Layer(string name = "Untitled Layer")
@@ -432,6 +473,10 @@ public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
 			Tiles = new();
 		}
 
+		/// <summary>
+		/// Returns an exact copy of the Layer
+		/// </summary>
+		/// <returns></returns>
 		public Layer Copy()
 		{
 			var layer = new Layer(Name)
@@ -451,22 +496,53 @@ public sealed class TilesetComponent : Collider, Component.ExecuteInEditor
 			return layer;
 		}
 
+		/// <summary>
+		/// Set a tile at the specified position. Will fail if IsLocked is true.
+		/// </summary>
+		/// <param name="position"></param>
+		/// <param name="tileId"></param>
+		/// <param name="cellPosition"></param>
+		/// <param name="angle"></param>
+		/// <param name="flipX"></param>
+		/// <param name="flipY"></param>
+		/// <param name="rebuild"></param>
 		public void SetTile(Vector2Int position, Guid tileId, Vector2Int cellPosition = default, int angle = 0, bool flipX = false, bool flipY = false, bool rebuild = true)
 		{
+			if (IsLocked) return;
 			var tile = new Tile(tileId, cellPosition, angle, flipX, flipY);
-			Tiles[position.ToString()] = tile;
+			Tiles[position] = tile;
 			if (rebuild && TilesetComponent.IsValid())
 				TilesetComponent.IsDirty = true;
 		}
 
-		public Tile GetTile(Vector3 position)
+		/// <summary>
+		/// Get the Tile at the specified position
+		/// </summary>
+		/// <param name="position"></param>
+		/// <returns></returns>
+		public Tile GetTile(Vector2Int position)
 		{
-			return Tiles[new Vector2Int((int)position.x, (int)position.y).ToString()];
+			return Tiles[position];
 		}
 
+		/// <summary>
+		/// Get the Tile at the specified position
+		/// </summary>
+		/// <param name="position"></param>
+		/// <returns></returns>
+		public Tile GetTile(Vector3 position)
+		{
+			return Tiles[new Vector2Int((int)position.x, (int)position.y)];
+		}
+
+		/// <summary>
+		/// Remove the Tile at the specified position. Will fail if IsLocked is true.
+		/// </summary>
+		/// <param name="position"></param>
 		public void RemoveTile(Vector2Int position)
 		{
-			Tiles.Remove(position.ToString());
+			if (IsLocked) return;
+			Tiles.Remove(position);
 		}
 	}
 
@@ -546,7 +622,7 @@ internal sealed class TilesetSceneObject : SceneCustomObject
 
 			foreach (var tile in Layer.Tiles)
 			{
-				var pos = Vector2Int.Parse(tile.Key);
+				var pos = tile.Key;
 				Vector2Int offsetPos = Vector2Int.Zero;
 				if (tile.Value.TileId == default) offsetPos = tile.Value.BakedPosition;
 				else
