@@ -1839,7 +1839,7 @@
           "__guid": "5893a9a5-0e65-4fec-b3bc-f11a3282e1aa",
           "Flags": 0,
           "Name": "ufosound",
-          "Position": "-5.286041,4.90332,280.7509",
+          "Position": "-5.286041,4.903809,212.7509",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -1866,7 +1866,7 @@
                 "Name": "game",
                 "Id": "9353fd8a-71db-43de-86d5-391050d1f9c5"
               },
-              "Volume": 0.5
+              "Volume": 1
             }
           ]
         }
@@ -1876,7 +1876,7 @@
       "__guid": "0b5efb75-65f0-4707-99f1-d81643ac7a65",
       "Flags": 0,
       "Name": "BIGblimbus",
-      "Position": "1056,-288,700.6075",
+      "Position": "768,-288,704",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "2,2,2",
       "Tags": "shootable",
@@ -1889,7 +1889,7 @@
           "BroadcastEvents": {},
           "CastShadows": "Off",
           "CreateAttachPoints": false,
-          "FlashTint": "0,0.08256,0.9907,0.57",
+          "FlashTint": "0,0,0,0",
           "PlaybackSpeed": 1,
           "Sprite": "sprites/blob1.sprite",
           "SpriteFlags": "None",
@@ -1941,22 +1941,22 @@
       ],
       "Children": [
         {
-          "__guid": "6815b889-139a-423e-8454-1de2599f173e",
+          "__guid": "b4c2fc9e-f2d5-4e50-91a8-a5a4cc9bf728",
           "Flags": 0,
           "Name": "ufosound",
-          "Position": "-5.286041,4.903381,384",
+          "Position": "0,0,464",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
             {
               "__type": "Sandbox.SoundPointComponent",
-              "__guid": "9cac6239-1ab9-46a5-8694-23a3c99b83a6",
+              "__guid": "0457b0aa-6c72-4b42-9bf0-2bd2b6bdc925",
               "DistanceAttenuation": true,
               "DistanceAttenuationOverride": true,
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
-              "Occlusion": true,
+              "Occlusion": false,
               "OcclusionOverride": true,
               "OcclusionRadius": 3.8,
               "Pitch": 1,
@@ -1981,7 +1981,7 @@
       "__guid": "f579497a-db7a-4149-90be-8d32a033475e",
       "Flags": 0,
       "Name": "Smokie",
-      "Position": "899.2219,321.485,155.873",
+      "Position": "352,321.485,155.873",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Enabled": true,
       "Components": [
@@ -2023,7 +2023,7 @@
           "__guid": "a8136833-5f5e-462c-a657-fdafdf4e41bb",
           "Flags": 0,
           "Name": "World",
-          "Position": "-30.51483,63.99976,568.9283",
+          "Position": "-30.51492,63.99974,96.00006",
           "Rotation": "0.5000001,0.4999999,0.5,-0.5",
           "Tags": "worldpanel",
           "Enabled": true,
@@ -2032,14 +2032,14 @@
               "__type": "Sandbox.WorldPanel",
               "__guid": "5a89fb1f-b87f-400d-8da2-42674cd4c94c",
               "HorizontalAlign": "Center",
-              "InteractionRange": 1000,
+              "InteractionRange": 2000,
               "LookAtCamera": false,
               "PanelSize": "3000,800",
               "RenderOptions": {
-                "GameLayer": true,
+                "GameLayer": false,
                 "OverlayLayer": false,
                 "BloomLayer": false,
-                "AfterUILayer": false
+                "AfterUILayer": true
               },
               "RenderScale": 9,
               "VerticalAlign": "Center"
@@ -2138,10 +2138,10 @@
               "LookAtCamera": false,
               "PanelSize": "4000,1600",
               "RenderOptions": {
-                "GameLayer": true,
+                "GameLayer": false,
                 "OverlayLayer": false,
                 "BloomLayer": false,
-                "AfterUILayer": false
+                "AfterUILayer": true
               },
               "RenderScale": 9,
               "VerticalAlign": "Center"
@@ -2250,7 +2250,7 @@
           "__guid": "11b26dd5-b489-4a55-ad1a-64042cf2de2e",
           "Flags": 0,
           "Name": "alientalk",
-          "Position": "4.786758,1.161255,346.8498",
+          "Position": "4.786758,1.161499,410.8498",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -2262,9 +2262,9 @@
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
-              "Occlusion": true,
+              "Occlusion": false,
               "OcclusionOverride": true,
-              "OcclusionRadius": 0.75,
+              "OcclusionRadius": 64,
               "Pitch": 1,
               "PlayOnStart": true,
               "ReflectionOverride": false,
@@ -2277,7 +2277,7 @@
                 "Name": "game",
                 "Id": "9353fd8a-71db-43de-86d5-391050d1f9c5"
               },
-              "Volume": 0.5
+              "Volume": 0.1
             }
           ]
         },
@@ -2362,7 +2362,7 @@
           "__guid": "680b6384-1dd7-4213-942c-4352eb6c5a53",
           "Flags": 0,
           "Name": "alientalk",
-          "Position": "4.786743,1.161133,346.8498",
+          "Position": "4.786743,1.161621,410.8498",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -2374,9 +2374,9 @@
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
-              "Occlusion": true,
+              "Occlusion": false,
               "OcclusionOverride": true,
-              "OcclusionRadius": 0.75,
+              "OcclusionRadius": 64,
               "Pitch": 1,
               "PlayOnStart": true,
               "ReflectionOverride": false,
@@ -2389,7 +2389,7 @@
                 "Name": "game",
                 "Id": "9353fd8a-71db-43de-86d5-391050d1f9c5"
               },
-              "Volume": 0.5
+              "Volume": 0.1
             }
           ]
         },
@@ -2474,7 +2474,7 @@
           "__guid": "968f0c21-c750-409e-879d-d516b29d043c",
           "Flags": 0,
           "Name": "alientalk",
-          "Position": "4.786743,1.161377,346.8498",
+          "Position": "4.786743,1.161621,410.8498",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -2486,9 +2486,9 @@
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
-              "Occlusion": true,
+              "Occlusion": false,
               "OcclusionOverride": true,
-              "OcclusionRadius": 0.75,
+              "OcclusionRadius": 64,
               "Pitch": 1,
               "PlayOnStart": true,
               "ReflectionOverride": false,
@@ -2501,7 +2501,7 @@
                 "Name": "game",
                 "Id": "9353fd8a-71db-43de-86d5-391050d1f9c5"
               },
-              "Volume": 0.5
+              "Volume": 0.1
             }
           ]
         },
@@ -2586,7 +2586,7 @@
           "__guid": "c4bc306f-c507-489a-b347-04211931d18c",
           "Flags": 0,
           "Name": "alientalk",
-          "Position": "4.786743,1.161377,346.8498",
+          "Position": "4.786743,1.161621,410.8498",
           "Rotation": "0,0,0.7071068,-0.7071068",
           "Enabled": true,
           "Components": [
@@ -2598,9 +2598,9 @@
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
-              "Occlusion": true,
+              "Occlusion": false,
               "OcclusionOverride": true,
-              "OcclusionRadius": 0.75,
+              "OcclusionRadius": 64,
               "Pitch": 1,
               "PlayOnStart": true,
               "ReflectionOverride": false,
@@ -2613,7 +2613,7 @@
                 "Name": "game",
                 "Id": "9353fd8a-71db-43de-86d5-391050d1f9c5"
               },
-              "Volume": 0.5
+              "Volume": 0.1
             }
           ]
         },
@@ -2693,7 +2693,7 @@
       "__guid": "5a9a92ed-a884-44cb-aa65-a1769175edb0",
       "Flags": 0,
       "Name": "city",
-      "Position": "1024,2.986548,800",
+      "Position": "736,2.986548,800",
       "Rotation": "0.5,-0.5,-0.5,0.5",
       "Scale": "18,18,1",
       "Enabled": true,
