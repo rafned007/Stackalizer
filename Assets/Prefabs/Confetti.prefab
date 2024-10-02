@@ -29,7 +29,7 @@
   "DontBreakAsTemplate": false,
   "ResourceVersion": 1,
   "__references": [
-    "baik.confettisplash"
+    "baik.confettisplash#42189"
   ],
   "IsValid": true,
   "__version": 1

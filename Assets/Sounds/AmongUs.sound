@@ -13,7 +13,7 @@
   "OcclusionRadius": 64,
   "DistanceAttenuation": false,
   "__references": [
-    "titanovsky.sfx_among_us_task_complete"
+    "titanovsky.sfx_among_us_task_complete#53946"
   ],
   "__version": 0
 }
