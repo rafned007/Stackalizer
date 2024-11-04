@@ -93,11 +93,17 @@
             A list of animations that are available for this sprite.
             </summary>
         </member>
+        <member name="M:SpriteTools.SpriteResource.GetAnimation(System.String)">
+            <summary>
+            Returns a specific animation by name (or null if it doesn't exist).
+            </summary>
+            <param name="name"></param>
+            <returns></returns>
+        </member>
         <member name="M:SpriteTools.SpriteResource.GetAttachmentNames">
             <summary>
             Returns a list of names for every attachment this Sprite has.
             </summary>
-            <returns>A list of names for every attachment this Sprite has</returns>
         </member>
         <member name="M:SpriteTools.SpriteResource.Load(System.String)">
             <summary>
@@ -116,6 +122,12 @@
             Returns a list of all the texture paths used by this sprite.
             </summary>
             <returns></returns>
+        </member>
+        <member name="M:SpriteTools.SpriteResource.CopyFrom(SpriteTools.SpriteResource)">
+            <summary>
+            Copies all the data from another sprite resource into this one.
+            </summary>
+            <param name="otherSprite"></param>
         </member>
         <member name="P:SpriteTools.SpriteAnimation._nameProp">
             <summary>

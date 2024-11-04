@@ -3,6 +3,7 @@ using Editor.NodeEditor;
 using Sandbox;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text.Json;
 
@@ -102,7 +103,7 @@ public partial class MainWindow : DockWindow, IAssetEditor
 
     void UpdateWindowTitle()
     {
-        Title = ($"{_asset.Name} - Sprite Editor" ?? "Untitled Sprite - Sprite Editor") + (_dirty ? "*" : "");
+        Title = $"{_asset?.Name ?? "Untitled Sprite"} - Sprite Editor" + (_dirty ? "*" : "");
     }
 
     public void RebuildUI()
@@ -111,10 +112,10 @@ public partial class MainWindow : DockWindow, IAssetEditor
 
         {
             var file = MenuBar.AddMenu("File");
-            file.AddOption("New", "common/new.png", () => New(), "CTRL+N").StatusText = "New Sprite";
-            file.AddOption("Open", "common/open.png", () => Open(), "Ctrl+O").StatusText = "Open Sprite";
-            file.AddOption("Save", "common/save.png", () => Save(), "Ctrl+S").StatusText = "Save Sprite";
-            file.AddOption("Save As...", "common/save.png", () => Save(true), "Ctrl+Shift+S").StatusText = "Save Sprite As...";
+            file.AddOption("New", "common/new.png", () => New(), "CTRL+N").StatusTip = "New Sprite";
+            file.AddOption("Open", "common/open.png", () => Open(), "Ctrl+O").StatusTip = "Open Sprite";
+            file.AddOption("Save", "common/save.png", () => Save(), "Ctrl+S").StatusTip = "Save Sprite";
+            file.AddOption("Save As...", "common/save.png", () => Save(true), "Ctrl+Shift+S").StatusTip = "Save Sprite As...";
             file.AddSeparator();
             file.AddOption(new Option("Exit") { Triggered = Close });
         }
@@ -193,9 +194,9 @@ public partial class MainWindow : DockWindow, IAssetEditor
         PromptSave(() => CreateNew());
     }
 
-    public void CreateNew()
+    public void CreateNew(string savePath = null)
     {
-        var savePath = GetSavePath("New Sprite");
+        if (string.IsNullOrEmpty(savePath)) savePath = GetSavePath("New Sprite");
 
         _asset = null;
         Sprite = AssetSystem.CreateResource("sprite", savePath).LoadResource<SpriteResource>();
@@ -279,6 +280,11 @@ public partial class MainWindow : DockWindow, IAssetEditor
         }
 
         // Register the asset if we haven't already
+        if (_asset is null)
+        {
+            var newSprite = AssetSystem.CreateResource("sprite", savePath).LoadResource<SpriteResource>();
+            newSprite.CopyFrom(Sprite);
+        }
         _asset ??= AssetSystem.RegisterFile(savePath);
         _asset.SaveToDisk(Sprite);
         _dirty = false;
@@ -331,10 +337,10 @@ public partial class MainWindow : DockWindow, IAssetEditor
         _undoMenuOption.Text = _undoStack.UndoName ?? "Undo";
         _redoMenuOption.Text = _undoStack.RedoName ?? "Redo";
 
-        _undoOption.StatusText = _undoStack.UndoName ?? "Undo";
-        _redoOption.StatusText = _undoStack.RedoName ?? "Redo";
-        _undoMenuOption.StatusText = _undoStack.UndoName ?? "Undo";
-        _redoMenuOption.StatusText = _undoStack.RedoName ?? "Redo";
+        _undoOption.StatusTip = _undoStack.UndoName ?? "Undo";
+        _redoOption.StatusTip = _undoStack.RedoName ?? "Redo";
+        _undoMenuOption.StatusTip = _undoStack.UndoName ?? "Undo";
+        _redoMenuOption.StatusTip = _undoStack.RedoName ?? "Redo";
     }
 
     static string GetSavePath(string title = "Save Sprite")
@@ -519,9 +525,9 @@ public partial class MainWindow : DockWindow, IAssetEditor
         toolBar = new ToolBar(this, "SpriteEditorToolbar");
         AddToolBar(toolBar, ToolbarPosition.Top);
 
-        toolBar.AddOption("New", "common/new.png", New).StatusText = "New Sprite";
-        toolBar.AddOption("Open", "common/open.png", Open).StatusText = "Open Sprite";
-        toolBar.AddOption("Save", "common/save.png", () => Save()).StatusText = "Save Sprite";
+        toolBar.AddOption("New", "common/new.png", New).StatusTip = "New Sprite";
+        toolBar.AddOption("Open", "common/open.png", Open).StatusTip = "Open Sprite";
+        toolBar.AddOption("Save", "common/save.png", () => Save()).StatusTip = "Save Sprite";
 
         toolBar.AddSeparator();
 

@@ -22,8 +22,8 @@ public sealed class Camshake : Component
 		var yaw = MathF.Sin( Bob ) * (intensity/10);
 		var pitch = MathF.Cos( -Bob * 2f ) * (intensity/10);
 
-		GameObject.Transform.LocalRotation *= Rotation.FromYaw( -yaw * LerpBobSpeed );
-		GameObject.Transform.LocalRotation *= Rotation.FromPitch( -pitch * LerpBobSpeed * 0.5f );
+		GameObject.WorldRotation *= Rotation.FromYaw( -yaw * LerpBobSpeed );
+		GameObject.WorldRotation *= Rotation.FromPitch( -pitch * LerpBobSpeed * 0.5f );
 	}
 
 	protected override void OnUpdate()

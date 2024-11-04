@@ -35,7 +35,7 @@ public sealed class ShooterControl : Component
 	{
 		if ( ShotSound is not null )
 		{
-			Sound.Play( ShotSound, Scene.Camera.Transform.Position );
+			Sound.Play( ShotSound, Scene.Camera.WorldPosition );
 		}
 
 		var tr = Scene.Trace
@@ -50,7 +50,7 @@ public sealed class ShooterControl : Component
 			if (blorble.upgrade && tr.GameObject.Tags.Has("blorble") )
 			{
 				var clone = explosion.Clone();
-				clone.Transform.Position = hitpos;
+				clone.WorldPosition = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= 2f;
 				Sound.Play( HitSound, hitpos);
@@ -59,7 +59,7 @@ public sealed class ShooterControl : Component
 			else if(!blorble.upgrade && tr.GameObject.Tags.Has("blorble"))
 			{
 				var clone = explosion.Clone();
-				clone.Transform.Position = hitpos;
+				clone.WorldPosition = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= .5f;
 				Sound.Play( HitSound, hitpos);
@@ -73,7 +73,7 @@ public sealed class ShooterControl : Component
 			if (tr.GameObject.Tags.Has("redcoin"))
 			{
 				var clone = coinsplosionr.Clone();
-				clone.Transform.Position = hitpos;
+				clone.WorldPosition = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= .5f;
 				Sound.Play( badcoin);
@@ -81,7 +81,7 @@ public sealed class ShooterControl : Component
 			else if (tr.GameObject.Tags.Has("bluecoin"))
 			{
 				var clone = coinsplosionb.Clone();
-				clone.Transform.Position = hitpos;
+				clone.WorldPosition = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= 1.2f;
 				Sound.Play( goodcoin);
@@ -89,7 +89,7 @@ public sealed class ShooterControl : Component
 			else if (tr.GameObject.Tags.Has("pinkcoin"))
 			{
 				var clone = coinsplosionp.Clone();
-				clone.Transform.Position = hitpos;
+				clone.WorldPosition = hitpos;
 				tr.GameObject.Destroy();
 				playerSpeed.TimetillMove *= 1.5f;
 				Sound.Play( goodcoin);

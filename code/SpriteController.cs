@@ -11,7 +11,7 @@ public sealed class SpriteController : Component
 
     protected override void OnStart()
     {
-        start = Transform.Position;
+        start = WorldPosition;
         end = start + MoveDistance;
         animDuration = TimeToMove;
     }
@@ -24,6 +24,6 @@ public sealed class SpriteController : Component
             start = temp;
             animDuration = TimeToMove;
         }
-        Transform.Position = start.LerpTo( end, animDuration.Fraction );
+        WorldPosition = start.LerpTo( end, animDuration.Fraction );
     }
 }

@@ -37,18 +37,18 @@ public sealed class CoinSpawner : Component
 			}
 			if (rndCoin == 1)
 			{
-				var cloneRC = redCoin.Clone(Transform.Position + (Vector3.Forward * -104));
+				var cloneRC = redCoin.Clone(WorldPosition + (Vector3.Forward * -104));
 				Log.Info(rndCoin);
 			}
 			else if (rndCoin == 2)
 			{
 				Log.Info(rndCoin);
-				var cloneBC = blueCoin.Clone(Transform.Position + (Vector3.Forward * -104));
+				var cloneBC = blueCoin.Clone(WorldPosition + (Vector3.Forward * -104));
 			}
 			else
 			{
 				Log.Info(rndCoin);
-				var clonePC = pinkCoin.Clone(Transform.Position + (Vector3.Forward * -104));
+				var clonePC = pinkCoin.Clone(WorldPosition + (Vector3.Forward * -104));
 			}
 		}
 		cloneagain();

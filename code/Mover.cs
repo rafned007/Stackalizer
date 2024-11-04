@@ -35,21 +35,21 @@ public sealed class Mover : Component
 	{
 		if (doMove && !jumped)
 		{
-    		Transform.Position += direction * 52;
+    		WorldPosition += direction * 52;
 			doMove = TimetillMove;
 		}
 
-		if (Vector3.DistanceBetween(Transform.Position, Border.Transform.Position) >= (10*52))
+		if (Vector3.DistanceBetween(WorldPosition, Border.WorldPosition) >= (10*52))
 		{
 			if (direction == Vector3.Left)
 			{
 				direction = Vector3.Right;
-				Transform.Position += direction * 52;
+				WorldPosition += direction * 52;
 			}
 			else
 			{
 				direction = Vector3.Left;
-				Transform.Position += direction * 52;
+				WorldPosition += direction * 52;
 			}
 		}
 	}
@@ -59,15 +59,15 @@ public sealed class Mover : Component
 		if (Input.Pressed("jump"))
 		{
 			//clone base at players current position
-			var clone = Base.Clone(Transform.Position);
+			var clone = Base.Clone(WorldPosition);
 			clone.Tags.Remove("base");
 
 			jumped = true;
 			TimetillMove *= TimeRatio;
 			//move border
-			Border.Transform.Position = Vector3.Up * (52*turn);
+			Border.WorldPosition = Vector3.Up * (52*turn);
 			//move player
-			Transform.Position = Border.Transform.Position + Vector3.Right*(52*9);	
+			WorldPosition = Border.WorldPosition + Vector3.Right*(52*9);	
 
 			NextTurn();
 		}
@@ -87,11 +87,11 @@ public sealed class Mover : Component
 	}
 	void camControl()
 	{	
-		var start = Camera.Transform.Position;
+		var start = Camera.WorldPosition;
 		var end = Vector3.Up *(52*turn)+ (Vector3.Backward * 208);
 		if (turn % 5 == 0)
 		{
-			Camera.Transform.Position = start.LerpTo(end, doMove.Fraction/10);	
+			Camera.WorldPosition = start.LerpTo(end, doMove.Fraction/10);	
 		}
 	}
 }

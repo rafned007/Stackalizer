@@ -2,6 +2,21 @@
   "__guid": "a997bb33-c937-46f7-abe2-4c26b809e5c4",
   "GameObjects": [
     {
+      "__guid": "b01f1e29-d75d-49ae-9a6c-2df8205be932",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "300ce40c-cd40-4afd-9ae4-a970834a20f3",
+          "Description": "",
+          "SceneTags": "",
+          "Title": "stack"
+        }
+      ]
+    },
+    {
       "__guid": "bfc59c12-1ed2-4f91-8956-a95a315eac3c",
       "Flags": 0,
       "Name": "Sun",
@@ -1216,7 +1231,8 @@
               "Center": "0,0,0",
               "IsTrigger": true,
               "Scale": "500.5001,1300,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "destroytrigger",
@@ -1335,7 +1351,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "SpriteTools.SpriteComponent",
@@ -1359,7 +1376,6 @@
           "__guid": "0321209e-f88d-4c0f-9068-428e0ab4cf1b",
           "Flags": 0,
           "Name": "Blocks2",
-          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
@@ -1368,7 +1384,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "SpriteTools.SpriteComponent",
@@ -1401,7 +1418,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "SpriteTools.SpriteComponent",
@@ -1444,7 +1462,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "SpriteTools.SpriteComponent",
@@ -1468,7 +1487,6 @@
           "__guid": "cfab8cfc-e320-4feb-932b-b85d64f64eb5",
           "Flags": 0,
           "Name": "Base2",
-          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
@@ -1477,7 +1495,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "SpriteTools.SpriteComponent",
@@ -1510,7 +1529,8 @@
               "Center": "0,0,0",
               "IsTrigger": false,
               "Scale": "50,50,50",
-              "Static": false
+              "Static": false,
+              "SurfaceVelocity": "0,0,0"
             },
             {
               "__type": "SpriteTools.SpriteComponent",
@@ -1568,7 +1588,6 @@
           "__guid": "249bc472-b246-4764-a33d-f59529e650af",
           "Flags": 0,
           "Name": "Base2",
-          "Position": "0,0,0",
           "Enabled": true,
           "Components": [
             {
@@ -1737,6 +1756,7 @@
         {
           "__type": "Sandbox.SkyBox2D",
           "__guid": "8cee23e7-22d1-48fd-a634-d5b3382f1d16",
+          "SkyIndirectLighting": true,
           "SkyMaterial": "materials/skybox/skybox_day_01.vmat",
           "Tint": "0.19694,0.05045,0.20465,0.38"
         }
@@ -1795,7 +1815,8 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "89.69985,58.29998,5.700144",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SpriteController",
@@ -1846,8 +1867,19 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "61504eff-939a-440d-b4e8-4c34447f2026",
+              "Distance": 512,
               "DistanceAttenuation": true,
               "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927
+                },
+                {
+                  "x": 1
+                }
+              ],
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
@@ -1905,7 +1937,8 @@
           "Center": "0,0,0",
           "IsTrigger": false,
           "Scale": "89.69985,58.29998,5.700144",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SpriteController",
@@ -1951,8 +1984,19 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "0457b0aa-6c72-4b42-9bf0-2bd2b6bdc925",
+              "Distance": 512,
               "DistanceAttenuation": true,
               "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927
+                },
+                {
+                  "x": 1
+                }
+              ],
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
@@ -2007,7 +2051,8 @@
           "Center": "-19.10003,-4.199998,0",
           "IsTrigger": false,
           "Scale": "49.50003,94.49947,5.700144",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SpriteController",
@@ -2109,7 +2154,8 @@
           "Center": "-19.10003,-4.199998,0",
           "IsTrigger": false,
           "Scale": "49.50003,94.49947,5.700144",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SpriteController",
@@ -2230,7 +2276,8 @@
           "Center": "-6.899997,-1.3,0",
           "IsTrigger": false,
           "Scale": "83.69993,82.09966,5.700144",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SpriteController",
@@ -2257,8 +2304,19 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "61c68947-2bb2-4616-8495-322be1b74271",
+              "Distance": 512,
               "DistanceAttenuation": true,
               "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927
+                },
+                {
+                  "x": 1
+                }
+              ],
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
@@ -2342,7 +2400,8 @@
           "Center": "-6.899997,-1.3,0",
           "IsTrigger": false,
           "Scale": "83.69993,82.09966,5.700144",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SpriteController",
@@ -2369,8 +2428,19 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "718452f2-fc04-4fb8-b226-ee94e3ecfedb",
+              "Distance": 512,
               "DistanceAttenuation": true,
               "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927
+                },
+                {
+                  "x": 1
+                }
+              ],
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
@@ -2454,7 +2524,8 @@
           "Center": "-6.899997,-1.3,0",
           "IsTrigger": false,
           "Scale": "83.69993,82.09966,5.700144",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SpriteController",
@@ -2481,8 +2552,19 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "a9446d20-793f-48ea-8bc7-958b0178ffd2",
+              "Distance": 512,
               "DistanceAttenuation": true,
               "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927
+                },
+                {
+                  "x": 1
+                }
+              ],
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
@@ -2566,7 +2648,8 @@
           "Center": "-6.899997,-1.3,0",
           "IsTrigger": false,
           "Scale": "83.69993,82.09966,5.700144",
-          "Static": false
+          "Static": false,
+          "SurfaceVelocity": "0,0,0"
         },
         {
           "__type": "SpriteController",
@@ -2593,8 +2676,19 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "78bb75c1-f459-4bb1-99ec-5d293f2b7d62",
+              "Distance": 512,
               "DistanceAttenuation": true,
               "DistanceAttenuationOverride": true,
+              "Falloff": [
+                {
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927
+                },
+                {
+                  "x": 1
+                }
+              ],
               "Force2d": false,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
@@ -2733,8 +2827,19 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "7056ca6e-7bdd-4a40-b19c-ff5f99800f75",
+              "Distance": 512,
               "DistanceAttenuation": false,
               "DistanceAttenuationOverride": false,
+              "Falloff": [
+                {
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927
+                },
+                {
+                  "x": 1
+                }
+              ],
               "Force2d": true,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
@@ -2767,8 +2872,19 @@
             {
               "__type": "Sandbox.SoundPointComponent",
               "__guid": "2898d591-5ea7-4b54-9fa2-e8a8469be0b2",
+              "Distance": 512,
               "DistanceAttenuation": false,
               "DistanceAttenuationOverride": false,
+              "Falloff": [
+                {
+                  "y": 1,
+                  "in": 3.1415927,
+                  "out": -3.1415927
+                },
+                {
+                  "x": 1
+                }
+              ],
               "Force2d": true,
               "MaxRepeatTime": 1,
               "MinRepeatTime": 1,
@@ -2799,9 +2915,13 @@
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 60,
     "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "stack"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -2815,10 +2935,9 @@
       "IncludedBodies": ""
     }
   },
+  "ResourceVersion": 2,
   "Title": "stack",
-  "Description": "",
-  "ResourceVersion": 1,
+  "Description": null,
   "__references": [],
-  "IsValid": true,
-  "__version": 1
+  "__version": 2
 }

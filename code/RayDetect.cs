@@ -48,7 +48,7 @@ public sealed class RayDetect : Component
 
 	void B1Destroyer()
 	{
-		var startPos1 = Transform.Position + Vector3.Left*52;
+		var startPos1 = WorldPosition + Vector3.Left*52;
 		var endPos1 = startPos1 + Vector3.Down *52;
 		var tr1 = Scene.Trace.Ray(startPos1, endPos1)
 		.WithoutTags("player").Size(5).Run();
@@ -62,7 +62,7 @@ public sealed class RayDetect : Component
 		{
 			Base1.Destroy();
 			var clone = particles.Clone();
-			clone.Transform.Position = pBlock1.Transform.Position;
+			clone.WorldPosition = pBlock1.WorldPosition;
 			pBlock1.Destroy();
 			b1Dead =true;
 			count1++;
@@ -72,7 +72,7 @@ public sealed class RayDetect : Component
 	}
 	void B2Destroyer()
 	{
-		var startPos2 = Transform.Position;
+		var startPos2 = WorldPosition;
 		var endPos2 = startPos2 + Vector3.Down *52;
 		var tr2 = Scene.Trace.Ray(startPos2, endPos2)
 		.WithoutTags("player").Size(5).Run();
@@ -86,7 +86,7 @@ public sealed class RayDetect : Component
 		{
 			Base2.Destroy();
 			var clone = particles.Clone();
-			clone.Transform.Position = pBlock2.Transform.Position;
+			clone.WorldPosition = pBlock2.WorldPosition;
 			pBlock2.Destroy();
 			b2Dead =true;
 			count2++;
@@ -96,7 +96,7 @@ public sealed class RayDetect : Component
 	}
 	void B3Destroyer()
 	{
-		var startPos3 = Transform.Position + Vector3.Right*52;
+		var startPos3 = WorldPosition + Vector3.Right*52;
 		var endPos3 = startPos3 + Vector3.Down *52;
 		var tr3 = Scene.Trace.Ray(startPos3, endPos3)
 		.WithoutTags("player").Size(5).Run();
@@ -110,7 +110,7 @@ public sealed class RayDetect : Component
 		{
 			Base3.Destroy();
 			var clone = particles.Clone();
-			clone.Transform.Position = pBlock3.Transform.Position;
+			clone.WorldPosition = pBlock3.WorldPosition;
 			pBlock3.Destroy();
 			b3Dead =true;
 			count3++;
@@ -144,7 +144,7 @@ public sealed class RayDetect : Component
 				// Log.Info(player.turn - 1);
 			}
 			
-		await Task.DelayRealtimeSeconds(.7f);
+		await Task.DelayRealtimeSeconds(1f);
 		pauseMenu.Enabled = false;
 		leaderBoardMenu.Enabled = true;
 	}
@@ -154,27 +154,27 @@ public sealed class RayDetect : Component
 		
 		if (!b1Dead && !b2Dead && !b3Dead)
 		{
-			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52;
+			clone.WorldPosition = Vector3.Up*52*(player.turn) + Vector3.Up*52;
 		}
 		if (b1Dead)
 		{
-			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*26;
+			clone.WorldPosition = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*26;
 		}
 		if (b3Dead)
 		{
-			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*-26;
+			clone.WorldPosition = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*-26;
 		}
 		if (b1Dead && b3Dead)
 		{
-			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52;
+			clone.WorldPosition = Vector3.Up*52*(player.turn) + Vector3.Up*52;
 		}
 		if (b1Dead && b2Dead)
 		{
-			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*52;
+			clone.WorldPosition = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*52;
 		}
 		if (b2Dead && b3Dead)
 		{
-			clone.Transform.Position = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*-52;
+			clone.WorldPosition = Vector3.Up*52*(player.turn) + Vector3.Up*52 + Vector3.Left*-52;
 		}
 	}
 

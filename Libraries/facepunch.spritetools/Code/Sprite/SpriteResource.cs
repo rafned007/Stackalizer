@@ -19,9 +19,18 @@ public class SpriteResource : GameResource
 	};
 
 	/// <summary>
+	/// Returns a specific animation by name (or null if it doesn't exist).
+	/// </summary>
+	/// <param name="name"></param>
+	/// <returns></returns>
+	public SpriteAnimation GetAnimation(string name)
+	{
+		return Animations.FirstOrDefault(x => x.Name == name);
+	}
+
+	/// <summary>
 	/// Returns a list of names for every attachment this Sprite has.
 	/// </summary>
-	/// <returns>A list of names for every attachment this Sprite has</returns>
 	public List<string> GetAttachmentNames()
 	{
 		var attachmentNames = new List<string>();
@@ -74,6 +83,33 @@ public class SpriteResource : GameResource
 			}
 		}
 		return paths;
+	}
+
+	/// <summary>
+	/// Copies all the data from another sprite resource into this one.
+	/// </summary>
+	/// <param name="otherSprite"></param>
+	public void CopyFrom(SpriteResource otherSprite)
+	{
+		Animations = new List<SpriteAnimation>();
+		foreach (var otherAnimation in otherSprite.Animations)
+		{
+			var newAnimation = new SpriteAnimation(otherAnimation.Name)
+			{
+				FrameRate = otherAnimation.FrameRate,
+				Looping = otherAnimation.Looping,
+				Origin = otherAnimation.Origin
+			};
+			foreach (var otherFrame in otherAnimation.Frames)
+			{
+				newAnimation.Frames.Add(otherFrame.Copy());
+			}
+			foreach (var otherAttachment in otherAnimation.Attachments)
+			{
+				newAnimation.Attachments.Add(otherAttachment.Copy());
+			}
+			Animations.Add(newAnimation);
+		}
 	}
 
 }

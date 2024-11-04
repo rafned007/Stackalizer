@@ -70,8 +70,9 @@
         IsPaused = false;
         player.ignoreinputs = false;
     }
-    void Startmenu()
+    async void Startmenu()
     {
+        await Task.DelayRealtimeSeconds(.01f);
         Scene.LoadFromFile("scenes/Startmenu.scene");
     }
     void MusicControl()

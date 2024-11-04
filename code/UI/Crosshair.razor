@@ -3,23 +3,23 @@
 @inherits PanelComponent
 
 <root>
-	<div @ref=CH class="crossh"></div>
+    <div @ref=CH class="crossh"></div>
 </root>
 
 @code
 {
-	private Panel CH { get; set; }
+    private Panel CH { get; set; }
 
-	protected override void OnUpdate()
+    protected override void OnUpdate()
     {
-        if ( CH is null )
+        if (CH is null)
             return;
 
         var screenSize = Screen.Size;
         var normalizedMousePosition = Mouse.Position / screenSize;
 
-        CH.Style.Left = Length.Percent( normalizedMousePosition.x *100f );
-        CH.Style.Top = Length.Percent(normalizedMousePosition.y *100f );
+        CH.Style.Left = Length.Percent(normalizedMousePosition.x * 100f);
+        CH.Style.Top = Length.Percent(normalizedMousePosition.y * 100f);
     }
-	
+
 }
