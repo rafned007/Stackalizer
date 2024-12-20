@@ -10,7 +10,8 @@ namespace SpriteTools;
 
 [Category("2D")]
 [Icon("emoji_emotions")]
-[Title("2D Sprite Component")]
+[Title("2D Sprite")]
+[Tint(EditorTint.Yellow)]
 public sealed class SpriteComponent : Component, Component.ExecuteInEditor
 {
     /// <summary>
@@ -173,6 +174,11 @@ public sealed class SpriteComponent : Component, Component.ExecuteInEditor
         get => _currentAnimation;
         set
         {
+            if (value is null)
+            {
+                _currentAnimation = null;
+                return;
+            }
             PlayAnimation(value.Name);
         }
     }
@@ -299,6 +305,9 @@ public sealed class SpriteComponent : Component, Component.ExecuteInEditor
                 SpriteMaterial = MaterialOverride.CreateCopy();
             else
                 SpriteMaterial = Material.Create("spritemat", "shaders/sprite_2d.shader");
+
+            SpriteMaterial?.Set("g_vFlashColor", _flashTint);
+            SpriteMaterial?.Set("g_flFlashAmount", _flashTint.a);
         }
 
         UpdateSprite();
@@ -323,7 +332,11 @@ public sealed class SpriteComponent : Component, Component.ExecuteInEditor
         base.OnEnabled();
 
         if (SceneObject.IsValid())
+        {
             SceneObject.RenderingEnabled = true;
+            SceneObject.ColorTint = Tint;
+            SceneObject.Tags.SetFrom(GameObject.Tags);
+        }
 
         if (CreateAttachPoints)
             BuildAttachPoints();
@@ -353,6 +366,16 @@ public sealed class SpriteComponent : Component, Component.ExecuteInEditor
             bbox.Maxs.z = 0.0f;
             Gizmo.Draw.Color = Gizmo.IsSelected ? Color.White : Color.Orange;
             Gizmo.Draw.LineBBox(bbox);
+        }
+    }
+
+    protected override void OnTagsChanged()
+    {
+        base.OnTagsChanged();
+
+        if (SceneObject.IsValid())
+        {
+            SceneObject.Tags.SetFrom(GameObject.Tags);
         }
     }
 

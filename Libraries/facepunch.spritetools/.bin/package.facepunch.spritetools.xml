@@ -205,6 +205,13 @@
             </summary>
             <param name="index">The index of the frame</param>
         </member>
+        <member name="M:SpriteTools.TextureAtlas.GetTextureFromFrame(System.Int32)">
+            <summary>
+            Returns the texture for a specific frame in the texture atlas.
+            </summary>
+            <param name="index"></param>
+            <returns></returns>
+        </member>
         <member name="M:SpriteTools.TextureAtlas.FromAnimation(SpriteTools.SpriteAnimation)">
             <summary>
             Returns a cached texture atlas given a sprite animation. Creates one if not in the cache. Returns null if there was an error and the atlas could not be created.
@@ -235,14 +242,15 @@
             A class that re-packs a tileset with 1px borders to avoid bleeding.
             </summary>
         </member>
+        <member name="M:SpriteTools.AutotileBrush.SetAutotileType(SpriteTools.AutotileType)">
+            <summary>
+            Set the autotile type for this brush. This will reset all existing tiles in the brush.
+            </summary>
+            <param name="autotileType"></param>
+        </member>
         <member name="P:SpriteTools.TilesetComponent.Layers">
             <summary>
             The Layers within the TilesetComponent
-            </summary>
-        </member>
-        <member name="P:SpriteTools.TilesetComponent.LayerDistance">
-            <summary>
-            The distance between layers, this is useful when you want to position things between layers.
             </summary>
         </member>
         <member name="P:SpriteTools.TilesetComponent.HasCollider">
@@ -250,10 +258,25 @@
             Whether or not the component should generate a collider based on the specified Collision Layer
             </summary>
         </member>
+        <member name="P:SpriteTools.TilesetComponent.Static">
+            <inheritdoc cref="P:Sandbox.Collider.Static" />
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.IsTrigger">
+            <inheritdoc cref="P:Sandbox.Collider.IsTrigger" />
+        </member>
         <member name="P:SpriteTools.TilesetComponent.ColliderWidth">
             <summary>
             The width of the generated collider
             </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Friction">
+            <inheritdoc cref="P:Sandbox.Collider.Friction" />
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Surface">
+            <inheritdoc cref="P:Sandbox.Collider.Surface" />
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.SurfaceVelocity">
+            <inheritdoc cref="P:Sandbox.Collider.SurfaceVelocity" />
         </member>
         <member name="P:SpriteTools.TilesetComponent.Layer.Name">
             <summary>
@@ -270,19 +293,29 @@
             Whether or not this Layer is locked. Locked Layers will ignore any attempted changes
             </summary>
         </member>
-        <member name="P:SpriteTools.TilesetComponent.Layer.IsCollisionLayer">
-            <summary>
-            Whether or not this Layer dictates the collision mesh
-            </summary>
-        </member>
         <member name="P:SpriteTools.TilesetComponent.Layer.TilesetResource">
             <summary>
             The Tileset that this Layer uses
             </summary>
         </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.Height">
+            <summary>
+            The height of the Layer
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.IsCollisionLayer">
+            <summary>
+            Whether or not this Layer dictates the collision mesh
+            </summary>
+        </member>
         <member name="P:SpriteTools.TilesetComponent.Layer.Tiles">
             <summary>
-            A dictionary of all Tiles in the layer by their position
+            A dictionary of all Tiles in the layer by their position.
+            </summary>
+        </member>
+        <member name="P:SpriteTools.TilesetComponent.Layer.Autotiles">
+            <summary>
+            A dictionary containing a list of positions for each Autotile Brush by their ID.
             </summary>
         </member>
         <member name="P:SpriteTools.TilesetComponent.Layer.TilesetComponent">
@@ -296,7 +329,7 @@
             </summary>
             <returns></returns>
         </member>
-        <member name="M:SpriteTools.TilesetComponent.Layer.SetTile(Vector2Int,System.Guid,Vector2Int,System.Int32,System.Boolean,System.Boolean,System.Boolean)">
+        <member name="M:SpriteTools.TilesetComponent.Layer.SetTile(Vector2Int,System.Guid,Vector2Int,System.Int32,System.Boolean,System.Boolean,System.Boolean,System.Boolean)">
             <summary>
             Set a tile at the specified position. Will fail if IsLocked is true.
             </summary>
@@ -327,6 +360,26 @@
             Remove the Tile at the specified position. Will fail if IsLocked is true.
             </summary>
             <param name="position"></param>
+        </member>
+        <member name="M:SpriteTools.TilesetComponent.Layer.SetAutotile(SpriteTools.AutotileBrush,Vector2Int,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Set an Autotile at the specified position. Will fail if IsLocked is true.
+            </summary>
+            <param name="autotileBrush"></param>
+            <param name="position"></param>
+            <param name="enabled"></param>
+            <param name="update"></param>
+            <param name="isMerging"></param>
+        </member>
+        <member name="M:SpriteTools.TilesetComponent.Layer.SetAutotile(System.Guid,Vector2Int,System.Boolean,System.Boolean,System.Boolean)">
+            <summary>
+            Set an Autotile at the specified position. Will fail if IsLocked is true.
+            </summary>
+            <param name="autotileId"></param>
+            <param name="position"></param>
+            <param name="enabled"></param>
+            <param name="update"></param>
+            <param name="isMerging"></param>
         </member>
     </members>
 </doc>

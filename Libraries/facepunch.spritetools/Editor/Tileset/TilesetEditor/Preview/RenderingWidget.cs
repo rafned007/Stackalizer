@@ -26,6 +26,8 @@ public class RenderingWidget : SpriteRenderingWidget
 	public RenderingWidget(MainWindow window, Widget parent) : base(parent)
 	{
 		MainWindow = window;
+		AcceptDrops = false;
+		IsDraggable = false;
 	}
 
 	[EditorEvent.Frame]
@@ -64,6 +66,11 @@ public class RenderingWidget : SpriteRenderingWidget
 			frameHeight = MainWindow.Tileset.TileSize.y / TextureSize.y * planeHeight;
 			xSeparation = MainWindow.Tileset.TileSeparation.x / TextureSize.x * planeWidth;
 			ySeparation = MainWindow.Tileset.TileSeparation.y / TextureSize.y * planeHeight;
+
+			if (Gizmo.WasLeftMouseReleased)
+			{
+				AutotileTileReferenceControl.DragId = Guid.Empty;
+			}
 
 			{
 				int framesPerRow = MainWindow.Tileset.CurrentTextureSize.x / MainWindow.Tileset.CurrentTileSize.x;
@@ -146,6 +153,7 @@ public class RenderingWidget : SpriteRenderingWidget
 
 	void TileControl(int xi, int yi, TilesetResource.Tile tile)
 	{
+		if (tile is null) return;
 		bool isSelected = MainWindow?.inspector?.tileList?.Selected?.Any(x => x.Tile == tile) ?? false;
 		using (Gizmo.Scope($"tile_{tile.Id}", Transform.Zero.WithPosition(isSelected ? (Vector3.Up * 5f) : Vector3.Zero)))
 		{
@@ -184,7 +192,6 @@ public class RenderingWidget : SpriteRenderingWidget
 						{
 							startMovePosition += new Vector3(0, xx * frameWidth);
 							tile.Position += new Vector2Int(xx, 0);
-							tile.Tileset?.InternalUpdateTileTexture(tile);
 						}
 					}
 					if (Math.Abs(deltaf.y) >= frameHeight / 2f)
@@ -194,7 +201,6 @@ public class RenderingWidget : SpriteRenderingWidget
 						{
 							startMovePosition += new Vector3(yy * frameHeight, 0);
 							tile.Position += new Vector2Int(0, yy);
-							tile.Tileset?.InternalUpdateTileTexture(tile);
 						}
 					}
 				}
@@ -233,6 +239,52 @@ public class RenderingWidget : SpriteRenderingWidget
 								DraggableCorner(tile, i, j, x + width * (i + 1) / 2f, y + height * (j + 1) / 2f);
 							}
 						}
+					}
+				}
+			}
+			else if (MainWindow.inspector.SelectedTab == 2)
+			{
+				if (Gizmo.IsHovered)
+				{
+					Cursor = CursorShape.Finger;
+					timeSinceLastCornerHover = 0f;
+					using (Gizmo.Scope("hover"))
+					{
+						Gizmo.Draw.Color = Gizmo.Draw.Color.WithAlpha(0.5f);
+						Gizmo.Draw.SolidBox(bbox);
+					}
+					if (Gizmo.WasLeftMouseReleased)
+					{
+						if (MainWindow?.inspector?.autotileBrushList?.SelectedTile is not null)
+						{
+							var currentTileCount = MainWindow?.inspector?.autotileBrushList?.SelectedTile?.Tiles?.Count ?? 0;
+							if (currentTileCount > 0 && (MainWindow?.inspector?.autotileBrushList?.SelectedTile?.Tiles?.LastOrDefault()?.Id ?? new Guid()) == Guid.Empty)
+							{
+								MainWindow.inspector.autotileBrushList.SelectedTile.Tiles.RemoveAt(currentTileCount - 1);
+							}
+							var hadNone = currentTileCount == 0;
+							var reference = new AutotileBrush.TileReference(tile.Id);
+							reference.Tileset = MainWindow.Tileset;
+							if (currentTileCount < 2)
+							{
+								MainWindow.inspector.autotileBrushList.SelectedTile.Tiles ??= new();
+								MainWindow.inspector.autotileBrushList.SelectedTile.Tiles.Clear();
+							}
+							if (!MainWindow.inspector.autotileBrushList.SelectedTile.Tiles.Contains(reference))
+								MainWindow.inspector.autotileBrushList.SelectedTile.Tiles.Add(reference);
+							MainWindow.inspector?.UpdateSelectedAutotileSheet();
+
+							if (hadNone)
+							{
+								var selectedIndex = Array.IndexOf(MainWindow.inspector.autotileBrushList.SelectedBrush.Brush.Tiles, MainWindow.inspector.autotileBrushList.SelectedTile);
+								selectedIndex = (selectedIndex + 1) % MainWindow.inspector.autotileBrushList.SelectedBrush.Brush.Tiles.Count();
+								MainWindow.inspector.autotileBrushList.SelectedTile = MainWindow.inspector.autotileBrushList.SelectedBrush.Brush.Tiles[selectedIndex];
+							}
+						}
+					}
+					else if (Gizmo.WasLeftMousePressed)
+					{
+						AutotileTileReferenceControl.DragId = tile.Id;
 					}
 				}
 			}
@@ -362,7 +414,6 @@ public class RenderingWidget : SpriteRenderingWidget
 					{
 						tile.Position = position;
 						tile.Size = size;
-						tile.Tileset?.InternalUpdateTileTexture(tile);
 					}
 				}
 			}

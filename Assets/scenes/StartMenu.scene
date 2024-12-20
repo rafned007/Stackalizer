@@ -2,6 +2,20 @@
   "__guid": "01d9204e-86b5-45f5-9048-4a9d5b2c8b84",
   "GameObjects": [
     {
+      "__guid": "b3a8e544-3b77-4687-8762-e233361b0577",
+      "Flags": 0,
+      "Name": "Scene Information",
+      "Enabled": true,
+      "Components": [
+        {
+          "__type": "Sandbox.SceneInformation",
+          "__guid": "2ad2ec5f-eb60-4cbb-b2aa-633301592cbe",
+          "Description": "",
+          "Title": "startmenu"
+        }
+      ]
+    },
+    {
       "__guid": "e0ec5190-1309-4845-ade1-803d40485196",
       "Flags": 0,
       "Name": "StartMenu",
@@ -110,8 +124,13 @@
         {
           "__type": "Sandbox.SoundBoxComponent",
           "__guid": "f0f3d44e-e409-4cce-afc5-5364ac94e58c",
+          "Distance": 0,
           "DistanceAttenuation": false,
           "DistanceAttenuationOverride": false,
+          "Falloff": {
+            "rangex": "0,0",
+            "rangey": "0,0"
+          },
           "Force2d": true,
           "MaxRepeatTime": 1,
           "MinRepeatTime": 1,
@@ -167,9 +186,13 @@
     "MaxFixedUpdates": 5,
     "NetworkFrequency": 30,
     "NetworkInterpolation": true,
+    "PhysicsSubSteps": 1,
     "ThreadedAnimation": true,
     "TimeScale": 1,
     "UseFixedUpdate": true,
+    "Metadata": {
+      "Title": "startmenu"
+    },
     "NavMesh": {
       "Enabled": false,
       "IncludeStaticBodies": true,
@@ -183,10 +206,9 @@
       "IncludedBodies": ""
     }
   },
+  "ResourceVersion": 2,
   "Title": "startmenu",
-  "Description": "",
-  "ResourceVersion": 1,
+  "Description": null,
   "__references": [],
-  "IsValid": true,
-  "__version": 1
+  "__version": 2
 }

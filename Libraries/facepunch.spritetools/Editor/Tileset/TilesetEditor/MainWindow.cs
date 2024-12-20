@@ -251,8 +251,6 @@ public partial class MainWindow : DockWindow, IAssetEditor
 			_asset = null;
 		}
 
-		Tileset?.InternalUpdateTileTextures();
-
 		// Register the asset if we haven't already
 		_asset ??= AssetSystem.RegisterFile(savePath);
 		_asset.SaveToDisk(Tileset);
@@ -266,6 +264,7 @@ public partial class MainWindow : DockWindow, IAssetEditor
 		}
 
 		MainAssetBrowser.Instance?.UpdateAssetList();
+		TileAtlas.ClearCache(Tileset);
 
 		return true;
 	}
@@ -410,7 +409,6 @@ public partial class MainWindow : DockWindow, IAssetEditor
 		PushRedo();
 
 		Tileset.InternalUpdateTiles();
-		Tileset.InternalUpdateTileTextures();
 
 		UpdateEverything();
 	}
@@ -457,13 +455,13 @@ public partial class MainWindow : DockWindow, IAssetEditor
 
 	public void PushUndo(string name, string buffer = "")
 	{
-		if (string.IsNullOrEmpty(buffer)) buffer = Tileset.Serialize();
+		if (string.IsNullOrEmpty(buffer)) buffer = Tileset.SerializeString();
 		_undoStack.PushUndo(name, buffer);
 	}
 
 	public void PushRedo()
 	{
-		_undoStack.PushRedo(Tileset.Serialize());
+		_undoStack.PushRedo(Tileset.SerializeString());
 	}
 
 	public void Undo()
@@ -502,7 +500,7 @@ public partial class MainWindow : DockWindow, IAssetEditor
 
 	internal void ReloadFromString(string buffer)
 	{
-		Tileset.Deserialize(buffer);
+		Tileset.DeserializeString(buffer);
 
 		SetDirty();
 		UpdateEverything();

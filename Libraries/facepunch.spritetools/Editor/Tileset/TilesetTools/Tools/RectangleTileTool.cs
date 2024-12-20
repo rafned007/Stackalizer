@@ -17,9 +17,15 @@ public class RectangleTileTool : BaseTileTool
 {
     public RectangleTileTool(TilesetTool parent) : base(parent) { }
 
-    [Property] public bool Hollow { get; set; } = false;
+    /// <summary>
+    /// If enabled, the rectangle will only draw the border and not be filled.
+    /// </summary>
+    [Group("Rectangle Tool"), Property] public bool Hollow { get; set; } = false;
 
     Vector2 startPos;
+    Vector2 lastMin;
+    Vector2 lastMax;
+    Vector2 lastTilePos;
     bool holding = false;
     bool deleting = false;
 
@@ -32,7 +38,7 @@ public class RectangleTileTool : BaseTileTool
         Parent._sceneObject.RenderingEnabled = true;
 
         var tileSize = Parent.SelectedLayer.TilesetResource.GetTileSize();
-        var tilePos = pos / tileSize;
+        var tilePos = (pos - Parent.SelectedComponent.WorldPosition) / tileSize;
 
         if (holding)
         {
@@ -49,16 +55,24 @@ public class RectangleTileTool : BaseTileTool
                     Gizmo.Draw.Color = Color.Red.WithAlpha(0.5f);
                     Gizmo.Draw.SolidBox(new BBox(tilePos * tileSize + min * tileSize, tilePos * tileSize + max * tileSize + tileSize));
                 }
+                Parent._sceneObject.SetPositions(new List<Vector2> { Vector2.Zero });
             }
             else
             {
                 positions = GetPositions(min, max);
                 Parent._sceneObject.RenderingEnabled = true;
-                Parent._sceneObject.SetPositions(positions);
+                if (tilePos != lastTilePos || min != lastMin || max != lastMax)
+                {
+                    UpdateTilePositions(positions);
+                    lastMin = min;
+                    lastMax = max;
+                    lastTilePos = tilePos;
+                }
             }
 
             if (!Gizmo.IsLeftMouseDown && !Gizmo.IsRightMouseDown)
             {
+                var brush = AutotileBrush;
                 holding = false;
                 Parent._sceneObject.ClearPositions();
 
@@ -67,7 +81,10 @@ public class RectangleTileTool : BaseTileTool
                     positions = GetPositions(min, max);
                     foreach (var ppos in positions)
                     {
-                        Parent.EraseTile(tilePos + ppos, false);
+                        if (brush is null)
+                            Parent.EraseTile(tilePos + ppos, false);
+                        else
+                            Parent.EraseAutoTile(brush, (Vector2Int)(tilePos + ppos));
                     }
                     SceneEditorSession.Active.FullUndoSnapshot($"Erase Tile Rectangle");
                     Parent.SelectedComponent.IsDirty = true;
@@ -75,9 +92,24 @@ public class RectangleTileTool : BaseTileTool
                 else
                 {
                     var tile = TilesetTool.Active.SelectedTile;
-                    foreach (var ppos in positions)
+                    if (brush is null)
                     {
-                        Parent.PlaceTile((Vector2Int)(tilePos + ppos), tile.Id, Vector2Int.Zero, false);
+                        foreach (var ppos in positions)
+                        {
+                            Parent.PlaceTile((Vector2Int)(tilePos + ppos), tile.Id, Vector2Int.Zero, false);
+                        }
+                    }
+                    else
+                    {
+                        foreach (var ppos in positions)
+                        {
+                            Parent.PlaceAutotile(brush.Id, (Vector2Int)(tilePos + ppos), false);
+                        }
+
+                        foreach (var ppos in positions)
+                        {
+                            Parent.SelectedLayer.UpdateAutotile(brush.Id, (Vector2Int)(tilePos + ppos), false);
+                        }
                     }
                     SceneEditorSession.Active.FullUndoSnapshot($"Place Tile Rectangle");
                     Parent.SelectedComponent.IsDirty = true;
@@ -89,6 +121,14 @@ public class RectangleTileTool : BaseTileTool
             startPos = tilePos;
             holding = true;
             deleting = Gizmo.IsRightMouseDown;
+        }
+        else
+        {
+            if (tilePos != lastTilePos)
+            {
+                UpdateTilePositions(new List<Vector2> { 0 });
+                lastTilePos = tilePos;
+            }
         }
     }
 

@@ -9,6 +9,7 @@ namespace SpriteTools.TilesetTool.Preview;
 public class RenderingWidget : SpriteRenderingWidget
 {
 	TilesetToolInspector Inspector;
+	AutotileBrush AutotileBrush;
 
 	float planeWidth;
 	float planeHeight;
@@ -57,6 +58,8 @@ public class RenderingWidget : SpriteRenderingWidget
 			}
 		}
 
+		AutotileBrush = AutotileWidget.Instance?.Brush;
+
 		using (SceneInstance.Push())
 		{
 			var hasTiles = tiles.Count > 0;
@@ -81,7 +84,10 @@ public class RenderingWidget : SpriteRenderingWidget
 
 				using (Gizmo.Scope("tiles"))
 				{
-					Gizmo.Draw.Color = new Color(0.1f, 0.4f, 1f);
+					if (AutotileBrush is null)
+						Gizmo.Draw.Color = new Color(0.1f, 0.4f, 1f);
+					else
+						Gizmo.Draw.Color = Color.Yellow;
 					Gizmo.Draw.LineThickness = 3f;
 
 					int xi = 0;
@@ -113,6 +119,11 @@ public class RenderingWidget : SpriteRenderingWidget
 
 	void TileControl(int xi, int yi, TilesetResource.Tile tile)
 	{
+		if (AutotileBrush is not null)
+		{
+			if (!AutotileBrush.Tiles.Any(x => x?.Tiles?.Any(y => (y?.Id ?? Guid.Empty) == tile.Id) ?? false)) return;
+		}
+
 		bool isSelected = TilesetTool.Active?.SelectedTile == tile;
 		using (Gizmo.Scope($"tile_{tile.Id}", Transform.Zero.WithPosition(isSelected ? (Vector3.Up * 5f) : Vector3.Zero)))
 		{
@@ -127,22 +138,25 @@ public class RenderingWidget : SpriteRenderingWidget
 			var bbox = BBox.FromPositionAndSize(new Vector3(y + height / 2f, x + width / 2f, 1f), new Vector3(height, width, 1f));
 			Gizmo.Hitbox.BBox(bbox);
 
-			if (isSelected)
+			if (AutotileBrush is null)
 			{
-				Gizmo.Draw.LineThickness = 4;
-				Gizmo.Draw.Color = Color.Yellow;
-			}
-
-			if (Gizmo.IsHovered)
-			{
-				using (Gizmo.Scope("hover"))
+				if (isSelected)
 				{
-					Gizmo.Draw.Color = Gizmo.Draw.Color.WithAlpha(0.5f);
-					Gizmo.Draw.SolidBox(bbox);
+					Gizmo.Draw.LineThickness = 4;
+					Gizmo.Draw.Color = Color.Yellow;
 				}
-				if (Gizmo.WasLeftMousePressed)
+
+				if (Gizmo.IsHovered)
 				{
-					TilesetTool.Active.SelectedTile = tile;
+					using (Gizmo.Scope("hover"))
+					{
+						Gizmo.Draw.Color = Gizmo.Draw.Color.WithAlpha(0.5f);
+						Gizmo.Draw.SolidBox(bbox);
+					}
+					if (Gizmo.WasLeftMousePressed)
+					{
+						TilesetTool.Active.SelectedTile = tile;
+					}
 				}
 			}
 

@@ -17,9 +17,20 @@ public partial class TilesetTool : EditorTool
 {
 	public static TilesetTool Active { get; private set; }
 
-	[Property] public int Angle { get; set; } = 0;
-	[Property] public bool HorizontalFlip { get; set; } = false;
-	[Property] public bool VerticalFlip { get; set; } = false;
+	public ToolSettings Settings { get; private set; } = new();
+	public class ToolSettings
+	{
+		[Group("Brush"), Property, Editor("angle")] public int Angle { get; set; } = 0;
+		[Group("Brush"), Property] public bool HorizontalFlip { get; set; } = false;
+		[Group("Brush"), Property] public bool VerticalFlip { get; set; } = false;
+
+		[Header("FEATURE NOT COMPLETE!")]
+		[Group("Brush"), Property, Editor("autotile_index")] public int AutotileBrush { get; set; } = -1;
+
+
+		[Group("Brush"), Property, WideMode(HasLabel = false), Order(999999)]
+		public Preview.Preview Preview { get; set; } = new();
+	}
 
 	public override IEnumerable<EditorTool> GetSubtools()
 	{
@@ -37,14 +48,16 @@ public partial class TilesetTool : EditorTool
 		{
 			if (_selectedLayer == value) return;
 
+			var previousTileset = _selectedLayer?.TilesetResource;
 			_selectedLayer = value;
-			if (value is not null)
+			if (value is not null && (previousTileset == null || _selectedLayer?.TilesetResource != previousTileset))
 			{
+				Settings.AutotileBrush = -1;
 				_sceneObject?.UpdateTileset(value.TilesetResource);
 				SelectedTile = value?.TilesetResource?.Tiles?.FirstOrDefault();
 				if (!string.IsNullOrEmpty(_selectedLayer?.TilesetResource?.FilePath))
 				{
-					TilesetToolInspector.Active?.Preview?.UpdateTexture(_selectedLayer.TilesetResource.FilePath);
+					Preview.PreviewWidget.Current?.UpdateTexture(_selectedLayer.TilesetResource.FilePath);
 				}
 			}
 		}
@@ -65,7 +78,7 @@ public partial class TilesetTool : EditorTool
 	}
 	TilesetResource.Tile _selectedTile;
 
-	internal Action UpdateInspector;
+	internal Action UpdateInspector { get; set; }
 
 	bool WasGridActive = true;
 	Vector2Int GridSize => SelectedLayer?.TilesetResource?.TileSize ?? new Vector2Int(32, 32);
@@ -108,6 +121,13 @@ public partial class TilesetTool : EditorTool
 	public override void OnUpdate()
 	{
 		base.OnUpdate();
+		if (SelectedComponent.Transform is null) return;
+
+		if (Selection.FirstOrDefault() != this || Selection.Count > 1)
+		{
+			EditorToolManager.SetTool("object");
+			return;
+		}
 
 		if (SceneViewportWidget.LastSelected?.SceneView?.Tools?.CurrentTool?.CurrentTool is null)
 		{
@@ -120,7 +140,7 @@ public partial class TilesetTool : EditorTool
 		using (Gizmo.Scope("grid"))
 		{
 			Gizmo.Draw.IgnoreDepth = state.Is2D;
-			Gizmo.Draw.Grid(state.GridAxis, gridSize, state.GridOpacity);
+			Gizmo.Draw.Grid(SelectedComponent.WorldPosition, state.GridAxis, gridSize, state.GridOpacity, 0.01f, 0.01f);
 		}
 	}
 
@@ -144,11 +164,32 @@ public partial class TilesetTool : EditorTool
 		}
 	}
 
+	internal void PlaceAutotile(Guid brushId, Vector2Int position, bool update = true)
+	{
+		if (SelectedLayer is null) return;
+
+		bool isMerging = CurrentTool is BaseTileTool tool && tool.ShouldMergeAutotiles;
+		SelectedLayer.SetAutotile(brushId, position, true, update, isMerging);
+	}
+
+	internal void EraseAutoTile(AutotileBrush brush, Vector2Int position, bool update = true)
+	{
+		if (SelectedLayer is null) return;
+
+		SelectedLayer.SetAutotile(brush.Id, position, false, update);
+	}
+
 	internal void PlaceTile(Vector2Int position, Guid tileId, Vector2Int cellPosition, bool rebuild = true)
 	{
 		if (SelectedLayer is null) return;
 
-		SelectedLayer.SetTile(position, tileId, cellPosition, Angle, HorizontalFlip, VerticalFlip, rebuild);
+		if (Math.Abs(position.x) >= int.MaxValue || Math.Abs(position.y) >= int.MaxValue)
+		{
+			Log.Warning($"Attempted to place tile {position} out of bounds");
+			return;
+		}
+
+		SelectedLayer.SetTile(position, tileId, cellPosition, Settings.Angle, Settings.HorizontalFlip, Settings.VerticalFlip, rebuild);
 	}
 
 	internal void EraseTile(Vector2 position, bool rebuild = true)
@@ -200,17 +241,17 @@ public partial class TilesetTool : EditorTool
 	public static void RotateLeft()
 	{
 		if (Active is null) return;
-		Active.Angle = (Active.Angle + 90) % 360;
+		Active.Settings.Angle = (Active.Settings.Angle + 90) % 360;
 	}
 
 	[Shortcut("tileset-tools.rotate-right", "W", typeof(SceneViewportWidget))]
 	public static void RotateRight()
 	{
 		if (Active is null) return;
-		Active.Angle -= 90;
-		if (Active.Angle < 0)
+		Active.Settings.Angle -= 90;
+		if (Active.Settings.Angle < 0)
 		{
-			Active.Angle += 360;
+			Active.Settings.Angle += 360;
 		}
 	}
 
@@ -218,14 +259,14 @@ public partial class TilesetTool : EditorTool
 	public static void FlipHorizontal()
 	{
 		if (Active is null) return;
-		Active.HorizontalFlip = !Active.HorizontalFlip;
+		Active.Settings.HorizontalFlip = !Active.Settings.HorizontalFlip;
 	}
 
 	[Shortcut("tileset-tools.flip-vertical", "S", typeof(SceneViewportWidget))]
 	public static void FlipVertical()
 	{
 		if (Active is null) return;
-		Active.VerticalFlip = !Active.VerticalFlip;
+		Active.Settings.VerticalFlip = !Active.Settings.VerticalFlip;
 	}
 
 }
@@ -235,7 +276,7 @@ internal sealed class TilesetPreviewObject : SceneCustomObject
 	TilesetTool Tool;
 	Material Material;
 
-	internal List<(Vector2Int, Vector2Int)> MultiTilePositions = new();
+	internal List<(Vector2Int, Vector2Int, Guid)> MultiTilePositions = new();
 
 	public TilesetPreviewObject(TilesetTool tool, SceneWorld world) : base(world)
 	{
@@ -254,43 +295,55 @@ internal sealed class TilesetPreviewObject : SceneCustomObject
 		MultiTilePositions.Clear();
 	}
 
-	internal void SetPositions(List<Vector2Int> positions, List<Vector2Int> cellPositions = null)
+	internal void SetPositions(List<Vector2Int> positions, List<Vector2Int> cellPositions = null, List<Guid> guids = null)
 	{
 		if (cellPositions is null)
 		{
-			MultiTilePositions = positions.Select(x => (x, new Vector2Int(-1, -1))).ToList();
+			MultiTilePositions = positions.Select(x => (x, new Vector2Int(-1, -1), Guid.Empty)).ToList();
 			return;
 		}
+
+		guids ??= new();
 
 		MultiTilePositions.Clear();
 		for (int i = 0; i < positions.Count; i++)
 		{
-			if (i >= cellPositions.Count)
-				MultiTilePositions.Add((positions[i], new Vector2Int(-1, -1)));
-			else
-				MultiTilePositions.Add((positions[i], cellPositions[i]));
+			Vector2Int cellPos = new Vector2Int(-1, -1);
+			Guid cellId = Guid.Empty;
+			if (i < cellPositions.Count)
+				cellPos = cellPositions[i];
+			if (i < guids.Count)
+				cellId = guids[i];
+
+			MultiTilePositions.Add((positions[i], cellPos, cellId));
 		}
 	}
 
-	internal void SetPositions(List<Vector2> positions, List<Vector2> cellPositions = null)
+	internal void SetPositions(List<Vector2> positions, List<Vector2> cellPositions = null, List<Guid> guids = null)
 	{
 		if (cellPositions is null)
 		{
-			MultiTilePositions = positions.Select(x => ((Vector2Int)x, new Vector2Int(-1, -1))).ToList();
+			MultiTilePositions = positions.Select(x => ((Vector2Int)x, new Vector2Int(-1, -1), Guid.Empty)).ToList();
 			return;
 		}
+
+		guids ??= new();
 
 		MultiTilePositions.Clear();
 		for (int i = 0; i < positions.Count; i++)
 		{
-			if (i >= cellPositions.Count)
-				MultiTilePositions.Add(((Vector2Int)positions[i], new Vector2Int(-1, -1)));
-			else
-				MultiTilePositions.Add(((Vector2Int)positions[i], (Vector2Int)cellPositions[i]));
+			Vector2Int cellPos = new Vector2Int(-1, -1);
+			Guid cellId = Guid.Empty;
+			if (i < cellPositions.Count)
+				cellPos = (Vector2Int)cellPositions[i];
+			if (i < guids.Count)
+				cellId = guids[i];
+
+			MultiTilePositions.Add(((Vector2Int)positions[i], cellPos, cellId));
 		}
 	}
 
-	internal void SetPositions(List<(Vector2Int, Vector2Int)> positions)
+	internal void SetPositions(List<(Vector2Int, Vector2Int, Guid)> positions)
 	{
 		MultiTilePositions = positions;
 	}
@@ -308,13 +361,15 @@ internal sealed class TilesetPreviewObject : SceneCustomObject
 		var tileset = selectedTile.Tileset;
 		if (tileset is null) return;
 
+		var brush = AutotileWidget.Instance?.Brush;
+
 		var tileSize = tileset.GetTileSize();
 		var scale = Vector2Int.One;
 		// if (TilesetTool.Active.CurrentTool is PaintTileTool) scale = selectedTile.Size;
 		var tiling = tileset.GetTiling() * scale;
 
 		var positions = MultiTilePositions.ToList();
-		if (positions.Count == 0) positions.Add((Vector2Int.Zero, new Vector2Int(-1, -1)));
+		if (positions.Count == 0) positions.Add((Vector2Int.Zero, new Vector2Int(-1, -1), Guid.Empty));
 
 		int i = 0;
 		var vertexCount = positions.Count * 6;
@@ -325,15 +380,19 @@ internal sealed class TilesetPreviewObject : SceneCustomObject
 			var offsetPos = pos.Item1;
 			var tilePosition = (pos.Item2.x == -1 || pos.Item2.y == -1) ? selectedTile.Position : pos.Item2;
 
-			if (Tool.Angle == 90)
-				offsetPos = new Vector2Int(-offsetPos.y, offsetPos.x);
-			else if (Tool.Angle == 180)
-				offsetPos = new Vector2Int(-offsetPos.x, -offsetPos.y);
-			else if (Tool.Angle == 270)
-				offsetPos = new Vector2Int(offsetPos.y, -offsetPos.x);
+			if (brush is null)
+			{
+				if (Tool.Settings.Angle == 90)
+					offsetPos = new Vector2Int(-offsetPos.y, offsetPos.x);
+				else if (Tool.Settings.Angle == 180)
+					offsetPos = new Vector2Int(-offsetPos.x, -offsetPos.y);
+				else if (Tool.Settings.Angle == 270)
+					offsetPos = new Vector2Int(offsetPos.y, -offsetPos.x);
+			}
+
 			var offset = tileset.GetOffset(tilePosition);
 
-			var position = new Vector3(offsetPos.x * tileSize.x, offsetPos.y * tileSize.y, 0) - new Vector3(0, (scale.y - 1) * tileSize.y, 0);
+			var position = new Vector3(offsetPos.x * tileSize.x, offsetPos.y * tileSize.y, Position.z) - new Vector3(0, (scale.y - 1) * tileSize.y, 0);
 			var size = tileSize * scale;
 
 			var topLeft = new Vector3(position.x, position.y, position.z);
@@ -342,38 +401,41 @@ internal sealed class TilesetPreviewObject : SceneCustomObject
 			var bottomLeft = new Vector3(position.x, position.y + size.y, position.z);
 
 
-			if (Tool.HorizontalFlip) offset.x = -offset.x - tiling.x;
-			if (!Tool.VerticalFlip) offset.y = -offset.y - tiling.y;
+			if (Tool.Settings.HorizontalFlip) offset.x = -offset.x - tiling.x;
+			if (!Tool.Settings.VerticalFlip) offset.y = -offset.y - tiling.y;
 
 			var uvTopLeft = new Vector2(offset.x, offset.y);
 			var uvTopRight = new Vector2(offset.x + tiling.x, offset.y);
 			var uvBottomRight = new Vector2(offset.x + tiling.x, offset.y + tiling.y);
 			var uvBottomLeft = new Vector2(offset.x, offset.y + tiling.y);
 
-			if (Tool.Angle == 90)
+			if (brush is null)
 			{
-				var tempUv = uvTopLeft;
-				uvTopLeft = uvBottomLeft;
-				uvBottomLeft = uvBottomRight;
-				uvBottomRight = uvTopRight;
-				uvTopRight = tempUv;
-			}
-			else if (Tool.Angle == 180)
-			{
-				var tempUv = uvTopLeft;
-				uvTopLeft = uvBottomRight;
-				uvBottomRight = tempUv;
-				tempUv = uvTopRight;
-				uvTopRight = uvBottomLeft;
-				uvBottomLeft = tempUv;
-			}
-			else if (Tool.Angle == 270)
-			{
-				var tempUv = uvTopLeft;
-				uvTopLeft = uvTopRight;
-				uvTopRight = uvBottomRight;
-				uvBottomRight = uvBottomLeft;
-				uvBottomLeft = tempUv;
+				if (Tool.Settings.Angle == 90)
+				{
+					var tempUv = uvTopLeft;
+					uvTopLeft = uvBottomLeft;
+					uvBottomLeft = uvBottomRight;
+					uvBottomRight = uvTopRight;
+					uvTopRight = tempUv;
+				}
+				else if (Tool.Settings.Angle == 180)
+				{
+					var tempUv = uvTopLeft;
+					uvTopLeft = uvBottomRight;
+					uvBottomRight = tempUv;
+					tempUv = uvTopRight;
+					uvTopRight = uvBottomLeft;
+					uvBottomLeft = tempUv;
+				}
+				else if (Tool.Settings.Angle == 270)
+				{
+					var tempUv = uvTopLeft;
+					uvTopLeft = uvTopRight;
+					uvTopRight = uvBottomRight;
+					uvBottomRight = uvBottomLeft;
+					uvBottomLeft = tempUv;
+				}
 			}
 
 			vertex[i] = new Vertex(topLeft);

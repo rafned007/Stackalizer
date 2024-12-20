@@ -17,9 +17,13 @@ public class LineTileTool : BaseTileTool
 {
     public LineTileTool(TilesetTool parent) : base(parent) { }
 
-    [Property, Range(0, 8, 1)] public int Separation { get; set; } = 0;
+    /// <summary>
+    /// The distance/spacing between each tile in the line.
+    /// </summary>
+    [Group("Line Tool"), Property, Range(0, 8, 1)] public int Separation { get; set; } = 0;
 
     Vector2 startPos;
+    Vector2 lastTilePos;
     bool holding = false;
 
     public override void OnUpdate()
@@ -30,7 +34,7 @@ public class LineTileTool : BaseTileTool
         Parent._sceneObject.Transform = new Transform(pos, Rotation.Identity, 1);
         Parent._sceneObject.RenderingEnabled = true;
 
-        var tilePos = pos / Parent.SelectedLayer.TilesetResource.GetTileSize();
+        var tilePos = (pos - Parent.SelectedComponent.WorldPosition) / Parent.SelectedLayer.TilesetResource.GetTileSize();
 
         if (holding)
         {
@@ -52,17 +56,32 @@ public class LineTileTool : BaseTileTool
                 if (!positions.Contains(thisPos))
                     positions.Add(thisPos);
             }
-            Parent._sceneObject.SetPositions(positions);
+            if (tilePos != lastTilePos)
+            {
+                UpdateTilePositions(positions);
+                lastTilePos = tilePos;
+            }
 
             if (!Gizmo.IsLeftMouseDown)
             {
                 holding = false;
                 Parent._sceneObject.ClearPositions();
 
+                var brush = AutotileBrush;
                 var tile = TilesetTool.Active.SelectedTile;
-                foreach (var ppos in positions)
+                if (brush is null)
                 {
-                    Parent.PlaceTile((Vector2Int)(tilePos + ppos), tile.Id, Vector2Int.Zero, false);
+                    foreach (var ppos in positions)
+                    {
+                        Parent.PlaceTile((Vector2Int)(tilePos + ppos), tile.Id, Vector2Int.Zero, false);
+                    }
+                }
+                else
+                {
+                    foreach (var ppos in positions)
+                    {
+                        Parent.PlaceAutotile(brush.Id, (Vector2Int)(tilePos + ppos));
+                    }
                 }
                 Parent.SelectedComponent.IsDirty = true;
                 SceneEditorSession.Active.FullUndoSnapshot($"Paint Tile Line");
@@ -73,8 +92,17 @@ public class LineTileTool : BaseTileTool
             startPos = tilePos;
             holding = true;
         }
+        else
+        {
+            if (tilePos != lastTilePos)
+            {
+                UpdateTilePositions(new List<Vector2> { 0 });
+                lastTilePos = tilePos;
+            }
+        }
 
     }
+
 
     [Shortcut("tileset-tools.line-tool", "l", typeof(SceneViewportWidget))]
     public static void ActivateSubTool()

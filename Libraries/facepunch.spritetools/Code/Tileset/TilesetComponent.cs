@@ -8,9 +8,10 @@ using System.Text.Json.Serialization;
 namespace SpriteTools;
 
 [Category("2D")]
-[Title("2D Tileset Component")]
+[Title("2D Tileset")]
 [Icon("calendar_view_month")]
-public partial class TilesetComponent : Collider, Component.ExecuteInEditor
+[Tint(EditorTint.Yellow)]
+public partial class TilesetComponent : Component, Component.ExecuteInEditor
 {
 	/// <summary>
 	/// The Layers within the TilesetComponent
@@ -31,16 +32,9 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 	List<Layer> _layers;
 
 	/// <summary>
-	/// The distance between layers, this is useful when you want to position things between layers.
-	/// </summary>
-	[Property, Group("Layers"), ShowIf(nameof(TilesetComponent.HasMultipleLayers), true)]
-	public float LayerDistance { get; set; } = 1f;
-	bool HasMultipleLayers => Layers.Count > 1;
-
-	/// <summary>
 	/// Whether or not the component should generate a collider based on the specified Collision Layer
 	/// </summary>
-	[Property, Group("Collision")]
+	[Property, FeatureEnabled("Collision")]
 	public bool HasCollider
 	{
 		get => _hasCollider;
@@ -48,15 +42,44 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 		{
 			if (value == _hasCollider) return;
 			_hasCollider = value;
-			RebuildMesh();
+			if (value) CreateCollider();
+			else DestroyCollider();
 		}
 	}
 	bool _hasCollider;
 
+	/// <inheritdoc cref="Collider.Static" />
+	[Property, Feature("Collision")]
+	public bool Static
+	{
+		get => _static;
+		set
+		{
+			if (value == _static) return;
+			_static = value;
+			if (Collider.IsValid()) Collider.Static = value;
+		}
+	}
+	private bool _static = true;
+
+	/// <inheritdoc cref="Collider.IsTrigger" />
+	[Property, Feature("Collision")]
+	public bool IsTrigger
+	{
+		get => _isTrigger;
+		set
+		{
+			if (value == _isTrigger) return;
+			_isTrigger = value;
+			if (Collider.IsValid()) Collider.IsTrigger = value;
+		}
+	}
+	private bool _isTrigger = false;
+
 	/// <summary>
 	/// The width of the generated collider
 	/// </summary>
-	[Property, Group("Collision")]
+	[Property, Feature("Collision")]
 	public float ColliderWidth
 	{
 		get => _colliderWidth;
@@ -65,27 +88,77 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 			if (value < 0f) _colliderWidth = 0f;
 			else if (value == _colliderWidth) return;
 			_colliderWidth = value;
-			RebuildMesh();
+			Collider?.RebuildMesh();
 		}
 	}
 	float _colliderWidth;
 
-	public bool IsDirty = false;
-	private Model CollisionMesh { get; set; }
-	private List<Vector3> CollisionVertices { get; set; } = new();
-	private List<int[]> CollisionFaces { get; set; } = new();
-	List<TilesetSceneObject> _sos = new();
-
-	protected override void OnStart()
+	/// <inheritdoc cref="Collider.Friction" />
+	[Property, Feature("Collision"), Group("Surface Properties")]
+	[Range(0f, 1f, 0.01f, true, true)]
+	public float? Friction
 	{
-		base.OnStart();
-
-		RebuildMesh();
+		get => _friction;
+		set
+		{
+			if (value == _friction) return;
+			_friction = value;
+			if (Collider.IsValid()) Collider.Friction = value;
+		}
 	}
+	private float? _friction;
+
+	/// <inheritdoc cref="Collider.Surface" />
+	[Property, Feature("Collision"), Group("Surface Properties")]
+	public Surface Surface
+	{
+		get => _surface;
+		set
+		{
+			if (value == _surface) return;
+			_surface = value;
+			if (Collider.IsValid()) Collider.Surface = value;
+		}
+	}
+	private Surface _surface;
+
+	/// <inheritdoc cref="Collider.SurfaceVelocity" />
+	[Property, Feature("Collision"), Group("Surface Properties")]
+	public Vector3 SurfaceVelocity
+	{
+		get => _surfaceVelocity;
+		set
+		{
+			if (value == _surfaceVelocity) return;
+			_surfaceVelocity = value;
+			if (Collider.IsValid()) Collider.SurfaceVelocity = value;
+		}
+	}
+	private Vector3 _surfaceVelocity;
+
+	[Property, Feature("Collision"), Group("Trigger Actions"), ShowIf(nameof(IsTrigger), true)]
+	public Action<Collider> OnTriggerEnter { get; set; }
+
+	[Property, Feature("Collision"), Group("Trigger Actions"), ShowIf(nameof(IsTrigger), true)]
+	public Action<Collider> OnTriggerExit { get; set; }
+
+	public bool IsDirty
+	{
+		get => Collider?.IsDirty ?? false;
+		set
+		{
+			if (!Collider.IsValid()) return;
+			Collider.IsDirty = value;
+		}
+	}
+	TilesetCollider Collider;
+	List<TilesetSceneObject> _sos = new();
 
 	protected override void OnEnabled()
 	{
 		base.OnEnabled();
+
+		CreateCollider();
 
 		if (Layers is null) return;
 		foreach (var layer in Layers)
@@ -98,10 +171,13 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 	{
 		base.OnDisabled();
 
+		DestroyCollider();
+
 		foreach (var _so in _sos)
 		{
 			_so.Delete();
 		}
+		_sos.Clear();
 	}
 
 	protected override void OnUpdate()
@@ -113,12 +189,6 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 		if (Layers.Count != _sos.Count)
 		{
 			RebuildSceneObjects();
-		}
-
-		if (IsDirty)
-		{
-			IsDirty = false;
-			RebuildMesh();
 		}
 	}
 
@@ -155,37 +225,34 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 	{
 		base.DrawGizmos();
 
+		var bounds = GetBounds();
+		Gizmo.Hitbox.BBox(bounds);
+
 		if (!Gizmo.IsSelected) return;
 
-		if (CollisionMesh is not null)
+		using (Gizmo.Scope("tileset", new Transform(0, WorldRotation.Inverse, 1)))
 		{
-			using (Gizmo.Scope("tile_collisions"))
-			{
-				Gizmo.Draw.Color = Color.Green;
-				Gizmo.Draw.LineThickness = 2f;
-
-				foreach (var face in CollisionFaces)
-				{
-					for (int i = 0; i < face.Length; i++)
-					{
-						var a = CollisionVertices[face[i]];
-						var b = CollisionVertices[face[(i + 1) % face.Length]];
-						Gizmo.Draw.Line(a, b);
-					}
-				}
-			}
+			Gizmo.Draw.Color = Color.Yellow;
+			Gizmo.Draw.LineThickness = 1f;
+			Gizmo.Draw.LineBBox(bounds);
 		}
+	}
 
+	public BBox GetBounds()
+	{
+		var bounds = BBox.FromPositionAndSize(0, 0);
 		foreach (var _so in _sos)
 		{
 			if (!_so.IsValid()) continue;
-			using (Gizmo.Scope("tileset"))
+
+			var boundSize = _so.Bounds.Size;
+			if ((boundSize.x + boundSize.y + boundSize.z) > (bounds.Size.x + bounds.Size.y + bounds.Size.z))
 			{
-				Gizmo.Draw.Color = Color.Yellow;
-				Gizmo.Draw.LineThickness = 1f;
-				Gizmo.Draw.LineBBox(_so.Bounds);
+				bounds = _so.Bounds.Translate(-_so.Position);
 			}
 		}
+
+		return bounds;
 	}
 
 	void RebuildSceneObjects()
@@ -202,219 +269,27 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 		}
 	}
 
-	void RebuildMesh()
+	void CreateCollider()
 	{
-		if (CollisionMesh is not null)
-		{
-			CollisionMesh = null;
-			CollisionVertices.Clear();
-			CollisionFaces.Clear();
-		}
-		CollisionBoxes.Clear();
-
 		if (!HasCollider) return;
-		if (Layers is null) return;
-
-		var collisionLayer = Layers.FirstOrDefault(x => x.IsCollisionLayer);
-		if (collisionLayer is null) collisionLayer = Layers.FirstOrDefault();
-		if (collisionLayer is null) return;
-
-		var tilePositions = new Dictionary<Vector2Int, bool>();
-		foreach (var tile in collisionLayer.Tiles)
-		{
-			tilePositions[tile.Key] = true;
-		}
-		if (tilePositions.Count == 0) return;
-
-		var minPosition = tilePositions.Keys.Aggregate((min, next) => Vector2Int.Min(min, next));
-		var maxPosition = tilePositions.Keys.Aggregate((max, next) => Vector2Int.Max(max, next));
-		var totalSize = maxPosition - minPosition + Vector2Int.One;
-
-		bool[,] tiles = new bool[totalSize.x, totalSize.y];
-		foreach (var tile in tilePositions)
-		{
-			var pos = tile.Key - minPosition;
-			tiles[pos.x, pos.y] = true;
-		}
-
-		// Generate mesh from tiles
-		var firstResource = Layers[0].TilesetResource;
-		var tileSize = (Vector2)firstResource.GetTileSize();
-		var mesh = new PolygonMesh();
-		CollisionVertices = new List<Vector3>();
-		CollisionFaces = new List<int[]>();
-
-		var min3d = new Vector3(minPosition.x * tileSize.x, minPosition.y * tileSize.y, 0);
-
-		bool[,] visited = new bool[totalSize.x, totalSize.y];
-		for (int x = 0; x < totalSize.x; x++)
-		{
-			for (int y = 0; y < totalSize.y; y++)
-			{
-
-				if (tiles[x, y] && !visited[x, y])
-				{
-					int width = 1;
-					int height = 1;
-
-					// Check width
-					while (x + width < totalSize.x && tiles[x + width, y] && !visited[x + width, y])
-					{
-						width++;
-					}
-
-					// Check height
-					while (y + height < totalSize.y && IsRectangle(tiles, visited, x, y, width, height))
-					{
-						height++;
-					}
-
-					// Mark the cells of this rectangle as visited
-					for (int i = 0; i < width; i++)
-					{
-						for (int j = 0; j < height; j++)
-						{
-							visited[x + i, y + j] = true;
-						}
-					}
-
-					AddRectangle(CollisionVertices, CollisionFaces, tiles, x, y, width, height, tileSize, ColliderWidth, minPosition, CollisionBoxes);
-				}
-			}
-		}
-
-		var hVertices = mesh.AddVertices(CollisionVertices.ToArray());
-		var faceMat = Material.Load("materials/dev/reflectivity_30.vmat");
-
-		foreach (var face in CollisionFaces)
-		{
-			var faceIndex = mesh.AddFace(face.Select(x => hVertices[x]).ToArray());
-			mesh.SetFaceMaterial(faceIndex, faceMat);
-		}
-		mesh.Transform = Transform.World;
-
-		CollisionMesh = mesh.Rebuild();
-		RebuildImmediately();
+		if (Collider.IsValid()) return;
+		Collider = AddComponent<TilesetCollider>();
+		Collider.Flags |= ComponentFlags.Hidden | ComponentFlags.NotSaved;
+		Collider.Tileset = this;
+		Collider.Static = Static;
+		Collider.IsTrigger = IsTrigger;
+		Collider.Friction = Friction;
+		Collider.Surface = Surface;
+		Collider.SurfaceVelocity = SurfaceVelocity;
+		Collider.OnTriggerEnter += OnTriggerEnter;
+		Collider.OnTriggerExit += OnTriggerExit;
 	}
 
-	List<BBox> CollisionBoxes = new();
-	protected override IEnumerable<PhysicsShape> CreatePhysicsShapes(PhysicsBody targetBody)
+	void DestroyCollider()
 	{
-		if (!HasCollider) yield break;
-
-		if (CollisionBoxes.Count > 0)
-		{
-			foreach (var box in CollisionBoxes)
-			{
-				var shape = targetBody.AddBoxShape(box, Rotation.Identity, true);
-				yield return shape;
-			}
-		}
-		else
-		{
-			if (CollisionMesh is null) yield break;
-			if (CollisionMesh.Physics is null) yield break;
-
-			var bodyTransform = targetBody.Transform.ToLocal(Transform.World);
-
-			foreach (var part in CollisionMesh.Physics.Parts)
-			{
-				var bx = bodyTransform.ToWorld(part.Transform);
-
-				foreach (var mesh in part.Meshes)
-				{
-					var shape = targetBody.AddShape(mesh, bx, false, true);
-					shape.Surface = mesh.Surface;
-					shape.Surfaces = mesh.Surfaces;
-					yield return shape;
-				}
-			}
-		}
-	}
-
-	static bool IsRectangle(bool[,] grid, bool[,] visited, int x, int y, int width, int height)
-	{
-		for (int i = 0; i < width; i++)
-		{
-			if (!grid[x + i, y + height] || visited[x + i, y + height])
-			{
-				return false;
-			}
-		}
-		return true;
-	}
-
-	static void AddRectangle(List<Vector3> vertices, List<int[]> faces, bool[,] grid, int x, int y, int width, int height, Vector2 tileSize, float depth, Vector2Int minPosition, List<BBox> boxes)
-	{
-		int startIndex = vertices.Count;
-		float currentDepth = MathF.Abs(depth);
-		float z = currentDepth / 2f;
-
-		// Top Face
-		var v0 = new Vector3((minPosition.x + x) * tileSize.x, (minPosition.y + y) * tileSize.x, z);
-		var v1 = new Vector3((minPosition.x + x + width) * tileSize.x, (minPosition.y + y) * tileSize.y, z);
-		var v2 = new Vector3((minPosition.x + x + width) * tileSize.x, (minPosition.y + y + height) * tileSize.y, z);
-		var v3 = new Vector3((minPosition.x + x) * tileSize.x, (minPosition.y + y + height) * tileSize.y, z);
-		AddFace(vertices, faces, v0, v1, v2, v3);
-
-		if (depth == 0) return;
-
-		// Bottom Face
-		z -= currentDepth;
-		var v4 = new Vector3((minPosition.x + x) * tileSize.x, (minPosition.y + y) * tileSize.y, z);
-		var v5 = new Vector3((minPosition.x + x + width) * tileSize.x, (minPosition.y + y) * tileSize.y, z);
-		var v6 = new Vector3((minPosition.x + x + width) * tileSize.x, (minPosition.y + y + height) * tileSize.y, z);
-		var v7 = new Vector3((minPosition.x + x) * tileSize.x, (minPosition.y + y + height) * tileSize.y, z);
-		AddFace(vertices, faces, v4, v5, v6, v7);
-
-		boxes.Add(new BBox(v0, v6));
-
-		// Add indices for the sides if not inner
-		if (IsExposedFace(grid, x, y, 1, height, -1, 0)) // Left
-		{
-			AddFace(vertices, faces, v0, v3, v7, v4);
-		}
-		if (IsExposedFace(grid, x + width - 1, y, 1, height, 1, 0)) // Right
-		{
-			AddFace(vertices, faces, v2, v1, v5, v6);
-		}
-		if (IsExposedFace(grid, x, y, width, 1, 0, -1)) // Front
-		{
-			AddFace(vertices, faces, v1, v0, v4, v5);
-		}
-		if (IsExposedFace(grid, x, y + height - 1, width, 1, 0, 1)) // Back
-		{
-			AddFace(vertices, faces, v3, v2, v6, v7);
-		}
-	}
-
-	static void AddFace(List<Vector3> vertices, List<int[]> faces, Vector3 a, Vector3 b, Vector3 c, Vector3 d)
-	{
-		var startIndex = vertices.Count;
-		vertices.AddRange(new Vector3[] { a, b, c, d });
-		faces.Add(new int[] { startIndex, startIndex + 1, startIndex + 2 });
-		faces.Add(new int[] { startIndex + 2, startIndex + 3, startIndex + 0 });
-	}
-
-	static bool IsExposedFace(bool[,] grid, int x, int y, int width, int height, int dx, int dy)
-	{
-		int rows = grid.GetLength(0);
-		int cols = grid.GetLength(1);
-
-		for (int i = 0; i < width; i++)
-		{
-			for (int j = 0; j < height; j++)
-			{
-				int nx = x + i + dx;
-				int ny = y + j + dy;
-
-				if (nx < 0 || nx >= rows || ny < 0 || ny >= cols || !grid[nx, ny])
-				{
-					return true;
-				}
-			}
-		}
-		return false;
+		if (Collider.IsValid())
+			Collider.Destroy();
+		Collider = null;
 	}
 
 	public Layer GetLayerFromName(string name)
@@ -446,19 +321,29 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 		public bool IsLocked { get; set; }
 
 		/// <summary>
-		/// Whether or not this Layer dictates the collision mesh
-		/// </summary>
-		public bool IsCollisionLayer { get; set; }
-
-		/// <summary>
 		/// The Tileset that this Layer uses
 		/// </summary>
 		[Property, Group("Selected Layer")] public TilesetResource TilesetResource { get; set; }
 
 		/// <summary>
-		/// A dictionary of all Tiles in the layer by their position
+		/// The height of the Layer
+		/// </summary>
+		[Property, Group("Selected Layer")] public float Height { get; set; } = 0f;
+
+		/// <summary>
+		/// Whether or not this Layer dictates the collision mesh
+		/// </summary>
+		[Group("Selected Layer"), Title("Has Collisions")] public bool IsCollisionLayer { get; set; }
+
+		/// <summary>
+		/// A dictionary of all Tiles in the layer by their position.
 		/// </summary>
 		public Dictionary<Vector2Int, Tile> Tiles { get; set; }
+
+		/// <summary>
+		/// A dictionary containing a list of positions for each Autotile Brush by their ID.
+		/// </summary>
+		public Dictionary<Guid, List<AutotilePosition>> Autotiles { get; set; }
 
 		/// <summary>
 		/// The TilesetComponent that this Layer belongs to
@@ -506,13 +391,28 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 		/// <param name="flipX"></param>
 		/// <param name="flipY"></param>
 		/// <param name="rebuild"></param>
-		public void SetTile(Vector2Int position, Guid tileId, Vector2Int cellPosition = default, int angle = 0, bool flipX = false, bool flipY = false, bool rebuild = true)
+		public void SetTile(Vector2Int position, Guid tileId, Vector2Int cellPosition = default, int angle = 0, bool flipX = false, bool flipY = false, bool rebuild = true, bool removeAutotile = true)
 		{
 			if (IsLocked) return;
 			var tile = new Tile(tileId, cellPosition, angle, flipX, flipY);
 			Tiles[position] = tile;
 			if (rebuild && TilesetComponent.IsValid())
 				TilesetComponent.IsDirty = true;
+
+			if (removeAutotile && Autotiles is not null)
+			{
+				foreach (var group in Autotiles)
+				{
+					foreach (var autotile in group.Value)
+					{
+						if (autotile.Position == position)
+						{
+							Autotiles[group.Key].Remove(autotile);
+							break;
+						}
+					}
+				}
+			}
 		}
 
 		/// <summary>
@@ -543,6 +443,327 @@ public partial class TilesetComponent : Collider, Component.ExecuteInEditor
 		{
 			if (IsLocked) return;
 			Tiles.Remove(position);
+
+			if (Autotiles is not null)
+			{
+				foreach (var group in Autotiles)
+				{
+					foreach (var autotile in group.Value)
+					{
+						if (autotile.Position == position)
+						{
+							Autotiles[group.Key].Remove(autotile);
+							break;
+						}
+					}
+				}
+			}
+		}
+
+		/// <summary>
+		/// Set an Autotile at the specified position. Will fail if IsLocked is true.
+		/// </summary>
+		/// <param name="autotileBrush"></param>
+		/// <param name="position"></param>
+		/// <param name="enabled"></param>
+		///	<param name="update"></param>
+		/// <param name="isMerging"></param>
+		public void SetAutotile(AutotileBrush autotileBrush, Vector2Int position, bool enabled = true, bool update = true, bool isMerging = false)
+		{
+			SetAutotile(autotileBrush.Id, position, enabled, update, isMerging);
+		}
+
+		/// <summary>
+		/// Set an Autotile at the specified position. Will fail if IsLocked is true.
+		/// </summary>
+		/// <param name="autotileId"></param>
+		/// <param name="position"></param>
+		/// <param name="enabled"></param>
+		/// <param name="update"></param>
+		/// <param name="isMerging"></param>
+		public void SetAutotile(Guid autotileId, Vector2Int position, bool enabled = true, bool update = true, bool isMerging = false)
+		{
+			if (IsLocked) return;
+			Autotiles ??= new();
+
+			foreach (var group in Autotiles)
+			{
+				if (group.Key == autotileId) continue;
+				foreach (var autotile in group.Value)
+				{
+					if (autotile.Position == position)
+					{
+						Autotiles[group.Key].Remove(autotile);
+						break;
+					}
+				}
+			}
+
+			if (!Autotiles.ContainsKey(autotileId))
+				Autotiles[autotileId] = new List<AutotilePosition>();
+
+			bool shouldUpdate = false;
+			if (enabled)
+			{
+				if (!Autotiles[autotileId].Any(x => x.Position == position))
+				{
+					Autotiles[autotileId].Add(new(position, isMerging));
+					shouldUpdate = true;
+				}
+			}
+			else
+			{
+				var foundPos = Autotiles[autotileId].FirstOrDefault(x => x.Position == position);
+				if (foundPos is not null)
+				{
+					Tiles.Remove(position);
+					Autotiles[autotileId].Remove(foundPos);
+					shouldUpdate = true;
+				}
+				else
+				{
+					RemoveTile(position);
+				}
+			}
+
+			if (update && shouldUpdate)
+			{
+				UpdateAutotile(autotileId, position, !enabled, shouldMerge: isMerging);
+			}
+		}
+
+		public void UpdateAutotile(Guid autotileId, Vector2Int position, bool checkErased, bool updateSurrounding = true, bool shouldMerge = false)
+		{
+			if (!Autotiles.ContainsKey(autotileId)) return;
+
+			var brush = TilesetResource.AutotileBrushes.FirstOrDefault(x => x.Id == autotileId);
+			var autotile = Autotiles[autotileId].FirstOrDefault(x => x.Position == position);
+			if (autotile is not null)
+			{
+				if (shouldMerge) autotile.ShouldMerge = true;
+				if (autotile.ShouldMerge) shouldMerge = true;
+
+				var bitmask = GetAutotileBitmask(autotileId, position, shouldMerge);
+				if (bitmask == -1)
+				{
+					if (checkErased) RemoveTile(position);
+				}
+				else
+				{
+					if (brush is not null)
+					{
+						var tile = brush.GetTileFromBitmask(bitmask);
+						if (tile is not null)
+						{
+							SetTile(position, tile.Id, Vector2Int.Zero, 0, false, false, false, removeAutotile: false);
+						}
+						else
+						{
+							Log.Warning($"Tile not found for bitmask {bitmask} in AutotileBrush {brush.Name}");
+						}
+					}
+				}
+			}
+
+			if (updateSurrounding)
+			{
+				var up = position.WithY(position.y + 1);
+				var down = position.WithY(position.y - 1);
+				var left = position.WithX(position.x - 1);
+				var right = position.WithX(position.x + 1);
+				var upLeft = up.WithX(left.x);
+				var upRight = up.WithX(right.x);
+				var downLeft = down.WithX(left.x);
+				var downRight = down.WithX(right.x);
+
+				if (brush is not null && brush.AutotileType == AutotileType.Bitmask2x2Edge)
+				{
+					ClearInvalidAutotile(autotileId, up);
+					ClearInvalidAutotile(autotileId, down);
+					ClearInvalidAutotile(autotileId, left);
+					ClearInvalidAutotile(autotileId, right);
+					ClearInvalidAutotile(autotileId, upLeft);
+					ClearInvalidAutotile(autotileId, upRight);
+					ClearInvalidAutotile(autotileId, downLeft);
+					ClearInvalidAutotile(autotileId, downRight);
+				}
+
+				UpdateAutotile(autotileId, up, checkErased, false, shouldMerge);
+				UpdateAutotile(autotileId, down, checkErased, false, shouldMerge);
+				UpdateAutotile(autotileId, left, checkErased, false, shouldMerge);
+				UpdateAutotile(autotileId, right, checkErased, false, shouldMerge);
+				UpdateAutotile(autotileId, upLeft, checkErased, false, shouldMerge);
+				UpdateAutotile(autotileId, upRight, checkErased, false, shouldMerge);
+				UpdateAutotile(autotileId, downLeft, checkErased, false, shouldMerge);
+				UpdateAutotile(autotileId, downRight, checkErased, false, shouldMerge);
+			}
+		}
+
+		void ClearInvalidAutotile(Guid autotileId, Vector2Int position)
+		{
+			if (!Tiles.TryGetValue(position, out var tile)) return;
+
+			var brush = TilesetResource.AutotileBrushes.FirstOrDefault(x => x.Id == autotileId);
+
+			if (brush is null) return;
+			if (brush.AutotileType != AutotileType.Bitmask2x2Edge) return;
+			if (!brush.Tiles.Any(x => x.Tiles.Any(y => y.Id == tile.TileId))) return;
+			if (GetAutotileBitmask(autotileId, position) != -1) return;
+
+			RemoveTile(position);
+		}
+
+		public int GetAutotileBitmask(Guid autotileId, Vector2Int position, bool mergeAll = false)
+		{
+			if (Autotiles is null || (!mergeAll && !Autotiles.ContainsKey(autotileId))) return -1;
+
+			List<AutotilePosition> positions = new();
+			if (mergeAll)
+			{
+				foreach (var kvp in Autotiles)
+				{
+					positions.AddRange(kvp.Value);
+				}
+			}
+			else
+			{
+				positions = Autotiles[autotileId];
+			}
+			int value = 0;
+
+			var up = position.WithY(position.y + 1);
+			var down = position.WithY(position.y - 1);
+			var left = position.WithX(position.x - 1);
+			var right = position.WithX(position.x + 1);
+
+			var brush = TilesetResource.AutotileBrushes.FirstOrDefault(x => x.Id == autotileId);
+			if (brush is null) return 0;
+
+			bool is2x2 = brush.AutotileType == AutotileType.Bitmask2x2Edge;
+			if (is2x2)
+			{
+				foreach (var pos in positions)
+				{
+					if (pos.Position == up) value += 1;
+					if (pos.Position == left) value += 2;
+					if (pos.Position == right) value += 4;
+					if (pos.Position == down) value += 8;
+				}
+				switch (value)
+				{
+					case 0:
+					case 1:
+					case 2:
+					case 4:
+					case 8:
+					case 9:
+					case 6:
+						return -1;
+				}
+				value = 0;
+			}
+
+			var upLeft = up.WithX(left.x);
+			var upRight = up.WithX(right.x);
+			var downLeft = down.WithX(left.x);
+			var downRight = down.WithX(right.x);
+
+			foreach (var thing in positions)
+			{
+				var pos = thing.Position;
+				if (pos == upLeft) value += 1;
+				if (pos == up) value += 2;
+				if (pos == upRight) value += 4;
+				if (pos == left) value += 8;
+				if (pos == right) value += 16;
+				if (pos == downLeft) value += 32;
+				if (pos == down) value += 64;
+				if (pos == downRight) value += 128;
+			}
+
+			if (is2x2)
+			{
+				switch (value)
+				{
+					case 46:
+					case 116:
+					case 147:
+					case 201:
+						return -1;
+				}
+			}
+
+			return value;
+		}
+
+		public int GetAutotileBitmask(Guid autotileId, Vector2Int position, Dictionary<Vector2Int, bool> overrides, bool mergeAll = false)
+		{
+			if (Autotiles is null) return -1;
+
+			var positions = new List<Vector2Int>();
+			foreach (var thing in Autotiles)
+			{
+				if (!mergeAll && thing.Key != autotileId) continue;
+				foreach (var pos in thing.Value)
+				{
+					if (!positions.Contains(pos.Position))
+						positions.Add(pos.Position);
+				}
+			}
+			int value = 0;
+
+			foreach (var ride in overrides)
+			{
+				if (ride.Value)
+				{
+					if (!positions.Contains(ride.Key))
+					{
+						positions.Add(ride.Key);
+					}
+				}
+				else
+				{
+					if (positions.Contains(ride.Key))
+					{
+						positions.Remove(ride.Key);
+					}
+				}
+			}
+
+			var up = position.WithY(position.y + 1);
+			var down = position.WithY(position.y - 1);
+			var left = position.WithX(position.x - 1);
+			var right = position.WithX(position.x + 1);
+			var upLeft = up.WithX(left.x);
+			var upRight = up.WithX(right.x);
+			var downLeft = down.WithX(left.x);
+			var downRight = down.WithX(right.x);
+
+			foreach (var pos in positions)
+			{
+				if (pos == upLeft) value += 1;
+				if (pos == up) value += 2;
+				if (pos == upRight) value += 4;
+				if (pos == left) value += 8;
+				if (pos == right) value += 16;
+				if (pos == downLeft) value += 32;
+				if (pos == down) value += 64;
+				if (pos == downRight) value += 128;
+			}
+
+			return value;
+		}
+
+		public class AutotilePosition
+		{
+			public Vector2Int Position { get; set; }
+			public bool ShouldMerge { get; set; } = false;
+
+			public AutotilePosition(Vector2Int position, bool shouldMerge = false)
+			{
+				Position = position;
+				ShouldMerge = shouldMerge;
+			}
 		}
 	}
 
@@ -588,6 +809,7 @@ internal sealed class TilesetSceneObject : SceneCustomObject
 
 		MissingMaterial = Material.Load("materials/sprite_2d.vmat").CreateCopy();
 		MissingMaterial.Set("Texture", Texture.Load("images/missing-tile.png"));
+		Tags.SetFrom(Component.Tags);
 	}
 
 	public override void RenderSceneObject()
@@ -642,7 +864,7 @@ internal sealed class TilesetSceneObject : SceneCustomObject
 
 
 				var size = tileset.GetTileSize();
-				var position = new Vector3(pos.x, pos.y, layerIndex) * new Vector3(size.x, size.y, Component.LayerDistance);
+				var position = new Vector3(pos.x, pos.y, Layer.Height) * new Vector3(size.x, size.y, 1);
 
 				minPosition = Vector3.Min(minPosition, position);
 				maxPosition = Vector3.Max(maxPosition, position);
@@ -719,7 +941,7 @@ internal sealed class TilesetSceneObject : SceneCustomObject
 
 			var siz = tileset.GetTileSize();
 			maxPosition += new Vector3(siz.x, siz.y, 0);
-			Bounds = new BBox(minPosition, maxPosition + Vector3.Down * 0.01f);
+			Bounds = new BBox(minPosition, maxPosition + Vector3.Down * 0.01f).Rotate(Rotation).Translate(Position);
 
 
 		}
@@ -764,6 +986,7 @@ internal sealed class TilesetSceneObject : SceneCustomObject
 
 		if (Materials.TryGetValue(resource, out var combo))
 		{
+			combo.Item1 = texture;
 			combo.Item2.Set("Texture", texture);
 		}
 		else
